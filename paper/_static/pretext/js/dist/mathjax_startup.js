@@ -27,7 +27,7 @@ let mathJaxOpts = {
   },
   "loader": {
     "load": [
-      "input/asciimath",
+      "input/asciimath", "ui/lazy",
       "[tex]/amscd",
       "[tex]/color"
     ]

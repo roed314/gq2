@@ -64,3 +64,23 @@ article.theorem-like > a.lean-link::before { content: "⚙ "; }
   padding-top: .3rem;
 }
 .notation-popup .notation-ctx-link:hover { text-decoration: underline; }
+
+/* proof-local details tier button (quiet, matching the proof knowl look) */
+.detail-next-btn {
+  display: block; margin: .4em 0 .2em; padding: .15em .7em;
+  background: #f5f5f5; border: none; border-radius: 3px;
+  font-family: inherit; font-style: italic; font-size: .95em;
+  color: #333; cursor: pointer;
+}
+.detail-next-btn:hover { background: #ececec; }
+
+/* inline detail tiers (e.g. <p detail-level="2">): hidden until a container
+   (body via the slider, or a proof via its details button) enables them */
+.para.detail-level-2, .para.detail-level-3, .para.detail-level-4 { display: none; }
+.show-dl-2 .para.detail-level-2, .show-dl-3 .para.detail-level-3,
+.show-dl-4 .para.detail-level-4 { display: block; }
+
+/* the details button sits on the Proof line, only while the proof is open */
+.detail-next-btn { display: inline-block; margin: 0 0 0 .9em;
+  padding: .05em .55em; vertical-align: baseline; }
+details.hiddenproof:not([open]) .detail-next-btn { display: none; }

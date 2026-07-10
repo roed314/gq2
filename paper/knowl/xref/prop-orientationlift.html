@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="proposition theorem-like"><h2 class="heading">
+<span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lifting the orientation-preserving abelian automorphisms.</span>
+</h2>
+<div class="para logical">
+<div class="para">The natural map</div>
+<div class="displaymath process-math">
+\begin{equation}
+\Aut(\notn{D0}{D_0})\longrightarrow\Aut(\notn{Bab}{B_{\mathrm{ab}}},\notn{chi0}{\chi_0})\tag{3.10}
+\end{equation}
+</div>
+<div class="para">is surjective.  More explicitly, every element of <span class="process-math">\(\Aut(\notn{Bab}{B_{\mathrm{ab}}},\notn{chi0}{\chi_0})\)</span> has the unique form</div>
+<div class="displaymath process-math">
+\begin{equation}
+\alpha_{u,b}:
+\quad
+\notn{tTors}{t}\longmapsto \notn{tTors}{t},
+\qquad
+\bar S\longmapsto u\bar S,
+\qquad
+\bar Y\longmapsto\bar Y+b\bar S,\tag{3.11}
+\end{equation}
+</div>
+<div class="para">with <span class="process-math">\(u\in\mathbb{Z}_2^\times\)</span> and <span class="process-math">\(b\in\mathbb{Z}_2\text{,}\)</span> and every <span class="process-math">\(\alpha_{u,b}\)</span> lifts to <span class="process-math">\(\Aut(\notn{D0}{D_0})\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-orientationlift-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="lean-link" href="https://roed.github.io/gq2-lean/docs/GQ2.SectionThree.prop_3_8_lift.html" data-lean-ref="GQ2.SectionThree.prop_3_8_lift" title="Formalized as GQ2.SectionThree.prop_3_8_lift">GQ2.SectionThree.prop_3_8_lift</a><a class="lean-link" href="https://roed.github.io/gq2-lean/docs/GQ2.SectionThree.prop_3_8_classification.html" data-lean-ref="GQ2.SectionThree.prop_3_8_classification" title="Formalized as GQ2.SectionThree.prop_3_8_classification">GQ2.SectionThree.prop_3_8_classification</a><div class="autopermalink" aria-hidden="true" data-description="Proposition 3.9: Lifting the orientation-preserving abelian automorphisms"><a tabindex="-1" href="#prop-orientationlift" title="Copy heading and permalink for Proposition 3.9: Lifting the orientation-preserving abelian automorphisms" aria-label="Copy heading and permalink for Proposition 3.9: Lifting the orientation-preserving abelian automorphisms">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">We first determine the orientation-preserving automorphisms of the abelianization, then realize their unit-scaling part, and finally realize the remaining shear.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-orientationlift-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Because <span class="process-math">\(v_2(\notnfar{eta}{\eta}-1)=2\text{,}\)</span> the element <span class="process-math">\(\notnfar{eta}{\eta}\)</span> topologically generates <span class="process-math">\(1+4\mathbb{Z}_2\text{.}\)</span>  From <a href="#eq-Bsplit" class="xref" data-knowl="./knowl/xref/eq-Bsplit.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.4">(3.4)</a> and <a href="#eq-standardorientation" class="xref" data-knowl="./knowl/xref/eq-standardorientation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.5">(3.5)</a> one obtains</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-Bsplit.html ./knowl/xref/eq-standardorientation.html ./knowl/xref/eq-alphaub.html">
+\begin{equation*}
+\ker\notn{chi0}{\chi_0}=\mathbb{Z}_2\bar S.
+\end{equation*}
+</div>
+<div class="para">The torsion subgroup of <span class="process-math">\(\notn{Bab}{B_{\mathrm{ab}}}\)</span> is the order-two group generated by <span class="process-math">\(\notn{tTors}{t}\text{.}\)</span>  Hence an orientation-preserving automorphism fixes <span class="process-math">\(\notn{tTors}{t}\text{,}\)</span> sends <span class="process-math">\(\bar S\)</span> to <span class="process-math">\(u\bar S\)</span> for a unique unit <span class="process-math">\(u\text{,}\)</span> and sends <span class="process-math">\(\bar Y\)</span> to <span class="process-math">\(\bar Y+b\bar S\)</span> for a unique <span class="process-math">\(b\text{.}\)</span>  Conversely, every map <a href="#eq-alphaub" class="xref" data-knowl="./knowl/xref/eq-alphaub.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.11">(3.11)</a> is an orientation-preserving automorphism of <span class="process-math">\(\notn{Bab}{B_{\mathrm{ab}}}\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-orientationlift-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">The automorphism <span class="process-math">\(\Psi_u\)</span> of <a href="#lem-squarerootHNN" class="xref" data-knowl="./knowl/xref/lem-squarerootHNN.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 3.8: Square-root and HNN lifting">Lemma 3.8</a> sends <span class="process-math">\(\bar A,\bar S\)</span> to <span class="process-math">\(u\bar A,u\bar S\text{,}\)</span> so it fixes <span class="process-math">\(\notn{tTors}{t}=\bar A+2\bar S\)</span> and sends <span class="process-math">\(\bar S\)</span> to <span class="process-math">\(u\bar S\text{.}\)</span>  The canonical orientation is the action on the dualizing module and is therefore preserved by every automorphism of <span class="process-math">\(\notn{D0}{D_0}\text{.}\)</span>  Thus <span class="process-math">\(\Psi_u\)</span> induces <span class="process-math">\(\alpha_{u,b(u)}\)</span> for some <span class="process-math">\(b(u)\in\mathbb{Z}_2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-orientationlift-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">For <span class="process-math">\(b\in\mathbb{Z}_2\text{,}\)</span> define</div>
+<div class="displaymath process-math">
+\begin{equation}
+\Theta_b(A)=A^{S^b},
+\qquad
+\Theta_b(S)=S,
+\qquad
+\Theta_b(\notn{Ygen}{Y})=YS^b,\tag{3.12}
+\end{equation}
+</div>
+<div class="para">Here <span class="process-math">\(A^{S^b}=(S^b)^{-1}AS^b\)</span> is conjugation, not the product <span class="process-math">\(AS^b\text{.}\)</span> This is an automorphism of the free pro-<span class="process-math">\(2\)</span> group on <span class="process-math">\(A,S,\notn{Ygen}{Y}\text{,}\)</span> with inverse <span class="process-math">\(\Theta_{-b}\text{.}\)</span>  Moreover</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[S,YS^b]=[S,\notn{Ygen}{Y}]^{S^b},
+\end{equation*}
+</div>
+<div class="para">and therefore</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Theta_b(A^2S^4[S,\notn{Ygen}{Y}])
+=(A^2)^{S^b}S^4[S,\notn{Ygen}{Y}]^{S^b}
+=(A^2S^4[S,\notn{Ygen}{Y}])^{S^b}.
+\end{equation*}
+</div>
+<div class="para">It therefore descends to an automorphism of <span class="process-math">\(\notn{D0}{D_0}\text{,}\)</span> inducing <span class="process-math">\(\alpha_{1,b}\text{.}\)</span>  The composite <span class="process-math">\(\Theta_{b-b(u)}\circ\Psi_u\)</span> induces <span class="process-math">\(\alpha_{u,b}\text{,}\)</span> proving surjectivity.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-orientationlift-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 3.9.1"><a tabindex="-1" href="#prop-orientationlift-5" title="Copy heading and permalink for Proof 3.9.1" aria-label="Copy heading and permalink for Proof 3.9.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#prop-orientationlift">In Context</a></span>
+</body>
+</html>

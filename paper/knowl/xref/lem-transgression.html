@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Determinant transgression relative to the fixed equivariant class.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(q\)</span> be a nonsingular <span class="process-math">\(C\)</span>-invariant quadratic form on <span class="process-math">\(V\text{,}\)</span> and assume that a zero-section-normalized equivariant class</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\kappa_q^0\in H^2(V\rtimes C,\F_2)
+\end{equation*}
+</div>
+<div class="para">restricting to <span class="process-math">\(q\)</span> on <span class="process-math">\(V\)</span> has been fixed.  Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1\to V\to G_\notnfar{eta}{\eta}\to C\to1
+\end{equation*}
+</div>
+<div class="para">have extension class <span class="process-math">\(\notnfar{eta}{\eta}\in H^2(C,V)\text{.}\)</span>  Relative to the fixed equivariant lift <span class="process-math">\(\kappa_q^0\text{,}\)</span> the obstruction to extending the fibre class over <span class="process-math">\(G_\notnfar{eta}{\eta}\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation}
+d_2(q)=b_q^\flat{}_*\notnfar{eta}{\eta}\in H^2(C,V^\vee).\tag{6.58}
+\end{equation}
+</div>
+<div class="para">Consequently, if <span class="process-math">\(q\)</span> is the restriction of an actual class in <span class="process-math">\(H^2(G_\notnfar{eta}{\eta},\F_2)\text{,}\)</span> then <span class="process-math">\(\notnfar{eta}{\eta}=0\)</span> and <span class="process-math">\(G_\notnfar{eta}{\eta}\cong V\rtimes C\)</span> over <span class="process-math">\(C\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-transgression-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="lean-link" href="https://roed.github.io/gq2-lean/docs/GQ2.SectionSix.lemma_6_21.html" data-lean-ref="GQ2.SectionSix.lemma_6_21" title="Formalized as GQ2.SectionSix.lemma_6_21">GQ2.SectionSix.lemma_6_21</a><div class="autopermalink" aria-hidden="true" data-description="Lemma 6.21: Determinant transgression relative to the fixed equivariant class"><a tabindex="-1" href="#lem-transgression" title="Copy heading and permalink for Lemma 6.21: Determinant transgression relative to the fixed equivariant class" aria-label="Copy heading and permalink for Lemma 6.21: Determinant transgression relative to the fixed equivariant class">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">We choose sections for the extension, compare the induced automorphisms of the fibre extension, and identify their discrepancy with the transgressed class <span class="process-math">\(b_q^\flat{}_*(\notnfar{eta}{\eta})\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-transgression-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1\longrightarrow\F_2\longrightarrow E_q\longrightarrow V\longrightarrow1
+\end{equation*}
+</div>
+<div class="para">be the central extension represented by <span class="process-math">\(\kappa_q^0|_V\text{.}\)</span>  Central automorphisms of <span class="process-math">\(E_q\)</span> inducing the identity on <span class="process-math">\(V\)</span> are canonically <span class="process-math">\(V^\vee\text{.}\)</span> If <span class="process-math">\(\widehat v\)</span> is a lift of <span class="process-math">\(v\in V\text{,}\)</span> inner conjugation by <span class="process-math">\(\widehat v\)</span> is the central automorphism</div>
+<div class="displaymath process-math">
+\begin{equation}
+w\longmapsto b_q(v,w)=b_q^\flat(v)(w).\tag{6.59}
+\end{equation}
+</div>
+<div class="para">Choose the zero-section-normalized representative of <span class="process-math">\(\kappa_q^0\text{.}\)</span>  Its preimage of <span class="process-math">\(C\)</span> is split, so conjugation by the chosen lifts of <span class="process-math">\(c\in C\)</span> supplies coherent automorphisms</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\alpha_c\in\Aut(E_q),
+\qquad \alpha_c\alpha_d=\alpha_{cd},
+\end{equation*}
+</div>
+<div class="para">lifting the prescribed <span class="process-math">\(C\)</span>-action on <span class="process-math">\(V\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-transgression-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Choose a normalized section <span class="process-math">\(s:C\to G_\notnfar{eta}{\eta}\)</span> and write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-innerpolar.html ./knowl/xref/eq-transgressioncochain.html ./knowl/xref/eq-transgressionformula.html">
+\begin{equation}
+s(c)s(d)=\notnfar{eta}{\eta}(c,d)s(cd).\tag{6.60}
+\end{equation}
+</div>
+<div class="para">In a putative central extension of <span class="process-math">\(G_\notnfar{eta}{\eta}\)</span> restricting to <span class="process-math">\(E_q\text{,}\)</span> lifts of the section elements would satisfy</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-innerpolar.html ./knowl/xref/eq-transgressioncochain.html ./knowl/xref/eq-transgressionformula.html">
+\begin{equation*}
+\widehat s(c)\widehat s(d)
+=z(c,d)\widehat{\notnfar{eta}{\eta}(c,d)}\widehat s(cd)
+\end{equation*}
+</div>
+<div class="para">for a scalar factor <span class="process-math">\(z(c,d)\in\F_2\text{.}\)</span>  Compare the induced automorphisms of <span class="process-math">\(E_q\text{.}\)</span>  The left side induces <span class="process-math">\(\alpha_c\alpha_d=\alpha_{cd}\text{,}\)</span> whereas the right side induces</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-innerpolar.html ./knowl/xref/eq-transgressioncochain.html ./knowl/xref/eq-transgressionformula.html">
+\begin{equation*}
+\operatorname{Int}(\widehat{\notnfar{eta}{\eta}(c,d)})\alpha_{cd}.
+\end{equation*}
+</div>
+<div class="para">By <a href="#eq-innerpolar" class="xref" data-knowl="./knowl/xref/eq-innerpolar.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.59">(6.59)</a>, their discrepancy is the <span class="process-math">\(V^\vee\)</span>-valued normalized <span class="process-math">\(2\)</span>-cocycle</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-innerpolar.html ./knowl/xref/eq-transgressioncochain.html ./knowl/xref/eq-transgressionformula.html">
+\begin{equation}
+(c,d)\longmapsto b_q^\flat(\notnfar{eta}{\eta}(c,d)).\tag{6.61}
+\end{equation}
+</div>
+<div class="para">Changing the section <span class="process-math">\(s\)</span> changes <span class="process-math">\(\notnfar{eta}{\eta}\)</span> by a coboundary and changes <a href="#eq-transgressioncochain" class="xref" data-knowl="./knowl/xref/eq-transgressioncochain.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.61">(6.61)</a> by the corresponding <span class="process-math">\(V^\vee\)</span>-coboundary. Changing the coherent lifts <span class="process-math">\(\alpha_c\)</span> by central automorphisms <span class="process-math">\(\gamma(c)\in V^\vee\)</span> changes the discrepancy by <span class="process-math">\(d\gamma\text{.}\)</span>  Hence the cohomology class of the obstruction is exactly <span class="process-math">\(b_q^\flat{}_*[\notnfar{eta}{\eta}]\text{.}\)</span>  This is the <span class="process-math">\(d_2^{0,2}\)</span> differential after the intrinsic equivariance obstruction has been trivialized by the fixed split class <span class="process-math">\(\kappa_q^0\text{,}\)</span> proving <a href="#eq-transgressionformula" class="xref" data-knowl="./knowl/xref/eq-transgressionformula.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.58">(6.58)</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-transgression-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">If an actual class on <span class="process-math">\(G_\notnfar{eta}{\eta}\)</span> restricts to <span class="process-math">\(q\text{,}\)</span> the obstruction vanishes.  Since <span class="process-math">\(q\)</span> is nonsingular, <span class="process-math">\(b_q^\flat:V\xrightarrow{\sim}V^\vee\)</span> is an isomorphism of <span class="process-math">\(C\)</span>-modules.  Therefore <span class="process-math">\([\notnfar{eta}{\eta}]=0\text{,}\)</span> so the extension splits over <span class="process-math">\(C\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-transgression-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.21.1"><a tabindex="-1" href="#lem-transgression-4" title="Copy heading and permalink for Proof 6.21.1" aria-label="Copy heading and permalink for Proof 6.21.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#lem-transgression">In Context</a></span>
+</body>
+</html>

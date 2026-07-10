@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Central-cover exact-image transform.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\notnfar{calY}{\mathcal Y}=(\notnfar{Ytarget}{Y},\notnfar{LY}{L_Y},\notnfar{piY}{\pi_Y},\notnfar{thetaY}{\theta_Y})\)</span> be boundary-framed and let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p:\widetilde Y\twoheadrightarrow \notnfar{Ytarget}{Y}
+\end{equation*}
+</div>
+<div class="para">be a central double cover.  Give it the pulled-back structure</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\widetilde L=p^{-1}(\notnfar{LY}{L_Y}),
+\qquad
+\widetilde\pi=\pi_Yp,
+\qquad
+\widetilde\theta=\theta_Yp,
+\end{equation*}
+</div>
+<div class="para">and assume the central kernel lies in <span class="process-math">\(\ker(\widetilde\pi,\widetilde\theta)\text{.}\)</span> Fix an exact-image subgroup <span class="process-math">\(J\le \notnfar{Ytarget}{Y}\)</span> projecting onto <span class="process-math">\(\notnfar{Htarget}{H}\text{.}\)</span>  If <span class="process-math">\(u_\Gamma^\beta(p,J)\)</span> counts boundary-framed exact-image maps to <span class="process-math">\(J\)</span> whose pullback cover is split, then</div>
+<div class="displaymath process-math">
+\begin{equation}
+8u_\Gamma^\beta(p,J)
+=\sum_{\substack{\widetilde J\le p^{-1}(J)\\p(\widetilde J)=J}}
+\notnfar{eGamma}{e_\Gamma}^\beta(\widetilde J,\widetilde J\cap\widetilde L,
+\widetilde\pi|_{\widetilde J},
+\widetilde\theta|_{\widetilde J}).\tag{8.1}
+\end{equation}
+</div>
+<div class="para">Every term on the right is therefore an ordinary exact-image object in the same global boundary-framed category.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-covertransform-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="lean-link" href="https://roed.github.io/gq2-lean/docs/GQ2.SectionEight.lemma_8_3.html" data-lean-ref="GQ2.SectionEight.lemma_8_3" title="Formalized as GQ2.SectionEight.lemma_8_3">GQ2.SectionEight.lemma_8_3</a><div class="autopermalink" aria-hidden="true" data-description="Lemma 8.3: Central-cover exact-image transform"><a tabindex="-1" href="#lem-covertransform" title="Copy heading and permalink for Lemma 8.3: Central-cover exact-image transform" aria-label="Copy heading and permalink for Lemma 8.3: Central-cover exact-image transform">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">An unobstructed map <span class="process-math">\(f:\Gamma\twoheadrightarrow J\)</span> has a lift, and the set of all lifts is a torsor under <span class="process-math">\(\Hom(\Gamma,\F_2)\text{.}\)</span>  By <a href="#lem-commonscalars" class="xref" data-knowl="./knowl/xref/lem-commonscalars.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 8.2: Common scalar character group">Lemma 8.2</a>, this group has order <span class="process-math">\(8\)</span> for both sources, and scalar twisting preserves the boundary-framed condition.  Twisting a lift changes only the new central coordinate.  Because that coordinate lies in the kernel of both the tame marking and the decoration, every twist still satisfies the identical boundary equation.  The exact image of a lift is a subgroup <span class="process-math">\(\widetilde J\le p^{-1}(J)\)</span> mapping onto <span class="process-math">\(J\text{,}\)</span> and every such exact-image lift occurs in precisely one summand.  This is a literal partition of the eight lifts, proving <a href="#eq-covertransform" class="xref" data-knowl="./knowl/xref/eq-covertransform.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.1">(8.1)</a>; it also proves exact-image and decoration compatibility without an equidistribution assumption.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-covertransform-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 8.3.1"><a tabindex="-1" href="#lem-covertransform-4" title="Copy heading and permalink for Proof 8.3.1" aria-label="Copy heading and permalink for Proof 8.3.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#lem-covertransform">In Context</a></span>
+</body>
+</html>

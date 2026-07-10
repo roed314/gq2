@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Quadratic orbit–stabilizer Shapiro.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(W=\F_2[H]^N\)</span> have coordinates <span class="process-math">\(X_{r,h}\)</span> with <span class="process-math">\(H\)</span> acting by left translation on <span class="process-math">\(h\text{.}\)</span>  If <span class="process-math">\(K/F\)</span> is the <span class="process-math">\(H\)</span>-extension and <span class="process-math">\(\alpha_r\in H^1(K,\F_2)\)</span> is the scalar Shapiro coordinate, then the orbit classes of <a href="#lem-basedetclass" class="xref" data-knowl="./knowl/xref/lem-basedetclass.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.3: Base equivariant determinant class">Lemma 6.3</a> evaluate as follows.  For <span class="process-math">\(g\in H\text{,}\)</span> choose any lift <span class="process-math">\(\widetilde g\in G_F\)</span> and use the convention</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-basedetclass.html ./knowl/xref/eq-app-galpha-definition.html">
+\begin{equation*}
+(g\alpha_s)(n)=\alpha_s(\widetilde g^{-1}n\widetilde g)
+\qquad(n\in G_K).
+\end{equation*}
+</div>
+<div class="para">This is independent of the chosen lift and is the convention fixed in <a href="#eq-app-galpha-definition" class="xref" data-knowl="./knowl/xref/eq-app-galpha-definition.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation A.13">(A.13)</a>:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-basedetclass.html ./knowl/xref/eq-app-galpha-definition.html">
+\begin{align}
+S_r&amp;\longmapsto \cor_{K/F}(\alpha_r^2),\tag{6.45}\\
+C_{r,s,g}&amp;\longmapsto \cor_{K/F}(\alpha_r\smile g\alpha_s),\tag{6.46}\\
+E_{r,g}&amp;\longmapsto
+\cor_{K_0/F}\Evens_{K/K_0}(\alpha_r),
+\qquad K_0=K^{\langle g\rangle}.\tag{6.47}
+\end{align}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-orbitshapiro-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="lean-link" href="https://roed.github.io/gq2-lean/docs/GQ2.SectionSix.lemma_6_15_square.html" data-lean-ref="GQ2.SectionSix.lemma_6_15_square" title="Formalized as GQ2.SectionSix.lemma_6_15_square">GQ2.SectionSix.lemma_6_15_square</a><a class="lean-link" href="https://roed.github.io/gq2-lean/docs/GQ2.SectionSix.lemma_6_15_free.html" data-lean-ref="GQ2.SectionSix.lemma_6_15_free" title="Formalized as GQ2.SectionSix.lemma_6_15_free">GQ2.SectionSix.lemma_6_15_free</a><a class="lean-link" href="https://roed.github.io/gq2-lean/docs/GQ2.SectionSix.lemma_6_15_involution.html" data-lean-ref="GQ2.SectionSix.lemma_6_15_involution" title="Formalized as GQ2.SectionSix.lemma_6_15_involution">GQ2.SectionSix.lemma_6_15_involution</a><div class="autopermalink" aria-hidden="true" data-description="Lemma 6.15: Quadratic orbit–stabilizer Shapiro"><a tabindex="-1" href="#lem-orbitshapiro" title="Copy heading and permalink for Lemma 6.15: Quadratic orbit–stabilizer Shapiro" aria-label="Copy heading and permalink for Lemma 6.15: Quadratic orbit–stabilizer Shapiro">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">We treat square orbits, free orbits, and involution-stabilized orbits in that order, recording at each stage whether the identity is literal at cochain level or only after passage to cohomology.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-orbitshapiro-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Choose lifts <span class="process-math">\(\widetilde h\in G_F\)</span> of <span class="process-math">\(h\in H\text{,}\)</span> and write <span class="process-math">\(\bar\gamma\)</span> for the image of <span class="process-math">\(\gamma\in G_F\)</span> in <span class="process-math">\(H\text{.}\)</span>  With the left-regular convention used here, the normalized Shapiro map is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-squareorbitfactor.html ./knowl/xref/eq-shapirosquare.html ./knowl/xref/eq-app-galpha-shapiro.html ./knowl/xref/eq-app-free-orbit-boundary.html ./knowl/xref/eq-shapirofree.html">
+\begin{equation*}
+b_r(\gamma)_h
+=\operatorname{Sh}(\alpha_r)(\gamma)_h
+=\alpha_r\!\left(\widetilde h^{-1}\gamma
+\widetilde{\bar\gamma^{-1}h}\right).
+\end{equation*}
+</div>
+<div class="para">For scalar cocycles <span class="process-math">\(\alpha,\beta\)</span> on <span class="process-math">\(G_K\text{,}\)</span> direct substitution into the normalized bar corestriction gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-squareorbitfactor.html ./knowl/xref/eq-shapirosquare.html ./knowl/xref/eq-app-galpha-shapiro.html ./knowl/xref/eq-app-free-orbit-boundary.html ./knowl/xref/eq-shapirofree.html">
+\begin{equation}
+\sum_{h\in H}
+\operatorname{Sh}(\alpha)(\gamma)_h\,
+\operatorname{Sh}(\beta)(\notnfar{eta}{\eta})_{\bar\gamma^{-1}h}
+=\operatorname{cor}_{K/F}(\alpha\smile\beta)(\gamma,\notnfar{eta}{\eta}).\tag{6.48}
+\end{equation}
+</div>
+<div class="para">The factor set <a href="#eq-squareorbitfactor" class="xref" data-knowl="./knowl/xref/eq-squareorbitfactor.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.17">(6.17)</a> therefore gives <a href="#lem-orbitshapiro-2-1-13" class="xref" data-knowl="./knowl/xref/eq-shapirosquare.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.45">(6.45)</a>.  For the free orbit, the coordinate appearing in the monomial is the right shift <span class="process-math">\(\mathsf R_g\operatorname{Sh}(\alpha_s)\text{.}\)</span>  By <a href="#eq-app-galpha-shapiro" class="xref" data-knowl="./knowl/xref/eq-app-galpha-shapiro.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation A.15">(A.15)</a> this differs from <span class="process-math">\(\operatorname{Sh}(g\alpha_s)\)</span> by the explicit coboundary <span class="process-math">\(dq_{\alpha_s,g}\text{,}\)</span> and <a href="#eq-app-free-orbit-boundary" class="xref" data-knowl="./knowl/xref/eq-app-free-orbit-boundary.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation A.16">(A.16)</a> displays the resulting normalized boundary after taking the cup product and trace. Therefore <a href="#lem-orbitshapiro-2-1-13" class="xref" data-knowl="./knowl/xref/eq-shapirofree.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.46">(6.46)</a> holds in cohomology; it is a literal cochain identity whenever the chosen section is right-<span class="process-math">\(g\)</span>-equivariant.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-orbitshapiro-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Now let <span class="process-math">\(J=\langle g\rangle\text{,}\)</span> let <span class="process-math">\(\mathcal R\)</span> be right-coset representatives for <span class="process-math">\(H/J\text{,}\)</span> and put <span class="process-math">\(K_0=K^J\text{.}\)</span>  For <span class="process-math">\(c\in H\)</span> and <span class="process-math">\(u\in\mathcal R\text{,}\)</span> use the notation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-halforbitcocycle.html ./knowl/xref/eq-kappahalforbit.html ./knowl/xref/eq-explicit-evens.html ./knowl/xref/eq-normalized-corestriction-two.html ./knowl/xref/eq-halfgraph-explicit.html ./knowl/xref/lem-twopointevans.html ./knowl/xref/eq-shapiroevens.html ./knowl/xref/eq-halfgraph-corestriction.html ./knowl/xref/eq-app-kappa-transversal-change.html ./knowl/xref/eq-app-nu-transversal-change.html">
+\begin{equation*}
+c^{-1}u=\pi_c(u)g^{\epsilon_c(u)}
+\end{equation*}
+</div>
+<div class="para">of <a href="#lem-halforbitcocycle" class="xref" data-knowl="./knowl/xref/lem-halforbitcocycle.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.2: Explicit involution-orbit cocycle">Lemma 6.2</a>.  Let <span class="process-math">\(\rho_0:G_{K_0}\twoheadrightarrow J\)</span> be the quotient map.  The graph pullback of the explicit half-orbit cocycle <a href="#eq-kappahalforbit" class="xref" data-knowl="./knowl/xref/eq-kappahalforbit.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.15">(6.15)</a> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-halforbitcocycle.html ./knowl/xref/eq-kappahalforbit.html ./knowl/xref/eq-explicit-evens.html ./knowl/xref/eq-normalized-corestriction-two.html ./knowl/xref/eq-halfgraph-explicit.html ./knowl/xref/lem-twopointevans.html ./knowl/xref/eq-shapiroevens.html ./knowl/xref/eq-halfgraph-corestriction.html ./knowl/xref/eq-app-kappa-transversal-change.html ./knowl/xref/eq-app-nu-transversal-change.html">
+\begin{align}
+&amp;\sum_{u\in\mathcal R}
+b_r(\gamma)_u\,
+b_r(\notnfar{eta}{\eta})_{\bar\gamma^{-1}ug}\notag\\
+&amp;\qquad+
+\sum_{u\in\mathcal R}\epsilon_{\bar\gamma}(u)
+b_r(\notnfar{eta}{\eta})_{\pi_{\bar\gamma}(u)}
+b_r(\notnfar{eta}{\eta})_{\pi_{\bar\gamma}(u)g}.\tag{6.49}
+\end{align}
+</div>
+<div class="para">For completeness, choose the lifts compatibly so that <span class="process-math">\(\widetilde{ug}=\widetilde u\,\widetilde g\)</span> for <span class="process-math">\(u\in\mathcal R\text{,}\)</span> and put</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-halforbitcocycle.html ./knowl/xref/eq-kappahalforbit.html ./knowl/xref/eq-explicit-evens.html ./knowl/xref/eq-normalized-corestriction-two.html ./knowl/xref/eq-halfgraph-explicit.html ./knowl/xref/lem-twopointevans.html ./knowl/xref/eq-shapiroevens.html ./knowl/xref/eq-halfgraph-corestriction.html ./knowl/xref/eq-app-kappa-transversal-change.html ./knowl/xref/eq-app-nu-transversal-change.html">
+\begin{equation*}
+\ell_u(\gamma)=
+\widetilde u^{-1}\gamma\,
+\widetilde{\pi_{\bar\gamma}(u)}
+\in G_{K_0}.
+\end{equation*}
+</div>
+<div class="para">Its image in <span class="process-math">\(J\)</span> is <span class="process-math">\(g^{\epsilon_{\bar\gamma}(u)}\text{.}\)</span>  In these conventions the normalized corestriction of a <span class="process-math">\(2\)</span>-cochain <span class="process-math">\(\nu\)</span> on <span class="process-math">\(G_{K_0}\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-halforbitcocycle.html ./knowl/xref/eq-kappahalforbit.html ./knowl/xref/eq-explicit-evens.html ./knowl/xref/eq-normalized-corestriction-two.html ./knowl/xref/eq-halfgraph-explicit.html ./knowl/xref/lem-twopointevans.html ./knowl/xref/eq-shapiroevens.html ./knowl/xref/eq-halfgraph-corestriction.html ./knowl/xref/eq-app-kappa-transversal-change.html ./knowl/xref/eq-app-nu-transversal-change.html">
+\begin{equation}
+(\operatorname{cor}_{K_0/F}\nu)(\gamma,\notnfar{eta}{\eta})
+=
+\sum_{u\in\mathcal R}
+\nu\!\left(
+\ell_u(\gamma),
+\ell_{\pi_{\bar\gamma}(u)}(\notnfar{eta}{\eta})
+\right).\tag{6.50}
+\end{equation}
+</div>
+<div class="para">Let <span class="process-math">\(b_J=\operatorname{Sh}_{K/K_0}(\alpha_r)\text{.}\)</span>  Compatibility of the transversals gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-halforbitcocycle.html ./knowl/xref/eq-kappahalforbit.html ./knowl/xref/eq-explicit-evens.html ./knowl/xref/eq-normalized-corestriction-two.html ./knowl/xref/eq-halfgraph-explicit.html ./knowl/xref/lem-twopointevans.html ./knowl/xref/eq-shapiroevens.html ./knowl/xref/eq-halfgraph-corestriction.html ./knowl/xref/eq-app-kappa-transversal-change.html ./knowl/xref/eq-app-nu-transversal-change.html">
+\begin{equation*}
+b_J(\ell_u(\gamma))_1=b_r(\gamma)_u
+\end{equation*}
+</div>
+<div class="para">and, for <span class="process-math">\(j\in\{1,g\}\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-halforbitcocycle.html ./knowl/xref/eq-kappahalforbit.html ./knowl/xref/eq-explicit-evens.html ./knowl/xref/eq-normalized-corestriction-two.html ./knowl/xref/eq-halfgraph-explicit.html ./knowl/xref/lem-twopointevans.html ./knowl/xref/eq-shapiroevens.html ./knowl/xref/eq-halfgraph-corestriction.html ./knowl/xref/eq-app-kappa-transversal-change.html ./knowl/xref/eq-app-nu-transversal-change.html">
+\begin{equation*}
+b_J\!\left(\ell_{\pi_{\bar\gamma}(u)}(\notnfar{eta}{\eta})\right)_j
+=
+b_r(\notnfar{eta}{\eta})_{\pi_{\bar\gamma}(u)j}.
+\end{equation*}
+</div>
+<div class="para">Substituting the explicit two-point cocycle <a href="#eq-explicit-evens" class="xref" data-knowl="./knowl/xref/eq-explicit-evens.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.40">(6.40)</a> into <a href="#eq-normalized-corestriction-two" class="xref" data-knowl="./knowl/xref/eq-normalized-corestriction-two.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.50">(6.50)</a> gives exactly <a href="#lem-orbitshapiro-6-3-11" class="xref" data-knowl="./knowl/xref/eq-halfgraph-explicit.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.49">(6.49)</a>: its first summand is the oriented factor-set term, and its second summand is the orientation-reversal correction. Consequently</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-halforbitcocycle.html ./knowl/xref/eq-kappahalforbit.html ./knowl/xref/eq-explicit-evens.html ./knowl/xref/eq-normalized-corestriction-two.html ./knowl/xref/eq-halfgraph-explicit.html ./knowl/xref/lem-twopointevans.html ./knowl/xref/eq-shapiroevens.html ./knowl/xref/eq-halfgraph-corestriction.html ./knowl/xref/eq-app-kappa-transversal-change.html ./knowl/xref/eq-app-nu-transversal-change.html">
+\begin{equation}
+(b_r,\rho)^*\kappa_g^{\mathcal R}
+=\operatorname{cor}_{K_0/F}
+\left((\operatorname{Sh}_{K/K_0}\alpha_r,\rho_0)^*\kappa_J\right)\tag{6.51}
+\end{equation}
+</div>
+<div class="para">as normalized cochains.  By <a href="#lem-twopointevans" class="xref" data-knowl="./knowl/xref/lem-twopointevans.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.13: Universal two-point normalization and the index-two Evens norm">Lemma 6.13</a>, the inner graph class is <span class="process-math">\(N_{G_K}^{G_{K_0},\mathrm{Ev}}(\alpha_r)\text{,}\)</span> which is denoted <span class="process-math">\(\Evens_{K/K_0}(\alpha_r)\)</span> in field notation.  Equation <a href="#lem-orbitshapiro-2-1-13" class="xref" data-knowl="./knowl/xref/eq-shapiroevens.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.47">(6.47)</a> follows.  With the compatible nested transversals just chosen, <a href="#eq-halfgraph-corestriction" class="xref" data-knowl="./knowl/xref/eq-halfgraph-corestriction.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.51">(6.51)</a> is literal equality of normalized cochains.  For arbitrary choices, <a href="#eq-app-kappa-transversal-change" class="xref" data-knowl="./knowl/xref/eq-app-kappa-transversal-change.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation A.32">(A.32)</a> and <a href="#eq-app-nu-transversal-change" class="xref" data-knowl="./knowl/xref/eq-app-nu-transversal-change.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation A.34">(A.34)</a> give the two explicit normalized <span class="process-math">\(1\)</span>-cochains whose boundaries account for the change.  Hence the formulas evaluate the actual orbit classes used in <span class="process-math">\(\kappa_{q_W}^0\text{,}\)</span> including all <span class="process-math">\(m_c\)</span>-terms, without an unspecified convention-dependent ambiguity.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-orbitshapiro-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.15.1"><a tabindex="-1" href="#lem-orbitshapiro-6" title="Copy heading and permalink for Proof 6.15.1" aria-label="Copy heading and permalink for Proof 6.15.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#lem-orbitshapiro">In Context</a></span>
+</body>
+</html>

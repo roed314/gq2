@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finite-word Stokes formula.</span>
+</h2>
+<div class="para">Let <span class="process-math">\(F_n=\langle g_1,\dots,g_n\rangle\)</span> be a free group, let <span class="process-math">\(\rho:F_n\to C\)</span> be a homomorphism to a finite group, and write <span class="process-math">\(c_i=\rho(g_i)\text{.}\)</span>  Let <span class="process-math">\(r\in F_n\)</span> be an ordinary finite word with <span class="process-math">\(\rho(r)=1\text{,}\)</span> and let <span class="process-math">\(\epsilon_i(r)\in\F_2\)</span> be the total exponent of <span class="process-math">\(g_i\)</span> in <span class="process-math">\(r\text{,}\)</span> reduced modulo <span class="process-math">\(2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-finitewordstokes-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical">
+<div class="para">For <span class="process-math">\(x=(x_i)\in A^n\)</span> and <span class="process-math">\(y=(y_i)\in(A^\vee)^n\text{,}\)</span> evaluate <span class="process-math">\(r\)</span> after replacing <span class="process-math">\(g_i\)</span> by <span class="process-math">\((x_i,y_i,0;c_i)\in\mathcal H(A)\rtimes C\text{.}\)</span>  Write the result as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\bigl(L_r^A(x),L_r^{A^\vee}(y),\beta_r(x,y);1\bigr).
+\end{equation*}
+</div>
+<div class="para">Then, for <span class="process-math">\(a\in A\)</span> and <span class="process-math">\(\lambda\in A^\vee\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align}
+\beta_r(d^0a,y)
+&amp;=\langle a,L_r^{A^\vee}(y)\rangle
++\sum_{i=1}^n\epsilon_i(r)\,y_i(c_i a),\tag{5.9}\\
+\beta_r(x,d^0\lambda)
+&amp;=\langle L_r^A(x),\lambda\rangle
++\sum_{i=1}^n\epsilon_i(r)\,\lambda(x_i),\tag{5.10}
+\end{align}
+</div>
+<div class="para">where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d^0a=((c_i-1)a)_i,
+\qquad
+d^0\lambda=((c_i-1)\lambda)_i.
+\end{equation*}
+</div>
+<div class="para">Consequently, for words <span class="process-math">\(r_1,\dots,r_m\)</span> and coefficients <span class="process-math">\(t_j\in\F_2\)</span> satisfying</div>
+<div class="displaymath process-math">
+\begin{equation}
+\sum_{j=1}^m t_j\epsilon_i(r_j)=0
+\qquad(1\le i\le n),\tag{5.11}
+\end{equation}
+</div>
+<div class="para">the corresponding traced mixed coordinate satisfies the two Stokes identities without correction terms.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-finitewordstokes-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="lean-link" href="https://roed.github.io/gq2-lean/docs/GQ2.FoxH.lemma_5_7_left.html" data-lean-ref="GQ2.FoxH.lemma_5_7_left" title="Formalized as GQ2.FoxH.lemma_5_7_left">GQ2.FoxH.lemma_5_7_left</a><a class="lean-link" href="https://roed.github.io/gq2-lean/docs/GQ2.FoxH.lemma_5_7_right.html" data-lean-ref="GQ2.FoxH.lemma_5_7_right" title="Formalized as GQ2.FoxH.lemma_5_7_right">GQ2.FoxH.lemma_5_7_right</a><div class="autopermalink" aria-hidden="true" data-description="Lemma 5.7: Finite-word Stokes formula"><a tabindex="-1" href="#lem-finitewordstokes" title="Copy heading and permalink for Lemma 5.7: Finite-word Stokes formula" aria-label="Copy heading and permalink for Lemma 5.7: Finite-word Stokes formula">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">The two identities follow from conjugating by a primal and a dual coefficient, after which the total exponent vector records the central correction contributed by each generator.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-finitewordstokes-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Put</div>
+<div class="displaymath process-math">
+\begin{equation*}
+p_a=(a,0,0;1),\qquad p_\lambda=(0,\lambda,0;1),
+\qquad \mathbf z(t)=(0,0,t;1).
+\end{equation*}
+</div>
+<div class="para">A direct multiplication in <span class="process-math">\(\mathcal H(A)\rtimes C\)</span> gives</div>
+<div class="displaymath process-math">
+\begin{align*}
+p_a^{-1}(0,y_i,0;c_i)p_a
+&amp;=((c_i-1)a,y_i,0;c_i)\,\mathbf z\bigl(y_i(c_i a)\bigr),\\
+p_\lambda^{-1}(x_i,0,0;c_i)p_\lambda
+&amp;=(x_i,(c_i-1)\lambda,0;c_i)\,\mathbf z\bigl(\lambda(x_i)\bigr).
+\end{align*}
+</div>
+<div class="para">The elements <span class="process-math">\(\mathbf z(t)\)</span> are central of order at most two.  Therefore, on evaluating an ordinary word, the extra central factor attached to the <span class="process-math">\(i\)</span>th generator occurs exactly <span class="process-math">\(\epsilon_i(r)\)</span> times.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-finitewordstokes-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">If only the dual variables <span class="process-math">\(y_i\)</span> are present, the value of <span class="process-math">\(r\)</span> is <span class="process-math">\((0,L_r^{A^\vee}(y),0;1)\text{.}\)</span>  Conjugating this value by <span class="process-math">\(p_a\)</span> contributes the central coordinate <span class="process-math">\(L_r^{A^\vee}(y)(a)\text{.}\)</span>  Adding the generatorwise central corrections gives <a href="#lem-finitewordstokes-2-2-9" class="xref" data-knowl="./knowl/xref/eq-wordstokes1.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.9">(5.9)</a>.  Repeating this conjugation calculation with <span class="process-math">\(p_\lambda\)</span> starts from <span class="process-math">\((L_r^A(x),0,0;1)\)</span> and gives <a href="#lem-finitewordstokes-2-2-9" class="xref" data-knowl="./knowl/xref/eq-wordstokes2.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.10">(5.10)</a>.  Condition <a href="#eq-traceboundaryzero" class="xref" data-knowl="./knowl/xref/eq-traceboundaryzero.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.11">(5.11)</a> cancels the correction terms.  Every step is functorial in <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-finitewordstokes-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 5.7.1"><a tabindex="-1" href="#lem-finitewordstokes-5" title="Copy heading and permalink for Proof 5.7.1" aria-label="Copy heading and permalink for Proof 5.7.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#lem-finitewordstokes">In Context</a></span>
+</body>
+</html>

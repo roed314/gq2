@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Deep-unit Evens norm.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(L/k\)</span> be an unramified quadratic extension of finite dyadic local fields and put <span class="process-math">\(e=v_k(2)\text{.}\)</span>  Then</div>
+<div class="displaymath process-math">
+\begin{equation}
+\Evens_{L/k}(\alpha)=0
+\qquad(\alpha\in U_{e+1}(L)\subset L^\times/L^{\times2}).\tag{6.52}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-evensvanish-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="lean-link" href="https://roed.github.io/gq2-lean/docs/GQ2.SectionSix.lemma_6_16.html" data-lean-ref="GQ2.SectionSix.lemma_6_16" title="Formalized as GQ2.SectionSix.lemma_6_16">GQ2.SectionSix.lemma_6_16</a><div class="autopermalink" aria-hidden="true" data-description="Lemma 6.16: Deep-unit Evens norm"><a tabindex="-1" href="#lem-evensvanish" title="Copy heading and permalink for Lemma 6.16: Deep-unit Evens norm" aria-label="Copy heading and permalink for Lemma 6.16: Deep-unit Evens norm">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">We translate the Evens norm into the degree-two Evens–Kahn identity, reduce the trace forms to Hilbert symbols, and then cancel the remaining terms by norm and Steinberg relations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-evensvanish-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">By <a href="#lem-twopointevans" class="xref" data-knowl="./knowl/xref/lem-twopointevans.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.13: Universal two-point normalization and the index-two Evens norm">Lemma 6.13</a>, the Evens norm is represented by the explicit two-point graph cocycle <a href="#eq-explicit-evens" class="xref" data-knowl="./knowl/xref/eq-explicit-evens.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.40">(6.40)</a>.  The index-two Evens–Kahn formula identifies this normalization with the degree-two term in the relative Stiefel–Whitney identity <a href="#bib-KahnSW" class="xref" data-knowl="./knowl/xref/bib-KahnSW.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 10">[10]</a>, <a href="#bib-Kozlowski" class="xref" data-knowl="./knowl/xref/bib-Kozlowski.html" data-reveal-label="Reveal" data-close-label="Close" title="Bibliographic Entry 11">[11]</a>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-twopointevans.html ./knowl/xref/eq-explicit-evens.html ./knowl/xref/bib-KahnSW.html ./knowl/xref/bib-Kozlowski.html">
+\begin{equation}
+w(\Tr_{L/k}\langle a\rangle)=
+w(\Tr_{L/k}\langle1\rangle)
+\bigl(1+\cor_{L/k}[a]+\Evens_{L/k}([a])\bigr).\tag{6.53}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-evensvanish-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Take a class in <span class="process-math">\(U_{e+1}(L)\)</span> and choose from the outset a representative</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-SWconvention.html">
+\begin{equation*}
+a=1+2b,\qquad b\in\mathfrak p_L.
+\end{equation*}
+</div>
+<div class="para">Write <span class="process-math">\(L=k(\sqrt d)\text{,}\)</span> where <span class="process-math">\(d\)</span> is the unramified quadratic square class, and write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-SWconvention.html">
+\begin{equation*}
+a=u+v\sqrt d,\qquad n=N_{L/k}(a)=u^2-dv^2.
+\end{equation*}
+</div>
+<div class="para">If</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-SWconvention.html">
+\begin{equation*}
+t=\Tr_{L/k}(b),\qquad m=N_{L/k}(b),
+\end{equation*}
+</div>
+<div class="para">then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-SWconvention.html">
+\begin{equation}
+u=1+t\in\mathcal O_k^\times,
+\qquad n=1+2t+4m.\tag{6.54}
+\end{equation}
+</div>
+<div class="para">In particular the divisions by <span class="process-math">\(u\)</span> below are legitimate.  The trace forms diagonalize as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-SWconvention.html">
+\begin{equation*}
+\Tr_{L/k}\langle a\rangle\simeq
+\left\langle2u,\frac{2dn}{u}\right\rangle,
+\qquad
+\Tr_{L/k}\langle1\rangle\simeq\langle2,2d\rangle.
+\end{equation*}
+</div>
+<div class="para">Taking degree two in <a href="#eq-SWconvention" class="xref" data-knowl="./knowl/xref/eq-SWconvention.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.53">(6.53)</a> first gives</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-SWconvention.html">
+\begin{equation*}
+\Evens_{L/k}([a])=(2u,2dn/u)+(2,2d)+(d,n).
+\end{equation*}
+</div>
+<div class="para">We now keep every Hilbert-symbol cancellation visible.  Bilinearity and <span class="process-math">\((x,x)=(x,-1)\)</span> give</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-SWconvention.html">
+\begin{align*}
+(2u,2dn/u)
+&amp;=(2u,2)+(2u,d)+(2u,n)+(2u,u),\\
+(2u,2)+(2u,u)&amp;=(2u,2u)=(2u,-1),\\
+(2,2d)&amp;=(2,-1)+(2,d).
+\end{align*}
+</div>
+<div class="para">Consequently</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-SWconvention.html">
+\begin{align*}
+\Evens_{L/k}([a])
+&amp;= (u,-1)+(u,d)+(2u,n)+(d,n)\\
+&amp;= (u,-d)+(2du,n).
+\end{align*}
+</div>
+<div class="para">Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-SWconvention.html">
+\begin{equation}
+\Evens_{L/k}([a])=(u,-d)+(2du,n).\tag{6.55}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-evensvanish-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Because <span class="process-math">\(L/k\)</span> is unramified and <span class="process-math">\(b\in\mathfrak p_L\text{,}\)</span> one has <span class="process-math">\(v_k(m)\ge2\text{.}\)</span>  From <a href="#eq-deepunit-un" class="xref" data-knowl="./knowl/xref/eq-deepunit-un.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.54">(6.54)</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-deepunit-un.html">
+\begin{equation}
+\frac{n}{2u-1}
+=1+\frac{4m}{2u-1}\in U_{2e+2}(k).\tag{6.56}
+\end{equation}
+</div>
+<div class="para">Here <span class="process-math">\(2u-1\)</span> is a unit and <span class="process-math">\(v_k(4m)\ge2e+2&gt;2v_k(2)\text{.}\)</span>  Hensel’s lemma, applied to <span class="process-math">\(X^2-n/(2u-1)\)</span> at <span class="process-math">\(X=1\text{,}\)</span> therefore gives <span class="process-math">\(U_{2e+2}(k)\subset k^{\times2}\text{.}\)</span>  Thus <span class="process-math">\(n\)</span> and <span class="process-math">\(2u-1\)</span> have the same square class.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-evensvanish-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Every unit of <span class="process-math">\(k\)</span> is a norm from its unramified quadratic extension, and <span class="process-math">\(n=N_{L/k}(a)\text{.}\)</span>  Hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-evenshilbert.html">
+\begin{equation*}
+(u,d)=0,\qquad(d,n)=0.
+\end{equation*}
+</div>
+<div class="para">Formula <a href="#eq-evenshilbert" class="xref" data-knowl="./knowl/xref/eq-evenshilbert.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.55">(6.55)</a> becomes</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-evenshilbert.html">
+\begin{equation*}
+(u,-1)+(2u,2u-1).
+\end{equation*}
+</div>
+<div class="para">The Steinberg relation gives <span class="process-math">\((2u,2u-1)=(2u,-1)\text{.}\)</span>  Finally <span class="process-math">\((2,-1)=0\text{:}\)</span> if <span class="process-math">\(i\in k\text{,}\)</span> then <span class="process-math">\(-1\)</span> is a square; otherwise <span class="process-math">\(2=N_{k(i)/k}(1+i)\text{.}\)</span>  Consequently <span class="process-math">\((2u,-1)=(u,-1)\text{,}\)</span> and the two terms cancel.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-evensvanish-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.16.1"><a tabindex="-1" href="#lem-evensvanish-4" title="Copy heading and permalink for Proof 6.16.1" aria-label="Copy heading and permalink for Proof 6.16.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#lem-evensvanish">In Context</a></span>
+</body>
+</html>

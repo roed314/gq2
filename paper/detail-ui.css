@@ -1,0 +1,66 @@
+/* ============ Detail slider (mounts in the masthead) ============ */
+/* Floating control: reliably visible regardless of PreTeXt's masthead layout.
+   (A production version would override the masthead template for a real slot.) */
+.detail-slider {
+  position: fixed; bottom: 1rem; right: 1rem; z-index: 1100;
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: #fff; color: #111;
+  border: 1px solid rgba(0,0,0,.2); border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+  padding: .4rem .7rem; font-size: .85rem; white-space: nowrap;
+}
+.detail-slider input[type="range"] { width: 8rem; vertical-align: middle; }
+.detail-slider .detail-val { font-variant-numeric: tabular-nums; opacity: .7; }
+@media (prefers-color-scheme: dark) {
+  .detail-slider { background: #22262b; color: #e8e8e8; border-color: rgba(255,255,255,.18); }
+}
+
+/* ============ Notation hovers (no knowl underline) ============ */
+/* The tagged symbol gets only a help cursor by default; a faint dotted
+   underline appears on hover so nothing distracts inside equations. */
+[class*="ptxnotn-"] { cursor: help; }
+[class*="ptxnotn-"]:hover,
+[class*="ptxnotn-"]:focus {
+  text-decoration: underline dotted 1px;
+  text-underline-offset: 3px;
+  outline: none;
+}
+
+.notation-popup {
+  position: absolute; z-index: 1200; max-width: 24rem;
+  background: #fff; color: #111;
+  border: 1px solid rgba(0,0,0,.2); border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  padding: .5rem .7rem; font-size: .9rem; line-height: 1.35;
+  pointer-events: none; opacity: 0; transform: translateY(-2px);
+  transition: opacity .1s ease, transform .1s ease;
+}
+.notation-popup.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.notation-popup .notation-popup-key {
+  display: block; font-weight: 600; opacity: .55;
+  font-size: .72rem; letter-spacing: .02em; margin-bottom: .2rem;
+}
+@media (prefers-color-scheme: dark) {
+  .notation-popup { background: #22262b; color: #e8e8e8; border-color: rgba(255,255,255,.18); }
+}
+
+/* ============ Formalization badges (<lean> as child of a theorem block) ============ */
+article.theorem-like > a.lean-link, section > a.lean-link {
+  display: inline-block; font-size: .78rem; font-family: ui-monospace, monospace;
+  padding: .1rem .5rem; margin: .2rem .3rem .2rem 0;
+  border: 1px solid rgba(25,100,60,.4); border-radius: 999px;
+  background: rgba(40,160,90,.08); text-decoration: none;
+}
+article.theorem-like > a.lean-link::before { content: "⚙ "; }
+
+/* Far notation (notation_far.py): NO rest-state affordance. On hover the
+   cursor is the help question-mark; the definition popup appears after a
+   delay (FAR_DELAY_MS in detail-ui.js) with a see-in-context link. */
+.ptxfar, .ptxfar * { cursor: help; }
+
+.notation-popup .notation-ctx-link {
+  display: block; margin-top: .4rem; font-size: .78rem;
+  opacity: .85; text-decoration: none; border-top: 1px solid rgba(128,128,128,.25);
+  padding-top: .3rem;
+}
+.notation-popup .notation-ctx-link:hover { text-decoration: underline; }

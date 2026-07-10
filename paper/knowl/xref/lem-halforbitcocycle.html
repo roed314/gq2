@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h2 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Explicit involution-orbit cocycle.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(H\)</span> be a finite group, let <span class="process-math">\(g\in H\)</span> have order <span class="process-math">\(2\text{,}\)</span> and let <span class="process-math">\(M=\F_2[H]\)</span> with left-regular action</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(c x)_h=x_{c^{-1}h}.
+\end{equation*}
+</div>
+<div class="para">Choose a set <span class="process-math">\(\mathcal R\subset H\)</span> of representatives for the right cosets <span class="process-math">\(u\langle g\rangle\text{.}\)</span>  For <span class="process-math">\(c\in H\)</span> and <span class="process-math">\(u\in\mathcal R\text{,}\)</span> write uniquely</div>
+<div class="displaymath process-math">
+\begin{equation}
+c^{-1}u=\pi_c(u)g^{\epsilon_c(u)},
+\qquad
+\pi_c(u)\in\mathcal R,
+\quad
+\epsilon_c(u)\in\F_2.\tag{6.9}
+\end{equation}
+</div>
+<div class="para">Define</div>
+<div class="displaymath process-math">
+\begin{align}
+q_g(x)&amp;=\sum_{u\in\mathcal R}x_u x_{ug},\tag{6.10}\\
+f_g(x,y)&amp;=\sum_{u\in\mathcal R}x_u y_{ug},\tag{6.11}\\
+m_c^g(x)&amp;=\sum_{u\in\mathcal R}
+\epsilon_c(u)x_{\pi_c(u)}x_{\pi_c(u)g}.\tag{6.12}
+\end{align}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math">
+\begin{align}
+m_c^g(x+y)+m_c^g(x)+m_c^g(y)
+&amp;=f_g(cx,cy)+f_g(x,y),\tag{6.13}\\
+m_{cd}^g(x)&amp;=m_c^g(dx)+m_d^g(x),
+\qquad m_1^g=0.\tag{6.14}
+\end{align}
+</div>
+<div class="para">Consequently</div>
+<div class="displaymath process-math">
+\begin{equation}
+\kappa_g^{\mathcal R}((x,c),(y,d))
+=f_g(x,cy)+m_c^g(y)\tag{6.15}
+\end{equation}
+</div>
+<div class="para">is a normalized <span class="process-math">\(2\)</span>-cocycle on <span class="process-math">\(M\rtimes H\text{.}\)</span>  It vanishes on the zero section <span class="process-math">\(H\hookrightarrow M\rtimes H\text{,}\)</span> and its restriction to <span class="process-math">\(M\)</span> has square map <span class="process-math">\(q_g\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-halforbitcocycle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Lemma 6.2: Explicit involution-orbit cocycle"><a tabindex="-1" href="#lem-halforbitcocycle" title="Copy heading and permalink for Lemma 6.2: Explicit involution-orbit cocycle" aria-label="Copy heading and permalink for Lemma 6.2: Explicit involution-orbit cocycle">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">We first compute the transition functions for the right-coset action, then verify the quadratic correction, and finally apply the general equivariant extension formula.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-halforbitcocycle-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">From <a href="#eq-piepsilon" class="xref" data-knowl="./knowl/xref/eq-piepsilon.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.9">(6.9)</a> one obtains</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-piepsilon.html ./knowl/xref/eq-mhalforbit.html ./knowl/xref/eq-halforbitquadratic.html">
+\begin{equation}
+\pi_{cd}=\pi_d\circ\pi_c,
+\qquad
+\epsilon_{cd}(u)=\epsilon_c(u)+\epsilon_d(\pi_c(u)).\tag{6.16}
+\end{equation}
+</div>
+<div class="para">Moreover,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-piepsilon.html ./knowl/xref/eq-mhalforbit.html ./knowl/xref/eq-halforbitquadratic.html">
+\begin{equation*}
+f_g(cx,cy)
+=\sum_{u\in\mathcal R}
+x_{\pi_c(u)g^{\epsilon_c(u)}}
+y_{\pi_c(u)g^{\epsilon_c(u)+1}}.
+\end{equation*}
+</div>
+<div class="para">For <span class="process-math">\(\epsilon_c(u)=0\)</span> this is the summand of <span class="process-math">\(f_g(x,y)\)</span> indexed by <span class="process-math">\(\pi_c(u)\text{;}\)</span> for <span class="process-math">\(\epsilon_c(u)=1\)</span> its orientation is reversed.  Therefore</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-piepsilon.html ./knowl/xref/eq-mhalforbit.html ./knowl/xref/eq-halforbitquadratic.html">
+\begin{equation*}
+f_g(cx,cy)+f_g(x,y)
+=\sum_{u\in\mathcal R}\epsilon_c(u)
+\bigl(x_{\pi_c(u)}y_{\pi_c(u)g}
++x_{\pi_c(u)g}y_{\pi_c(u)}\bigr),
+\end{equation*}
+</div>
+<div class="para">which is exactly the polarization of <a href="#lem-halforbitcocycle-2-1-11" class="xref" data-knowl="./knowl/xref/eq-mhalforbit.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.12">(6.12)</a>.  This proves <a href="#lem-halforbitcocycle-2-1-12" class="xref" data-knowl="./knowl/xref/eq-halforbitquadratic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.13">(6.13)</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-halforbitcocycle-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">The product <span class="process-math">\(x_vx_{vg}\)</span> is unchanged when <span class="process-math">\(v\)</span> is replaced by <span class="process-math">\(vg\text{.}\)</span>  Hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-piepsilon-cocycle.html ./knowl/xref/eq-halforbitcoherent.html ./knowl/xref/lem-extraspecialconnecting.html">
+\begin{equation*}
+m_c^g(dx)
+=\sum_{u\in\mathcal R}\epsilon_c(u)
+x_{\pi_d(\pi_c(u))}x_{\pi_d(\pi_c(u))g}.
+\end{equation*}
+</div>
+<div class="para">Adding <span class="process-math">\(m_d^g(x)\)</span> and using <a href="#eq-piepsilon-cocycle" class="xref" data-knowl="./knowl/xref/eq-piepsilon-cocycle.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.16">(6.16)</a> gives <a href="#lem-halforbitcocycle-2-1-12" class="xref" data-knowl="./knowl/xref/eq-halforbitcoherent.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.14">(6.14)</a>.  The cocycle assertion now follows directly from <a href="#lem-extraspecialconnecting" class="xref" data-knowl="./knowl/xref/lem-extraspecialconnecting.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 6.1: Equivariant extraspecial connecting cocycle">Lemma 6.1</a>.  Finally, <span class="process-math">\(f_g(x,x)=q_g(x)\)</span> and <span class="process-math">\(m_1^g=0\text{,}\)</span> proving the restriction and normalization claims.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-halforbitcocycle-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 6.2.1"><a tabindex="-1" href="#lem-halforbitcocycle-3" title="Copy heading and permalink for Proof 6.2.1" aria-label="Copy heading and permalink for Proof 6.2.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#lem-halforbitcocycle">In Context</a></span>
+</body>
+</html>

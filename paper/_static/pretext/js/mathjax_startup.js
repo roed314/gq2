@@ -5,6 +5,7 @@
 // Base config options. Will be supplemented by optional parts later
 let mathJaxOpts = {
   "tex": {
+    "macros": {"F": "\\mathbb{F}", "Zhat": "\\widehat{\\mathbb{Z}}", "Qtwo": "\\mathbb{Q}_2", "GQ": "G_{\\Qtwo}", "w": "\\omega_2", "TA": "T_{\\mathrm{tame}}", "WA": "W_A", "WF": "W_F", "GA": "\\Gamma_A", "Hom": "\\operatorname{Hom}", "Sur": "\\operatorname{Sur}", "Aut": "\\operatorname{Aut}", "im": "\\operatorname{im}", "rad": "\\operatorname{rad}", "soc": "\\operatorname{soc}", "Ob": "\\operatorname{Ob}", "Arf": "\\operatorname{Arf}", "cor": "\\operatorname{cor}", "res": "\\operatorname{res}", "tr": "\\operatorname{tr}", "gr": "\\operatorname{gr}", "id": "\\operatorname{id}", "PhiG": "\\Phi", "coker": "\\operatorname{coker}", "Cone": "\\operatorname{Cone}", "inv": "\\operatorname{inv}", "rec": "\\operatorname{rec}", "Tr": "\\operatorname{Tr}", "Evens": "N^{\\mathrm{Ev}}", "bdry": "\\partial_{\\mathrm{bd}}", "GL": "\\operatorname{GL}", "End": "\\operatorname{End}", "ol": ["\\overline{#1}", 1], "angles": ["\\left\\langle #1\\right\\rangle", 1], "notn": ["\\class{ptxnotn-#1}{#2}", 2], "notnfar": ["\\class{ptxfar}{\\class{ptxnotn-#1}{#2}}", 2]},
     "inlineMath": [
       [
         "\\(",

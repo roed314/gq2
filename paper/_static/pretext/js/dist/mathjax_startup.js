@@ -19,6 +19,7 @@ let mathJaxOpts = {
     }
   },
   "options": {
+    "lazyAlwaysTypeset": ["div.knowl__content[id^=knowl-uid-]", ".lean-knowl", ".section-knowl", ".pfm-panel", ".notation-popup"],
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
     "processHtmlClass": "process-math"
   },

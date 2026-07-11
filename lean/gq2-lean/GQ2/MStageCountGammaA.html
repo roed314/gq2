@@ -1,0 +1,148 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href=".././style.css"></link><link rel="icon" href=".././favicon.svg"></link><link rel="mask-icon" href=".././favicon.svg" color="#000000"></link><link rel="prefetch" href=".././/declarations/declaration-data.bmp" as="image"></link><title>GQ2.MStageCountGammaA</title><script defer="true" src=".././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT=".././";</script><script>const MODULE_NAME="GQ2.MStageCountGammaA";</script><script type="module" src=".././jump-src.js"></script><script type="module" src=".././search.js"></script><script type="module" src=".././expand-nav.js"></script><script type="module" src=".././how-about.js"></script><script type="module" src=".././instances.js"></script><script type="module" src=".././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">GQ2</span>.<span class="name">MStageCountGammaA</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/MStageCountGammaA.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href=".././Init.html">Init</a></li><li><a href=".././GQ2/MStageCount.html">GQ2.MStageCount</a></li><li><a href=".././GQ2/RStage/GammaA.html">GQ2.RStage.GammaA</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-GQ2.MStageCountGammaA" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#GQ2.SectionEight.RecursionFrame.liftsOver_nonempty_gammaA"><span class="name">GQ2</span>.<span class="name">SectionEight</span>.<span class="name">RecursionFrame</span>.<span class="name">liftsOver_nonempty_gammaA</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.SectionEight.RecursionFrame.liftsOver_card_gammaA_of_nonempty"><span class="name">GQ2</span>.<span class="name">SectionEight</span>.<span class="name">RecursionFrame</span>.<span class="name">liftsOver_card_gammaA_of_nonempty</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.SectionEight.RecursionFrame.liftsOver_card_gammaA"><span class="name">GQ2</span>.<span class="name">SectionEight</span>.<span class="name">RecursionFrame</span>.<span class="name">liftsOver_card_gammaA</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="P-17i-the-Γ-A-side-M-stage-multiplicity-count-hmultA" class="markdown-heading">P-17i: the <code>Γ_A</code>-side <code>M</code>-stage multiplicity count (<code>hmultA</code>) <a class="hover-link" href="#P-17i-the-Γ-A-side-M-stage-multiplicity-count-hmultA">#</a></h1><p>The <code>M</code>-stage lane of <code>thm_4_2</code> (<code><a href=".././GQ2/SectionNine.html">GQ2/SectionNine.lean</a></code>, the <code>R = ⊥</code> branch) applies
+<code>mStage_partition</code> at both sources with multiplicity <code>mult = |M_B|²</code>; the <code>G_ℚ₂</code> count is
+<code>RecursionFrame.liftsOver_card_local</code> (<code><a href=".././GQ2/MStageCount.html">GQ2/MStageCount.lean</a></code>).  This file supplies the <strong><code>Γ_A</code></strong>
+count <code>#LiftsOver_{Γ_A}(ρ) = |M_B|²</code> (<code>hmultA</code>).</p><p>The proof mirrors <code>liftsOver_card_local</code> (the <code>#H² = 1</code> torsor bridge at the descended module
+<code>M_B</code>), with the two <code>Γ_A</code>-specific substitutions of the P-16d6e5 <code>RStageGammaA</code> playbook:</p><ul><li><strong>the <code>Z¹</code> count</strong> — there is no local Euler characteristic for <code>Γ_A</code>; the candidate duality
+supplies it instead.  <code>z1Equiv</code> (<code>WordCohBridge</code>, P-16c1) identifies <code>Z¹_cont(Γ_A, M_B)</code> with the
+Fox–Heisenberg word cocycles <code>Z¹_word(markC ρ)</code>, and <code>prop_5_15</code> clause 2 (<code>IsSelfDual</code>) counts
+those as <code>|M_B|² · #fixedPts_C(M_B^∨)</code>.  This is exactly the <code>hZcount_gammaA</code> route at module
+<code>M_B</code> instead of <code>R</code>.  <code>#fixedPts = 1</code> is the source-independent <code>lemma_7_1_dual</code> bridge, proved
+inline (identical to <code>liftsOver_card_local</code>'s <code>hfix</code>).</li><li><strong>nonemptiness</strong> — <code>Γ_A</code> has no degree-2 word↔continuous bridge, so the <code>#H² = 1 ⟹ coboundary</code>
+route of the local proof is unavailable.  Instead <code><a href=".././GQ2/MStageCountGammaA.html#GQ2.SectionEight.RecursionFrame.liftsOver_nonempty_gammaA">liftsOver_nonempty_gammaA</a></code> ports the
+<code>hsep_hom_gammaA</code> + L5-descent argument (<code>RStageGammaA</code>) from <code>(π_B, R)</code> to <code>(π_BC, M_B)</code>: a
+set-lift marking's relator values land in <code>M_B</code>, the trace-span duality forces their correction
+(since <code>(M_B^∨)^C = 0</code>), and the corrected marking descends.</li></ul><p>Axioms (target at close): <code>⊆ std-3 + B6 + B7</code> (as <code>liftsOver_card_local</code> / <code>hZcount_gammaA</code>).</p></div><div class="decl" id="GQ2.SectionEight.RecursionFrame.liftsOver_nonempty_gammaA"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/MStageCountGammaA.lean#L159-L421">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/MStageCountGammaA.html#GQ2.SectionEight.RecursionFrame.liftsOver_nonempty_gammaA"><span class="name">GQ2</span>.<span class="name">SectionEight</span>.<span class="name">RecursionFrame</span>.<span class="name">liftsOver_nonempty_gammaA</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">H </span><span class="fn">E</span> : <a href=".././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Basic.html#TopologicalSpace">TopologicalSpace</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Order.html#DiscreteTopology">DiscreteTopology</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#CommGroup">CommGroup</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Basic.html#TopologicalSpace">TopologicalSpace</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Order.html#DiscreteTopology">DiscreteTopology</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Y</span> : <a href=".././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Basic.html#TopologicalSpace">TopologicalSpace</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Order.html#DiscreteTopology">DiscreteTopology</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">T</span> : <span class="fn"><a href=".././GQ2/BoundaryFrame.html#GQ2.MarkedTarget">MarkedTarget</a> <span class="fn">H</span> <span class="fn">E</span> <span class="fn">Y</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Blk</span> : <span class="fn"><a href=".././GQ2/SectionSeven.html#GQ2.SectionSeven.MinimalBlock">SectionSeven.MinimalBlock</a> <span class="fn"><span class="fn">T</span>.<a href=".././GQ2/BoundaryFrame.html#GQ2.MarkedTarget.LY">LY</a></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">RF</span> : <span class="fn"><a href=".././GQ2/SectionEight.html#GQ2.SectionEight.RecursionFrame">RecursionFrame</a> <span class="fn">T</span> <span class="fn">Blk</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">↑<span class="fn"><span class="fn"><a href=".././GQ2/GammaA.html#GQ2.GammaA">GammaA</a>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Algebra/Category/ProfiniteGrp/Basic.html#ProfiniteGrp.toProfinite">toProfinite</a></span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Category/CompHausLike/Basic.html#CompHausLike.toTop">toTop</a></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Algebra/ContinuousMonoidHom.html#ContinuousMonoidHom">→ₜ*</a> <span class="fn">↥<a href=".././GQ2/BoundaryFrame.html#GQ2.boundarySubgroup">boundarySubgroup</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><a href=".././GQ2/BoundaryFrame.html#GQ2.BoundaryFrame">BoundaryFrame</a> <span class="fn">H</span> <span class="fn">E</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ρ</span> : <span class="fn"><a href=".././GQ2/BoundaryFrame.html#GQ2.BoundaryLifts">BoundaryLifts</a> <span class="fn">b</span> <span class="fn">F</span> <span class="fn"><span class="fn">RF</span>.<a href=".././GQ2/SectionEight.html#GQ2.SectionEight.RecursionFrame.TC">TC</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nonempty">Nonempty</a> <span class="fn">(<span class="fn"><span class="fn">RF</span>.<a href=".././GQ2/RadicalEdge/Bridge.html#GQ2.SectionEight.RecursionFrame.LiftsOver">LiftsOver</a></span> <span class="fn">b</span> <span class="fn">F</span> <span class="fn">ρ</span>)</span></span></div></div><p><strong>Nonemptiness of the <code>Γ_A</code> <code>B</code>-lift fibre</strong> (P-17i, the M-stage residue): every lower
+boundary lift <code>ρ : Γ_A ↠ C</code> lifts to a continuous homomorphism <code>Γ_A → B</code> through <code>π_{BC}</code>.</p><p>Ported from <code>RStageGammaA.hsep_hom_gammaA</code> (which lifts through <code>π_B : Y ↠ B</code>) to <code>π_{BC} : B ↠ C</code>
+(kernel <code>M_B</code>, 2-torsion by <code>MB_elem</code>): a set-lift marking of <code>ρ</code> has relator values in <code>M_B</code>, and
+since <code>(M_B^∨)^C = 0</code> (<code>lemma_7_1_dual</code>, the <code>hfix</code> group theory) the trace-span duality forces
+those values to be correctable, whence the corrected marking descends (L5).</p></div></div><div class="decl" id="GQ2.SectionEight.RecursionFrame.liftsOver_card_gammaA_of_nonempty"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/MStageCountGammaA.lean#L423-L685">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/MStageCountGammaA.html#GQ2.SectionEight.RecursionFrame.liftsOver_card_gammaA_of_nonempty"><span class="name">GQ2</span>.<span class="name">SectionEight</span>.<span class="name">RecursionFrame</span>.<span class="name">liftsOver_card_gammaA_of_nonempty</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">H </span><span class="fn">E</span> : <a href=".././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Basic.html#TopologicalSpace">TopologicalSpace</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Order.html#DiscreteTopology">DiscreteTopology</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#CommGroup">CommGroup</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Basic.html#TopologicalSpace">TopologicalSpace</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Order.html#DiscreteTopology">DiscreteTopology</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Y</span> : <a href=".././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Basic.html#TopologicalSpace">TopologicalSpace</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Order.html#DiscreteTopology">DiscreteTopology</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">T</span> : <span class="fn"><a href=".././GQ2/BoundaryFrame.html#GQ2.MarkedTarget">MarkedTarget</a> <span class="fn">H</span> <span class="fn">E</span> <span class="fn">Y</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Blk</span> : <span class="fn"><a href=".././GQ2/SectionSeven.html#GQ2.SectionSeven.MinimalBlock">SectionSeven.MinimalBlock</a> <span class="fn"><span class="fn">T</span>.<a href=".././GQ2/BoundaryFrame.html#GQ2.MarkedTarget.LY">LY</a></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">RF</span> : <span class="fn"><a href=".././GQ2/SectionEight.html#GQ2.SectionEight.RecursionFrame">RecursionFrame</a> <span class="fn">T</span> <span class="fn">Blk</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">↑<span class="fn"><span class="fn"><a href=".././GQ2/GammaA.html#GQ2.GammaA">GammaA</a>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Algebra/Category/ProfiniteGrp/Basic.html#ProfiniteGrp.toProfinite">toProfinite</a></span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Category/CompHausLike/Basic.html#CompHausLike.toTop">toTop</a></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Algebra/ContinuousMonoidHom.html#ContinuousMonoidHom">→ₜ*</a> <span class="fn">↥<a href=".././GQ2/BoundaryFrame.html#GQ2.boundarySubgroup">boundarySubgroup</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><a href=".././GQ2/BoundaryFrame.html#GQ2.BoundaryFrame">BoundaryFrame</a> <span class="fn">H</span> <span class="fn">E</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ρ</span> : <span class="fn"><a href=".././GQ2/BoundaryFrame.html#GQ2.BoundaryLifts">BoundaryLifts</a> <span class="fn">b</span> <span class="fn">F</span> <span class="fn"><span class="fn">RF</span>.<a href=".././GQ2/SectionEight.html#GQ2.SectionEight.RecursionFrame.TC">TC</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hne</span> : <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Nonempty">Nonempty</a> <span class="fn">(<span class="fn"><span class="fn">RF</span>.<a href=".././GQ2/RadicalEdge/Bridge.html#GQ2.SectionEight.RecursionFrame.LiftsOver">LiftsOver</a></span> <span class="fn">b</span> <span class="fn">F</span> <span class="fn">ρ</span>)</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">(<span class="fn"><span class="fn">RF</span>.<a href=".././GQ2/RadicalEdge/Bridge.html#GQ2.SectionEight.RecursionFrame.LiftsOver">LiftsOver</a></span> <span class="fn">b</span> <span class="fn">F</span> <span class="fn">ρ</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">↥<span class="fn"><span class="fn">RF</span>.<a href=".././GQ2/SectionEight.html#GQ2.SectionEight.RecursionFrame.MB">MB</a></span></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HPow.hPow">^</a> <span class="fn">2</span></div></div><p><strong><code>hmultA</code> for <code>Γ_A</code></strong>, assuming the fibre is nonempty: <code>#LiftsOver(ρ) = |M_B|²</code>.  The
+<code>Z¹</code>-torsor bridge (<code>liftsOver_card_local</code>'s Step 2) is source-generic once a base lift exists;
+the <code>Z¹</code> count is the candidate-duality route (<code>z1Equiv</code> + <code>prop_5_15</code> clause 2), and <code>hfix = 1</code>
+is the <code>lemma_7_1_dual</code> bridge, both mirroring the local proof.</p></div></div><div class="decl" id="GQ2.SectionEight.RecursionFrame.liftsOver_card_gammaA"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/MStageCountGammaA.lean#L687-L692">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/MStageCountGammaA.html#GQ2.SectionEight.RecursionFrame.liftsOver_card_gammaA"><span class="name">GQ2</span>.<span class="name">SectionEight</span>.<span class="name">RecursionFrame</span>.<span class="name">liftsOver_card_gammaA</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">H </span><span class="fn">E</span> : <a href=".././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Basic.html#TopologicalSpace">TopologicalSpace</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Order.html#DiscreteTopology">DiscreteTopology</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">H</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#CommGroup">CommGroup</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Basic.html#TopologicalSpace">TopologicalSpace</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Order.html#DiscreteTopology">DiscreteTopology</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Y</span> : <a href=".././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Defs/Basic.html#TopologicalSpace">TopologicalSpace</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Order.html#DiscreteTopology">DiscreteTopology</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">T</span> : <span class="fn"><a href=".././GQ2/BoundaryFrame.html#GQ2.MarkedTarget">MarkedTarget</a> <span class="fn">H</span> <span class="fn">E</span> <span class="fn">Y</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Blk</span> : <span class="fn"><a href=".././GQ2/SectionSeven.html#GQ2.SectionSeven.MinimalBlock">SectionSeven.MinimalBlock</a> <span class="fn"><span class="fn">T</span>.<a href=".././GQ2/BoundaryFrame.html#GQ2.MarkedTarget.LY">LY</a></span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">RF</span> : <span class="fn"><a href=".././GQ2/SectionEight.html#GQ2.SectionEight.RecursionFrame">RecursionFrame</a> <span class="fn">T</span> <span class="fn">Blk</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn">↑<span class="fn"><span class="fn"><a href=".././GQ2/GammaA.html#GQ2.GammaA">GammaA</a>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Algebra/Category/ProfiniteGrp/Basic.html#ProfiniteGrp.toProfinite">toProfinite</a></span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Category/CompHausLike/Basic.html#CompHausLike.toTop">toTop</a></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Algebra/ContinuousMonoidHom.html#ContinuousMonoidHom">→ₜ*</a> <span class="fn">↥<a href=".././GQ2/BoundaryFrame.html#GQ2.boundarySubgroup">boundarySubgroup</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">F</span> : <span class="fn"><a href=".././GQ2/BoundaryFrame.html#GQ2.BoundaryFrame">BoundaryFrame</a> <span class="fn">H</span> <span class="fn">E</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ρ</span> : <span class="fn"><a href=".././GQ2/BoundaryFrame.html#GQ2.BoundaryLifts">BoundaryLifts</a> <span class="fn">b</span> <span class="fn">F</span> <span class="fn"><span class="fn">RF</span>.<a href=".././GQ2/SectionEight.html#GQ2.SectionEight.RecursionFrame.TC">TC</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">(<span class="fn"><span class="fn">RF</span>.<a href=".././GQ2/RadicalEdge/Bridge.html#GQ2.SectionEight.RecursionFrame.LiftsOver">LiftsOver</a></span> <span class="fn">b</span> <span class="fn">F</span> <span class="fn">ρ</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">↥<span class="fn"><span class="fn">RF</span>.<a href=".././GQ2/SectionEight.html#GQ2.SectionEight.RecursionFrame.MB">MB</a></span></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HPow.hPow">^</a> <span class="fn">2</span></div></div><p><strong><code>hmultA</code> for <code>Γ_A</code></strong>: <code>#LiftsOver(ρ) = |M_B|²</code> over every lower boundary lift.</p></div></div></main>
+<nav class="nav"><iframe src=".././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

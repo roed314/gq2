@@ -1,0 +1,295 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href=".././style.css"></link><link rel="icon" href=".././favicon.svg"></link><link rel="mask-icon" href=".././favicon.svg" color="#000000"></link><link rel="prefetch" href=".././/declarations/declaration-data.bmp" as="image"></link><title>GQ2.TrivialSelfDual</title><script defer="true" src=".././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT=".././";</script><script>const MODULE_NAME="GQ2.TrivialSelfDual";</script><script type="module" src=".././jump-src.js"></script><script type="module" src=".././search.js"></script><script type="module" src=".././expand-nav.js"></script><script type="module" src=".././how-about.js"></script><script type="module" src=".././instances.js"></script><script type="module" src=".././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">GQ2</span>.<span class="name">TrivialSelfDual</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href=".././Init.html">Init</a></li><li><a href=".././GQ2/FoxHeisenberg.html">GQ2.FoxHeisenberg</a></li><li><a href=".././GQ2/MixedBilinear.html">GQ2.MixedBilinear</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-GQ2.TrivialSelfDual" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.d1Fun_of_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">d1Fun_of_trivial</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.d1_of_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">d1_of_trivial</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.d0_of_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">d0_of_trivial</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.elemDual_smul_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">elemDual_smul_trivial</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.card_fixedPts_elemDual_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">card_fixedPts_elemDual_trivial</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.card_range_d1_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">card_range_d1_trivial</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.card_H2w_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">card_H2w_trivial</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.card_Z1w_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">card_Z1w_trivial</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.elemDual_separates"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">elemDual_separates</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.mem_Z1w_trivial_iff"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">mem_Z1w_trivial_iff</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.B1w_trivial_eq_bot"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">B1w_trivial_eq_bot</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.trivialSelfDual"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">trivialSelfDual</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="P-13f-part-i-the-trivial-module-𝔽₂-is-self-dual" class="markdown-heading">P-13f, part (i): the trivial module <code>𝔽₂</code> is self-dual <a class="hover-link" href="#P-13f-part-i-the-trivial-module-𝔽₂-is-self-dual">#</a></h1><p>The base case of the <code>prop_5_15</code> dévissage: <code>IsSelfDual t A</code> when <code>C</code> acts <strong>trivially</strong> on the
+finite elementary-2 module <code>A</code> (the trivial simple <code>𝔽₂[C]</code>-module is <code>𝔽₂</code> with trivial action).</p><p>With every generator acting trivially the differentials collapse (<code>d⁰ = 0</code>, and — via the split
+wild row and <code>d1Fun_tame</code>, in char 2 — <code>d¹ x = (x₁, x₁)</code>), so the cohomology is elementary:</p><ul><li><code>Z¹ = {x | x₁ = 0} ≅ A³</code>,  <code>B¹ = 0</code>,  <code>H¹ = Z¹ ≅ A³</code>;</li><li><code>H² = (A×A)/Δ ≅ A</code>, matching <code>#(A^∨)^C = #A^∨ = #A</code>;</li></ul><p>which gives the two card clauses of <code>IsSelfDual</code>.  The degree-one pairing is the traced mixed
+coordinate <code>mixedB</code>, whose perfection is the paper's table (25) — the <code>3×3</code> Gram computation.</p></div><div class="decl" id="GQ2.FoxH.d1Fun_of_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L27-L44">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.d1Fun_of_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">d1Fun_of_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href=".././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Fin">Fin</a> <span class="fn">4</span></span> → <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.d1Fun">d1Fun</a> <span class="fn">t</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Prod.mk">(</a><span class="fn"><span class="fn">x</span> <span class="fn">1</span></span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Prod.mk">,</a> <span class="fn"><span class="fn">x</span> <span class="fn">1</span></span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Prod.mk">)</a></div></div><p><strong><code>d¹</code> on the trivial module</strong> collapses to the diagonal <code>x ↦ (x₁, x₁)</code>: the tame row
+(<code>d1Fun_tame</code>) is <code>x₀−x₀ + x₁ − (x₁+x₁) = x₁</code> and the wild row (<code>liftMarking_wildValue_u</code>,
+<code>x₁ + (1+S⁻¹)x₃</code>) is <code>x₁ + x₃ + x₃ = x₁</code>, both in char 2 with every generator acting trivially.</p></div></div><div class="decl" id="GQ2.FoxH.d1_of_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L46-L50">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.d1_of_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">d1_of_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href=".././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Fin">Fin</a> <span class="fn">4</span></span> → <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.d1">d1</a> <span class="fn">t</span>)</span> <span class="fn">x</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Prod.mk">(</a><span class="fn"><span class="fn">x</span> <span class="fn">1</span></span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Prod.mk">,</a> <span class="fn"><span class="fn">x</span> <span class="fn">1</span></span><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Prod.mk">)</a></div></div><p><code>d¹</code> bundled, on the trivial module.</p></div></div><div class="decl" id="GQ2.FoxH.d0_of_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L52-L56">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.d0_of_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">d0_of_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href=".././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn">A</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.d0">d0</a> <span class="fn">t</span>)</span> <span class="fn">v</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div></div><p><code>d⁰ = 0</code> on the trivial module.</p></div></div><div class="mod_doc"><h2 id="The-two-cardinality-clauses" class="markdown-heading">The two cardinality clauses <a class="hover-link" href="#The-two-cardinality-clauses">#</a></h2></div><div class="decl" id="GQ2.FoxH.elemDual_smul_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L60-L63">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.elemDual_smul_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">elemDual_smul_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">g</span> : <span class="fn">C</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">lam</span> : <span class="fn"><a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.ElemDual">ElemDual</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">g</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">lam</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">lam</span></div></div><p>Contragredience of a trivial action is trivial.</p></div></div><div class="decl" id="GQ2.FoxH.card_fixedPts_elemDual_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L65-L81">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.card_fixedPts_elemDual_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">card_fixedPts_elemDual_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">↑<span class="fn">(<a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.fixedPts">fixedPts</a> <span class="fn">C</span> <span class="fn">(<a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.ElemDual">ElemDual</a> <span class="fn">A</span>)</span>)</span></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">A</span></span></div></div><p><code>#(A^∨)^C = #A^∨ = #A</code>: the dual of a finite elementary-2 module has the same cardinality
+(finite <code>𝔽₂</code>-vector space is self-dual in cardinality), and every point is <code>C</code>-fixed here.</p></div></div><div class="decl" id="GQ2.FoxH.card_range_d1_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L83-L97">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.card_range_d1_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">card_range_d1_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href=".././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">↥<span class="fn"><span class="fn">(<a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.d1">d1</a> <span class="fn">t</span>)</span>.<a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Subgroup/Ker.html#AddMonoidHom.range">range</a></span></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">A</span></span></div></div><p>On the trivial module <code>range d¹ = Δ</code> (the diagonal <code>a ↦ (a,a)</code>), of cardinality <code>#A</code>.</p></div></div><div class="decl" id="GQ2.FoxH.card_H2w_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L99-L109">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.card_H2w_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">card_H2w_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href=".././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">(<a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.H2w">H2w</a> <span class="fn">t</span>)</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">A</span></span></div></div><p><strong>Card clause for <code>H²</code></strong>: <code>#H²w = #A</code> on the trivial module (<code>H² = (A×A)/Δ</code>).</p></div></div><div class="decl" id="GQ2.FoxH.card_Z1w_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L111-L129">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.card_Z1w_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">card_Z1w_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href=".././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">↥<span class="fn">(<a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.Z1w">Z1w</a> <span class="fn">t</span>)</span></span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/SetTheory/Cardinal/Finite.html#Nat.card">Nat.card</a> <span class="fn">A</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HPow.hPow">^</a> <span class="fn">3</span></div></div><p><strong>Card clause for <code>Z¹</code></strong>: <code>#Z¹w = (#A)³</code> on the trivial module (<code>Z¹ = {x | x₁ = 0}</code>).</p></div></div><div class="mod_doc"><h2 id="IsSelfDual-for-the-trivial-module" class="markdown-heading"><code>IsSelfDual</code> for the trivial module <a class="hover-link" href="#IsSelfDual-for-the-trivial-module">#</a></h2><p>The two card clauses are <code><a href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.card_H2w_trivial">card_H2w_trivial</a></code>/<code><a href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.card_Z1w_trivial">card_Z1w_trivial</a></code> combined with
+<code><a href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.card_fixedPts_elemDual_trivial">card_fixedPts_elemDual_trivial</a></code>.  The degree-one pairing (clause 3) is the paper's <strong>table (25)</strong> —
+the <code>3×3</code> Gram matrix of <code>mixedB</code> on the cocycle basis <code>{x₀, x₂, x₃}</code> (recall <code>Z¹ = {x | x₁ = 0}</code>,
+<code>B¹ = 0</code>, so <code>H¹ = Z¹</code>).</p><p>The pairing is built in <code><a href=".././GQ2/MixedBilinear.html">GQ2/MixedBilinear.lean</a></code> (all std-3): <code>mixedB</code> bilinearity, and the closed
+form <code>mixedB_cocycle : mixedB t x y = y₂(x₂) + y₃(x₀) − y₀(x₃) + u₁.z</code> on cocycles, with the ω₂
+scalar <code>u₁.z</code> confined to the <code>(3,3)</code> slot (<code>heisMarking_u1_z_of_{x3,y3}_zero</code>).  The Gram matrix is
+therefore unit-determinant regardless of <code>u₁.z</code>, and <code><a href=".././GQ2/Devissage.html#GQ2.FoxH.elemDual_separates">elemDual_separates</a></code> gives nondegeneracy.
+<code><a href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.trivialSelfDual">trivialSelfDual</a></code> descends <code>mixedB</code> to <code>H¹w = Z¹w</code> via <code><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Quotient.lift₂">Quotient.lift₂</a></code> and closes both
+nondegeneracy conditions by the case analysis below — <strong>fully proven, std-3</strong>.</p></div><div class="decl" id="GQ2.FoxH.elemDual_separates"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L145-L150">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/Devissage.html#GQ2.FoxH.elemDual_separates"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">elemDual_separates</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">a</span> : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">ha</span> : <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">lam</span> : <span class="fn"><a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.ElemDual">ElemDual</a> <span class="fn">A</span></span>), <span class="fn"><span class="fn">lam</span> <span class="fn">a</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Ne">≠</a> <span class="fn">0</span></span></div></div><p>The <code>𝔽₂</code>-dual separates points of a finite elementary-2 module.</p></div></div><div class="decl" id="GQ2.FoxH.mem_Z1w_trivial_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L152-L157">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.mem_Z1w_trivial_iff"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">mem_Z1w_trivial_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href=".././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Fin">Fin</a> <span class="fn">4</span></span> → <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">x</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Membership.mem">∈</a> <span class="fn"><a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.Z1w">Z1w</a> <span class="fn">t</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Core.html#Iff">↔</a> <span class="fn"><span class="fn">x</span> <span class="fn">1</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></div></div><p>On the trivial module <code>Z¹w = {x | x₁ = 0}</code>.</p></div></div><div class="decl" id="GQ2.FoxH.B1w_trivial_eq_bot"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L159-L164">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.B1w_trivial_eq_bot"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">B1w_trivial_eq_bot</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href=".././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.B1w">B1w</a> <span class="fn">t</span></span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Order/Notation.html#Bot.bot">⊥</a></div></div><p>On the trivial module <code>B¹w = ⊥</code> (<code>d⁰ = 0</code>), so <code>H¹w = Z¹w</code> and the class map is injective.</p></div></div><div class="decl" id="GQ2.FoxH.trivialSelfDual"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/02155b33e388e5252a373e3bce91bd26f3db5bdf/GQ2/TrivialSelfDual.lean#L167-L259">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href=".././GQ2/TrivialSelfDual.html#GQ2.FoxH.trivialSelfDual"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">trivialSelfDual</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href=".././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#Group">Group</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href=".././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GroupWithZero/Action/Defs.html#DistribMulAction">DistribMulAction</a> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href=".././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href=".././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">c</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HSMul.hSMul">•</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#HAdd.hAdd">+</a> <span class="fn">a</span> <a href="https://leanprover-community.github.io/mathlib4_docs/Init/Prelude.html#Eq">=</a> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href=".././GQ2/FoxHeisenberg.html#GQ2.FoxH.IsSelfDual">IsSelfDual</a> <span class="fn">t</span> <span class="fn">A</span></span></div></div><p><strong>P-13f, part (i)</strong>: the trivial module <code>𝔽₂</code> is self-dual.  Both card clauses and the degree-one
+pairing (table (25)) are proven: <code>mixedB</code> descends to <code>H¹w = Z¹w</code> (since <code>B¹w = ⊥</code>), its closed form
+<code>mixedB_cocycle = y₂(x₂)+y₃(x₀)−y₀(x₃)+u₁.z</code> has unit-determinant Gram matrix (the ω₂ scalar <code>u₁.z</code>
+sits only on the <code>(3,3)</code> slot, killed by choosing the paired dual coordinate <code>≠ 3</code>), and
+<code><a href=".././GQ2/Devissage.html#GQ2.FoxH.elemDual_separates">elemDual_separates</a></code> supplies the nonzero dual functionals.</p></div></div></main>
+<nav class="nav"><iframe src=".././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

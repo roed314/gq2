@@ -3,48 +3,195 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An explicit profinite presentation of the absolute Galois group of the 2-adic numbers, with an interactive web edition and a Lean 4 formalization.">
 <title>A Profinite Presentation of the Absolute Galois Group of Q₂</title>
 <style>
-  body { font-family: "Computer Modern Serif", Georgia, "Times New Roman", serif;
-         max-width: 44rem; margin: 0 auto; padding: 3rem 1.5rem; color: #111;
-         background: #fff; line-height: 1.55; }
-  h1 { font-size: 1.7rem; font-weight: 600; line-height: 1.3; margin-bottom: .3rem; }
-  .sub { color: #444; margin-bottom: 2.2rem; }
-  ul.links { list-style: none; padding: 0; }
-  ul.links li { margin: 1.1rem 0; }
-  ul.links a { font-size: 1.12rem; color: #111; }
-  .desc { color: #444; font-size: .95rem; margin-top: .15rem; }
-  .soon { color: #888; font-size: 1.12rem; }
-  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd;
-           color: #666; font-size: .9rem; }
+  :root {
+    --ink: #16181d;
+    --muted: #565d66;
+    --accent: #1e5c3a;            /* the paper's Lean green: accent = formalization */
+    --accent-ink: #ffffff;
+    --paper: #f6f6f3;
+    --card: #ffffff;
+    --line: #dcdedb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e8e9ec;
+      --muted: #9aa1ab;
+      --accent: #3f9c6b;
+      --accent-ink: #0d1210;
+      --paper: #16181c;
+      --card: #1e2126;
+      --line: #33373d;
+    }
+  }
+  @font-face {
+    font-family: "Computer Modern Serif";
+    src: url("paper/fonts/cmunrm.woff") format("woff");
+    font-weight: normal; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "Computer Modern Serif";
+    src: url("paper/fonts/cmunbx.woff") format("woff");
+    font-weight: bold; font-style: normal; font-display: swap;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { background: var(--paper); }
+  body {
+    width: min(68rem, 100%);
+    margin: 0 auto;
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3rem) 3rem;
+    color: var(--ink);
+    font-family: "Computer Modern Serif", Georgia, "Times New Roman", serif;
+    line-height: 1.55;
+  }
+
+  /* ---------------- hero ---------------- */
+  .hero { max-width: 46rem; margin-bottom: clamp(3rem, 6vw, 4.5rem); }
+  .eyebrow {
+    margin-bottom: 1.1rem;
+    color: var(--accent);
+    font: 700 0.72rem/1.2 system-ui, sans-serif;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  h1 {
+    max-width: 26ch;
+    margin: 0;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .sub { margin: 1.1rem 0 0.9rem; color: var(--muted); font-size: 1.1rem; }
+  .gist {
+    margin: 0 0 2rem;
+    max-width: 56ch;
+    font-size: 1.02rem;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+  .actions a {
+    padding: 0.75rem 1.25rem;
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    font: 650 0.95rem/1 system-ui, sans-serif;
+    text-decoration: none;
+    transition: filter .15s ease, background .15s ease;
+  }
+  .actions .primary { color: var(--accent-ink); background: var(--accent); }
+  .actions .primary:hover { filter: brightness(1.12); }
+  .actions .secondary { color: var(--accent); background: transparent; }
+  .actions .secondary:hover { background: rgba(40, 160, 90, 0.08); }
+  .actions a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+  /* ---------------- resource sections ---------------- */
+  h2 {
+    margin: 2.6rem 0 1rem;
+    font: 700 0.78rem/1.2 system-ui, sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+  }
+  .resource-card {
+    padding: 1.3rem 1.4rem;
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    background: var(--card);
+    box-shadow: 0 6px 18px rgba(24, 32, 29, 0.05);
+  }
+  .resource-card a.res-title {
+    color: var(--ink);
+    font-size: 1.12rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(40, 160, 90, 0.5);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+  }
+  .resource-card a.res-title:hover { text-decoration-color: var(--accent); }
+  .resource-card p { margin: 0.5rem 0 0; color: var(--muted); font-size: 0.95rem; }
+  .badge {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.14rem 0.55rem;
+    border-radius: 999px;
+    vertical-align: 0.12em;
+    font: 700 0.66rem/1.4 system-ui, sans-serif;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    background: rgba(40, 160, 90, 0.08);
+  }
+  .res-title-soon { color: var(--ink); font-size: 1.12rem; font-weight: 700; }
+
+  footer {
+    margin-top: 3.2rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  footer a { color: var(--ink); text-decoration-color: rgba(40,160,90,.5); }
 </style>
 </head>
 <body>
-<h1>A Profinite Presentation of the Absolute Galois Group of &#x211A;<sub>2</sub></h1>
-<p class="sub">David Roe and David Corneliu Turturean</p>
 
-<ul class="links">
-  <li><a href="paper/">Interactive paper</a>
-      <div class="desc">Expandable proofs, notation hovers, adjustable detail,
-      and links from each statement into the formalization.</div></li>
-  <li><a href="paper.pdf">PDF</a>
-      <div class="desc">The arXiv version.</div></li>
-  <li><a href="blueprint/">Formalization blueprint</a>
-      <div class="desc">Every statement paired with its Lean counterpart, with
-      an interactive dependency graph; completion status is computed directly
-      from the Lean code.</div></li>
-  <li><a href="lean/gq2-lean/">Lean API documentation</a>
-      <div class="desc">doc-gen4 pages for every declaration in the
-      formalization; dependency links resolve to the public Mathlib docs.</div></li>
-  <li><span class="soon">Development record — coming soon</span>
-      <div class="desc">How this paper and its formalizations were produced:
-      a ticket-level timeline of the AI-assisted development, notable
-      incidents, and statistics.</div></li>
-</ul>
+<header class="hero">
+  <div class="eyebrow">Research paper · Lean 4 formalization</div>
+  <h1>A Profinite Presentation of the Absolute Galois Group of&nbsp;&#x211A;<sub>2</sub></h1>
+  <p class="sub">David Roe and David Corneliu Turturean</p>
+  <p class="gist">An explicit presentation of the absolute Galois group of the
+  field of 2-adic numbers: four generators, two relations — the dyadic
+  counterpart to the classical presentations at odd primes — developed
+  alongside a Lean&nbsp;4 formalization over Mathlib.</p>
+  <nav class="actions">
+    <a class="primary" href="paper/">Read the interactive paper</a>
+    <a class="secondary" href="paper.pdf">Download the PDF</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Explore the formalization</h2>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <a class="res-title" href="blueprint/">Blueprint</a>
+      <p>Every statement paired with its Lean counterpart, with an interactive
+      dependency graph; completion status is computed directly from the Lean
+      code.</p>
+    </div>
+    <div class="resource-card">
+      <a class="res-title" href="lean/gq2-lean/">Lean API documentation</a>
+      <p>doc-gen4 pages for every declaration in the formalization;
+      dependency links resolve to the public Mathlib docs.</p>
+    </div>
+  </div>
+
+  <h2>Behind the project</h2>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <span class="res-title-soon">Development record</span><span class="badge">Coming&nbsp;soon</span>
+      <p>How this paper and its formalizations were produced: a ticket-level
+      timeline of the AI-assisted development, notable incidents, and
+      statistics.</p>
+    </div>
+    <div class="resource-card">
+      <a class="res-title" href="https://github.com/roed-math/gq2-lean">gq2-lean on GitHub</a>
+      <p>The Lean&nbsp;4 / Mathlib formalization source.</p>
+    </div>
+  </div>
+</main>
 
 <footer>
-  Formalizations: <a href="https://github.com/roed-math/gq2-lean">gq2-lean</a>
-  (Lean 4 / Mathlib)<!-- ; an independent GPT-produced formalization is forthcoming -->.
+  The interactive paper offers expandable proofs, notation hovers, adjustable
+  detail, and links from each statement into the formalization.
 </footer>
 </body>
 </html>

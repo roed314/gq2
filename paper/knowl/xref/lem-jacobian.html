@@ -22,13 +22,13 @@
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Evaluated Jacobian.</span>
 </h2>
 <div class="para logical">
-<div class="para">Write the lift variables on <span class="process-math">\((\notn{sigma}{\sigma},\notn{tau}{\tau},\notn{x0}{x_0},\notnfar{x1}{x_1})\)</span> as <span class="process-math">\((a,b,c,d)\in A^4\text{.}\)</span>  On a simple tame module the actual relation differential is</div>
+<div class="para">Write the lift variables on <span class="process-math">\((\notn{sigma}{\sigma},\notn{tau}{\tau},\notn{x0}{x_0},\notnfar{x1}{x_1})\)</span> as <span class="process-math">\((a,b,c,d)\in \notn{Amod}{A}^4\text{.}\)</span>  On a simple tame module the actual relation differential is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-Ltactual.html">
 \begin{equation}
-d^1_{\rho,A}=
+d^1_{\rho,\notn{Amod}{A}}=
 \begin{pmatrix}
-\mathsf S^{-1}(1+\mathsf T)&amp;\mathsf S^{-1}+1+\mathsf T&amp;0&amp;0\\
-0&amp;P&amp;0&amp;P+\mathsf S^{-1}
+\notn{opS}{\mathsf S}^{-1}(1+\notn{opT}{\mathsf T})&amp;\notn{opS}{\mathsf S}^{-1}+1+\notn{opT}{\mathsf T}&amp;0&amp;0\\
+0&amp;\notn{Pnorm}{P}&amp;0&amp;\notn{Pnorm}{P}+\notn{opS}{\mathsf S}^{-1}
 \end{pmatrix}.\tag{5.4}
 \end{equation}
 </div>
@@ -36,15 +36,15 @@ d^1_{\rho,A}=
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-Ltactual.html">
 \begin{align}
 L_{\mathrm t}
-&amp;=\mathsf S^{-1}(1+\mathsf T)a+(\mathsf S^{-1}+1+\mathsf T)b,\tag{5.5}\\
+&amp;=\notn{opS}{\mathsf S}^{-1}(1+\notn{opT}{\mathsf T})a+(\notn{opS}{\mathsf S}^{-1}+1+\notn{opT}{\mathsf T})b,\tag{5.5}\\
 L_{\mathrm w}
-&amp;=Pb+(P+\mathsf S^{-1})d.\tag{5.6}
+&amp;=Pb+(\notn{Pnorm}{P}+\notn{opS}{\mathsf S}^{-1})d.\tag{5.6}
 \end{align}
 </div>
-<div class="para">Postcomposing the tame defect coordinate by <span class="process-math">\(\mathsf S\)</span> gives the row-normalized expression</div>
+<div class="para">Postcomposing the tame defect coordinate by <span class="process-math">\(\notn{opS}{\mathsf S}\)</span> gives the row-normalized expression</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-Ltactual.html">
 \begin{equation*}
-(1+\mathsf T)a+\bigl(1+\mathsf S(1+\mathsf T)\bigr)b,
+(1+\notn{opT}{\mathsf T})a+\bigl(1+\notn{opS}{\mathsf S}(1+\notn{opT}{\mathsf T})\bigr)b,
 \end{equation*}
 </div>
 <div class="para">which may be used for rank calculations only.  The word complex, the mixed derivative, and the endpoint maps below use the unnormalized row <a href="#lem-jacobian-2-1-4" class="xref" data-knowl="./knowl/xref/eq-Ltactual.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.5">(5.5)</a>.</div>
@@ -55,25 +55,25 @@ L_{\mathrm w}
 <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
 <div class="para logical">
-<div class="para">Use <span class="process-math">\((u,g)(v,h)=(u+gv,gh)\)</span> in <span class="process-math">\(A\rtimes C\text{.}\)</span>  A direct calculation gives</div>
+<div class="para">Use <span class="process-math">\((u,g)(v,h)=(u+gv,gh)\)</span> in <span class="process-math">\(\notn{Amod}{A}\rtimes \notn{Cfin}{C}\text{.}\)</span>  A direct calculation gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-Ltactual.html">
 \begin{equation*}
-D(\notn{tau}{\tau}^\notn{sigma}{\sigma}\notn{tau}{\tau}^{-2})(a,b)
-=\mathsf S^{-1}(\mathsf T-1)a+\bigl(\mathsf S^{-1}-(1+\mathsf T)\bigr)b.
+\notn{Dfox}{D}(\notn{tau}{\tau}^\notn{sigma}{\sigma}\notn{tau}{\tau}^{-2})(a,b)
+=\notn{opS}{\mathsf S}^{-1}(\notn{opT}{\mathsf T}-1)a+\bigl(\notn{opS}{\mathsf S}^{-1}-(1+\notn{opT}{\mathsf T})\bigr)b.
 \end{equation*}
 </div>
 <div class="para">Over <span class="process-math">\(\F_2\)</span> this is exactly <a href="#lem-jacobian-2-1-4" class="xref" data-knowl="./knowl/xref/eq-Ltactual.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.5">(5.5)</a>.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-jacobian-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">For an odd-order <span class="process-math">\(\mathsf T\)</span>-orbit, differentiation of a <span class="process-math">\(\notn{w}{\w}\)</span>-power gives the norm projector <span class="process-math">\(P\text{.}\)</span>  By <a href="#lem-h0shadow" class="xref" data-knowl="./knowl/xref/lem-h0shadow.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.3: The elementary and class-two shadow of h_0">Lemma 5.3</a>, the word <span class="process-math">\(h_0\)</span> has the first-order value of <span class="process-math">\(\notn{x0}{x_0}^2\text{,}\)</span> hence zero.  The remaining wild factors give</div>
+<div class="para">For an odd-order <span class="process-math">\(\notn{opT}{\mathsf T}\)</span>-orbit, differentiation of a <span class="process-math">\(\notn{w}{\w}\)</span>-power gives the norm projector <span class="process-math">\(\notn{Pnorm}{P}\text{.}\)</span>  By <a href="#lem-h0shadow" class="xref" data-knowl="./knowl/xref/lem-h0shadow.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.3: The elementary and class-two shadow of h_0">Lemma 5.3</a>, the word <span class="process-math">\(h_0\)</span> has the first-order value of <span class="process-math">\(\notn{x0}{x_0}^2\text{,}\)</span> hence zero.  The remaining wild factors give</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-h0shadow.html ./knowl/xref/eq-Lwactual.html">
 \begin{equation*}
 \begin{array}{c|cccc}
 &amp;a&amp;b&amp;c&amp;d\\ \hline
 h_0&amp;0&amp;0&amp;0&amp;0\\
-u_1^{-1}&amp;0&amp;P&amp;0&amp;P\\
-\notnfar{x1}{x_1}^\notn{sigma}{\sigma}&amp;0&amp;0&amp;0&amp;\mathsf S^{-1}\\
+u_1^{-1}&amp;0&amp;\notn{Pnorm}{P}&amp;0&amp;\notn{Pnorm}{P}\\
+\notnfar{x1}{x_1}^\notn{sigma}{\sigma}&amp;0&amp;0&amp;0&amp;\notn{opS}{\mathsf S}^{-1}\\
 {[d_0,z_0]}&amp;0&amp;0&amp;0&amp;0.
 \end{array}
 \end{equation*}

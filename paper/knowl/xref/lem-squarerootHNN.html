@@ -22,13 +22,13 @@
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Square-root and HNN lifting.</span>
 </h2>
 <div class="para logical">
-<div class="para">For every <span class="process-math">\(u\in\mathbb{Z}_2^\times\)</span> there is an automorphism <span class="process-math">\(\Psi_u\in\Aut(\notn{D0}{D_0})\)</span> such that, on <span class="process-math">\(\notn{Bab}{B_{\mathrm{ab}}}\text{,}\)</span>
+<div class="para">For every <span class="process-math">\(u\in\mathbb{Z}_2^\times\)</span> there is an automorphism <span class="process-math">\(\notn{Psiu}{\Psi_u}\in\Aut(\notn{D0}{D_0})\)</span> such that, on <span class="process-math">\(\notn{Bab}{B_{\mathrm{ab}}}\text{,}\)</span>
 </div>
 <div class="displaymath process-math">
 \begin{equation}
-\bar A\longmapsto u\bar A,
+\notn{barA}{\bar A}\longmapsto u\notn{barA}{\bar A},
 \qquad
-\bar S\longmapsto u\bar S.\tag{3.8}
+\notn{barS}{\bar S}\longmapsto u\notn{barS}{\bar S}.\tag{3.8}
 \end{equation}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-squarerootHNN-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -37,84 +37,84 @@
 </article>
 <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
 <article class="hiddenproof knowl__content">
-<div class="para">The proof first lifts peripheral powering across the square-root relation, then transports the lift to the free pro-<span class="process-math">\(2\)</span> group on <span class="process-math">\(S,A\text{,}\)</span> and finally extends it over the HNN stable letter <span class="process-math">\(\notn{Ygen}{Y}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-squarerootHNN-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">The proof first lifts peripheral powering across the square-root relation, then transports the lift to the free pro-<span class="process-math">\(2\)</span> group on <span class="process-math">\(\notnfar{Sgen}{S},\notn{Agen}{A}\text{,}\)</span> and finally extends it over the HNN stable letter <span class="process-math">\(\notn{Ygen}{Y}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-squarerootHNN-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">Start with <span class="process-math">\(\varphi_u\)</span> and the conjugators from <a href="#lem-peripheralpower" class="xref" data-knowl="./knowl/xref/lem-peripheralpower.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 3.7: Cyclotomic powering of the three peripheral classes">Lemma 3.7</a>.  Consider</div>
+<div class="para">Start with <span class="process-math">\(\notn{varphiu}{\varphi_u}\)</span> and the conjugators from <a href="#lem-peripheralpower" class="xref" data-knowl="./knowl/xref/lem-peripheralpower.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 3.7: Cyclotomic powering of the three peripheral classes">Lemma 3.7</a>.  Consider</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-peripheralpower.html">
 \begin{equation*}
-E_\square=
-\left\langle P,T,A\;\middle|\;PTA^2=1\right\rangle_{\mathrm{pro}-2}
-\cong\langle P,A\rangle_{\mathrm{pro}-2},
-\qquad C=A^2.
+\notn{Esq}{E_\square}=
+\left\langle \notn{Pperi}{P},\notn{Tperi}{T},\notn{Agen}{A}\;\middle|\;PTA^2=1\right\rangle_{\mathrm{pro}-2}
+\cong\langle \notn{Pperi}{P},\notn{Agen}{A}\rangle_{\mathrm{pro}-2},
+\qquad \notn{Cperi}{C}=\notn{Agen}{A}^2.
 \end{equation*}
 </div>
-<div class="para">View the words <span class="process-math">\(c_P,c_T,c_C\)</span> in <span class="process-math">\(E_\square\)</span> via <span class="process-math">\(P,T\text{,}\)</span> and define</div>
+<div class="para">View the words <span class="process-math">\(\notn{cP}{c_P},\notn{cT}{c_T},\notn{cC}{c_C}\)</span> in <span class="process-math">\(\notn{Esq}{E_\square}\)</span> via <span class="process-math">\(\notn{Pperi}{P},\notn{Tperi}{T}\text{,}\)</span> and define</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-peripheralpower.html">
 \begin{equation*}
-P\longmapsto\varphi_u(P),
+\notn{Pperi}{P}\longmapsto\notn{varphiu}{\varphi_u}(\notn{Pperi}{P}),
 \qquad
-T\longmapsto\varphi_u(T),
+\notn{Tperi}{T}\longmapsto\notn{varphiu}{\varphi_u}(\notn{Tperi}{T}),
 \qquad
-A\longmapsto c_C^{-1}A^u c_C.
+\notn{Agen}{A}\longmapsto \notn{cC}{c_C}^{-1}\notn{Agen}{A}^u \notn{cC}{c_C}.
 \end{equation*}
 </div>
 <div class="para">The defining relation is preserved, because</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-peripheralpower.html">
 \begin{equation*}
-(c_C^{-1}A^u c_C)^2
-=c_C^{-1}C^u c_C
-=\varphi_u(C)
-=(\varphi_u(P)\varphi_u(T))^{-1}.
+(\notn{cC}{c_C}^{-1}\notn{Agen}{A}^u \notn{cC}{c_C})^2
+=\notn{cC}{c_C}^{-1}\notn{Cperi}{C}^u \notn{cC}{c_C}
+=\notn{varphiu}{\varphi_u}(\notn{Cperi}{C})
+=(\notn{varphiu}{\varphi_u}(\notn{Pperi}{P})\notn{varphiu}{\varphi_u}(\notn{Tperi}{T}))^{-1}.
 \end{equation*}
 </div>
-<div class="para">Modulo the Frattini subgroup, the free basis <span class="process-math">\(P,A\)</span> is sent to <span class="process-math">\(u\bar P,u\bar A\text{,}\)</span> hence to <span class="process-math">\(\bar P,\bar A\text{.}\)</span>  The pro-<span class="process-math">\(2\)</span> Burnside basis theorem and Hopficity therefore show that this endomorphism is an automorphism; call it <span class="process-math">\(\theta_u\text{.}\)</span>
+<div class="para">Modulo the Frattini subgroup, the free basis <span class="process-math">\(\notn{Pperi}{P},\notn{Agen}{A}\)</span> is sent to <span class="process-math">\(u\bar P,u\notn{barA}{\bar A}\text{,}\)</span> hence to <span class="process-math">\(\bar P,\notn{barA}{\bar A}\text{.}\)</span>  The pro-<span class="process-math">\(2\)</span> Burnside basis theorem and Hopficity therefore show that this endomorphism is an automorphism; call it <span class="process-math">\(\notn{thetau}{\theta_u}\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-squarerootHNN-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">In the free pro-<span class="process-math">\(2\)</span> group <span class="process-math">\(F_{S,A}=\langle S,A\rangle_{\mathrm{pro}-2}\)</span> put</div>
+<div class="para">In the free pro-<span class="process-math">\(2\)</span> group <span class="process-math">\(\notn{FSA}{F_{S,A}}=\langle \notnfar{Sgen}{S},\notn{Agen}{A}\rangle_{\mathrm{pro}-2}\)</span> put</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-peripheralpower.html ./knowl/xref/eq-D0HNN.html ./knowl/xref/eq-Psiabpartial.html">
 \begin{equation*}
-P=S^3,
+\notn{Pperi}{P}=\notnfar{Sgen}{S}^3,
 \qquad
-T=S^{-3}A^{-2}.
+\notn{Tperi}{T}=\notnfar{Sgen}{S}^{-3}\notn{Agen}{A}^{-2}.
 \end{equation*}
 </div>
-<div class="para">Since <span class="process-math">\(3\in\mathbb{Z}_2^\times\text{,}\)</span> the pair <span class="process-math">\(P,A\)</span> is again a free basis of <span class="process-math">\(F_{S,A}\text{,}\)</span> and <span class="process-math">\(PTA^2=1\text{.}\)</span>  For every odd integer <span class="process-math">\(m\text{,}\)</span> the power map <span class="process-math">\(x\mapsto x^m\)</span> is bijective on a pro-<span class="process-math">\(2\)</span> group, with inverse <span class="process-math">\(x\mapsto x^{m^{-1}}\)</span> for <span class="process-math">\(m^{-1}\in\mathbb{Z}_2^\times\text{.}\)</span>  Comparing the unique cube roots of the two sides of <a href="#eq-peripheralpower" class="xref" data-knowl="./knowl/xref/eq-peripheralpower.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.7">(3.7)</a> therefore gives</div>
+<div class="para">Since <span class="process-math">\(3\in\mathbb{Z}_2^\times\text{,}\)</span> the pair <span class="process-math">\(\notn{Pperi}{P},\notn{Agen}{A}\)</span> is again a free basis of <span class="process-math">\(\notn{FSA}{F_{S,A}}\text{,}\)</span> and <span class="process-math">\(PTA^2=1\text{.}\)</span>  For every odd integer <span class="process-math">\(m\text{,}\)</span> the power map <span class="process-math">\(x\mapsto x^m\)</span> is bijective on a pro-<span class="process-math">\(2\)</span> group, with inverse <span class="process-math">\(x\mapsto x^{m^{-1}}\)</span> for <span class="process-math">\(m^{-1}\in\mathbb{Z}_2^\times\text{.}\)</span>  Comparing the unique cube roots of the two sides of <a href="#eq-peripheralpower" class="xref" data-knowl="./knowl/xref/eq-peripheralpower.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.7">(3.7)</a> therefore gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-peripheralpower.html ./knowl/xref/eq-D0HNN.html ./knowl/xref/eq-Psiabpartial.html">
 \begin{equation*}
-\theta_u(S)=c_P^{-1}S^u c_P,
+\notn{thetau}{\theta_u}(\notnfar{Sgen}{S})=\notn{cP}{c_P}^{-1}\notnfar{Sgen}{S}^u \notn{cP}{c_P},
 \qquad
-\theta_u(T)=c_T^{-1}T^u c_T.
+\notn{thetau}{\theta_u}(\notn{Tperi}{T})=\notn{cT}{c_T}^{-1}\notn{Tperi}{T}^u \notn{cT}{c_T}.
 \end{equation*}
 </div>
 <div class="para">The relation of <span class="process-math">\(\notn{D0}{D_0}\)</span> is equivalently</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-peripheralpower.html ./knowl/xref/eq-D0HNN.html ./knowl/xref/eq-Psiabpartial.html">
 \begin{equation}
-\notn{Ygen}{Y}^{-1}SY=T,
+\notn{Ygen}{Y}^{-1}SY=\notn{Tperi}{T},
 \qquad
-T=S^{-3}A^{-2}.\tag{3.9}
+\notn{Tperi}{T}=\notnfar{Sgen}{S}^{-3}\notn{Agen}{A}^{-2}.\tag{3.9}
 \end{equation}
 </div>
 <div class="para">Define an endomorphism of the presentation <a href="#eq-D0HNN" class="xref" data-knowl="./knowl/xref/eq-D0HNN.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.9">(3.9)</a> by</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-peripheralpower.html ./knowl/xref/eq-D0HNN.html ./knowl/xref/eq-Psiabpartial.html">
 \begin{equation*}
-\Psi_u|_E=\theta_u,
+\notn{Psiu}{\Psi_u}|_E=\notn{thetau}{\theta_u},
 \qquad
-\Psi_u(\notn{Ygen}{Y})=c_P^{-1}Yc_T.
+\notn{Psiu}{\Psi_u}(\notn{Ygen}{Y})=\notn{cP}{c_P}^{-1}\notn{Ygen}{Y}\notn{cT}{c_T}.
 \end{equation*}
 </div>
 <div class="para">Then</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-peripheralpower.html ./knowl/xref/eq-D0HNN.html ./knowl/xref/eq-Psiabpartial.html">
 \begin{equation*}
-\Psi_u(\notn{Ygen}{Y})^{-1}\Psi_u(S)\Psi_u(\notn{Ygen}{Y})
-=c_T^{-1}\notn{Ygen}{Y}^{-1}S^uYc_T
-=c_T^{-1}T^u c_T
-=\Psi_u(T),
+\notn{Psiu}{\Psi_u}(\notn{Ygen}{Y})^{-1}\notn{Psiu}{\Psi_u}(\notnfar{Sgen}{S})\notn{Psiu}{\Psi_u}(\notn{Ygen}{Y})
+=\notn{cT}{c_T}^{-1}\notn{Ygen}{Y}^{-1}\notnfar{Sgen}{S}^uY\notn{cT}{c_T}
+=\notn{cT}{c_T}^{-1}\notn{Tperi}{T}^u \notn{cT}{c_T}
+=\notn{Psiu}{\Psi_u}(\notn{Tperi}{T}),
 \end{equation*}
 </div>
-<div class="para">so the relation is respected.  On the Frattini quotient of <span class="process-math">\(\notn{D0}{D_0}\text{,}\)</span> the images of <span class="process-math">\(A,S,\notn{Ygen}{Y}\)</span> form a triangular basis with diagonal entries <span class="process-math">\(1,1,1\text{.}\)</span> Consequently <span class="process-math">\(\Psi_u\)</span> is surjective and hence an automorphism.  Its action on <span class="process-math">\(\bar A,\bar S\)</span> is <a href="#eq-Psiabpartial" class="xref" data-knowl="./knowl/xref/eq-Psiabpartial.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.8">(3.8)</a>.</div>
+<div class="para">so the relation is respected.  On the Frattini quotient of <span class="process-math">\(\notn{D0}{D_0}\text{,}\)</span> the images of <span class="process-math">\(\notn{Agen}{A},\notnfar{Sgen}{S},\notn{Ygen}{Y}\)</span> form a triangular basis with diagonal entries <span class="process-math">\(1,1,1\text{.}\)</span> Consequently <span class="process-math">\(\notn{Psiu}{\Psi_u}\)</span> is surjective and hence an automorphism.  Its action on <span class="process-math">\(\notn{barA}{\bar A},\notn{barS}{\bar S}\)</span> is <a href="#eq-Psiabpartial" class="xref" data-knowl="./knowl/xref/eq-Psiabpartial.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.8">(3.8)</a>.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-squarerootHNN-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 3.8.1"><a tabindex="-1" href="#lem-squarerootHNN-4" title="Copy heading and permalink for Proof 3.8.1" aria-label="Copy heading and permalink for Proof 3.8.1">🔗</a></div>

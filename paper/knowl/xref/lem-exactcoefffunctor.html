@@ -22,29 +22,29 @@
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exact cone d\’evissage.</span>
 </h2>
 <div class="para logical">
-<div class="para">For an elementary <span class="process-math">\(\F_2[C]\)</span>-module <span class="process-math">\(A\text{,}\)</span> put</div>
+<div class="para">For an elementary <span class="process-math">\(\F_2[\notn{Cfin}{C}]\)</span>-module <span class="process-math">\(\notn{Amod}{A}\text{,}\)</span> put</div>
 <div class="displaymath process-math">
 \begin{equation}
-K(A)=\Cone\!\left(
-D_{\rho,A}:C^\bullet_{\rho,A}\longrightarrow
-\Hom_{\F_2}(C^\bullet_{\rho,A^\vee},\F_2)[-2]
+K(\notn{Amod}{A})=\Cone\!\left(
+D_{\rho,\notn{Amod}{A}}:\notn{Cfin}{C}^\bullet_{\rho,\notn{Amod}{A}}\longrightarrow
+\Hom_{\F_2}(\notn{Cfin}{C}^\bullet_{\rho,\notn{Amod}{A}^\vee},\F_2)[-2]
 \right).\tag{5.20}
 \end{equation}
 </div>
-<div class="para">For every short exact sequence of finite <span class="process-math">\(\F_2[C]\)</span>-modules</div>
+<div class="para">For every short exact sequence of finite <span class="process-math">\(\F_2[\notn{Cfin}{C}]\)</span>-modules</div>
 <div class="displaymath process-math">
 \begin{equation*}
-0\longrightarrow A'\longrightarrow A\longrightarrow A''\longrightarrow0,
+0\longrightarrow A'\longrightarrow \notn{Amod}{A}\longrightarrow A''\longrightarrow0,
 \end{equation*}
 </div>
 <div class="para">there is a degreewise short exact sequence of complexes</div>
 <div class="displaymath process-math">
 \begin{equation}
-0\longrightarrow K(A')\longrightarrow K(A)\longrightarrow K(A'')
+0\longrightarrow K(A')\longrightarrow K(\notn{Amod}{A})\longrightarrow K(A'')
 \longrightarrow0.\tag{5.21}
 \end{equation}
 </div>
-<div class="para">Consequently, if two of <span class="process-math">\(K(A')\text{,}\)</span> <span class="process-math">\(K(A)\text{,}\)</span> and <span class="process-math">\(K(A'')\)</span> are acyclic, then so is the third.  In particular, acyclicity for all simple modules implies acyclicity for every elementary module, including nonsplit and nonsemisimple modules.</div>
+<div class="para">Consequently, if two of <span class="process-math">\(K(A')\text{,}\)</span> <span class="process-math">\(K(\notn{Amod}{A})\text{,}\)</span> and <span class="process-math">\(K(A'')\)</span> are acyclic, then so is the third.  In particular, acyclicity for all simple modules implies acyclicity for every elementary module, including nonsplit and nonsemisimple modules.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-exactcoefffunctor-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <a class="lean-link" href="../lean/gq2-lean/find/?pattern=GQ2.FoxH.selfdualW_two_of_three#doc" data-lean-ref="GQ2.FoxH.selfdualW_two_of_three" title="Formalized as GQ2.FoxH.selfdualW_two_of_three">Lean (two-of-three)</a><a class="lean-link" href="../lean/gq2-lean/find/?pattern=GQ2.FoxH.lemma_5_11#doc" data-lean-ref="GQ2.FoxH.lemma_5_11" title="Formalized as GQ2.FoxH.lemma_5_11">Lean (main)</a><div class="autopermalink" aria-hidden="true" data-description="Lemma 5.11: Exact cone d\’evissage"><a tabindex="-1" href="#lem-exactcoefffunctor" title="Copy heading and permalink for Lemma 5.11: Exact cone d\’evissage" aria-label="Copy heading and permalink for Lemma 5.11: Exact cone d\’evissage">🔗</a></div>
@@ -57,15 +57,15 @@ D_{\rho,A}:C^\bullet_{\rho,A}\longrightarrow
 <div class="para">The finite-word construction is additive and exact in the coefficient module, so the source complexes form a degreewise short exact sequence</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sourcecomplexexact.html ./knowl/xref/eq-targetcomplexexact.html ./knowl/xref/lem-heisnatural.html ./knowl/xref/prop-chainmap.html ./knowl/xref/eq-coneshortexact.html">
 \begin{equation}
-0\longrightarrow C^\bullet_{\rho,A'}
-\longrightarrow C^\bullet_{\rho,A}
-\longrightarrow C^\bullet_{\rho,A''}\longrightarrow0.\tag{5.22}
+0\longrightarrow \notn{Cfin}{C}^\bullet_{\rho,A'}
+\longrightarrow \notn{Cfin}{C}^\bullet_{\rho,\notn{Amod}{A}}
+\longrightarrow \notn{Cfin}{C}^\bullet_{\rho,A''}\longrightarrow0.\tag{5.22}
 \end{equation}
 </div>
 <div class="para">Dualizing the coefficient sequence gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sourcecomplexexact.html ./knowl/xref/eq-targetcomplexexact.html ./knowl/xref/lem-heisnatural.html ./knowl/xref/prop-chainmap.html ./knowl/xref/eq-coneshortexact.html">
 \begin{equation*}
-0\longrightarrow A''^\vee\longrightarrow A^\vee
+0\longrightarrow A''^\vee\longrightarrow \notn{Amod}{A}^\vee
 \longrightarrow A'^\vee\longrightarrow0.
 \end{equation*}
 </div>
@@ -73,9 +73,9 @@ D_{\rho,A}:C^\bullet_{\rho,A}\longrightarrow
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sourcecomplexexact.html ./knowl/xref/eq-targetcomplexexact.html ./knowl/xref/lem-heisnatural.html ./knowl/xref/prop-chainmap.html ./knowl/xref/eq-coneshortexact.html">
 \begin{equation}
 \begin{split}
-0\longrightarrow&amp;\ \Hom_{\F_2}(C^\bullet_{\rho,A'^\vee},\F_2)[-2]
-\longrightarrow \Hom_{\F_2}(C^\bullet_{\rho,A^\vee},\F_2)[-2]\\
-\longrightarrow&amp;\ \Hom_{\F_2}(C^\bullet_{\rho,A''^\vee},\F_2)[-2]
+0\longrightarrow&amp;\ \Hom_{\F_2}(\notn{Cfin}{C}^\bullet_{\rho,A'^\vee},\F_2)[-2]
+\longrightarrow \Hom_{\F_2}(\notn{Cfin}{C}^\bullet_{\rho,\notn{Amod}{A}^\vee},\F_2)[-2]\\
+\longrightarrow&amp;\ \Hom_{\F_2}(\notn{Cfin}{C}^\bullet_{\rho,A''^\vee},\F_2)[-2]
 \longrightarrow0.
 \end{split}\tag{5.23}
 \end{equation}
@@ -83,21 +83,21 @@ D_{\rho,A}:C^\bullet_{\rho,A}\longrightarrow
 <div class="para">For compactness write</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sourcecomplexexact.html ./knowl/xref/eq-targetcomplexexact.html ./knowl/xref/lem-heisnatural.html ./knowl/xref/prop-chainmap.html ./knowl/xref/eq-coneshortexact.html">
 \begin{equation*}
-C^\dagger(A)=\Hom_{\F_2}(C^\bullet_{\rho,A^\vee},\F_2)[-2].
+\notn{Cfin}{C}^\dagger(\notn{Amod}{A})=\Hom_{\F_2}(\notn{Cfin}{C}^\bullet_{\rho,\notn{Amod}{A}^\vee},\F_2)[-2].
 \end{equation*}
 </div>
 <div class="para">Strict coefficient naturality of the Heisenberg central coordinate gives the commutative diagram</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-sourcecomplexexact.html ./knowl/xref/eq-targetcomplexexact.html ./knowl/xref/lem-heisnatural.html ./knowl/xref/prop-chainmap.html ./knowl/xref/eq-coneshortexact.html">
 \begin{equation*}
 \begin{array}{ccccc}
-C^\bullet_{\rho,A'}&amp;\longrightarrow&amp;C^\bullet_{\rho,A}
-&amp;\longrightarrow&amp;C^\bullet_{\rho,A''}\\
-\downarrow D_{\rho,A'}&amp;&amp;\downarrow D_{\rho,A}&amp;&amp;\downarrow D_{\rho,A''}\\
-C^\dagger(A')&amp;\longrightarrow&amp;C^\dagger(A)&amp;\longrightarrow&amp;C^\dagger(A'').
+\notn{Cfin}{C}^\bullet_{\rho,A'}&amp;\longrightarrow&amp;\notn{Cfin}{C}^\bullet_{\rho,\notn{Amod}{A}}
+&amp;\longrightarrow&amp;\notn{Cfin}{C}^\bullet_{\rho,A''}\\
+\downarrow D_{\rho,A'}&amp;&amp;\downarrow D_{\rho,\notn{Amod}{A}}&amp;&amp;\downarrow D_{\rho,A''}\\
+\notn{Cfin}{C}^\dagger(A')&amp;\longrightarrow&amp;\notn{Cfin}{C}^\dagger(\notn{Amod}{A})&amp;\longrightarrow&amp;\notn{Cfin}{C}^\dagger(A'').
 \end{array}
 \end{equation*}
 </div>
-<div class="para">Here the rows are the nonzero portions of <a href="#eq-sourcecomplexexact" class="xref" data-knowl="./knowl/xref/eq-sourcecomplexexact.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.22">(5.22)</a> and <a href="#eq-targetcomplexexact" class="xref" data-knowl="./knowl/xref/eq-targetcomplexexact.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.23">(5.23)</a>, and commutativity is <a href="#lem-heisnatural" class="xref" data-knowl="./knowl/xref/lem-heisnatural.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.6: Strict coefficient naturality">Lemma 5.6</a>, <a href="#prop-chainmap" class="xref" data-knowl="./knowl/xref/prop-chainmap.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.10: The Fox–Heisenberg chain map">Proposition 5.10</a>.  Mapping cones are formed degree by degree, so this diagram gives <a href="#eq-coneshortexact" class="xref" data-knowl="./knowl/xref/eq-coneshortexact.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.21">(5.21)</a>.  The associated long exact cohomology sequence proves the two-out-of-three assertion.  Applying it successively to a composition series of <span class="process-math">\(A\)</span> proves the final statement.</div>
+<div class="para">Here the rows are the nonzero portions of <a href="#eq-sourcecomplexexact" class="xref" data-knowl="./knowl/xref/eq-sourcecomplexexact.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.22">(5.22)</a> and <a href="#eq-targetcomplexexact" class="xref" data-knowl="./knowl/xref/eq-targetcomplexexact.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.23">(5.23)</a>, and commutativity is <a href="#lem-heisnatural" class="xref" data-knowl="./knowl/xref/lem-heisnatural.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.6: Strict coefficient naturality">Lemma 5.6</a>, <a href="#prop-chainmap" class="xref" data-knowl="./knowl/xref/prop-chainmap.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 5.10: The Fox–Heisenberg chain map">Proposition 5.10</a>.  Mapping cones are formed degree by degree, so this diagram gives <a href="#eq-coneshortexact" class="xref" data-knowl="./knowl/xref/eq-coneshortexact.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.21">(5.21)</a>.  The associated long exact cohomology sequence proves the two-out-of-three assertion.  Applying it successively to a composition series of <span class="process-math">\(\notn{Amod}{A}\)</span> proves the final statement.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-exactcoefffunctor-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 5.11.1"><a tabindex="-1" href="#lem-exactcoefffunctor-5" title="Copy heading and permalink for Proof 5.11.1" aria-label="Copy heading and permalink for Proof 5.11.1">🔗</a></div>

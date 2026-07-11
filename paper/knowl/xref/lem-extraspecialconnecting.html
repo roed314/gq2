@@ -22,23 +22,23 @@
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Equivariant extraspecial connecting cocycle.</span>
 </h2>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(V\)</span> be an elementary <span class="process-math">\(\F_2[C]\)</span>-module, let <span class="process-math">\(q:V\to\F_2\)</span> be a <span class="process-math">\(C\)</span>-invariant quadratic form with polar form <span class="process-math">\(b_q\text{,}\)</span> and let</div>
+<div class="para">Let <span class="process-math">\(\notnfar{Vhead}{V}\)</span> be an elementary <span class="process-math">\(\F_2[\notn{Cfin}{C}]\)</span>-module, let <span class="process-math">\(q:\notnfar{Vhead}{V}\to\F_2\)</span> be a <span class="process-math">\(\notn{Cfin}{C}\)</span>-invariant quadratic form with polar form <span class="process-math">\(\notn{bq}{b_q}\text{,}\)</span> and let</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f:V\times V\to\F_2,
+f:\notnfar{Vhead}{V}\times \notnfar{Vhead}{V}\to\F_2,
 \qquad
-f(v,v)=q(v),\qquad f(v,w)+f(w,v)=b_q(v,w),
+f(v,v)=q(v),\qquad f(v,w)+f(w,v)=\notn{bq}{b_q}(v,w),
 \end{equation*}
 </div>
 <div class="para">be a normalized factor set for the central extension</div>
 <div class="displaymath process-math">
 \begin{equation*}
-E_f=V\times\F_2,
+E_f=\notnfar{Vhead}{V}\times\F_2,
 \qquad
 (v,z)(w,t)=(v+w,z+t+f(v,w)).
 \end{equation*}
 </div>
-<div class="para">When an equivariant lift is chosen, its action in the normalized section is written by functions <span class="process-math">\(m_c:V\to\F_2\)</span> satisfying</div>
+<div class="para">When an equivariant lift is chosen, its action in the normalized section is written by functions <span class="process-math">\(m_c:\notnfar{Vhead}{V}\to\F_2\)</span> satisfying</div>
 <div class="displaymath process-math">
 \begin{equation}
 m_c(v+w)+m_c(v)+m_c(w)=f(cv,cw)+f(v,w)\tag{6.1}
@@ -56,27 +56,27 @@ m_{cd}(v)=m_c(dv)+m_d(v),\qquad m_1=0.\tag{6.2}
 c\cdot(v,z)=(cv,z+m_c(v))
 \end{equation*}
 </div>
-<div class="para">defines an action by automorphisms of <span class="process-math">\(E_f\text{.}\)</span>  The associated normalized base central cocycle on <span class="process-math">\(V\rtimes C\)</span> is</div>
+<div class="para">defines an action by automorphisms of <span class="process-math">\(E_f\text{.}\)</span>  The associated normalized base central cocycle on <span class="process-math">\(\notnfar{Vhead}{V}\rtimes \notn{Cfin}{C}\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation}
-\kappa_q^0((v,c),(w,d))=f(v,cw)+m_c(w).\tag{6.3}
+\notnfar{kappaq0}{\kappa_q^0}((v,c),(w,d))=f(v,cw)+m_c(w).\tag{6.3}
 \end{equation}
 </div>
-<div class="para">Consequently, for a source <span class="process-math">\(\Gamma\text{,}\)</span> a lower map <span class="process-math">\(\rho:\Gamma\to C\text{,}\)</span> and a normalized <span class="process-math">\(V\)</span>-valued <span class="process-math">\(1\)</span>-cocycle <span class="process-math">\(b\text{,}\)</span> the base connecting cocycle is</div>
+<div class="para">Consequently, for a source <span class="process-math">\(\notnfar{GammaSrc}{\Gamma}\text{,}\)</span> a lower map <span class="process-math">\(\notnfar{rhoEpi}{\rho}:\notnfar{GammaSrc}{\Gamma}\to \notn{Cfin}{C}\text{,}\)</span> and a normalized <span class="process-math">\(\notnfar{Vhead}{V}\)</span>-valued <span class="process-math">\(1\)</span>-cocycle <span class="process-math">\(b\text{,}\)</span> the base connecting cocycle is</div>
 <div class="displaymath process-math">
 \begin{equation}
-(b,\rho)^*\kappa_q^0(g,h)
-=f(b(g),\rho(g)b(h))+m_{\rho(g)}(b(h)).\tag{6.4}
+(b,\notnfar{rhoEpi}{\rho})^*\notnfar{kappaq0}{\kappa_q^0}(g,h)
+=f(b(g),\notnfar{rhoEpi}{\rho}(g)b(h))+m_{\rho(g)}(b(h)).\tag{6.4}
 \end{equation}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-extraspecialconnecting-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <div class="para logical">
-<div class="para">If <span class="process-math">\(\kappa\)</span> is another normalized central cocycle on <span class="process-math">\(V\rtimes C\)</span> whose restriction to <span class="process-math">\(V\)</span> is the same quadratic form <span class="process-math">\(q\text{,}\)</span> then, after replacing <span class="process-math">\(\kappa\)</span> by a cohomologous normalized cocycle and changing the normalized section, the following is an equality of normalized <span class="process-math">\(2\)</span>-cochains:</div>
+<div class="para">If <span class="process-math">\(\kappa\)</span> is another normalized central cocycle on <span class="process-math">\(\notnfar{Vhead}{V}\rtimes \notn{Cfin}{C}\)</span> whose restriction to <span class="process-math">\(\notnfar{Vhead}{V}\)</span> is the same quadratic form <span class="process-math">\(q\text{,}\)</span> then, after replacing <span class="process-math">\(\kappa\)</span> by a cohomologous normalized cocycle and changing the normalized section, the following is an equality of normalized <span class="process-math">\(2\)</span>-cochains:</div>
 <div class="displaymath process-math">
 \begin{equation}
-\kappa=\kappa_q^0+\Gamma_\gamma+
-\operatorname{inf}_C^{V\rtimes C}\delta,\tag{6.5}
+\kappa=\notnfar{kappaq0}{\kappa_q^0}+\Gamma_\gamma+
+\operatorname{inf}_C^{\notnfar{Vhead}{V}\rtimes \notn{Cfin}{C}}\delta,\tag{6.5}
 \end{equation}
 </div>
 <div class="para">where</div>
@@ -84,27 +84,27 @@ c\cdot(v,z)=(cv,z+m_c(v))
 \begin{equation}
 \Gamma_\gamma((v,c),(w,d))=\gamma(c)(cw),
 \qquad
-\gamma\in Z^1(C,V^\vee),\quad
-\delta\in Z^2(C,\F_2).\tag{6.6}
+\gamma\in Z^1(\notn{Cfin}{C},\notnfar{Vhead}{V}^\vee),\quad
+\delta\in Z^2(\notn{Cfin}{C},\F_2).\tag{6.6}
 \end{equation}
 </div>
-<div class="para">After graph pullback and application of the source functional <span class="process-math">\(\iota_\Gamma\text{,}\)</span> the corresponding scalar quadratic obstruction is</div>
+<div class="para">After graph pullback and application of the source functional <span class="process-math">\(\notn{iotaGamma}{\iota_\Gamma}\text{,}\)</span> the corresponding scalar quadratic obstruction is</div>
 <div class="displaymath process-math">
 \begin{equation}
-Q_{\kappa,\Gamma,\rho}(b)
-=Q^0_{\Gamma,\rho}(b)
-+\langle b,\rho^*\gamma\rangle_\Gamma
-+\iota_\Gamma(\rho^*\delta),\tag{6.7}
+Q_{\kappa,\notnfar{GammaSrc}{\Gamma},\notnfar{rhoEpi}{\rho}}(b)
+=Q^0_{\Gamma,\notnfar{rhoEpi}{\rho}}(b)
++\langle b,\notnfar{rhoEpi}{\rho}^*\gamma\rangle_\Gamma
++\notn{iotaGamma}{\iota_\Gamma}(\notnfar{rhoEpi}{\rho}^*\delta),\tag{6.7}
 \end{equation}
 </div>
 <div class="para">where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-Q^0_{\Gamma,\rho}(b)=
-\iota_\Gamma\bigl((b,\rho)^*\kappa_q^0\bigr).
+Q^0_{\Gamma,\notnfar{rhoEpi}{\rho}}(b)=
+\notn{iotaGamma}{\iota_\Gamma}\bigl((b,\notnfar{rhoEpi}{\rho})^*\notnfar{kappaq0}{\kappa_q^0}\bigr).
 \end{equation*}
 </div>
-<div class="para">Its polarization is the source pairing transported by <span class="process-math">\(b_q\text{.}\)</span>
+<div class="para">Its polarization is the source pairing transported by <span class="process-math">\(\notn{bq}{b_q}\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-extraspecialconnecting-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -115,17 +115,17 @@ Q^0_{\Gamma,\rho}(b)=
 <div class="para">We verify the equivariant central extension, identify the filtration-one and inflated difference terms, and then compute the polarization.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-extraspecialconnecting-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">Equation <a href="#eq-mquadratic" class="xref" data-knowl="./knowl/xref/eq-mquadratic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1">(6.1)</a> is exactly the condition that <span class="process-math">\((v,z)\mapsto(cv,z+m_c(v))\)</span> preserve the multiplication in <span class="process-math">\(E_f\text{;}\)</span> equation <a href="#eq-mcoherent" class="xref" data-knowl="./knowl/xref/eq-mcoherent.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2">(6.2)</a> says that these automorphisms form a genuine <span class="process-math">\(C\)</span>-action. Multiplication in the semidirect product attached to this lifted action is</div>
+<div class="para">Equation <a href="#eq-mquadratic" class="xref" data-knowl="./knowl/xref/eq-mquadratic.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.1">(6.1)</a> is exactly the condition that <span class="process-math">\((v,z)\mapsto(cv,z+m_c(v))\)</span> preserve the multiplication in <span class="process-math">\(E_f\text{;}\)</span> equation <a href="#eq-mcoherent" class="xref" data-knowl="./knowl/xref/eq-mcoherent.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.2">(6.2)</a> says that these automorphisms form a genuine <span class="process-math">\(\notn{Cfin}{C}\)</span>-action. Multiplication in the semidirect product attached to this lifted action is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-mquadratic.html ./knowl/xref/eq-mcoherent.html ./knowl/xref/eq-basekappacochain.html ./knowl/xref/eq-baseconnectingcochain.html">
 \begin{equation}
 (v,c,z)(w,d,t)=
 (v+cw,cd,z+t+f(v,cw)+m_c(w)),\tag{6.8}
 \end{equation}
 </div>
-<div class="para">which gives <a href="#eq-basekappacochain" class="xref" data-knowl="./knowl/xref/eq-basekappacochain.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3">(6.3)</a>.  Pulling back this cocycle by the graph of a <span class="process-math">\(1\)</span>-cocycle <span class="process-math">\(b\)</span> gives <a href="#eq-baseconnectingcochain" class="xref" data-knowl="./knowl/xref/eq-baseconnectingcochain.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.4">(6.4)</a>.  This is the term which would be missing if one incorrectly assumed that the section <span class="process-math">\(v\mapsto(v,0)\)</span> were <span class="process-math">\(C\)</span>-equivariant.</div>
+<div class="para">which gives <a href="#eq-basekappacochain" class="xref" data-knowl="./knowl/xref/eq-basekappacochain.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.3">(6.3)</a>.  Pulling back this cocycle by the graph of a <span class="process-math">\(1\)</span>-cocycle <span class="process-math">\(b\)</span> gives <a href="#eq-baseconnectingcochain" class="xref" data-knowl="./knowl/xref/eq-baseconnectingcochain.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.4">(6.4)</a>.  This is the term which would be missing if one incorrectly assumed that the section <span class="process-math">\(v\mapsto(v,0)\)</span> were <span class="process-math">\(\notn{Cfin}{C}\)</span>-equivariant.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-extraspecialconnecting-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para">For the difference statement, the quotient <span class="process-math">\(\kappa-\kappa_q^0\)</span> restricts trivially to <span class="process-math">\(V\times V\text{.}\)</span>  In the normalized Lyndon–Hochschild–Serre filtration for the split extension <span class="process-math">\(1\to V\to V\rtimes C\to C\to1\text{,}\)</span> such a class has only a filtration-one part in <span class="process-math">\(Z^1(C,V^\vee)\)</span> and an inflated scalar part in <span class="process-math">\(Z^2(C,\F_2)\text{.}\)</span>  The normalized representative is exactly <a href="#eq-Gammagamma" class="xref" data-knowl="./knowl/xref/eq-Gammagamma.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.6">(6.6)</a>; the cocycle condition for it is the condition that <span class="process-math">\(\gamma\)</span> be a <span class="process-math">\(1\)</span>-cocycle.  Pullback along <span class="process-math">\((b,\rho)\)</span> gives <a href="#eq-Qkappadifference" class="xref" data-knowl="./knowl/xref/eq-Qkappadifference.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.7">(6.7)</a>.  Polarization of the base term is obtained by adding the formulas for <span class="process-math">\(b+b'\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(b'\text{;}\)</span> the <span class="process-math">\(m_c\)</span>-contribution cancels because each <span class="process-math">\(m_c\)</span> has polar form <span class="process-math">\(f(c-,c-)+f(-,-)\text{,}\)</span> and the remaining term is <span class="process-math">\(b_q(b\smile b')\text{.}\)</span>  The difference terms in <a href="#eq-Qkappadifference" class="xref" data-knowl="./knowl/xref/eq-Qkappadifference.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.7">(6.7)</a> are linear or inflated scalar terms and therefore do not change the polar form.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-extraspecialconnecting-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">For the difference statement, the quotient <span class="process-math">\(\kappa-\notnfar{kappaq0}{\kappa_q^0}\)</span> restricts trivially to <span class="process-math">\(\notnfar{Vhead}{V}\times \notnfar{Vhead}{V}\text{.}\)</span>  In the normalized Lyndon–Hochschild–Serre filtration for the split extension <span class="process-math">\(1\to \notnfar{Vhead}{V}\to \notnfar{Vhead}{V}\rtimes \notn{Cfin}{C}\to \notn{Cfin}{C}\to1\text{,}\)</span> such a class has only a filtration-one part in <span class="process-math">\(Z^1(\notn{Cfin}{C},\notnfar{Vhead}{V}^\vee)\)</span> and an inflated scalar part in <span class="process-math">\(Z^2(\notn{Cfin}{C},\F_2)\text{.}\)</span>  The normalized representative is exactly <a href="#eq-Gammagamma" class="xref" data-knowl="./knowl/xref/eq-Gammagamma.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.6">(6.6)</a>; the cocycle condition for it is the condition that <span class="process-math">\(\gamma\)</span> be a <span class="process-math">\(1\)</span>-cocycle.  Pullback along <span class="process-math">\((b,\notnfar{rhoEpi}{\rho})\)</span> gives <a href="#eq-Qkappadifference" class="xref" data-knowl="./knowl/xref/eq-Qkappadifference.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.7">(6.7)</a>.  Polarization of the base term is obtained by adding the formulas for <span class="process-math">\(b+b'\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(b'\text{;}\)</span> the <span class="process-math">\(m_c\)</span>-contribution cancels because each <span class="process-math">\(m_c\)</span> has polar form <span class="process-math">\(f(c-,c-)+f(-,-)\text{,}\)</span> and the remaining term is <span class="process-math">\(\notn{bq}{b_q}(b\smile b')\text{.}\)</span>  The difference terms in <a href="#eq-Qkappadifference" class="xref" data-knowl="./knowl/xref/eq-Qkappadifference.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.7">(6.7)</a> are linear or inflated scalar terms and therefore do not change the polar form.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-extraspecialconnecting-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 6.1.1"><a tabindex="-1" href="#lem-extraspecialconnecting-3" title="Copy heading and permalink for Proof 6.1.1" aria-label="Copy heading and permalink for Proof 6.1.1">🔗</a></div>
 </article></details><span class="incontext"><a class="internal" href="#lem-extraspecialconnecting">In Context</a></span>

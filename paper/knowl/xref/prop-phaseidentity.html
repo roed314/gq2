@@ -22,14 +22,14 @@
 <span class="type">Proposition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Completed-square phase identity.</span>
 </h2>
 <div class="para logical">
-<div class="para">For either source, every lower exact-image map <span class="process-math">\(\rho\text{,}\)</span> every <span class="process-math">\(b\in H^1_{\Gamma,\rho}(V)\text{,}\)</span> and every <span class="process-math">\(\chi\in \mathcal X_T\text{,}\)</span>
+<div class="para">For either source, every lower exact-image map <span class="process-math">\(\notnfar{rhoEpi}{\rho}\text{,}\)</span> every <span class="process-math">\(b\in \notn{HGr}{H^1_{\Gamma,\rho}}(\notnfar{Vhead}{V})\text{,}\)</span> and every <span class="process-math">\(\chi\in \notnfar{calX}{\mathcal X_T}\text{,}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-descendedclass.html">
 \begin{equation}
-Q_{\kappa,\Gamma,\rho}(b)
-+\langle\partial_{\Gamma,\rho} b+\rho^*e,\chi\rangle
-=Q^0_{\Gamma,\rho}(b+\rho^*a_{\chi,\kappa})
-+\iota_\Gamma(\rho^*\Delta_{\chi,\kappa}).\tag{8.12}
+Q_{\kappa,\notnfar{GammaSrc}{\Gamma},\notnfar{rhoEpi}{\rho}}(b)
++\langle\partial_{\Gamma,\notnfar{rhoEpi}{\rho}} b+\notnfar{rhoEpi}{\rho}^*e,\chi\rangle
+=Q^0_{\Gamma,\notnfar{rhoEpi}{\rho}}(b+\notnfar{rhoEpi}{\rho}^*a_{\chi,\kappa})
++\notn{iotaGamma}{\iota_\Gamma}(\notnfar{rhoEpi}{\rho}^*\notn{DeltaChiKappa}{\Delta_{\chi,\kappa}}).\tag{8.12}
 \end{equation}
 </div>
 <div class="para">Here <span class="process-math">\(Q^0\)</span> is the base determinant form and <span class="process-math">\(Q_\kappa\)</span> is the obstruction for the actual scalar pushout class <a href="#eq-descendedclass" class="xref" data-knowl="./knowl/xref/eq-descendedclass.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.7">(8.7)</a>.</div>
@@ -43,28 +43,28 @@ Q_{\kappa,\Gamma,\rho}(b)
 <div class="para">By <a href="#cor-adjointboundary" class="xref" data-knowl="./knowl/xref/cor-adjointboundary.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 5.17: Common lift numerics and adjoint boundaries">Corollary 5.17</a>,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-adjointboundary.html ./knowl/xref/eq-Qkappadifference.html ./knowl/xref/eq-phaseidentity.html ./knowl/xref/eq-phaseidentity.html">
 \begin{equation*}
-\langle\partial_{\Gamma,\rho}b,\chi\rangle
-=\langle b,\rho^*\gamma_\chi\rangle_\Gamma.
+\langle\partial_{\Gamma,\notnfar{rhoEpi}{\rho}}b,\chi\rangle
+=\langle b,\notnfar{rhoEpi}{\rho}^*\gamma_\chi\rangle_\Gamma.
 \end{equation*}
 </div>
 <div class="para">Using <a href="#eq-Qkappadifference" class="xref" data-knowl="./knowl/xref/eq-Qkappadifference.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 6.7">(6.7)</a>, the left side of <a href="#eq-phaseidentity" class="xref" data-knowl="./knowl/xref/eq-phaseidentity.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.12">(8.12)</a> is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-adjointboundary.html ./knowl/xref/eq-Qkappadifference.html ./knowl/xref/eq-phaseidentity.html ./knowl/xref/eq-phaseidentity.html">
 \begin{equation*}
-Q^0_{\Gamma,\rho}(b)
-+\langle b,\rho^*(\gamma_\kappa+\gamma_\chi)\rangle_\Gamma
-+\iota_\Gamma(\rho^*\delta_\kappa)
-+\iota_\Gamma(\rho^*(\chi_*e)).
+Q^0_{\Gamma,\notnfar{rhoEpi}{\rho}}(b)
++\langle b,\notnfar{rhoEpi}{\rho}^*(\gamma_\kappa+\gamma_\chi)\rangle_\Gamma
++\notn{iotaGamma}{\iota_\Gamma}(\notnfar{rhoEpi}{\rho}^*\delta_\kappa)
++\notn{iotaGamma}{\iota_\Gamma}(\notnfar{rhoEpi}{\rho}^*(\chi_*e)).
 \end{equation*}
 </div>
-<div class="para">By the definition of <span class="process-math">\(a_{\chi,\kappa}\text{,}\)</span> the middle linear term is the polar pairing <span class="process-math">\(b_q(b,\rho^*a_{\chi,\kappa})\text{.}\)</span>  Completing the square for the base quadratic form gives</div>
+<div class="para">By the definition of <span class="process-math">\(a_{\chi,\kappa}\text{,}\)</span> the middle linear term is the polar pairing <span class="process-math">\(\notnfar{bq}{b_q}(b,\notnfar{rhoEpi}{\rho}^*a_{\chi,\kappa})\text{.}\)</span>  Completing the square for the base quadratic form gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor-adjointboundary.html ./knowl/xref/eq-Qkappadifference.html ./knowl/xref/eq-phaseidentity.html ./knowl/xref/eq-phaseidentity.html">
 \begin{equation*}
-Q^0(b)+b_q(b,\rho^*a_{\chi,\kappa})
-=Q^0(b+\rho^*a_{\chi,\kappa})
-+\iota_\Gamma\bigl(\rho^*\Theta_q^0(a_{\chi,\kappa})\bigr).
+Q^0(b)+\notnfar{bq}{b_q}(b,\notnfar{rhoEpi}{\rho}^*a_{\chi,\kappa})
+=Q^0(b+\notnfar{rhoEpi}{\rho}^*a_{\chi,\kappa})
++\notn{iotaGamma}{\iota_\Gamma}\bigl(\notnfar{rhoEpi}{\rho}^*\Theta_q^0(a_{\chi,\kappa})\bigr).
 \end{equation*}
 </div>
-<div class="para">Adding the two inflated scalar terms proves <a href="#eq-phaseidentity" class="xref" data-knowl="./knowl/xref/eq-phaseidentity.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.12">(8.12)</a>.  The class <span class="process-math">\(\Delta_{\chi,\kappa}\)</span> is defined on the finite target <span class="process-math">\(C\text{;}\)</span> no comparison map between the two source <span class="process-math">\(H^1\)</span>-spaces is involved.</div>
+<div class="para">Adding the two inflated scalar terms proves <a href="#eq-phaseidentity" class="xref" data-knowl="./knowl/xref/eq-phaseidentity.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 8.12">(8.12)</a>.  The class <span class="process-math">\(\notn{DeltaChiKappa}{\Delta_{\chi,\kappa}}\)</span> is defined on the finite target <span class="process-math">\(\notnfar{Cfin}{C}\text{;}\)</span> no comparison map between the two source <span class="process-math">\(H^1\)</span>-spaces is involved.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#prop-phaseidentity-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 8.8.1"><a tabindex="-1" href="#prop-phaseidentity-4" title="Copy heading and permalink for Proof 8.8.1" aria-label="Copy heading and permalink for Proof 8.8.1">🔗</a></div>

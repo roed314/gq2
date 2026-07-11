@@ -25,31 +25,31 @@
 <div class="para">Use arithmetic local reciprocity <span class="process-math">\(\notn{rec}{\rec}\text{,}\)</span> normalized so that <span class="process-math">\(\notn{rec}{\rec}(2)\)</span> is arithmetic Frobenius, and normalize <span class="process-math">\(\notn{nuur}{\nu_{\mathrm{ur}}}\)</span> geometrically.  Put</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\bar s=\notn{rec}{\rec}(2)^{-1}=\notn{rec}{\rec}(1/2),\qquad
+\notn{bars}{\bar s}=\notn{rec}{\rec}(2)^{-1}=\notn{rec}{\rec}(1/2),\qquad
 \bar\epsilon=\notn{rec}{\rec}(-1),\qquad
-\bar y=\notn{rec}{\rec}(-3),\qquad
-\bar a=\bar\epsilon\bar s^{-2}=\notn{rec}{\rec}(-4).
+\notn{bary}{\bar y}=\notn{rec}{\rec}(-3),\qquad
+\notn{bara}{\bar a}=\bar\epsilon\notn{bars}{\bar s}^{-2}=\notn{rec}{\rec}(-4).
 \end{equation*}
 </div>
-<div class="para">Then the pro-<span class="process-math">\(2\)</span> abelianization of <span class="process-math">\(\notnfar{Dloc}{D_{\mathrm{loc}}}=G_{\notn{Qtwo}{\Qtwo}}(2)\)</span> is identified with <span class="process-math">\(\notn{Bab}{B_{\mathrm{ab}}}\)</span> by</div>
+<div class="para">Then the pro-<span class="process-math">\(2\)</span> abelianization of <span class="process-math">\(\notnfar{Dloc}{D_{\mathrm{loc}}}=G_{\Qtwo}(2)\)</span> is identified with <span class="process-math">\(\notn{Bab}{B_{\mathrm{ab}}}\)</span> by</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\bar A\longmapsto\bar a,
+\notn{barA}{\bar A}\longmapsto\notn{bara}{\bar a},
 \qquad
-\bar S\longmapsto\bar s,
+\notn{barS}{\bar S}\longmapsto\notn{bars}{\bar s},
 \qquad
-\bar Y\longmapsto\bar y.
+\notn{barY}{\bar Y}\longmapsto\notn{bary}{\bar y}.
 \end{equation*}
 </div>
 <div class="para">Under this identification,</div>
 <div class="displaymath process-math">
 \begin{equation}
-\notn{nuur}{\nu_{\mathrm{ur}}}(\bar a,\bar s,\bar y)=(-2,1,0),
+\notn{nuur}{\nu_{\mathrm{ur}}}(\notn{bara}{\bar a},\notn{bars}{\bar s},\notn{bary}{\bar y})=(-2,1,0),
 \qquad
-\chi_{\mathrm{loc}}(\bar a,\bar s,\bar y)=(-1,1,(-3)^{-1}),\tag{3.6}
+\notn{chiloc}{\chi_{\mathrm{loc}}}(\notn{bara}{\bar a},\notn{bars}{\bar s},\notn{bary}{\bar y})=(-1,1,(-3)^{-1}),\tag{3.6}
 \end{equation}
 </div>
-<div class="para">where <span class="process-math">\(\chi_{\mathrm{loc}}\)</span> is the canonical Demushkin orientation.  In the basis of <span class="process-math">\(H^1(\notnfar{Dloc}{D_{\mathrm{loc}}},\F_2)\)</span> dual to <span class="process-math">\((\bar a,\bar s,\bar y)\text{,}\)</span> the Demushkin quadratic initial form is</div>
+<div class="para">where <span class="process-math">\(\notn{chiloc}{\chi_{\mathrm{loc}}}\)</span> is the canonical Demushkin orientation.  In the basis of <span class="process-math">\(H^1(\notnfar{Dloc}{D_{\mathrm{loc}}},\F_2)\)</span> dual to <span class="process-math">\((\notn{bara}{\bar a},\notn{bars}{\bar s},\notn{bary}{\bar y})\text{,}\)</span> the Demushkin quadratic initial form is</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \alpha^2+\beta\gamma+\gamma\beta.
@@ -58,13 +58,13 @@
 <div class="para">Consequently a Demushkin relator for lifts of these classes has the same quadratic initial form as</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\notn{r0}{r_0}=A^2S^4[S,\notn{Ygen}{Y}],
+\notn{r0}{r_0}=\notn{Agen}{A}^2\notn{Sgen}{S}^4[\notn{Sgen}{S},\notn{Ygen}{Y}],
 \end{equation*}
 </div>
-<div class="para">namely <span class="process-math">\(A^2+[S,\notn{Ygen}{Y}]\)</span> in degree two.  Moreover the pair</div>
+<div class="para">namely <span class="process-math">\(\notn{Agen}{A}^2+[\notn{Sgen}{S},\notn{Ygen}{Y}]\)</span> in degree two.  Moreover the pair</div>
 <div class="displaymath process-math">
 \begin{equation*}
-(\notn{nuur}{\nu_{\mathrm{ur}}},\chi_{\mathrm{loc}}):\notn{Bab}{B_{\mathrm{ab}}}\longrightarrow
+(\notn{nuur}{\nu_{\mathrm{ur}}},\notn{chiloc}{\chi_{\mathrm{loc}}}):\notn{Bab}{B_{\mathrm{ab}}}\longrightarrow
 \mathbb{Z}_2\times\mathbb{Z}_2^\times
 \end{equation*}
 </div>
@@ -81,11 +81,11 @@
 <div class="para">Since <span class="process-math">\(\notn{nuur}{\nu_{\mathrm{ur}}}\)</span> is normalized by geometric Frobenius while <span class="process-math">\(\notn{rec}{\rec}(2)\)</span> is arithmetic Frobenius, one has <span class="process-math">\(\notn{nuur}{\nu_{\mathrm{ur}}}(\notn{rec}{\rec}(2))=-1\text{.}\)</span>  Hence</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\notn{nuur}{\nu_{\mathrm{ur}}}(\bar s)=1,
+\notn{nuur}{\nu_{\mathrm{ur}}}(\notn{bars}{\bar s})=1,
 \qquad
-\notn{nuur}{\nu_{\mathrm{ur}}}(\bar y)=0,
+\notn{nuur}{\nu_{\mathrm{ur}}}(\notn{bary}{\bar y})=0,
 \qquad
-\notn{nuur}{\nu_{\mathrm{ur}}}(\bar a)=-2.
+\notn{nuur}{\nu_{\mathrm{ur}}}(\notn{bara}{\bar a})=-2.
 \end{equation*}
 </div>
 <div class="para">The pro-<span class="process-math">\(2\)</span> completion of <span class="process-math">\(\notn{Qtwo}{\Qtwo}^\times\)</span> is</div>
@@ -98,14 +98,14 @@
 \oplus \langle -3\rangle_{\mathbb{Z}_2}.
 \end{equation*}
 </div>
-<div class="para">The single relation among <span class="process-math">\(\bar A,\bar S,\bar Y\)</span> is</div>
+<div class="para">The single relation among <span class="process-math">\(\notn{barA}{\bar A},\notn{barS}{\bar S},\notn{barY}{\bar Y}\)</span> is</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\bar a^2\bar s^4
+\notn{bara}{\bar a}^2\notn{bars}{\bar s}^4
 =\notn{rec}{\rec}((-4)^2(1/2)^4)=\notn{rec}{\rec}(1)=1,
 \end{equation*}
 </div>
-<div class="para">that is, additively, <span class="process-math">\(2\bar A+4\bar S=0\text{.}\)</span>
+<div class="para">that is, additively, <span class="process-math">\(2\notn{barA}{\bar A}+4\notn{barS}{\bar S}=0\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-markedinitialform-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -113,7 +113,7 @@
 <div class="para">For a local Demushkin group the canonical orientation is the <span class="process-math">\(2\)</span>-adic cyclotomic character.  With the reciprocity convention above, local reciprocity gives</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-localmarkingorientation.html">
 \begin{equation*}
-\chi_{\mathrm{loc}}(\notn{rec}{\rec}(u))=u^{-1}\qquad(u\in\mathbb{Z}_2^\times),
+\notn{chiloc}{\chi_{\mathrm{loc}}}(\notn{rec}{\rec}(u))=u^{-1}\qquad(u\in\mathbb{Z}_2^\times),
 \end{equation*}
 </div>
 <div class="para">while the uniformizer component acts trivially on the totally ramified extension <span class="process-math">\(\notn{Qtwo}{\Qtwo}(\mu_{2^\infty})/\notn{Qtwo}{\Qtwo}\text{.}\)</span>  This proves the orientation row in <a href="#eq-localmarkingorientation" class="xref" data-knowl="./knowl/xref/eq-localmarkingorientation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.6">(3.6)</a>.</div>
@@ -123,22 +123,22 @@
 <div class="para">Modulo squares, the classes are</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\bar a\equiv[-1],\qquad \bar s\equiv[2],\qquad \bar y\equiv[-3].
+\notn{bara}{\bar a}\equiv[-1],\qquad \notn{bars}{\bar s}\equiv[2],\qquad \notn{bary}{\bar y}\equiv[-3].
 \end{equation*}
 </div>
 <div class="para">For odd units <span class="process-math">\(u,v\text{,}\)</span> write</div>
 <div class="displaymath process-math">
 \begin{equation*}
-\epsilon(u)=\frac{u-1}{2}\bmod 2,
+\notn{epsu}{\epsilon}(u)=\frac{u-1}{2}\bmod 2,
 \qquad
-\omega(u)=\frac{u^2-1}{8}\bmod 2.
+\notn{omgu}{\omega}(u)=\frac{u^2-1}{8}\bmod 2.
 \end{equation*}
 </div>
 <div class="para">The dyadic Hilbert-symbol formula</div>
 <div class="displaymath process-math">
 \begin{equation*}
 (2^\alpha u,2^\beta v)_2
-=(-1)^{\epsilon(u)\epsilon(v)+\alpha\omega(v)+\beta\omega(u)}
+=(-1)^{\notn{epsu}{\epsilon}(u)\notn{epsu}{\epsilon}(v)+\alpha\notn{omgu}{\omega}(v)+\beta\notn{omgu}{\omega}(u)}
 \end{equation*}
 </div>
 <div class="para">gives, in the square-class basis <span class="process-math">\((-1,2,-3)\text{,}\)</span>
@@ -150,7 +150,7 @@
 (2,-3)_2=-1,
 \end{equation*}
 </div>
-<div class="para">with all other pairings among these basis elements trivial, up to symmetry. Under Kummer theory, cup product is the Hilbert symbol.  Thus the dual basis has Bockstein/cup initial form <span class="process-math">\(\alpha^2+\beta\gamma+\gamma\beta\text{,}\)</span> which is exactly the degree-two initial form of <span class="process-math">\(A^2S^4[S,\notn{Ygen}{Y}]\text{.}\)</span>
+<div class="para">with all other pairings among these basis elements trivial, up to symmetry. Under Kummer theory, cup product is the Hilbert symbol.  Thus the dual basis has Bockstein/cup initial form <span class="process-math">\(\alpha^2+\beta\gamma+\gamma\beta\text{,}\)</span> which is exactly the degree-two initial form of <span class="process-math">\(\notn{Agen}{A}^2\notn{Sgen}{S}^4[\notn{Sgen}{S},\notn{Ygen}{Y}]\text{.}\)</span>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-markedinitialform-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -158,9 +158,9 @@
 <div class="para">Finally, in the decomposition <a href="#eq-Bsplit" class="xref" data-knowl="./knowl/xref/eq-Bsplit.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.4">(3.4)</a>,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-Bsplit.html ./knowl/xref/eq-Bsplit.html">
 \begin{equation*}
-\notn{nuur}{\nu_{\mathrm{ur}}}(\notn{tTors}{t},\bar S,\bar Y)=(0,1,0),
+\notn{nuur}{\nu_{\mathrm{ur}}}(\notn{tTors}{t},\notn{barS}{\bar S},\notn{barY}{\bar Y})=(0,1,0),
 \qquad
-\chi_{\mathrm{loc}}(\notn{tTors}{t},\bar S,\bar Y)=(-1,1,\notn{eta}{\eta}).
+\notn{chiloc}{\chi_{\mathrm{loc}}}(\notn{tTors}{t},\notn{barS}{\bar S},\notn{barY}{\bar Y})=(-1,1,\notn{eta}{\eta}).
 \end{equation*}
 </div>
 <div class="para">The element <span class="process-math">\(\notn{eta}{\eta}\)</span> topologically generates <span class="process-math">\(1+4\mathbb{Z}_2\text{,}\)</span> because <span class="process-math">\(v_2(\notn{eta}{\eta}-1)=2\text{.}\)</span>  The two displayed characters therefore detect the three direct summands of <a href="#eq-Bsplit" class="xref" data-knowl="./knowl/xref/eq-Bsplit.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.4">(3.4)</a>, proving injectivity.</div>

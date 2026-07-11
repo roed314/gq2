@@ -690,7 +690,7 @@ var ptx_lunr_docs = [
   "url": "#lem-affinelifting",
   "type": "Lemma",
   "number": "8.7",
-  "title": "Affine <span class=\"process-math\">\\(T\\)<\/span>-lifting equation.",
+  "title": "Affine <span class=\"process-math\">\\(\\notn{Tsub}{T}\\)<\/span>-lifting equation.",
   "body": " Affine -lifting equation   Choose the splitting above and let be the class obtained by pulling back along the zero section . For a lower exact-image map , a class is the -coordinate of an actual -lift if and only if For every such class, the number of raw lifts above it is which is independent of and has the same value on the two sources.   Lean   Represent the -extension of by a normalized cocycle. Its pure component is zero because is elementary abelian; its mixed component is the module extension ; and its restriction to the zero section is . Pulling this cocycle back along the graph of a -cocycle gives exactly , proving in characteristic two.  Each cohomology class has cocycle representatives, and each solvable -defect equation has solutions. For the nontrivial simple , ; , gives the common value of .   "
 },
 {

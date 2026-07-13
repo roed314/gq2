@@ -41,6 +41,10 @@
 .ptx-content, .ptx-content .para, .ptx-page, .ptx-masthead .title-container {
   font-family: "Computer Modern Serif", "Latin Modern Roman", Georgia, serif;
 }
+.ptx-content .frontmatter .author-status-note {
+  margin-top: 0.2rem;
+  font-size: 0.92em;
+}
 .ptx-content .heading, .ptx-content h1, .ptx-content h2, .ptx-content h3,
 .ptx-content h4, .ptx-content h5 {
   font-family: "Computer Modern Serif", "Latin Modern Roman", Georgia, serif;

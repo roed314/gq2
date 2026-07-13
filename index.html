@@ -147,11 +147,11 @@
 <header class="hero">
   <div class="eyebrow">Research paper · Lean 4 formalization</div>
   <h1>A Profinite Presentation of the Absolute Galois Group of&nbsp;&#x211A;<sub>2</sub></h1>
-  <p class="sub">David Roe and David Corneliu Turturean</p>
+  <p class="sub">David Roe and David Turturean</p>
   <p class="gist">An explicit presentation of the absolute Galois group of the
   field of 2-adic numbers: four generators, two relations — the dyadic
   counterpart to the classical presentations at odd primes — developed
-  alongside two independent Lean&nbsp;4 formalizations.</p>
+  alongside two separately developed Lean&nbsp;4 formalization projects.</p>
   <nav class="actions">
     <a class="primary" href="paper/">Read the interactive paper</a>
     <a class="secondary" href="paper.pdf">Download the PDF</a>
@@ -159,7 +159,7 @@
 </header>
 
 <main>
-  <h2>Explore the formalization</h2>
+  <h2>Explore the formalizations</h2>
   <div class="resource-grid">
     <div class="resource-card">
       <a class="res-title" href="blueprint/">Blueprint</a>
@@ -171,6 +171,22 @@
       <a class="res-title" href="lean/gq2-claude/">Lean API documentation</a>
       <p>doc-gen4 pages for every declaration in the formalization;
       dependency links resolve to the public Mathlib docs.</p>
+    </div>
+  </div>
+
+  <p>A separately developed Lean formalization by David Turturean is released
+  below.</p>
+
+  <h2>David Turturean's formalization</h2>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <a class="res-title" href="https://github.com/davidturturean/gq2-lean-turturean/releases/tag/audit-11.1">Earlier
+      standalone version</a>
+      <p>An earlier version of David Turturean's Lean proof. It contains no
+      <code>sorry</code>, but four mathematical steps are assumed rather than
+      proved in this version. It also uses six results cited from the
+      literature. The repository lists all ten assumptions and shows where
+      each is used.</p>
     </div>
   </div>
 
@@ -188,9 +204,16 @@
       in the paper).</p>
     </div>
     <div class="resource-card">
-      <a class="res-title" href="https://github.com/davidturturean/gq2-lean-turturean-complete">gq2-gpt on GitHub</a>
-      <p>An independent GPT-produced Lean&nbsp;4 formalization (indigo badges
-      in the paper).</p>
+      <span class="res-title-soon">Completed Lean proof</span><span class="badge">Private&nbsp;for&nbsp;now</span>
+      <p>This version proves the four steps that were left open in the earlier
+      release. It does so using a documented 8,832-line addition adapted from
+      David Roe's separately developed formalization, amounting to 3.54% of
+      the code used by the proof. Lean still accepts seven named mathematical
+      statements as assumptions: three directly restate or specialize
+      published results, three are short documented derivations from published
+      results, and one is a project-specific sign calculation supported by a
+      documented multi-source derivation that Lean does not yet check. A public
+      link will be added after permission for the adapted files is confirmed.</p>
     </div>
   </div>
 </main>

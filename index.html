@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="An explicit profinite presentation of the absolute Galois group of the 2-adic numbers, with an interactive web edition and a Lean 4 formalization.">
+<meta name="description" content="An explicit profinite presentation of the absolute Galois group of the 2-adic numbers, with an interactive web edition and two Lean 4 formalization projects.">
 <title>A Profinite Presentation of the Absolute Galois Group of Q₂</title>
 <style>
   :root {
@@ -131,6 +131,44 @@
     background: rgba(40, 160, 90, 0.08);
   }
   .res-title-soon { color: var(--ink); font-size: 1.12rem; font-weight: 700; }
+  .card-heading,
+  .stage-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.55rem;
+  }
+  .card-heading .badge,
+  .stage-heading .badge { margin-left: 0; }
+  .section-intro {
+    max-width: 66ch;
+    color: var(--muted);
+  }
+  .stage-list {
+    margin-top: 1rem;
+    border-top: 1px solid var(--line);
+  }
+  .stage {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .stage:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .stage-title {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  a.stage-title {
+    text-decoration: underline;
+    text-decoration-color: rgba(40, 160, 90, 0.5);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+  }
+  a.stage-title:hover { text-decoration-color: var(--accent); }
+  .stage p { font-size: 0.91rem; }
 
   footer {
     margin-top: 3.2rem;
@@ -145,13 +183,13 @@
 <body>
 
 <header class="hero">
-  <div class="eyebrow">Research paper · Lean 4 formalization</div>
+  <div class="eyebrow">Research paper · Lean 4 formalizations</div>
   <h1>A Profinite Presentation of the Absolute Galois Group of&nbsp;&#x211A;<sub>2</sub></h1>
   <p class="sub">David Roe and David Turturean</p>
   <p class="gist">An explicit presentation of the absolute Galois group of the
   field of 2-adic numbers: four generators, two relations — the dyadic
   counterpart to the classical presentations at odd primes — developed
-  alongside two separately developed Lean&nbsp;4 formalization projects.</p>
+  alongside two Lean&nbsp;4 formalization projects.</p>
   <nav class="actions">
     <a class="primary" href="paper/">Read the interactive paper</a>
     <a class="secondary" href="paper.pdf">Download the PDF</a>
@@ -159,7 +197,7 @@
 </header>
 
 <main>
-  <h2>Explore the formalizations</h2>
+  <h2>Explore the proof</h2>
   <div class="resource-grid">
     <div class="resource-card">
       <a class="res-title" href="blueprint/">Blueprint</a>
@@ -174,19 +212,45 @@
     </div>
   </div>
 
-  <p>A separately developed Lean formalization by David Turturean is released
-  below.</p>
-
-  <h2>David Turturean's formalization</h2>
+  <h2>Lean formalizations</h2>
+  <p class="section-intro">The presentation has been formalized twice, in two
+  separate Lean projects.</p>
   <div class="resource-grid">
     <div class="resource-card">
-      <a class="res-title" href="https://github.com/davidturturean/gq2-lean-turturean/releases/tag/audit-11.1">Earlier
-      standalone version</a>
-      <p>An earlier version of David Turturean's Lean proof. It contains no
-      <code>sorry</code>, but four mathematical steps are assumed rather than
-      proved in this version. It also uses six results cited from the
-      literature. The repository lists all ten assumptions and shows where
-      each is used.</p>
+      <div class="card-heading">
+        <span class="res-title-soon">David Roe's formalization</span>
+        <span class="badge">Complete</span>
+      </div>
+      <p>An end-to-end Lean proof of the presentation theorem with no
+      <code>sorry</code> placeholders. Lean treats nine named mathematical
+      results from the literature as given, with a specific citation recorded
+      for each.</p>
+    </div>
+    <div class="resource-card">
+      <div class="card-heading">
+        <span class="res-title-soon">David Turturean's formalization</span>
+      </div>
+      <p>A second Lean proof, begun independently and preserved in two stages.</p>
+      <div class="stage-list">
+        <div class="stage">
+          <div class="stage-heading">
+            <a class="stage-title" href="https://github.com/davidturturean/gq2-lean-turturean/releases/tag/audit-11.1">Standalone version</a>
+            <span class="badge">Public</span>
+          </div>
+          <p>Contains no <code>sorry</code> placeholders and uses no Lean code
+          from Roe's project. Lean treats six published results and four
+          project-specific steps as given; the release lists all ten.</p>
+        </div>
+        <div class="stage">
+          <div class="stage-heading">
+            <a class="stage-title" href="https://github.com/davidturturean/gq2-lean-turturean-complete">Completed version</a>
+            <span class="badge">Public</span>
+          </div>
+          <p>Proves four remaining steps using a documented adaptation from Roe's
+          formalization. Its seven remaining external mathematical inputs are
+          each tied to published literature.</p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -194,26 +258,8 @@
   <div class="resource-grid">
     <div class="resource-card">
       <span class="res-title-soon">Development record</span><span class="badge">Coming&nbsp;soon</span>
-      <p>How this paper and its formalizations were produced: a ticket-level
-      timeline of the AI-assisted development, notable incidents, and
-      statistics.</p>
-    </div>
-    <div class="resource-card">
-      <a class="res-title" href="https://github.com/roed-math/gq2-lean">gq2-claude on GitHub</a>
-      <p>The primary Lean&nbsp;4 / Mathlib formalization source (green badges
-      in the paper).</p>
-    </div>
-    <div class="resource-card">
-      <span class="res-title-soon">Completed Lean proof</span><span class="badge">Private&nbsp;for&nbsp;now</span>
-      <p>This version proves the four steps that were left open in the earlier
-      release. It does so using a documented 8,832-line addition adapted from
-      David Roe's separately developed formalization, amounting to 3.54% of
-      the code used by the proof. Lean still accepts seven named mathematical
-      statements as assumptions: three directly restate or specialize
-      published results, three are short documented derivations from published
-      results, and one is a project-specific sign calculation supported by a
-      documented multi-source derivation that Lean does not yet check. A public
-      link will be added after permission for the adapted files is confirmed.</p>
+      <p>A source-checked account of how the candidate, proof, and
+      formalizations were developed.</p>
     </div>
   </div>
 </main>

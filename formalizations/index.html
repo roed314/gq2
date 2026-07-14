@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Lean 4 formalizations of the presentation of the absolute Galois group of the 2-adic numbers: blueprint, API documentation, and the two formalization projects.">
+<title>Formalizations · A Presentation of the Absolute Galois Group of Q₂</title>
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<header class="page-header">
+  <a class="back" href="../">&#8592; A Presentation of the Absolute Galois Group of&nbsp;&#x211A;<sub>2</sub></a>
+  <h1>The formalizations</h1>
+</header>
+
+<main>
+  <h2>Explore the proof</h2>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <a class="res-title" href="../blueprint/">Blueprint</a>
+      <p>Every statement paired with its Lean counterpart, with an interactive
+      dependency graph; completion status is computed directly from the Lean
+      code.</p>
+    </div>
+    <div class="resource-card">
+      <a class="res-title" href="../lean/gq2-claude/">Lean API documentation</a>
+      <p>doc-gen4 pages for every declaration in the formalization;
+      dependency links resolve to the public Mathlib docs.</p>
+    </div>
+  </div>
+
+  <h2>Lean formalizations</h2>
+  <p class="section-intro">The presentation has been formalized twice, in two
+  separate Lean projects.</p>
+  <div class="resource-grid">
+    <div class="resource-card">
+      <div class="card-heading">
+        <span class="res-title-soon">David Roe's formalization</span>
+        <span class="badge">Complete</span>
+      </div>
+      <p>An end-to-end Lean proof of the presentation theorem with no
+      <code>sorry</code> placeholders. Lean treats nine named mathematical
+      results from the literature as given, with a specific citation recorded
+      for each.</p>
+    </div>
+    <div class="resource-card">
+      <div class="card-heading">
+        <span class="res-title-soon">David Turturean's formalization</span>
+      </div>
+      <p>A second Lean proof, begun independently and preserved in two stages.</p>
+      <div class="stage-list">
+        <div class="stage">
+          <div class="stage-heading">
+            <a class="stage-title" href="https://github.com/davidturturean/gq2-lean-turturean/releases/tag/audit-11.1">Standalone version</a>
+            <span class="badge">Public</span>
+          </div>
+          <p>Contains no <code>sorry</code> placeholders and uses no Lean code
+          from Roe's project. Lean treats six published results and four
+          project-specific steps as given; the release lists all ten.</p>
+        </div>
+        <div class="stage">
+          <div class="stage-heading">
+            <a class="stage-title" href="https://github.com/davidturturean/gq2-lean-turturean-complete">Completed version</a>
+            <span class="badge">Public</span>
+          </div>
+          <p>Proves four remaining steps using a documented adaptation from Roe's
+          formalization. Its seven remaining external mathematical inputs are
+          each tied to published literature.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  The interactive paper offers expandable proofs, notation hovers, adjustable
+  detail, and links from each statement into the formalizations.
+  Built with
+  <a class="pf-credit" href="https://github.com/roed-math/paperforge"><svg class="pf-glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+    <defs>
+      <mask id="pf-glyph-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+        <rect width="24" height="24" fill="white"/>
+        <path d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Z" fill="black"/>
+      </mask>
+    </defs>
+    <path fill="currentColor" mask="url(#pf-glyph-cut)" d="M2 7h5l2-2h6l2 2h5c-1 4-4 7-8 8-2 1-2 3 0 5l1 1h-4l-1-2H7l-1 2H3v-2l2-2c2-2 0-3-3-4Z"/>
+    <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Zm13-5c0 3-1 5-4 6"/>
+  </svg>PaperForge</a>.
+</footer>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>GQ2.Devissage.Chi1</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="GQ2.Devissage.Chi1";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">GQ2</span>.<span class="name">Devissage</span>.<span class="name">Chi1</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/Chi1.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="../.././Init.html">Init</a></li><li><a href="../.././GQ2/Devissage/EvalPairings.html">GQ2.Devissage.EvalPairings</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-GQ2.Devissage.Chi1" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.chi1Aux"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1Aux</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.chi1"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.chi1TAux"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1TAux</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.chi1T"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1T</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.chi1T_flip"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1T_flip</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.pairing_clause_iff"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">pairing_clause_iff</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.chi1_bij_of_inj"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1_bij_of_inj</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.chi1_square"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1_square</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.chi1T_square"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1T_square</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="5-11-dévissage-the-degree-1-pairings-χ¹" class="markdown-heading">§5.11 dévissage: the degree-1 pairings χ¹ <a class="hover-link" href="#5-11-dévissage-the-degree-1-pairings-χ¹">#</a></h1><p>Part of the §5.11 dévissage development (split from <code><a href="../.././GQ2/Devissage.html">GQ2/Devissage.lean</a></code>).</p></div><div class="mod_doc"><h2 id="The-duality-ladder-degree-1-the-mixedB-pairings-χ¹-χ¹-transposed" class="markdown-heading">The duality ladder, degree 1: the <code>mixedB</code> pairings <code>χ¹</code>, <code>χ¹</code>-transposed <a class="hover-link" href="#The-duality-ladder-degree-1-the-mixedB-pairings-χ¹-χ¹-transposed">#</a></h2><p>The degree-(1,1) rung: <code>mixedB</code> descends to <code>H¹w(A) × H¹w(A^∨)</code> (both coboundary directions die
+by Prop 5.8), giving <code><a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">chi1</a> : H¹w(A) →+ (H¹w(A^∨))^∨</code> and its transpose.  <code>IsSelfDual</code>'s pairing
+clause is <em>exactly</em> the injectivity of both (the descended pairing is forced to be <code><a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">chi1</a></code>).</p></div><div class="decl" id="GQ2.FoxH.chi1Aux"><div class="def"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/Chi1.lean#L34-L53">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1Aux"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1Aux</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn">↥<span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.Z1w">Z1w</a> <span class="fn">t</span>)</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.ElemDual">ElemDual</a> <span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span>)</span></span></div></div><p>The inner functional: a fixed <code>Z¹w(A)</code>-cocycle <code>x</code> pairs against <code>H¹w(A^∨)</code>-classes via
+<code>mixedB</code> (dual coboundary offsets die by Prop 5.8 right, since <code>d¹x = 0</code>).</p><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-GQ2.FoxH.chi1Aux" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="GQ2.FoxH.chi1"><div class="def"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/Chi1.lean#L55-L86">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span> <span class="fn">→+</span> <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.ElemDual">ElemDual</a> <span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span>)</span></span></span></div></div><p><strong><code>χ¹</code> (degree-(1,1) <code>mixedB</code> pairing)</strong>: <code>H¹w(A) →+ (H¹w(A^∨))^∨</code>.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn"><a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">GQ2.FoxH.chi1</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span></span> <span class="fn">=</span>   <span class="fn"><span class="fn">QuotientAddGroup.lift</span> <span class="fn">(<span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.B1w">GQ2.FoxH.B1w</a> <span class="fn">t</span>)</span>.<span class="fn">addSubgroupOf</span></span> <span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.Z1w">GQ2.FoxH.Z1w</a> <span class="fn">t</span>)</span>)</span>
+    <span class="fn"><span class="fn">{</span> <span class="fn">toFun</span> := <span class="fn"><a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1Aux">GQ2.FoxH.chi1Aux</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span></span>, <span class="fn">map_zero'</span> := <span class="fn">⋯</span>, <span class="fn">map_add'</span> := <span class="fn">⋯</span> <span class="fn">}</span></span> <span class="fn">⋯</span></span></span></li></ul></details><details id="instances-for-list-GQ2.FoxH.chi1" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="GQ2.FoxH.chi1TAux"><div class="def"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/Chi1.lean#L89-L108">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1TAux"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1TAux</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">y</span> : <span class="fn">↥<span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.Z1w">Z1w</a> <span class="fn">t</span>)</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.ElemDual">ElemDual</a> <span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span>)</span></span></div></div><p>The transposed inner functional: a fixed dual cocycle <code>y</code> pairs against <code>H¹w(A)</code>-classes
+(primal coboundary offsets die by Prop 5.8 left, since <code>d¹y = 0</code>).</p><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-GQ2.FoxH.chi1TAux" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="GQ2.FoxH.chi1T"><div class="def"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/Chi1.lean#L110-L141">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable def</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1T</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span> <span class="fn">→+</span> <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.ElemDual">ElemDual</a> <span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span>)</span></span></span></div></div><p><strong><code>χ¹</code> transposed</strong>: <code>H¹w(A^∨) →+ (H¹w(A))^∨</code>.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn"><a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T">GQ2.FoxH.chi1T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span></span> <span class="fn">=</span>   <span class="fn"><span class="fn">QuotientAddGroup.lift</span> <span class="fn">(<span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.B1w">GQ2.FoxH.B1w</a> <span class="fn">t</span>)</span>.<span class="fn">addSubgroupOf</span></span> <span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.Z1w">GQ2.FoxH.Z1w</a> <span class="fn">t</span>)</span>)</span>
+    <span class="fn"><span class="fn">{</span> <span class="fn">toFun</span> := <span class="fn"><a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1TAux">GQ2.FoxH.chi1TAux</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span></span>, <span class="fn">map_zero'</span> := <span class="fn">⋯</span>, <span class="fn">map_add'</span> := <span class="fn">⋯</span> <span class="fn">}</span></span> <span class="fn">⋯</span></span></span></li></ul></details><details id="instances-for-list-GQ2.FoxH.chi1T" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="GQ2.FoxH.chi1T_flip"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/Chi1.lean#L144-L150">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T_flip"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1T_flip</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h'</span> : <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T">chi1T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span> <span class="fn">h'</span>)</span> <span class="fn">h</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">chi1</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span> <span class="fn">h</span>)</span> <span class="fn">h'</span></span></span></div></div><p>The two orientations pair the same classes: <code>χ¹ᵀ(h', h) = χ¹(h, h')</code>.</p></div></div><div class="decl" id="GQ2.FoxH.pairing_clause_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/Chi1.lean#L152-L201">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.pairing_clause_iff"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">pairing_clause_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(∃ (<span class="fn">P</span> : <span class="fn"><span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span> → <span class="fn"><span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span> → <span class="fn"><span class="fn">ZMod</span> <span class="fn">2</span></span></span></span>),
+    <span class="fn"><span class="fn">(∀ (<span class="fn">x</span> : <span class="fn">↥<span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.Z1w">Z1w</a> <span class="fn">t</span>)</span></span>) (<span class="fn">y</span> : <span class="fn">↥<span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.Z1w">Z1w</a> <span class="fn">t</span>)</span></span>), <span class="fn"><span class="fn"><span class="fn">P</span> <span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.h1wMk">h1wMk</a> <span class="fn">t</span> <span class="fn">x</span>)</span> <span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.h1wMk">h1wMk</a> <span class="fn">t</span> <span class="fn">y</span>)</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Heisenberg.html#GQ2.FoxH.mixedB">mixedB</a> <span class="fn">t</span> <span class="fn">↑<span class="fn">x</span></span> <span class="fn">↑<span class="fn">y</span></span></span></span>)</span> <span class="fn">∧</span>       <span class="fn"><span class="fn">(∀ (<span class="fn">h</span> : <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span>), <span class="fn"><span class="fn"><span class="fn">h</span> <span class="fn">≠</span> <span class="fn">0</span></span> → <span class="fn">∃ (<span class="fn">h'</span> : <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span>), <span class="fn"><span class="fn"><span class="fn">P</span> <span class="fn">h</span> <span class="fn">h'</span></span> <span class="fn">≠</span> <span class="fn">0</span></span></span></span>)</span> <span class="fn">∧</span> <span class="fn">∀ (<span class="fn">h'</span> : <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span>), <span class="fn"><span class="fn"><span class="fn">h'</span> <span class="fn">≠</span> <span class="fn">0</span></span> → <span class="fn">∃ (<span class="fn">h</span> : <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span>), <span class="fn"><span class="fn"><span class="fn">P</span> <span class="fn">h</span> <span class="fn">h'</span></span> <span class="fn">≠</span> <span class="fn">0</span></span></span></span></span></span></span>)</span> <span class="fn">↔</span>   <span class="fn"><span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">chi1</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T">chi1T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span></span></span></div></div><p><strong>The <code>IsSelfDual</code> pairing clause, characterized</strong>: a descended two-sided-nondegenerate
+pairing exists iff <code>χ¹</code> and <code>χ¹ᵀ</code> are both injective.  (The descent condition forces
+<code>P = χ¹</code>-evaluation.)</p></div></div><div class="decl" id="GQ2.FoxH.chi1_bij_of_inj"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/Chi1.lean#L203-L230">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1_bij_of_inj"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1_bij_of_inj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn"><span class="fn"><span class="fn">a</span> <span class="fn">+</span> <span class="fn">a</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hinj</span> : <span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">chi1</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hinjT</span> : <span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T">chi1T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">Function.Bijective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">chi1</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">Function.Bijective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T">chi1T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">Nat.card</span> <span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">Nat.card</span> <span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span>)</span></span></span></span></span></div></div><p>Both-injectivity upgrades to both-bijectivity (finite cards through <code>#X^∨ = #X</code>), and gives
+the <code>H¹w</code>-card equality.</p></div></div><div class="mod_doc"><h3 id="The-Lemma-5-6-squares-χ¹-commutes-with-coefficient-maps" class="markdown-heading">The Lemma 5.6 squares: <code>χ¹</code> commutes with coefficient maps <a class="hover-link" href="#The-Lemma-5-6-squares-χ¹-commutes-with-coefficient-maps">#</a></h3><p>For an equivariant <code>φ : A →+ B</code>, the degree-1 ladder square commutes — in both orientations it
+unfolds on classes to exactly <code>lemma_5_6</code>.</p></div><div class="decl" id="GQ2.FoxH.chi1_square"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/Chi1.lean#L239-L251">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1_square"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1_square</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">φ</span> : <span class="fn"><span class="fn">A</span> <span class="fn">→+</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hφ</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn"><span class="fn"><span class="fn">φ</span> <span class="fn">(<span class="fn">c</span> <span class="fn">•</span> <span class="fn">a</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn"><span class="fn">φ</span> <span class="fn">a</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">chi1</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span> <span class="fn">(<span class="fn">(<a href="../.././GQ2/Devissage/Naturality.html#GQ2.FoxH.H1wMap">H1wMap</a> <span class="fn">t</span> <span class="fn">φ</span> <span class="fn">hφ</span>)</span> <span class="fn">h</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<a href="../.././GQ2/Devissage/ElemDualPack.html#GQ2.FoxH.dualMap">dualMap</a> <span class="fn">(<a href="../.././GQ2/Devissage/Naturality.html#GQ2.FoxH.H1wMap">H1wMap</a> <span class="fn">t</span> <span class="fn">(<a href="../.././GQ2/Devissage/ElemDualPack.html#GQ2.FoxH.dualMap">dualMap</a> <span class="fn">φ</span>)</span> <span class="fn">⋯</span>)</span>)</span> <span class="fn">(<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">chi1</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span> <span class="fn">h</span>)</span></span></span></div></div><p>The <code>χ¹</code> square over a coefficient map: <code>χ¹_B ∘ H¹wMap φ = (H¹wMap φ^∨)^∨ ∘ χ¹_A</code>.</p></div></div><div class="decl" id="GQ2.FoxH.chi1T_square"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/Chi1.lean#L253-L264">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T_square"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi1T_square</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">φ</span> : <span class="fn"><span class="fn">A</span> <span class="fn">→+</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hφ</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn"><span class="fn"><span class="fn">φ</span> <span class="fn">(<span class="fn">c</span> <span class="fn">•</span> <span class="fn">a</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn"><span class="fn">φ</span> <span class="fn">a</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">z</span> : <span class="fn"><a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.H1w">H1w</a> <span class="fn">t</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T">chi1T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span> <span class="fn">(<span class="fn">(<a href="../.././GQ2/Devissage/Naturality.html#GQ2.FoxH.H1wMap">H1wMap</a> <span class="fn">t</span> <span class="fn">(<a href="../.././GQ2/Devissage/ElemDualPack.html#GQ2.FoxH.dualMap">dualMap</a> <span class="fn">φ</span>)</span> <span class="fn">⋯</span>)</span> <span class="fn">z</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(<a href="../.././GQ2/Devissage/ElemDualPack.html#GQ2.FoxH.dualMap">dualMap</a> <span class="fn">(<a href="../.././GQ2/Devissage/Naturality.html#GQ2.FoxH.H1wMap">H1wMap</a> <span class="fn">t</span> <span class="fn">φ</span> <span class="fn">hφ</span>)</span>)</span> <span class="fn">(<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T">chi1T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span> <span class="fn">z</span>)</span></span></span></div></div><p>The transposed <code>χ¹</code> square: <code>χ¹ᵀ_A ∘ H¹wMap φ^∨ = (H¹wMap φ)^∨ ∘ χ¹ᵀ_B</code>.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

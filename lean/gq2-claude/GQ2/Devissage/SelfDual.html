@@ -1,0 +1,148 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>GQ2.Devissage.SelfDual</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="GQ2.Devissage.SelfDual";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">GQ2</span>.<span class="name">Devissage</span>.<span class="name">SelfDual</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/SelfDual.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="../.././Init.html">Init</a></li><li><a href="../.././GQ2/Devissage/Chi1.html">GQ2.Devissage.Chi1</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-GQ2.Devissage.SelfDual" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.IsSelfDualW"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">IsSelfDualW</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.isSelfDualW_iff"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">isSelfDualW_iff</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.chi_bij_of_selfdualW"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi_bij_of_selfdualW</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.four_lemma_inj"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">four_lemma_inj</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="5-11-dévissage-word-internal-self-duality-and-the-four-lemma" class="markdown-heading">§5.11 dévissage: word-internal self-duality and the four lemma <a class="hover-link" href="#5-11-dévissage-word-internal-self-duality-and-the-four-lemma">#</a></h1><p>Part of the §5.11 dévissage development (split from <code><a href="../.././GQ2/Devissage.html">GQ2/Devissage.lean</a></code>).</p></div><div class="mod_doc"><h2 id="Word-internal-self-duality" class="markdown-heading">Word-internal self-duality <a class="hover-link" href="#Word-internal-self-duality">#</a></h2><p>The marking-internal form of the <code>IsSelfDual</code> package: <code>#H⁰w(A^∨)</code> in place of
+<code>#fixedPts C (A^∨)</code>.  For a <em>generating</em> marking (<code>t.Generates</code>) the two agree — <code>ker d⁰</code> is then
+exactly the <code>C</code>-fixed points; <code>lemma_5_11</code>'s dévissage propagates the internal form, and the
+<code>fixedPts</code>-form follows wherever generation is available.</p></div><div class="decl" id="GQ2.FoxH.IsSelfDualW"><div class="def"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/SelfDual.lean#L35-L45">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/SelfDual.html#GQ2.FoxH.IsSelfDualW"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">IsSelfDualW</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_3)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p><strong>Word-internal self-duality</strong> (the <code>IsSelfDual</code> package with the invariants of the dual
+replaced by the word-complex <code>H⁰w</code> of the dual).</p><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-GQ2.FoxH.IsSelfDualW" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="GQ2.FoxH.isSelfDualW_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/SelfDual.lean#L47-L69">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/SelfDual.html#GQ2.FoxH.isSelfDualW_iff"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">isSelfDualW_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn"><span class="fn"><span class="fn">a</span> <span class="fn">+</span> <span class="fn">a</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././GQ2/Devissage/SelfDual.html#GQ2.FoxH.IsSelfDualW">IsSelfDualW</a> <span class="fn">t</span> <span class="fn">A</span></span> <span class="fn">↔</span>   <span class="fn"><span class="fn"><span class="fn">Function.Bijective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/EvalPairings.html#GQ2.FoxH.chi2">chi2</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">chi1</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T">chi1T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span></span></span></span></div></div><p><code><a href="../.././GQ2/Devissage/SelfDual.html#GQ2.FoxH.IsSelfDualW">IsSelfDualW</a></code> in <code>χ</code>-language: <code>χ²</code> bijective and <code>χ¹</code>, <code>χ¹ᵀ</code> injective.  (The second card
+clause is rank-nullity; the pairing clause is <code>pairing_clause_iff</code>.)</p></div></div><div class="decl" id="GQ2.FoxH.chi_bij_of_selfdualW"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/SelfDual.lean#L71-L122">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/SelfDual.html#GQ2.FoxH.chi_bij_of_selfdualW"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">chi_bij_of_selfdualW</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.WildRel">WildRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA₂</span> : <span class="fn">∀ (<span class="fn">a</span> : <span class="fn">A</span>), <span class="fn"><span class="fn"><span class="fn">a</span> <span class="fn">+</span> <span class="fn">a</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hsd</span> : <span class="fn"><a href="../.././GQ2/Devissage/SelfDual.html#GQ2.FoxH.IsSelfDualW">IsSelfDualW</a> <span class="fn">t</span> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">Function.Bijective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/EvalPairings.html#GQ2.FoxH.chi2">chi2</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span> <span class="fn">∧</span>   <span class="fn"><span class="fn"><span class="fn">Function.Bijective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/EvalPairings.html#GQ2.FoxH.chi2T">chi2T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span> <span class="fn">∧</span>     <span class="fn"><span class="fn"><span class="fn">Function.Bijective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/EvalPairings.html#GQ2.FoxH.chi0">chi0</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span> <span class="fn">∧</span>       <span class="fn"><span class="fn"><span class="fn">Function.Bijective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/EvalPairings.html#GQ2.FoxH.chi0T">chi0T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn">Function.Bijective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1">chi1</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn">Function.Bijective</span> <span class="fn">⇑<span class="fn">(<a href="../.././GQ2/Devissage/Chi1.html#GQ2.FoxH.chi1T">chi1T</a> <span class="fn">t</span> <span class="fn">ht</span> <span class="fn">hw</span>)</span></span></span></span></span></span></span></span></div></div><p>From a <code><a href="../.././GQ2/Devissage/SelfDual.html#GQ2.FoxH.IsSelfDualW">IsSelfDualW</a></code>-package, <strong>all six</strong> <code>χ</code>-maps are bijective (the free halves plus the
+Euler-characteristic swap <code>#H⁰w(A) = #H²w(A^∨)</code>).</p></div></div><div class="mod_doc"><h2 id="The-four-lemma-injectivity-form" class="markdown-heading">The four lemma (injectivity form) <a class="hover-link" href="#The-four-lemma-injectivity-form">#</a></h2><p>The standard diagram chase, hand-rolled for <code>AddMonoidHom</code>s with pointwise exactness data — the
+engine that turns the ladder squares into the conditional halves of the <code>χ</code>-bijectivities.</p></div><div class="decl" id="GQ2.FoxH.four_lemma_inj"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/91e1918fea29c23579c6bf9df42d30160d769283/GQ2/Devissage/SelfDual.lean#L137-L167">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Devissage/SelfDual.html#GQ2.FoxH.four_lemma_inj"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">four_lemma_inj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₁</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₂</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₃</span> : <a href="../.././foundational_types.html">Type</a> u_4}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A₄</span> : <a href="../.././foundational_types.html">Type</a> u_5}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B₁</span> : <a href="../.././foundational_types.html">Type</a> u_6}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B₂</span> : <a href="../.././foundational_types.html">Type</a> u_7}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B₃</span> : <a href="../.././foundational_types.html">Type</a> u_8}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B₄</span> : <a href="../.././foundational_types.html">Type</a> u_9}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A₃</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">A₄</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">B₁</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">B₂</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">B₃</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">B₄</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">a₁</span> : <span class="fn"><span class="fn">A₁</span> <span class="fn">→+</span> <span class="fn">A₂</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a₂</span> : <span class="fn"><span class="fn">A₂</span> <span class="fn">→+</span> <span class="fn">A₃</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">a₃</span> : <span class="fn"><span class="fn">A₃</span> <span class="fn">→+</span> <span class="fn">A₄</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b₁</span> : <span class="fn"><span class="fn">B₁</span> <span class="fn">→+</span> <span class="fn">B₂</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b₂</span> : <span class="fn"><span class="fn">B₂</span> <span class="fn">→+</span> <span class="fn">B₃</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b₃</span> : <span class="fn"><span class="fn">B₃</span> <span class="fn">→+</span> <span class="fn">B₄</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m₁</span> : <span class="fn"><span class="fn">A₁</span> <span class="fn">→+</span> <span class="fn">B₁</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m₂</span> : <span class="fn"><span class="fn">A₂</span> <span class="fn">→+</span> <span class="fn">B₂</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m₃</span> : <span class="fn"><span class="fn">A₃</span> <span class="fn">→+</span> <span class="fn">B₃</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m₄</span> : <span class="fn"><span class="fn">A₄</span> <span class="fn">→+</span> <span class="fn">B₄</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sq₁</span> : <span class="fn">∀ (<span class="fn">x</span> : <span class="fn">A₁</span>), <span class="fn"><span class="fn"><span class="fn">m₂</span> <span class="fn">(<span class="fn">a₁</span> <span class="fn">x</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">b₁</span> <span class="fn">(<span class="fn">m₁</span> <span class="fn">x</span>)</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sq₂</span> : <span class="fn">∀ (<span class="fn">x</span> : <span class="fn">A₂</span>), <span class="fn"><span class="fn"><span class="fn">m₃</span> <span class="fn">(<span class="fn">a₂</span> <span class="fn">x</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">b₂</span> <span class="fn">(<span class="fn">m₂</span> <span class="fn">x</span>)</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">sq₃</span> : <span class="fn">∀ (<span class="fn">x</span> : <span class="fn">A₃</span>), <span class="fn"><span class="fn"><span class="fn">m₄</span> <span class="fn">(<span class="fn">a₃</span> <span class="fn">x</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">b₃</span> <span class="fn">(<span class="fn">m₃</span> <span class="fn">x</span>)</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htop₂</span> : <span class="fn">∀ (<span class="fn">x</span> : <span class="fn">A₂</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">a₂</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn">0</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn">x</span> <span class="fn">∈</span> <span class="fn"><span class="fn">a₁</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htop₃</span> : <span class="fn">∀ (<span class="fn">x</span> : <span class="fn">A₃</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">a₃</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn">0</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn">x</span> <span class="fn">∈</span> <span class="fn"><span class="fn">a₂</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hbot₂</span> : <span class="fn">∀ (<span class="fn">y</span> : <span class="fn">B₂</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">b₂</span> <span class="fn">y</span></span> <span class="fn">=</span> <span class="fn">0</span></span> → <span class="fn"><span class="fn">y</span> <span class="fn">∈</span> <span class="fn"><span class="fn">b₁</span>.<span class="fn">range</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hm₁</span> : <span class="fn"><span class="fn">Function.Surjective</span> <span class="fn">⇑<span class="fn">m₁</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hm₂</span> : <span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">m₂</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hm₄</span> : <span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">m₄</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Function.Injective</span> <span class="fn">⇑<span class="fn">m₃</span></span></span></div></div><p><strong>Four lemma, injectivity</strong>: in a commuting ladder with exact rows, if <code>m₁</code> is surjective and
+<code>m₂</code>, <code>m₄</code> are injective, then <code>m₃</code> is injective.  (Exactness is taken pointwise; only the
+<code>ker ⊆ im</code> direction is needed on the bottom row.)</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

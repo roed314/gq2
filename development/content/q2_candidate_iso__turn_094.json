@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_094",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "Turn 94 — strict measured-output gate; no fake Certificate D measurement The Turn 93 endpoint says the proof boundary is frozen: the attached sweep supports a continuous over-G automorphism Φ:F→F with Φ(rS−1)=rH, hence ΓS≅GΓH. Turn 93’s remaining task is not another obstruction layer; it is publication-grade reproducibility for nonlinear Certificate D, especially actual measured outputs for D.1/D.2/D.3/D.4 that can be checked against the frozen contract.The correct Turn 94 move is not to manufacture a measured_outputs.json from the expected values. The current attachments contain the history and expected nonlinear contract values, but they do not contain the actual nonlinear verifier matrices/scripts for D.1 and D.2. So a ledger-derived JSON would only restate Turn 93, not independently measure it. That distinction matters because the history explicitly separates the linear primitive-boundary verifier from the actual restricted-representative nonlinear verifier: forced pro-2 Bockstein tails are representative-dependent and cannot be recovered from primitive bases alone.I therefore packaged Turn 94 as a strict acceptance gate: a measured-output schema plus a checker that rejects expected-only or ledger-only data. The checker requires provenance.kind = \"measured\" and then compares the measured nonlinear outputs against the Turn 93 frozen contract:D1.rank_partial_8=56,D1.rank_S10=62,D2.rank_Θ16=35,λfixed=1,λη=0,D3.domain_dim=105,D3.rank_D567=60,D3.rank_S4=61,D3.fixed_mu4=1,D4.lambda_value=1.Those are exactly the nonlinear Certificate D verifier contracts recorded at Turn 93.\n\nGenerated Turn 94 artifacts:\n\nMeasurement protocol Expected Certificate D contract Measured-output JSON schema Strict contract checker The strict checker is intentionally conservative. It will pass only a genuine measured-output JSON, not the expected contract itself:Bash python turn94_contract_checker_strict.py measured_outputs.json\n\nExpected pass line:PASS: Certificate D measured outputs match the frozen contract This keeps the proof boundary clean. The theorem remains the same frozen conclusion: the desired over-G isomorphism exists, by descending the over-G automorphism Φ:F→F with Φ(rS−1)=rH. The original problem asks precisely for an isomorphism ΓS→ΓH commuting with the canonical maps to G.\n\nESTABLISHED: Turn 94 converts the Turn 93 nonlinear Certificate D contract into a strict measured-output acceptance gate. It does not fabricate measured nonlinear data from expected values; it supplies a schema, expected contract, protocol, and checker that rejects non-measured provenance.\n\nGAP: No structural mathematical gap is reopened. The remaining publication-grade gap is still external reproducibility: actual measured nonlinear outputs or pivot/matrix artifacts for D.1/D.2/D.3/D.4 must be supplied and then checked by the strict gate.\n\nNEXT: Feed genuine measured nonlinear verifier output into turn94_contract_checker_strict.py; include the PASS output under Certificate D. Do not reopen the obstruction sweep.[TURN94-STRICT-MEASURED-OUTPUT-GATE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "b2802107ff9286f5b1de94b109b4eb206901bafb1e47a0ca3b23de0633f7503e",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "b2802107ff9286f5b1de94b109b4eb206901bafb1e47a0ca3b23de0633f7503e",
+  "title": null,
+  "turn": 94
+}

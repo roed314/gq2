@@ -1,0 +1,25 @@
+{
+  "key": "manual__20260624T0506__6a3b65b4",
+  "lane": "manual",
+  "link": null,
+  "msgs": [
+    {
+      "ct": 1782277555.899,
+      "role": "user",
+      "text": "This proof gives presentation for the absolute Galois group of the field of 2-adic numbers as a profinite group. Is it correct?"
+    },
+    {
+      "ct": 1782279327.599728,
+      "role": "assistant",
+      "text": "## Verdict\n\n**I would not certify this as correct as written.** I found no quick contradiction, and several important sanity checks work, but the claimed theorem depends on several new, highly nontrivial arguments that are too compressed to regard as established without expert refereeing.\n\nThe parts I checked include:\n\n- The tame quotient calculation is consistent.\n- On passing to the maximal pro-2 quotient, the wild relation reduces to\n  \\[\n  x_0^{\\sigma^2}x_0[x_1,\\sigma]=1,\n  \\]\n  as claimed.\n- Its abelianization is\n  \\[\n  \\widehat{\\mathbf Z}\\oplus C_2\\oplus\\mathbf Z_2,\n  \\]\n  consistent with local class field theory for \\(\\mathbf Q_2^\\times\\).\n- The rank-three Demushkin normal form and orientation in Section 3.1 are compatible with Labute’s classification. \n- Several of the elementary Fox-derivative and class-two identities are internally consistent.\n\nThe main difficulty is Section 6. In particular:\n\n1. **Proposition 6.8, ramified case.**  \n   The crucial assertion that self-duality turns the invariant quadratic form into the trace of a Hermitian form, with\n   \\[\n   \\operatorname{Arf}(q)\\equiv s\\pmod2,\n   \\]\n   is essentially asserted rather than fully derived. This determines the sign of the candidate Gauss sum, so it is load-bearing.\n\n2. **Lemma 6.20.**  \n   The formula\n   \\[\n   d_2(q)=B_q^\\flat{}_*(\\eta)\n   \\]\n   for the Lyndon–Hochschild–Serre differential, followed by the conclusion that the extension \\(B\\to C\\) splits, needs a complete cochain-level proof. The manuscript gives only a short description of one bicomplex component. This lemma is subsequently used to identify \\(B/T\\) with \\(V\\rtimes C\\). \n\n3. **Lemmas 6.12–6.16.**  \n   The identification of the explicit graph cocycle with the normalized Evens norm, its compatibility with Shapiro and corestriction, and the deep-unit vanishing theorem must all have exactly the stated normalization. A discrepancy here changes the local Arf invariant and therefore breaks the finite-target induction. \n\n4. **The global induction.**  \n   Proposition 8.9 and Sections 8–9 give an intricate reconstruction from affine lifting counts, quadratic Gauss sums, and auxiliary central covers. The strategy is coherent, but its validity depends completely on the unverified Section 6 interface. \n\nThe paper also says that a separate computational verification exists but is **not reproduced**. Consequently, that computation cannot presently serve as independent evidence for the displayed relation. \n\nThis would resolve a problem that is still publicly listed as unsolved as of June 24, 2026, so independent scrutiny is especially important. \n\n**My assessment:** the presentation is plausible and passes basic consistency tests, but the manuscript has not yet supplied a sufficiently checkable proof of its deepest steps. Thus the appropriate status is **unverified—not demonstrably false, but not established as correct**."
+    }
+  ],
+  "schema_version": 2,
+  "source": "fetched",
+  "source_detail": {
+    "artifact_sha256": "2b4e2ce93aa700bcba16f64151c48ae6ac2239288d6205dddc070cd32b7ddbf7",
+    "kind": "backend_fetched"
+  },
+  "source_file_sha256": "2b4e2ce93aa700bcba16f64151c48ae6ac2239288d6205dddc070cd32b7ddbf7",
+  "title": "Galois group proof"
+}

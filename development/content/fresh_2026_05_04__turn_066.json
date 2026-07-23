@@ -1,0 +1,20 @@
+{
+  "key": "fresh_2026_05_04__turn_066",
+  "lane": "fresh_2026_05_04",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "I’ll treat the prior investigations as proposals, not proof, and focus on the latest surviving candidate, unresolved gap, and any post-truncation counterchecks or algebraic obstruction."
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "ebbb9b293112ff327c6fbb699cd9825e8c4c4f7829c89d13a7fb37477b418874",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "ebbb9b293112ff327c6fbb699cd9825e8c4c4f7829c89d13a7fb37477b418874",
+  "title": null,
+  "turn": 66
+}

@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_109",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "According to the attached history document from 2026-06-28, Turn 109 is again an attachment-only continuation. No independent measured nonlinear Certificate D artifacts were attached in this turn.\n\nTurn 109 — attachment-only state remains idempotent\n\nThe state remains exactly the Turn 108 two-coordinate state:(THEOREM_STATE,MEASURED_CERTIFICATE_D_STATE)=(ΓS≅GΓH, NO_MEASURED_INPUT).The theorem coordinate remains closed. The attached history records the stronger statement that there is a continuous over-G automorphism Φ:F=P⋊G⟶F=P⋊G such thatΦ(rS−1)=rH.\n\nSince rS and rS−1 generate the same closed normal subgroup, this descends toΓS=F/⟨⟨rS⟩⟩≅G\n\nF/⟨⟨rH⟩⟩=ΓH,which is exactly the over-G isomorphism required in the problem statement. The latest history explicitly says the compactness descent uses finite filtered Nielsen/cocycle data SN,J, obtains a compatible inverse-limit over-G automorphism Φ:F→F, and intersects all PN,J to get Φ(rS−1)=rH.\n\nThere is still no reason to reopen degree 16, the A2 -layer, the t-layer, the Koszul–Witt coefficient tower, or any Certificate D subcase. Turn 108 already formalized the attachment-only transition rule: when the only inputs are mega_prompt.md, problem_statement.md, and turns_history__q2_candidate_iso.md, and no independent measured D.1–D.4 artifacts are attached, the transition is idempotent:(ΓS≅GΓH, NO_MEASURED_INPUT)↦(ΓS≅GΓH, NO_MEASURED_INPUT).The attached history also makes the provenance distinction explicit: history-recorded verifier claims support the theorem coordinate, but they are not newly attached measured artifacts for the strict Certificate D gate.So Turn 109 should not perform a new obstruction computation. It should preserve the frozen proof chain:H1 -Nielsen equivalence+residual restricted-Lie induction+normalized Koszul–Witt coefficient induction+D.1–D.4 certificates+finite filtered Nielsen compactness⟹ΓS≅GΓH.\n\nThe strict measured Certificate D gate remains\n\nNO_MEASURED_INPUT,not PASS, not FAIL, and not REJECTED_AS_LEDGER_DERIVED. A non-idempotent next step would require genuine object-level D.1–D.4 scripts, matrices, pivot tables, or measured-output logs not derived from the history ledger.\n\nESTABLISHED: Turn 109 is idempotent under the same attachment-only conditions as Turn 108. The theorem coordinate remains ΓS≅GΓH, via an over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH. The strict measured Certificate D coordinate remains NO_MEASURED_INPUT.\n\nGAP: No structural mathematical gap is reopened. The only remaining gap is external reproducibility: no genuine object-level measured nonlinear D.1–D.4 artifacts are attached in this turn.\n\nNEXT: Keep the obstruction sweep closed. The only non-idempotent next move is to attach genuine measured D.1–D.4 scripts, matrices, pivots, or measured-output logs not derived from the history, then run the strict gate as PASS or FAIL.[TURN109-ATTACHMENT-ONLY-IDEMPOTENT-GATE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "82809d8a75552025a611238f1c50f628919d23ddb3be24df21c3aa7798a792e3",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "82809d8a75552025a611238f1c50f628919d23ddb3be24df21c3aa7798a792e3",
+  "title": null,
+  "turn": 109
+}

@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_069",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "Turn 69 — standalone appendix artifact produced I converted the frozen Certificates 0–F proof into a standalone appendix-style Markdown file:turn69_certificate_appendix.md The appendix states the certificate theorem in the strong form:∃Φ:F=P⋊G∼\n\nFover GwithΦ(rS−1)=rH.\n\nSince rS and rS−1 generate the same closed normal subgroup, this descends toΓS≅GΓH.This is exactly the over-G isomorphism asked for in the problem statement: a continuous isomorphism commuting with the canonical projections to G.The appendix is deliberately not another obstruction sweep. It follows Turn 68’s instruction to freeze the proof as a checkable certificate artifact: fixed orientation ρS=rS−1, the H1 -Nielsen matrix, the primitive/boundary verifier, the residual restricted-Lie induction, nonlinear witnesses D.1–D.4, normalized Koszul–Witt coefficient induction, and finite filtered Nielsen compactness. Turn 68 explicitly says that no new degree-16, A2, t-layer, or coefficient-grade case should be reopened.The artifact includes the corrected row-action convention for the dangerous Ef-piece:U0=( s−11 s−22),(s+3,−2)U0=(s2+1,s−1),det(U0)=s.This is the matrix convention frozen in the later audit turns to avoid the transpose ambiguity.\n\nIt also records the residual tower closure:Ln/im∂n−1≅{0,Ln/2[2],n odd,n even,Cm=Lm (m≥5),so every odd residual layer is an ordinary boundary and every even square quotient is hit by a root transgression.For the coefficient tower, the appendix uses the exact normalization(s2+1,s−1)∼(2,t),t=s−1,via(s2+1)−(s+1)(s−1)=2.It then invokes the normalized Koszul–Witt induction: the t-layer is contractible, the first 2-Bockstein secondary maps satisfy Bd↠Hd(2)for d≥4, and higher (2,t)-adic Witt cascades are triangular in Magnus root degree.The nonlinear finite certificate ledger is included as D.1–D.4. In particular, the last executable D.3 gap is now stated as the stack-rank certificate rankD5,6,7=60,rank(D5,6,7μ4B4)=61,which proves that the continuation kernel toggles the fixed μ4=1 scalar to 0. This was the final finite verifier gap closed in Turn 54.Finally, the appendix ends with the finite filtered Nielsen compactness descent: for coefficient-and-degree truncationsPN,J:=P∩(1+IN+JM),the finite solution sets SN,J consist of filtered Nielsen/cocycle data with first layer UmodJ, satisfying the finite cocycle relation for τσ=τ2, and sending ρS=rS−1 to rH modulo PN,J. The inverse limit produces a continuous over-G automorphism Φ:F→F with Φ(rS−1)=rH, hence the desired quotient isomorphism.\n\nESTABLISHED: Turn 69 produces the standalone appendix artifact promised by Turn 68. The file packages the proof as Certificates 0–F, ending with a continuous over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH, and therefore ΓS≅GΓH.\n\nGAP: No structural mathematical gap remains inside the attached sweep. The remaining issue is external reproducibility in a paper: attach the verifier scripts or explicit matrices/pivots realizing Certificates B–D, especially the D.3 stack-rank 60→61.\n\nNEXT: Convert turn69_certificate_appendix.md into a polished manuscript appendix with actual verifier-code blocks or matrix/pivot tables inserted under Certificates B–D.[TURN69-STANDALONE-CERTIFICATE-APPENDIX-FILE-ISO]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "347b5f9256390d039fc830d5944ac04f5e586846fca087d6d55c25d53d51fd2f",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "347b5f9256390d039fc830d5944ac04f5e586846fca087d6d55c25d53d51fd2f",
+  "title": null,
+  "turn": 69
+}

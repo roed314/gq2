@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_070",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "Turn 70 — polished appendix artifact produced I did not open or rely on the un-attached turn69_certificate_appendix.md. Since only the three current attachments were available, I reconstructed the polished appendix directly from the attached Turn 1–69 history and the problem statement.\n\nI produced two files:\n\nDownload the polished certificate appendix\n\nDownload the linear verifier script The appendix freezes the proof in certificate form rather than reopening any new Magnus or coefficient case. This follows the current state of the sweep: Turn 69 says the proof should now be converted into a polished manuscript appendix with verifier/code or matrix data under Certificates B–D, not used as a prompt for another obstruction search.\n\nThe appendix proves the stronger statement∃Φ:F=P⋊G∼\n\nFover GwithΦ(rS−1)=rH.\n\nSince rS and rS−1 generate the same closed normal subgroup, this descends toΓS≅GΓH,which is exactly the isomorphism over G asked for in the problem statement.\n\nWhat changed in Turn 70:The appendix now includes the fixed basis-action convention for the H1 -matrix and the local coefficient shear, so the transpose ambiguity is removed. It uses the Ef-piece matrixU0(e0)=e0 (s−1)+e1 (s−2),U0(e1)=e0+2e1,so that (s+3,−2)U0=(s2+1,s−1),det(U0)=s.This is the convention frozen in the later audit turns.The appendix also inserts the executable linear verifier output for the primitive-boundary backbone:dimL1,…,dimL10=2,3,2,6,6,11,18,36,56,105,and the boundary/secondary-rank table through d=10. The companion script turn70_linear_verifier.py recomputes those values from the reduced-coproduct definition of Ln=Primn(F2⟨A,B⟩), matching the verifier outputs recorded in the sweep.For the nonlinear certificate ledger, the appendix includes D.1–D.4. In particular, it records the final D.3 stack-rank certificate rankD5,6,7=60,rank(D5,6,7μ4B4)=61,which was the last executable verifier gap closed in Turn 54. Since H4(2)is one-dimensional, this proves that the continuation kernel toggles the fixed μ4=1 scalar to 0.The final compactness descent is kept in the corrected filtered-Nielsen form: for coefficient-and-degree truncations PN,J=P∩(1+IN+JM), the finite solution sets SN,J consist of filtered Nielsen/cocycle data, not arbitrary finite quotient automorphisms. The nonempty finite system has a compatible inverse limit, producing a continuous over-G automorphism Φ:F→F with Φ(rS−1)=rH.\n\nESTABLISHED: Turn 70 produces a polished standalone certificate appendix and a working linear verifier script. The appendix packages the proof as Certificates 0–F and ends with a continuous over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH, hence ΓS≅GΓH.\n\nGAP: No structural mathematical gap remains inside the attached sweep. The only remaining external reproducibility item is optional: a standalone paper could still attach the full nonlinear verifier scripts or explicit matrices/pivots for D.1–D.4, especially the D.3 60→61 stack-rank computation.\n\nNEXT: If continuing, convert turn70_polished_certificate_appendix.md into a LaTeX manuscript appendix and attach the nonlinear verifier scripts or explicit pivot tables under Certificate D, without reopening any new obstruction layer.[TURN70-POLISHED-CERTIFICATE-APPENDIX-ARTIFACT]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "b8ef1c19b60a470b2cc4845616586b6c063b58d411c803222ab731c439d2825f",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "b8ef1c19b60a470b2cc4845616586b6c063b58d411c803222ab731c439d2825f",
+  "title": null,
+  "turn": 70
+}

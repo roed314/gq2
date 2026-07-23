@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_107",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "According to the attached history document from 2026-06-28, Turn 107 is another attachment-only continuation. The three required current-turn attachments are present, and I did not use File Library material.\n\nTurn 107 — attachment-only idempotence remains closed\n\nThe state remains unchanged from Turn 106:(THEOREM_STATE,MEASURED_CERTIFICATE_D_STATE)=(ΓS≅GΓH, NO_MEASURED_INPUT).The theorem coordinate remains closed. The attached sweep records the stronger F=P⋊G-level statement:∃Φ:F→F continuous over GwithΦ(rS−1)=rH.\n\nSince rS and rS−1 generate the same closed normal subgroup of F, this descends to\n\nF/⟨⟨rS⟩⟩F≅G\n\nF/⟨⟨rH⟩⟩F,i.e.ΓS≅GΓH.This is exactly the over-G isomorphism requested in the problem statement: an isomorphism Φ:ΓS→ΓH satisfying πH∘Φ=πS.\n\nThe frozen proof chain remains:H1 -Nielsen equivalence+residual restricted-Lie induction+normalized Koszul–Witt coefficient induction+D.1–D.4+finite filtered Nielsen compactness⟹ΓS≅GΓH.The compactness step is still the corrected filtered-Nielsen one: for coefficient-and-degree truncations PN,J, the finite solution sets consist of filtered Nielsen/cocycle data; finite Frattini gives finite over-G automorphisms; compactness gives a compatible inverse-limit automorphism Φ:F→F; and intersecting all PN,J gives Φ(rS−1)=rH.The measured-certificate coordinate also remains unchanged. The current attachments are still only the prompt, problem statement, and history ledger. They do not include genuine object-level nonlinear Certificate D artifacts: no measured D.1–D.4 scripts, matrices, pivot tables, or measured-output logs. Therefore the strict Certificate D gate remains\n\nNO_MEASURED_INPUT,not PASS, not FAIL, and not REJECTED_AS_LEDGER_DERIVED. The history explicitly separates the theorem-level conclusion from the external measured-output gate: the theorem state remains ΓS≅GΓH, while publication-grade reproducibility still requires genuine measured nonlinear Certificate D artifacts.\n\nSo no Magnus tower, coefficient tower, degree-16 case, A2 -layer, t-layer, or Certificate D subcase should be reopened under the current attachment-only input. The invariant state is:history/problem/prompt only⟹(ΓS≅GΓH, NO_MEASURED_INPUT).\n\nESTABLISHED: Turn 107 is idempotent under the same attachment-only conditions as Turn 106. The theorem coordinate remains ΓS≅GΓH, via an over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH. The measured Certificate D coordinate remains NO_MEASURED_INPUT.\n\nGAP: No structural mathematical gap is reopened. The only remaining gap is external reproducibility: no genuine object-level measured nonlinear D.1–D.4 artifacts are attached in this turn.\n\nNEXT: Keep the obstruction sweep closed. The only valid next move is to attach genuine measured D.1–D.4 scripts, matrices, pivots, or measured-output logs not derived from the history, then run the strict gate as PASS or FAIL.[TURN107-ATTACHMENT-ONLY-IDEMPOTENT-GATE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "8bdf56a69d28ab502ad2db54daa5efe9a447cac2a647c6696fec4156c7a8b9ca",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "8bdf56a69d28ab502ad2db54daa5efe9a447cac2a647c6696fec4156c7a8b9ca",
+  "title": null,
+  "turn": 107
+}

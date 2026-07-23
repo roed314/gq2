@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_071",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "Turn 71 — LaTeX certificate appendix artifact I continued from the attached Turn 70 state, where the proof had already been frozen as Certificates 0–F and the next requested action was to convert the certificate appendix into a LaTeX-style manuscript artifact rather than reopening another obstruction layer. The attached history states that Turn 70 produced a polished certificate appendix and a linear verifier script, with the proof ending in an over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH, hence ΓS≅GΓH.\n\nI produced the LaTeX appendix source here:Download turn71_certificate_appendix.tex I also produced a standalone linear verifier script and its output:Download turn71_linear_verifier.py Download turn71_linear_verifier_output.txt\n\nThe verifier recomputes the primitive dimensionsdimL1,…,dimL10=2,3,2,6,6,11,18,36,56,105 and the boundary/secondary-rank table through d=10, matching the primitive-boundary backbone recorded in the sweep.The LaTeX appendix fixes the right-row convention explicitly. In ordinary right-row multiplication it usesU0=( s−1s−212),equivalentlyU0(e0)=e0 (s−1)+e1 (s−2),U0(e1)=e0+2e1,so that (s+3,−2)U0=(s2+1,s−1),detU0=s.This matches the basis-action convention frozen in Turn 70 and avoids the transpose ambiguity noted in the last audit turns.\n\nThe appendix also records the coefficient-normalizing shearN(e0)=e0−(s+1)e1,N(e1)=e1,so that(s2+1,s−1)N=(2,t),t=s−1.This is the exact row normalization used by the normalized Koszul–Witt coefficient induction; the attached history records that this turns the apparent 2t+t2 term into a coordinate artifact and then handles higher (2,t)-adic layers by the Witt-cascade argument.For Certificate D, I did not pretend to have regenerated the full nonlinear verifier scripts in this turn. The appendix records the nonlinear certificate ledger exactly as frozen: D.1 degree-10 Bockstein witnesses, D.2 residual degree-16 lower-base toggle, D.3 stack-rank rankD5,6,7=60,rank(D5,6,7μ4B4)=61,and D.4 the witness θ80(0,B8)=(B8)[2]. The D.3 rank jump was the last executable certificate gap closed in Turn 54.The compactness section is written in the corrected filtered-Nielsen form: for coefficient-and-degree truncations PN,J=P∩(1+IN+JM), the finite sets SN,J consist of filtered Nielsen/cocycle data, not arbitrary quotient automorphisms. The history records this repair as the mechanism that gives a compatible inverse-limit over-G automorphism and avoids both the false degree-only quotient issue and a Hopficity shortcut.\n\nESTABLISHED: Turn 71 produces a LaTeX certificate appendix and a working standalone linear verifier. The appendix packages the proof as Certificates 0–F and ends with the same conclusion as the attached sweep: a continuous over-G automorphism Φ:F→F with Φ(rS−1)=rH, hence ΓS≅GΓH.\n\nGAP: No structural mathematical gap remains inside the attached sweep. The remaining external reproducibility gap is still the full nonlinear verifier material: a standalone paper should attach the actual nonlinear scripts or explicit matrices/pivots for D.1–D.4, especially the D.3 stack-rank 60→61.\n\nNEXT: Add a nonlinear-verifier appendix or pivot-table appendix under Certificate D, beginning with a reproducible record of the D.3 matrix construction and rank jump, without reopening any new obstruction layer.[TURN71-LATEX-CERTIFICATE-APPENDIX-AND-LINEAR-VERIFIER]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "817a7d5c785cf2a8aa8aa8771009bbf32f69b1e10a90151ba48bd84c14822666",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "817a7d5c785cf2a8aa8aa8771009bbf32f69b1e10a90151ba48bd84c14822666",
+  "title": null,
+  "turn": 71
+}

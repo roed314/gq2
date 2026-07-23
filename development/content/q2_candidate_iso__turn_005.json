@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_005",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "Turn 5 — degree-8 nonlinear residual sweep I used only the three attachments from this message. The original target is still the over-G isomorphism problem for ΓS,ΓH, where F=P⋊G, P is the free G-operator pro-2 group on x0,x1, and the two relators are rS,rH as in the statement.The prior history had already reduced the only surviving obstruction test to the residual mod-2, s=1 Magnus equation with section twistS(Y0,Y1,q)=(Y1,Y1q)−1Y1−2Y03Y0q,where Y0,Y1 are the transported source generators and q is the residual section-twist parameter.\n\nTurn 4 cleared the residual congruence through I8, i.e. through homogeneous degree 7, and correctly identified degree 8 as the first nonlinear Maurer–Cartan layer because degree-4 corrections can interact quadratically.\n\nThe new result is:The degree-8 residual Maurer–Cartan obstruction also dies.More precisely, there are explicit residual section-twisted lifts withS(Y0(8),Y1(8),q(8))=X2+O(I9)in the completed mod-2 Magnus algebra F2⟨⟨A,B⟩⟩, where X=1+A, Y=1+B, and I=(A,B).The key structural point is that the fixed Turn-4 gauge is misleading at degree 8. If one holds the lower section twist fixed and only tests the degree-7 linear correction image, one sees a real-looking nonzero class. But it is not invariant: a lower Frattini-level section twist of q, invisible to the already-fixed first-order data, changes the degree-8 Maurer–Cartan class. This is exactly the “step back from a single case” pattern: degree 8 is not about one tail; it is about the affine family of lower lifts.Here is one explicit witness.Work in the residual free pro-2 group on X,Y, with the same commutator convention (a,b)=a−1b−1ab.Put\n\nC:=(X,Y),D:=(X,C),E:=(X,Y2).\n\nDefineY0(8)=YCX4C2 (X,D)(Y,E)⋅(X,(X,D))(Y,C2)⋅E2 (X,(X,C2))(X,(X,(X,D)))(X,(X,(Y,E)))⋅(X,(X,(X,C2)))(X,(X,(X,Y4)))⋅(X,(X,(X,(Y,E))))(X,(X,(Y,C2)))(X,(Y,(X,Y4))),Y1(8)=CX−1Y2C2 ⋅(X,(Y,E))(Y,C2)⋅E2(X,(X,(X,D)))(Y,(X,(X,E)))(Y,(X,(Y,E))),andq(8)=YY2DE ⋅(X,C2)(X,Y4)(X,(Y,E))(Y,C2)⋅E2 (X,(X,C2))(X,(X,(X,D))).\n\nA direct mod-2 Magnus expansion givesS(Y0(8),Y1(8),q(8))−X2∈I9.So the homogeneous degree-8 part vanishes. For this particular witness, the first remaining tail is in degree 9; in my expansion it has support size 250. I am not treating that degree-9 tail as an obstruction, for the same reason the degree-6 and fixed-gauge degree-8 tails were not obstructions: the next layer must include lower-choice interactions, now especially degree 4+5=9.\n\nThe important change from Turn 4 is the lower part of q(8):q(8)=Y⋅ lower Frattini section twistY2DE ⋅(degree 5,6 restricted corrections).That lower twist preserves the residual congruence through the already-cleared layers, but it moves the degree-8 Maurer–Cartan class into the higher correction image. In other words, the degree-8 problem is not solved by hammering one Turn-4 lift harder; it is solved by recognizing the full affine family of lower section choices.\n\nESTABLISHED: The residual mod-2, s=1, section-twisted Magnus obstruction vanishes through homogeneous degree 8. Explicitly,S(Y0(8),Y1(8),q(8))≡X2 (modI9).\n\nGAP: This still does not prove ΓS≅GΓH. The residual tower is now uncleared from degree 9 onward, and the degree-9 equation must include interactions among degree-4 and degree-5 corrections, not merely a linear restricted-Lie image test.\n\nNEXT: Build the degree-9 nonlinear Maurer–Cartan equation on the same residual Ef-piece, including the 4+5 interaction terms and the remaining lower section-twist freedom.[DEG8-MC-CLEARED]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "dfba32a8b510d11cfc622f23c4acd19f3a269cb7218abff97f2e5ecb7071f8fc",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "dfba32a8b510d11cfc622f23c4acd19f3a269cb7218abff97f2e5ecb7071f8fc",
+  "title": null,
+  "turn": 5
+}

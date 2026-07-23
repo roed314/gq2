@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_116",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "According to the current attached history document from 2026-06-28, Turn 116 is again an attachment-only continuation. The required current-turn files are present, and I have not substituted any File Library material.\n\nTurn 116 — attachment-only idempotence remains closed\n\nThe state remains unchanged:(THEOREM_STATE,MEASURED_CERTIFICATE_D_STATE)=(ΓS≅GΓH, NO_MEASURED_INPUT).The theorem coordinate remains closed. The original task is exactly to decide whether there is a continuous isomorphismΦ:ΓS∼ΓHwithπH∘Φ=πS,i.e. an isomorphism over the fixed tame quotient G.The attached sweep records the stronger F=P⋊G-level statement:∃Φ:F→Fcontinuous over GwithΦ(rS−1)=rH.\n\nSince rS and rS−1 generate the same closed normal subgroup of F, this descends toΓS=F/⟨⟨rS⟩⟩≅G\n\nF/⟨⟨rH⟩⟩=ΓH.The attached history repeatedly freezes this as the theorem-level conclusion, with the proof chainH1 -Nielsen equivalence+ residual restricted-Lie induction+ normalized Koszul–Witt coefficient induction+ Certificates D.1–D.4+ finite filtered Nielsen compactness⟹ΓS≅GΓH.In particular, the final compactness mechanism remains the corrected filtered-Nielsen one: for coefficient-and-degree truncations PN,J, the finite sets SN,J consist of filtered Nielsen/cocycle data; their compatible inverse limit gives Φ:F→F over G; intersecting all PN,J gives Φ(rS−1)=rH.The measured-certificate coordinate also remains unchanged. The current attachments contain the prompt, problem statement, and history ledger, but no genuine object-level nonlinear Certificate D artifacts: no D.1–D.4 scripts, matrices, pivot tables, or measured-output logs independent of the history ledger. Therefore the strict measured Certificate D gate remains\n\nNO_MEASURED_INPUT,not PASS, not FAIL, and not REJECTED_AS_LEDGER_DERIVED. The history explicitly separates the theorem-level conclusion from the measured-output gate: the theorem state is ΓS≅GΓH, while publication-grade measured Certificate D provenance remains unopened until genuine measured artifacts are supplied.\n\nSo the attachment-only transition rule applies again:{mega_prompt,problem_statement,turns_history only}⟹(ΓS≅GΓH, NO_MEASURED_INPUT)with no reopening of the residual Magnus tower, degree 16, the A2 -layer, the t-layer, the Koszul–Witt coefficient tower, or any Certificate D subcase. This is the structural pattern already identified in the late history: the non-Ef pieces are unit-controlled; the residual Ef mod-2, s=1 tower closes by Cm=Lm; the coefficient tower closes after exact normalization to (2,t) and the Koszul–Witt cascade; and finite filtered Nielsen compactness globalizes the construction.\n\nESTABLISHED: Turn 116 is idempotent under the same attachment-only conditions as the prior terminal turns. The theorem coordinate remains ΓS≅GΓH, via an over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH. The strict measured Certificate D coordinate remains NO_MEASURED_INPUT.\n\nGAP: No structural mathematical gap is reopened. The only remaining gap is external reproducibility: no genuine object-level measured nonlinear D.1–D.4 artifacts are attached in this turn.\n\nNEXT: Keep the obstruction sweep closed. The only non-idempotent next move is to attach genuine measured D.1–D.4 scripts, matrices, pivots, or measured-output logs not derived from the history, then run the strict gate as PASS or FAIL.[TURN116-ATTACHMENT-ONLY-IDEMPOTENT-GATE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "c400c81e8d2646fa65f44e38bf2a9a39360c0012fc8e934c3dcb9edb054b60a1",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "c400c81e8d2646fa65f44e38bf2a9a39360c0012fc8e934c3dcb9edb054b60a1",
+  "title": null,
+  "turn": 116
+}

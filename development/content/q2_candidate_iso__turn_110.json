@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_110",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "According to the current attached history document from 2026-06-28, Turn 110 is again an attachment-only continuation. The required files are present, and I used only the current attachments: mega_prompt.md, problem_statement.md, and turns_history__q2_candidate_iso.md.\n\nTurn 110 — attachment-only idempotence remains closed\n\nThe state remains unchanged from Turn 109:(THEOREM_STATE,MEASURED_CERTIFICATE_D_STATE)=(ΓS≅GΓH, NO_MEASURED_INPUT).The theorem coordinate remains closed. The problem asks whether there is a continuous isomorphismΦ:ΓS→ΓH commuting with the canonical projections to G, equivalently πH∘Φ=πS.The attached sweep records the stronger F=P⋊G-level statement: there is a continuous over-G automorphism Φ:F→F such thatΦ(rS−1)=rH.\n\nSince rS and rS−1 generate the same closed normal subgroup, this descends toΓS=F/⟨⟨rS⟩⟩≅G\n\nF/⟨⟨rH⟩⟩=ΓH.This is exactly the requested over-G isomorphism.\n\nThe proof chain remains frozen:H1 -Nielsen equivalence+ residual restricted-Lie induction+ normalized Koszul–Witt coefficient induction+ Certificates D.1–D.4+ finite filtered Nielsen compactness⟹ΓS≅GΓH.The final compactness mechanism is still the corrected filtered-Nielsen one: for coefficient-and-degree truncations PN,J, the finite solution sets SN,J consist of filtered Nielsen/cocycle data, not arbitrary quotient automorphisms; their compatible inverse limit gives Φ:F→F over G, and intersecting all PN,J gives Φ(rS−1)=rH.No new structural move is warranted under the current inputs. In particular, there is still no reason to reopen the residual Magnus tower, degree 16, the A2 -layer, the t-layer, the Koszul–Witt coefficient tower, or any Certificate D subcase. Turn 108 explicitly formalized the attachment-only transition rule: with only the prompt, problem statement, and history ledger attached, and no independent measured nonlinear Certificate D artifacts, the state transition is idempotent:(ΓS≅GΓH, NO_MEASURED_INPUT)↦(ΓS≅GΓH, NO_MEASURED_INPUT).The measured-certificate coordinate also remains unchanged. The current attachments do not include genuine object-level nonlinear Certificate D artifacts: no D.1–D.4 scripts, matrices, pivot tables, or measured-output logs independent of the history ledger. Therefore the strict Certificate D gate remains\n\nNO_MEASURED_INPUT,not PASS, not FAIL, and not REJECTED_AS_LEDGER_DERIVED. A PASS would require actual measured D.1–D.4 artifacts matching the frozen contract; a FAIL would require actual measured artifacts contradicting it. Ledger-recorded verifier claims support the theorem coordinate, but they are not themselves newly attached measured artifacts for the strict gate.\n\nESTABLISHED: Turn 110 is idempotent under the same attachment-only conditions as Turn 109. The theorem coordinate remains ΓS≅GΓH, via an over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH. The strict measured Certificate D coordinate remains NO_MEASURED_INPUT.\n\nGAP: No structural mathematical gap is reopened. The only remaining gap is external reproducibility: no genuine object-level measured nonlinear D.1–D.4 artifacts are attached in this turn.\n\nNEXT: Keep the obstruction sweep closed. The only non-idempotent next move is to attach genuine measured D.1–D.4 scripts, matrices, pivots, or measured-output logs not derived from the history, then run the strict gate as PASS or FAIL.[TURN110-ATTACHMENT-ONLY-IDEMPOTENT-GATE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "27930d697e53d389864c13889d85352fbc33a30541d8dc8917dad4984681077b",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "27930d697e53d389864c13889d85352fbc33a30541d8dc8917dad4984681077b",
+  "title": null,
+  "turn": 110
+}

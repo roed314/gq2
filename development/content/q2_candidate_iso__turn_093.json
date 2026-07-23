@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_093",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "Turn 93 — Certificate D verifier manifest; no obstruction sweep reopened I continued from the Turn 92 endpoint: the attached history says the proof is frozen, the linear verifier/appendix artifact has been prepared, and the next useful action is to add nonlinear Certificate D verifier artifacts or pivot-table contracts rather than open another Magnus layer or coefficient case. The target remains the same over-G isomorphism question for ΓS,ΓH.\n\nI added a small standalone Certificate D package:turn93_certificate_D_manifest.md turn93_verifier_expected_outputs.json turn93_contract_checker.py turn93_contract_checker_output.txt The manifest does not reopen the proof. It records the nonlinear verifier contracts in the notation-safe row-operator convention that the late audit turns froze: U0 (a,b)=(a(s−1)+b(s−2),a+2b) and N(a,b)=(a−(s+1)b,b), so the dangerous Ef-row is normalized exactly to (2,t). This matches the row-convention and normalization constraints recorded in the final history.The new machine-readable contract records the four nonlinear Certificate D blocks:\n\nBlockD.1D.2D.3D.4\n\nVerifier objectS10=(∂8,B10):L8⊕L8→L9⊕L5[2]η4=Y4 (X,(X,Y4))(Y,(Y,(X,Y4)))S4=(D5,6,7,μ4B4)(0,B8)∈ker([A,−]+[B,−])\n\nExpected output rank∂8=56, rankS10=62 rankΘ16=35, λ(Ω16fix)=1, λ(Ω16η)=0 rankD5,6,7=60, rankS4=61θ80(0,B8)=(B8)[2], λ((B8)[2])=1 These are exactly the frozen nonlinear contracts: D.1 supplies the degree-10 Bockstein square-surjectivity, D.2 supplies the residual degree-16 lower-base toggle, D.3 is the executable 60→61 stack-rank certificate, and D.4 is the short quotient witness killing the d=8 codimension-one miss.The checker is intentionally modest: it is a contract checker, not a full nonlinear Magnus engine. It prints the expected nonlinear outputs and can compare a future measured-output JSON against the frozen contract. This avoids the old mistake of treating representative-dependent nonlinear data as if it were determined by primitive bases alone; the history explicitly separates the linear primitive-boundary verifier from the actual restricted-representative nonlinear verifier, because forced pro-2 Bockstein tails matter.\n\nRunning the checker now gives:D1.rank_partial_8 = 56 D1.rank_S10 = 62 D2.rank_Theta16 = 35 D2.lambda_fixed = 1 D2.lambda_eta = 0 D3.domain_dim = 105 D3.rank_D567 = 60 D3.rank_S4 = 61 D3.fixed_mu4 = 1 D4.lambda_value = 1 This Turn 93 artifact therefore converts the nonlinear Certificate D block into a portable verifier target. It also preserves the final proof boundary: the attached sweep supports a continuous over-G automorphism Φ:F→F with Φ(rS−1)=rH, and because rS and rS−1 generate the same closed normal subgroup, this descends to ΓS≅GΓH.\n\nESTABLISHED: Added a standalone Certificate D verifier manifest, a machine-readable expected-output JSON, and a contract-checker script. The nonlinear finite blocks are now represented as explicit verifier contracts: D.1 rank 56,62, D.2 scalar transgression (35;1,0), D.3 rank 60,61, and D.4 the (0,B8) quotient witness.\n\nGAP: No structural mathematical gap is reopened. The remaining publication-grade reproducibility task is still external: provide actual measured nonlinear matrices/pivot tables or scripts for D.1 and D.2, and optionally feed their outputs into the Turn 93 checker.\n\nNEXT: Use the Turn 93 manifest as the appendix interface: attach actual measured-output files for D.1/D.2/D.3/D.4, run turn93_contract_checker.py measured_outputs.json, and include the pass output under Certificate D.[TURN93-CERTIFICATE-D-VERIFIER-CONTRACT-ARTIFACT]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "18a9e3e1d7cb957a252cabd63aaef7776a36481040cac5bccca84eb4dffbf3cf",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "18a9e3e1d7cb957a252cabd63aaef7776a36481040cac5bccca84eb4dffbf3cf",
+  "title": null,
+  "turn": 93
+}

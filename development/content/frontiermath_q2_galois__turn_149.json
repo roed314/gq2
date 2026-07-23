@@ -1,0 +1,26 @@
+{
+  "key": "frontiermath_q2_galois__turn_149",
+  "lane": "frontiermath_q2_galois",
+  "link": null,
+  "msgs": [
+    {
+      "ct": 1782196139.904,
+      "role": "user",
+      "text": "# Scorched-Earth Erdős Sweep — Turn 149\n\nThis is turn 149. Turns 1 through 148 are consolidated in `turns_history__frontiermath_q2_galois.md` (attached). Re-read it before answering.\nAlso re-read `mega_prompt.md` and `problem_statement.md`.\n\nCRITICAL — use ONLY the files attached to THIS message. Do NOT open, import, retrieve, or cite any file from your File Library / previously uploaded files, even one named similarly (e.g. another `turns_history…md`). Other unrelated problems use similarly named history files in the same account, and importing one will silently switch you onto the wrong problem. If the attached `turns_history__frontiermath_q2_galois.md` appears missing, do NOT continue from partial context. Reply only with `MISSING_REQUIRED_ATTACHMENT` and name the missing file(s); never substitute a library file.\n\nIf this turn drifts into hammering one specific case or sub-instance, step back and ask whether the case is revealing a structural pattern that would close many cases at once. Prefer arguments whose conclusion is a uniform statement.\n\nEnd this response with ESTABLISHED / GAP / NEXT + tag.\nContinue with Turn 149."
+    },
+    {
+      "ct": 1782196701.474422,
+      "role": "assistant",
+      "text": "## Turn 149 — frozen submission handoff\n\nThe exact verifier file is frozen unchanged:\n\n```text\nsigma,tau,x0,x1\n\nsigma2 = sigma^40491355905\ng0 = sigma2^2\nu0 = (x0*tau)^40491355905\nu1 = (x1*tau)^40491355905\nd0 = u0*x0^-1\nz0 = x0^sigma2\nc0 = d0^-1*z0^-1*d0*z0\ndg = d0^g0\nhcomm = dg^-1*d0^-1*dg*d0\nh0 = (x0^g0)*x0*dg*d0*d0^2*hcomm\n\nh0*u1^-1*(x1^sigma)*c0\n```\n\nThe tame relation is correctly omitted; `x0,x1` retain the stipulated 2-core semantics; and `40491355905` is the required verifier residue of the genuine profinite idempotent \\(\\omega_2\\). \n\nI independently reconstructed the serialization and checked:\n\n- size: **256 bytes**\n- line endings: **LF**\n- SHA-256:  \n  `4f81b04ae00e737a244f2445d70b095333a427508958f11489e3cabdc0192fdc`\n\n[Download the frozen h0 submission](sandbox:/mnt/data/q2_galois_h0_submission.txt)\n\nNo further isolated finite-group search is justified before the verifier run. The current proof architecture has only three source-sensitive interfaces—marked boundary, natural finite-Heisenberg deformation duality, and determinant Wall–Kummer sign—and Turns 145–148 audited all three together with the target recurrence shell. No new correction to the word emerged. \n\nA verifier failure should therefore be handled by a strict localization protocol:\n\n1. Construct the framed certificate for the first failing target.\n2. Descend to the lowest rejected node.\n3. Determine whether the failure is in Proposition I, II, III, or finite target/incidence arithmetic.\n4. Modify the word only if the lowest failure is genuinely source-side; otherwise repair the certificate data.\n\n**ESTABLISHED**: Reconstructed and byte-verified the exact frozen \\(h_0\\) submission: 256 bytes, SHA-256 `4f81b04ae00e737a244f2445d70b095333a427508958f11489e3cabdc0192fdc`. Froze the first-failure localization protocol; no casewise modification is warranted before verifier evidence.\n\n**GAP**: The private 5402-group verifier remains unrun, and the complete proof has not received independent external manuscript review.\n\n**NEXT**: Submit the linked file unchanged. On any failure, construct the certificate for the first failing target and inspect its lowest rejected node before altering the presentation.\n\n[CONTINUE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "fetched",
+  "source_detail": {
+    "artifact_sha256": "db092fd35ce395244825babc31f6389bdd0f5f229d722b532fa6ec87514971bb",
+    "kind": "backend_fetched"
+  },
+  "source_file_sha256": "db092fd35ce395244825babc31f6389bdd0f5f229d722b532fa6ec87514971bb",
+  "title": "Scorched-Earth Erdős Sweep",
+  "turn": 149
+}

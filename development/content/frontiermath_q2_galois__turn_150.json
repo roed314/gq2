@@ -1,0 +1,26 @@
+{
+  "key": "frontiermath_q2_galois__turn_150",
+  "lane": "frontiermath_q2_galois",
+  "link": null,
+  "msgs": [
+    {
+      "ct": 1782196921.131,
+      "role": "user",
+      "text": "# Scorched-Earth Erdős Sweep — Turn 150\n\nThis is turn 150. Turns 1 through 149 are consolidated in `turns_history__frontiermath_q2_galois.md` (attached). Re-read it before answering.\nAlso re-read `mega_prompt.md` and `problem_statement.md`.\n\nCRITICAL — use ONLY the files attached to THIS message. Do NOT open, import, retrieve, or cite any file from your File Library / previously uploaded files, even one named similarly (e.g. another `turns_history…md`). Other unrelated problems use similarly named history files in the same account, and importing one will silently switch you onto the wrong problem. If the attached `turns_history__frontiermath_q2_galois.md` appears missing, do NOT continue from partial context. Reply only with `MISSING_REQUIRED_ATTACHMENT` and name the missing file(s); never substitute a library file.\n\nIf this turn drifts into hammering one specific case or sub-instance, step back and ask whether the case is revealing a structural pattern that would close many cases at once. Prefer arguments whose conclusion is a uniform statement.\n\nEnd this response with ESTABLISHED / GAP / NEXT + tag.\nContinue with Turn 150."
+    },
+    {
+      "ct": 1782197330.258563,
+      "role": "assistant",
+      "text": "## Turn 150 — parser-level submission preflight\n\nI recreated the frozen \\(h_0\\) submission from the current attachments and ran a strict serialization/syntax audit. The specification requires three blank-line-separated sections, omits the implicit tame relation, constrains \\(x_0,x_1\\) through the 2-core semantics, and interprets exponents modulo \\(M=85667662080\\). \n\nThe audit found:\n\n- exactly four generators and three sections;\n- ten uniquely named, acyclic definitions and one relation;\n- no undefined identifiers;\n- no submitted tame relation;\n- all numeric exponents in the permitted residue range;\n- \\(40491355905^2\\equiv40491355905\\pmod M\\), with residues \\(1\\bmod256\\) and \\(0\\) on the odd part;\n- ASCII with LF endings, no carriage returns;\n- exactly 256 bytes;\n- SHA-256 `4f81b04ae00e737a244f2445d70b095333a427508958f11489e3cabdc0192fdc`.\n\nThis independently reproduces the frozen serialization and checksum recorded at Turn 149. \n\n[Download the byte-exact h₀ submission](sandbox:/mnt/data/q2_galois_h0_submission.txt)\n\n**ESTABLISHED**: The frozen \\(h_0\\) file passes a parser-level dependency, format, exponent, line-ending, byte-count, and checksum preflight. No change to the presentation is indicated.\n\n**GAP**: The private 5402-group verifier remains unrun; the proof has not received external manuscript review.\n\n**NEXT**: Submit this exact file unchanged. On failure, apply the frozen protocol: construct the first target’s framed certificate and descend to its lowest rejected node before modifying any word.\n\n[CONTINUE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "fetched",
+  "source_detail": {
+    "artifact_sha256": "44133a7aab289222390cf4a04bcbc237293f726a4bd5fc08967fc66c61e76f26",
+    "kind": "backend_fetched"
+  },
+  "source_file_sha256": "44133a7aab289222390cf4a04bcbc237293f726a4bd5fc08967fc66c61e76f26",
+  "title": "Turn 150 Scorched-Earth",
+  "turn": 150
+}

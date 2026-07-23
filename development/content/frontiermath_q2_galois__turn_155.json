@@ -1,0 +1,26 @@
+{
+  "key": "frontiermath_q2_galois__turn_155",
+  "lane": "frontiermath_q2_galois",
+  "link": null,
+  "msgs": [
+    {
+      "ct": 1782201938.277,
+      "role": "user",
+      "text": "# Scorched-Earth Erdős Sweep — Turn 155\n\nThis is turn 155. Turns 1 through 154 are consolidated in `turns_history__frontiermath_q2_galois.md` (attached). Re-read it before answering.\nAlso re-read `mega_prompt.md` and `problem_statement.md`.\n\nCRITICAL — use ONLY the files attached to THIS message. Do NOT open, import, retrieve, or cite any file from your File Library / previously uploaded files, even one named similarly (e.g. another `turns_history…md`). Other unrelated problems use similarly named history files in the same account, and importing one will silently switch you onto the wrong problem. If the attached `turns_history__frontiermath_q2_galois.md` appears missing, do NOT continue from partial context. Reply only with `MISSING_REQUIRED_ATTACHMENT` and name the missing file(s); never substitute a library file.\n\nIf this turn drifts into hammering one specific case or sub-instance, step back and ask whether the case is revealing a structural pattern that would close many cases at once. Prefer arguments whose conclusion is a uniform statement.\n\nEnd this response with ESTABLISHED / GAP / NEXT + tag.\nContinue with Turn 155."
+    },
+    {
+      "ct": 1782202665.089594,
+      "role": "assistant",
+      "text": "## Turn 155 — root certificate manifest assembled\n\nI completed Turn 154’s requested provenance layer: a self-contained dependency DAG binding the frozen 256-byte \\(h_0\\) submission to Propositions I–III and the target-recurrence schema. Turn 154’s two reported Proposition-II artifact hashes are preserved exactly in the manifest. \n\nThe checker reran the bundled boundary audit and a fresh Proposition-III finite Wall audit. All integrity, syntax, DAG, idempotent, and bundled-certificate checks passed. The exact submission remains compatible with the stipulated implicit tame relation, 2-core marking, and modulus-\\(M\\) exponent encoding. \n\nRoot-manifest SHA-256:\n\n```text\n1c86f2a1cd3ef416ce64b6afc00d210b4f9ed39500dc0666740da1333da899ee\n```\n\nSubmission SHA-256:\n\n```text\n4f81b04ae00e737a244f2445d70b095333a427508958f11489e3cabdc0192fdc\n```\n\n[Root-manifest bundle](sandbox:/mnt/data/turn155_h0_root_manifest_bundle.zip) · [Exact verifier submission](sandbox:/mnt/data/turn155_root_manifest/q2_galois_h0_submission.txt) · [Verification report](sandbox:/mnt/data/turn155_root_manifest/root_manifest_verification_report.json)\n\n**ESTABLISHED**: Built and successfully verified the root provenance/dependency manifest for the frozen \\(h_0\\) submission. Added fresh executable audits for Proposition I and the finite inverse-action Wall identity; the latter exhausts both Arf classes in dimensions \\(2\\) and \\(4\\), covering all 102 relevant 2-power-order isometries with zero failures.\n\n**GAP**: The private 5402-group verifier remains unrun. The original Turn-154 Proposition-II executable and JSON artifact were not attached to this turn, so their reported hashes are provenance-bound but their bytes could not be independently re-executed.\n\n**NEXT**: Submit the unchanged 256-byte file to the private verifier; localize any rejection through the root DAG before altering the word.\n\n[CONTINUE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "fetched",
+  "source_detail": {
+    "artifact_sha256": "3b33186af8f92b1a8754a3a2d6d316a7ed83a947fa8a4df5a249828c9c499043",
+    "kind": "backend_fetched"
+  },
+  "source_file_sha256": "3b33186af8f92b1a8754a3a2d6d316a7ed83a947fa8a4df5a249828c9c499043",
+  "title": "Turn 155 Summary",
+  "turn": 155
+}

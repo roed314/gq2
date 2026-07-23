@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_111",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "According to the current attached history document from 2026-06-28, Turn 111 is again an attachment-only continuation. The required files are present, and I used only the current attachments: mega_prompt.md, problem_statement.md, and turns_history__q2_candidate_iso.md.\n\nTurn 111 — attachment-only idempotence remains closed\n\nThe state remains unchanged from Turn 110:(THEOREM_STATE,MEASURED_CERTIFICATE_D_STATE)=(ΓS≅GΓH, NO_MEASURED_INPUT).The theorem coordinate remains closed. The problem asks whether there is a continuous isomorphismΦ:ΓS→ΓH commuting with the canonical projections to G, equivalently πH∘Φ=πS. The attached sweep records the stronger F=P⋊G-level statement: there is a continuous over-G automorphism Φ:F→F such thatΦ(rS−1)=rH.\n\nSince rS and rS−1 generate the same closed normal subgroup, this descends toΓS=F/⟨⟨rS⟩⟩≅G\n\nF/⟨⟨rH⟩⟩=ΓH.This is exactly the requested over-G isomorphism.\n\nThe proof chain remains frozen:H1 -Nielsen equivalence+residual restricted-Lie induction+normalized Koszul–Witt coefficient induction+Certificates D.1–D.4+finite filtered Nielsen compactness⟹ΓS≅GΓH.The structural pattern is uniform and should not be replaced by hammering another subcase. The non-Ef pieces are unit-controlled; the residual Ef,mod2,s=1 tower closes by the restricted-Lie induction Cm=Lm; the coefficient tower closes after exact normalization to the row (2,t) and the Koszul--Witt cascade; and the final global step is finite filtered Nielsen compactness.No new structural move is warranted under the current inputs. There are still no genuine object-level nonlinear Certificate D artifacts attached: no D.1–D.4 scripts, matrices, pivot tables, or measured-output logs independent of the history ledger. Therefore the strict measured Certificate D gate remains\n\nNO_MEASURED_INPUT,not PASS, not FAIL, and not REJECTED_AS_LEDGER_DERIVED. The history’s verifier claims support the theorem ledger, but they are not themselves newly attached measured nonlinear Certificate D input.So the attachment-only state-transition lemma remains in force:{prompt, problem statement, history only}⟹(ΓS≅GΓH, NO_MEASURED_INPUT) unchanged.\n\nNo residual Magnus tower, degree-16 case, A2 -layer, t-layer, Koszul--Witt coefficient case, or Certificate D subcase should be reopened under this input.\n\nESTABLISHED: Turn 111 is idempotent under the same attachment-only conditions as Turn 110. The theorem coordinate remains ΓS≅GΓH, via an over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH. The strict measured Certificate D coordinate remains NO_MEASURED_INPUT.\n\nGAP: No structural mathematical gap is reopened. The only remaining gap is external reproducibility: no genuine object-level measured nonlinear D.1–D.4 artifacts are attached in this turn.\n\nNEXT: Keep the obstruction sweep closed. The only non-idempotent next move is to attach genuine measured D.1–D.4 scripts, matrices, pivots, or measured-output logs not derived from the history, then run the strict gate as PASS or FAIL.[TURN111-ATTACHMENT-ONLY-IDEMPOTENT-GATE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "ef78d86ab6f73b4ffd4f1e6ea724c2abfd99e5a149dc25168e0398e1ee7dd5d3",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "ef78d86ab6f73b4ffd4f1e6ea724c2abfd99e5a149dc25168e0398e1ee7dd5d3",
+  "title": null,
+  "turn": 111
+}

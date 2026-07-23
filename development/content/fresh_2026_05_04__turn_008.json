@@ -1,0 +1,20 @@
+{
+  "key": "fresh_2026_05_04__turn_008",
+  "lane": "fresh_2026_05_04",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "I treated Turn 7’s relation as the only serious surviving candidate and found a new obstruction. The Turn 7 candidate is not correct.\n\nThe candidate was sigma,tau,x,y nx = (x*tau^85667662078)^40491355905 ny = (y*tau)^40491355905 x*sigma^45176306175*x*sigma^40491355905*x^-1*nx*ny^sigma*y^-1i.e.r=xσ−πxσπx−1(xτ−2)π ((yτ)π)σy−1,π=π2.This respects the prompt syntax: σ,τ are the distinguished tame generators, τσ=τ2 is implicit, and π≡40491355905(modM), −π≡45176306175(modM).The prior file’s Turn 7 reported many successful finite tame cup-rank tests for this relation, so I focused exactly there.\n\nThe new bad quotient isΔ91,12=⟨σˉ,τˉ∣τˉ91=1,σˉ12=1,σˉτˉσˉ−1=τˉ2⟩.\n\nThis is a legal tame quotient because 91=7⋅13∣212−1=4095.The first-rank calculation still passes: the induced open subgroup hasdimF2H1=ef+2=91⋅12+2=1094.So this is not a linear-rank failure. The failure is in the quadratic Magnus form, i.e. the Demuškin cup-product layer.For the Turn 7 relation, after eliminating the linear relation on a nontrivial τ-character block, the quadratic block attached to a nontrivial 91-st root α has the following exact form. Put s=πmod12=9,u=(1+α)−1.On the 12-dimensional σ-orbit block, indexed by c∈Z/12Z, the matrix isBα (c,c)=1+u2c+1+u2c+s,Bα (c,c+s)=Bα (c,c−s)=1,with all other entries zero, where the off-diagonal terms are interpreted modulo 12. This formula is the useful new reduction: it compresses the full 1094-dimensional cup-product check to exact finite-field row reductions on 12×12 blocks.\n\nNow take α to be a root over F2of\n\nP(T)=T12+T8+T6+T5+T4+T3+1.\n\nThis polynomial divides T91−1, and TmodP(T) has order 91. Exact row reduction overF2 [T]/(P(T))gives rankBα=9,not 12. Thus the quadratic cup-product form has a nonzero radical on this tame-character block.\n\nMore globally, factoring T91−1 over F2, the nontrivial τ-part has dimension (91−1)⋅12=1080,but the Turn 7 relation gives rank only936 on that part. Adding the trivial τ-part contributes the expected 12+2=14, so the total cup rank is at most 936+14=950,where the Demuškin group for the actual degree-1092 local field must have nondegenerate cup product of rank 1092+2=1094.So Turn 7’s candidate fails badly, although it passed all smaller tests reported there. The first missed obstruction occurs at mixed unramified period f=12, not at the earlier prime or 2-power periods.The source of the failure is now clearer. The τ−2 correction fixes the previously bad (5,4), (15,4), and related Frobenius-orbit blocks, but whenf=22⋅3 the idempotent shift s=πmodf=9 splits the σ-cycle into three 4-cycles, and the diagonal terms1+u2c+1+u2c+9 do not prevent a radical on certain order-91 tame-character blocks. I also checked simple replacements x−1(xτa)π with a=±1,±2,±4,±8; −2 is still the best of those, and the others fail earlier. So the next repair is probably not just changing τ−2 to another fixed τa.\n\nESTABLISHED: Turn 7’s strengthened candidate is refuted. In the legal tame quotient (e,f)=(91,12), its nontrivial τ-character quadratic block has rank 9 instead of 12 for roots of T12+T8+T6+T5+T4+T3+1. Hence the induced cup product is degenerate, impossible for the relevant local Demuškin group.\n\nGAP: A replacement relation is still unknown. The missing term must fix mixed σ-periods such as f=12, not merely prime periods, 2-power periods, or the previously tested tame ramification cases.\n\nNEXT: Use the block formulaBα (c,c)=1+u2c+1+u2c+s,Bα (c,c±s)=1 as a design constraint. Search for an additional (σ,τ)-mixed correction whose character-block matrix kills the order-91 radical while preserving the already-correct (3,2),(5,4),(7,3),(15,4),(17,8),(31,5) tests.[BREAKTHROUGH]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "84c5a0e8c1cd410380f0cfe6ba2daa0165a8d528fc8e23552d7a6da95d7da43f",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "84c5a0e8c1cd410380f0cfe6ba2daa0165a8d528fc8e23552d7a6da95d7da43f",
+  "title": null,
+  "turn": 8
+}

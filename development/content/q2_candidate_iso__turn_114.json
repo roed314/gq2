@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_114",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "According to a document from 2026-06-28, Turn 114 is another attachment-only idempotent continuation. The current attachments are just mega_prompt.md, problem_statement.md, and turns_history__q2_candidate_iso.md; no independent measured nonlinear Certificate D artifacts were attached.\n\nTurn 114 — obstruction sweep remains closed\n\nThe state remains (THEOREM_STATE,MEASURED_CERTIFICATE_D_STATE)=(ΓS≅GΓH, NO_MEASURED_INPUT).The theorem coordinate is unchanged: the attached sweep records a continuous over-G automorphism Φ:F=P⋊G⟶FwithΦ(rS−1)=rH.\n\nSince rS and rS−1 generate the same closed normal subgroup, this descends toΓS=F/⟨⟨rS⟩⟩F≅G\n\nF/⟨⟨rH⟩⟩F=ΓH,which is exactly the problem’s required condition πH∘Φ=πS. The problem statement asks precisely for this over-G isomorphism, with F=P⋊G, P the free G-operator pro-2 group on x0,x1, and the quotients defined by rS,rH.\n\nNo Magnus layer, coefficient layer, degree-16 subcase, A2 -layer, t-layer, Koszul–Witt coefficient case, or Certificate D subcase should be reopened. The attached history’s final transition rule is structural:{mega_prompt,problem_statement,turns_history only}⟹(ΓS≅GΓH, NO_MEASURED_INPUT).\n\nTurn 113 already states this exact attachment-only idempotent state, including the stronger F-level automorphism Φ:F→F with Φ(rS−1)=rH, and says the strict measured Certificate D coordinate remains NO_MEASURED_INPUT.\n\nThe structural proof chain remains frozen:H1 -Nielsen equivalence+residual restricted-Lie induction+normalized Koszul–Witt coefficient induction+D.1–D.4+finite filtered Nielsen compactness⟹ΓS≅GΓH.The compactness step uses finite filtered Nielsen/cocycle data SN,J, not arbitrary finite quotient automorphisms. Each datum has first layer UmodJ, satisfies the finite cocycle relation induced by τσ=τ2, sends ρS=rS−1 to rH modulo PN,J, and induces a finite over-G automorphism by the finite Frattini criterion. The inverse limit gives Φ:F→F over G.The measured Certificate D coordinate is also unchanged. The current attachments contain no object-level nonlinear D.1–D.4 scripts, matrices, pivot tables, or measured-output logs independent of the history ledger. Therefore the strict gate is still\n\nNO_MEASURED_INPUT,not PASS, not FAIL, and not REJECTED_AS_LEDGER_DERIVED. A future non-idempotent move would require genuine measured D.1–D.4 artifacts; ledger-recorded verifier claims support the theorem coordinate, but they are not newly attached measured artifacts for the strict gate.\n\nESTABLISHED: Turn 114 is idempotent under the same attachment-only conditions as Turn 113. The theorem coordinate remains ΓS≅GΓH, via an over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH. The strict measured Certificate D coordinate remains NO_MEASURED_INPUT.\n\nGAP: No structural mathematical gap is reopened. The only remaining gap is external reproducibility: no genuine object-level measured nonlinear D.1–D.4 artifacts are attached in this turn.\n\nNEXT: Keep the obstruction sweep closed. The only non-idempotent next move is to attach genuine measured D.1–D.4 scripts, matrices, pivots, or measured-output logs not derived from the history, then run the strict gate as PASS or FAIL.[TURN114-ATTACHMENT-ONLY-IDEMPOTENT-GATE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "e27227e05b4a9135fdbccc81041a45d7fbcf465a608a98180a425a522dd5593a",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "e27227e05b4a9135fdbccc81041a45d7fbcf465a608a98180a425a522dd5593a",
+  "title": null,
+  "turn": 114
+}

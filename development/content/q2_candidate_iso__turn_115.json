@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_115",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "Turn 115 — attachment-only idempotence remains closed The required current-turn attachments are present, and I did not use File Library material. The user’s governing question remains whether there is an over-G isomorphismΦ:ΓS⟶∼ΓH,πH∘Φ=πS,for the two profinite one-relator groups defined in the problem statement.Under the same attachment-only conditions as Turn 114, the state is unchanged:(THEOREM_STATE,MEASURED_CERTIFICATE_D_STATE)=(ΓS≅GΓH, NO_MEASURED_INPUT).The theorem coordinate remains closed. The attached history records the stronger statement that there is a continuous over-G automorphism Φ:F=P⋊G→FwithΦ(rS−1)=rH.\n\nSince rS and rS−1 generate the same closed normal subgroup, this descends toΓS=F/⟨⟨rS⟩⟩F≅G\n\nF/⟨⟨rH⟩⟩F=ΓH,which is exactly the required condition πH∘Φ=πS.No structural computation should be reopened. In particular, there is no reason under the current inputs to revisit the residual Magnus tower, degree 16, the A2=R/(4,t)-layer, the t-layer, the Koszul–Witt coefficient tower, or any Certificate D subcase. The frozen proof chain remainsH1 -Nielsen equivalence+residual restricted-Lie induction+normalized Koszul–Witt coefficient induction+D.1–D.4+finite filtered Nielsen compactness⟹ΓS≅GΓH.The compactness step uses finite filtered Nielsen/cocycle data SN,J, not arbitrary finite quotient automorphisms; finite Frattini gives finite over-G automorphisms, and the inverse limit gives the desired Φ:F→F.The strict measured Certificate D coordinate also remains unchanged. The current attachments contain only mega_prompt.md, problem_statement.md, and turns_history__q2_candidate_iso.md; they do not include object-level measured nonlinear D.1–D.4 scripts, matrices, pivots, or measured-output logs independent of the history ledger. Therefore the strict gate remains\n\nNO_MEASURED_INPUT,not PASS, not FAIL, and not REJECTED_AS_LEDGER_DERIVED. A non-idempotent next step would require genuine measured D.1–D.4 artifacts not derived from the history itself.\n\nESTABLISHED: Turn 115 is idempotent under the same attachment-only conditions as Turn 114. The theorem coordinate remains ΓS≅GΓH, via an over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH. The strict measured Certificate D coordinate remains NO_MEASURED_INPUT.\n\nGAP: No structural mathematical gap is reopened. The only remaining gap is external reproducibility: no genuine object-level measured nonlinear D.1–D.4 artifacts are attached in this turn.\n\nNEXT: Keep the obstruction sweep closed. The only non-idempotent next move is to attach genuine measured D.1–D.4 scripts, matrices, pivots, or measured-output logs not derived from the history, then run the strict gate as PASS or FAIL.[TURN115-ATTACHMENT-ONLY-IDEMPOTENT-GATE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "194220600a2d3e01bd6aaacd6e66ebfdbf258523b2c1282d8aa05e7d6ae5e334",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "194220600a2d3e01bd6aaacd6e66ebfdbf258523b2c1282d8aa05e7d6ae5e334",
+  "title": null,
+  "turn": 115
+}

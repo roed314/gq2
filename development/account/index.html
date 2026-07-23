@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="David Turturean's account of the AI-assisted search for a presentation of the absolute Galois group of the 2-adic numbers.">
+<title>Finding the Presentation of the 2-adic Absolute Galois Group | David Turturean</title>
+<link rel="stylesheet" href="../../site.css?v=20260718-2">
+</head>
+<body class="account-page">
+
+<header class="page-header">
+  <a class="back" href="../">&#8592; Development record</a>
+  <h1>Finding the Presentation of the 2-adic Absolute Galois Group: David Turturean's Point of View</h1>
+</header>
+
+<main>
+  <article class="prose">
+    <p>By early 2026, it had become clear that AI was poised to solve a lot
+    of open problem in mathematics.</p>
+
+    <p>AI was starting to eat away at the Erdős Problems list by solving
+    some of them with just one prompt. AI was also now able to do cognitive
+    labor that would take a human a workday (so a few hours) in other
+    fields. In January of 2026, I thought to myself: why not make AI work
+    for many workdays in a row towards a certain problem, the way a research
+    mathematician would? If each time you prompt an AI model, it outputs the
+    technical volume that a human mathematician could produce in about a
+    day, why not repeat that and hope it generates what a human
+    mathematician produces in a week, month, or year?</p>
+
+    <p>Throughout January and February, I played around with deploying this
+    idea. I eventually landed on a harness on top of ChatGPT-Pro that
+    prompts the model with its own history of attempts to continue solving a
+    given problem. You can see the details of this in the logs. One thing I
+    found important is that, each time I prompted ChatGPT to attempt an open
+    problem, I should start a new conversation thread: through their
+    post-training, LLMs are made to not derail a conversation, meaning that
+    an LLM will only be so exploratory, self-critical and innovative once
+    you have a few back-and-forths with it in the same ChatGPT conversation.
+    This could have changed in the meantime, since LLMs are generally now
+    more eager to take open math problems, but at the time I found a huge
+    difference in progress if I kept the research prompts all within the
+    same conversation vs. if I initiated a conversation each time I inquired
+    furthermore.</p>
+
+    <p>Instead of coding up this harness that would let me prompt GPT-Pro
+    autonomously ad infinitum, I let Claude Code code it up: I did not want
+    to have to type a command each time I wanted to run certain routines,
+    but rather I wanted to be able to tell Claude Code in natural language
+    to run or edit the routines. So instead of me forcing a shape of the
+    approach onto Claude Code, I let Claude Code auto-discover what is the
+    best way to do that for itself.</p>
+
+    <p>I naturally became interested in the FrontierMath Open Problems set,
+    which I <a href="https://epoch.ai/frontiermath/open-problems/explicit-deformations">then</a>
+    <a href="https://epoch.ai/frontiermath/open-problems/ramsey-book-graphs">chipped</a>
+    at. Being part of the Open Problems set, I started
+    sending David Roe promising candidate presentations for the 2-adic
+    Absolute Galois Group. Unfortunately, none of the three ones I had sent
+    before June 2026, found and elaborated by ChatGPT-5.2-Pro and
+    ChatGPT-5.4-Pro, passed David Roe's computation verifier. Motivated by
+    the nonlinear connections LLMs pick up on in math through their
+    training, I had tried to get the models to first guess a promising
+    candidate, then prove the correctness of said candidate: the models could
+    neither prove or disprove a lot of the promising candidate presentations
+    they had found. I also tried to get the models to start from a promising
+    general shape of a proof of correctness that a candidate would have,
+    without a specific promising candidate in mind - and then try to 'fill
+    in the blanks' of the proof with said candidate: that also did not
+    work.</p>
+
+    <p>Eventually, according to X (formerly known as Twitter), GPT-5.6-Pro
+    was in stealth deployment, or A/B testing, and, indeed, when I tried to
+    use "GPT-5.5-Pro" in the second half of June through the web portal, it
+    was significantly better and thought for longer. So I attempted this
+    problem again.</p>
+
+    <p>During a ~26-hour autonomous stretch, Pro found a candidate called A2
+    and developed a substantial proof around it. It worked out calculations
+    over finite target groups, organized inductions intended to cover a lot
+    of interactions between it and other groups, and generated a
+    journal-style manuscript. At this point, I had also asked separately
+    GPT-5.6-Pro to develop a number of tests of varying oddity and
+    complexity to verify the candidate: every case my local package could
+    handle agreed with A2.</p>
+
+    <p>I opened a separate ChatGPT Pro review of the A2 manuscript. It found
+    that a Lemma 3.4 in this manuscript motivating the correctness of A2 was
+    false. A few turns of ChatGPT-Pro doing analysis located the defect in
+    the candidate itself: A2 was incompatible with data that the known
+    Galois group requires.</p>
+
+    <p>My next instruction was to find a more general candidate that
+    preserved the usable part of the proof while making the missing step
+    possible. Pro immediately derived a corrected relation, tantamount to a
+    generalization of the initial A2 candidate and proposed the presentation
+    proved here, that we have verified in the meantime, and that motivated
+    the existence of this website.</p>
+
+    <p>Much of this work done to solve this problem was done by voice. With
+    a lot of the infrastructure already in place from solving other open
+    problems, I used Claude Code as the operational controller and most
+    often just spoke to it the mathematical or procedural instruction I
+    wanted it to carry out. This was partly motivated by the fact that I was
+    trying to solve a lot of problems in parallel, partly motivated by the
+    fact that voice simply allows for more natural intention expressivity,
+    which coding agents can now pick up on. I also used speech-to-text in
+    the ChatGPT conversations while developing the manuscript.<br>
+    This was my first sustained attempt to direct a mathematical research
+    process primarily through speech. This entire experience has made me
+    question what will true effort in mathematics looks like in the future,
+    now that you can elicit solutions to decades-old research questions in
+    mathematics with your voice: can you one-shot entire PhD theses by just
+    talking about them, thinking about them? This is also exactly the kind
+    of thing that you predict becomes possible a few tens of months before
+    you can make things float with just your voice.</p>
+
+    <p>After I produced the 60-page manuscript that motivated the
+    presentation we have today, I sent to solution over to David Roe, who
+    ran the finite-group verifier he had built for EpochAI.</p>
+
+    <p>After submission passed every one of his tests, he also read the
+    manuscript and confirmed the natural-language proof.</p>
+
+    <p>Roe and I separately formalized the solution with coding agents: he
+    used Fable 5, while I used a combination of GPT-5.5-xhigh and
+    ChatGPT-5.5-Pro, followed by Fable 5 once it became available again. To
+    start, I asked GPT-5.5-Pro for a rough autoformalization plan based on
+    the manuscript, then let GPT-5.5-xhigh in Codex query ChatGPT-5.5-Pro
+    in-browser for incremental new formalization patches of Lean 4 code, and
+    had xhigh integrate and compile each new piece of Lean code from
+    Pro.</p>
+
+    <p>After Roe's autoformalization finished, I completed my development
+    with a patch from his separately developed formalization; this patch
+    represents 3-4% of my formalization, however was very helpful as models
+    can get slow and lazy towards the last-mile delivery of an
+    autoformalization.</p>
+
+    <p>I used computing resources provided by
+    <a href="https://fulcrum.inc">Fulcrum</a> throughout the solution search
+    and Lean formalization.</p>
+
+    <p>Roe created <a href="https://github.com/roed-math/paperforge">PaperForge</a>
+    and assembled the PDF, interactive paper, formalizations, and development
+    record into the site where this account appears. He has been immensely
+    helpful in corroborating the artifacts
+    that mathematician would find necessary to digest an AI-generated
+    result.</p>
+  </article>
+</main>
+
+<footer>
+  <a href="../../">Return to the project homepage</a>.
+  Built with
+  <a class="pf-credit" href="https://github.com/roed-math/paperforge"><svg class="pf-glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+    <defs>
+      <mask id="pf-glyph-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+        <rect width="24" height="24" fill="white"/>
+        <path d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Z" fill="black"/>
+      </mask>
+    </defs>
+    <path fill="currentColor" mask="url(#pf-glyph-cut)" d="M2 7h5l2-2h6l2 2h5c-1 4-4 7-8 8-2 1-2 3 0 5l1 1h-4l-1-2H7l-1 2H3v-2l2-2c2-2 0-3-3-4Z"/>
+    <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Zm13-5c0 3-1 5-4 6"/>
+  </svg>PaperForge</a>.
+</footer>
+</body>
+</html>

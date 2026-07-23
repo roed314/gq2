@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_098",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "Turn 98 — artifact-boundary audit: history claims are not measured artifacts I re-read the three current attachments only. The original task is still the over-G isomorphism problem for ΓS,ΓH: construct or disprove a continuous isomorphism commuting with the canonical projections to G. The attached history’s theorem-level state remains frozen: it records a proof of a continuous over-G automorphism Φ:F→F with Φ(rS−1)=rH, hence ΓS≅GΓH.\n\nThe correct Turn 98 refinement is:A measured-output claim inside the history is not itself measured input.This matters because the history contains earlier turns that report verifier outputs, for example D.3 stack-rank values such as rankD5,6,7=60,rankS4=61,and Turn 73 even records that a D.3 verifier script and output were “produced.” But in the current turn’s attached files, those scripts, pivot tables, matrices, or measured-output JSON files are not themselves attached. They appear only as assertions inside turns_history__q2_candidate_iso.md.So the strict Certificate D gate still cannot be upgraded to PASS.\n\nThe provenance rule from Turn 97 remains the right invariant:(THEOREM_STATE,MEASURED_CERTIFICATE_D_STATE)=(ΓS≅GΓH, NO_MEASURED_INPUT).\n\nTurn 97 explicitly separated those two coordinates and specified that no attached artifact gives NO_MEASURED_INPUT, expected-output JSON gives REJECTED_AS_NOT_MEASURED, matching measured artifacts give PASS, and contradicting measured artifacts give FAIL.\n\nThis turn therefore does not reopen degree 16, the A2 -coefficient layer, the t-layer, the Koszul–Witt induction, or any exceptional subcase. The theorem coordinate remains unchanged. The only live issue is external reproducibility of Certificate D.The minimum measured packet remains exactly the four nonlinear Certificate D artifacts:D.1D.2D.3D.4 measured matrix/pivots for S10=(∂8,B10) with ranks 56,62,measured evaluator/pivots showing rankΘ16=35, λ(Ω16fix)=1, λ(Ω16η)=0,measured D5,6,7 and S4 ranks 60,61,direct measured check of (0,B8)∈ker, θ80(0,B8)=(B8)[2], λ=1.That packet is listed in the history as the strict measured-output requirement, not as currently attached measured data.So the Turn 98 state is sharper than just repeating NO_MEASURED_INPUT:history-recorded verifier claims count for the theorem ledger, but not for the strict measured gate.A future PASS must come from object-level artifacts: actual scripts, matrices, pivots, or measured-output JSON. A future FAIL would localize an inconsistency in the measured Certificate D path; it would not authorize restarting the obstruction sweep as though a new Magnus or coefficient case had appeared.\n\nESTABLISHED: The theorem-level conclusion remains ΓS≅GΓH. The strict measured Certificate D state remains NO_MEASURED_INPUT. Turn 98 adds the artifact-boundary rule: verifier-output claims inside the history are ledger evidence, not attached measured artifacts.\n\nGAP: No structural mathematical gap is reopened. The only remaining gap is external reproducibility: genuine measured nonlinear D.1–D.4 artifacts are still absent from the current attachments.\n\nNEXT: Do not mine turns_history__q2_candidate_iso.md as a substitute for measured data. The next valid move is still to attach actual measured nonlinear verifier outputs, matrices, pivots, or scripts for D.1–D.4 and then run the strict gate.[TURN98-HISTORY-CLAIMS-NOT-MEASURED-ARTIFACTS]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "b86159d5fffaa205f1c067acb4a2fd2d36d2aa902af0f6fff062fe3738ab960f",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "b86159d5fffaa205f1c067acb4a2fd2d36d2aa902af0f6fff062fe3738ab960f",
+  "title": null,
+  "turn": 98
+}

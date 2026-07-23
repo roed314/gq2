@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="David Roe's account of the AI-assisted search for a presentation of the absolute Galois group of the 2-adic numbers.">
+<title>Verifying Presentations of the 2-adic Absolute Galois Group</title>
+<link rel="stylesheet" href="../site.css?v=20260718-2">
+<link rel="stylesheet" href="../vendor/katex.min.css">
+<script defer src="../vendor/katex.min.js"></script>
+<script defer src="../vendor/auto-render.min.js"></script>
+<script>
+  // deferred scripts run before DOMContentLoaded, so renderMathInElement
+  // is defined by the time this fires. Same delimiters as the dev page.
+  window.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$",  right: "$",  display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+</head>
+<body>
+
+<header class="page-header">
+  <a class="back" href="../" data-editorial-id="ui.header.back">&larr; A Presentation of the Absolute Galois Group of&nbsp;&#x211A;<sub>2</sub></a>
+  <h1>Verifying Presentations of the 2-adic Absolute Galois Group</h1>
+</header>
+
+<main>
+  <p>As part of the <a href="https://epoch.ai/frontiermath/open-problems/q2-absolute-galois">problem submission</a> to the Epoch AI Open Problems project, David Roe built a verification script that ran various checks on a proposed presentation.  These checks were not sufficient to prove the correctness of a presentation, but they provide strong evidence.</p>
+
+  <p>Given a presentation with four generators $\sigma, \tau, x_0, x_1$ and two relations $\tau^\sigma = \tau^2$ and $R(\sigma, \tau, x_0, x_1)$, if it is isomorphic to the absolute Galois group of $\mathbb{Q}_2$ then the number of Galois extensions of $\mathbb{Q}_2$ with Galois group $G$ is given by the number of quadruples in $G$ that both generate $G$ and satisfy the relations (divided by the size of the automorphism group of $G$).  See Proposition 4.2 of <a href="https://doi.org/10.2140/obs.2019.2.393">The Inverse Galois Problem for $p$-adic fields</a>.</p>
+
+  <p>This provides a strategy: when the number of extensions is known (though the <a href="https://www.lmfdb.org/padicField/">LMFDB database of $p$-adic fields</a> for example), then you can compare the predicted count from the presentation with the known count.  If any count disagrees, then the presentation cannot be correct.</p>
+
+  <p>In addition to the LMFDB counts, the counts are also known whenever $G$ is a $2$-group by the known presentation for the maximal pro-2 quotient (you can compute the count using the same method for this other presentation, and the two must agree for $2$-groups $G$).</p>
+
+  <p>In order to compute the counts, we create a directed system of homomorphisms between finite groups that can possibly arise as Galois groups of $p$-adic fields (they must be potentially $p$-realizable as in Definition 2.1 of <i>loc. cit.</i>).  Instead of just counting surjections, we actually store the quadruples (up to automorphism); these can then be lifted along the directed system (with adjustment for the fact that automorphism groups don't map surjectively even when quotienting by a characteristic subgroup).</p>
+
+</main>
+
+<footer>
+  <a href="../">Return to the project homepage</a>.
+  Built with
+  <a class="pf-credit" href="https://github.com/roed-math/paperforge"><svg class="pf-glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+    <defs>
+      <mask id="pf-glyph-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+        <rect width="24" height="24" fill="white"/>
+        <path d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Z" fill="black"/>
+      </mask>
+    </defs>
+    <path fill="currentColor" mask="url(#pf-glyph-cut)" d="M2 7h5l2-2h6l2 2h5c-1 4-4 7-8 8-2 1-2 3 0 5l1 1h-4l-1-2H7l-1 2H3v-2l2-2c2-2 0-3-3-4Z"/>
+    <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Zm13-5c0 3-1 5-4 6"/>
+  </svg>PaperForge</a>.
+</footer>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_073",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "Turn 73 — D.3 executable nonlinear verifier produced I used only the three files attached to this message. I did not open or rely on any un-attached Turn 70/71 artifacts.The attached history’s Turn 72 state was precise: the proof itself is frozen as a certificate proof of the over-G isomorphism, and the remaining task is external reproducibility for Certificate D, especially the D.3 stack-rank computation. Turn 72 says the D.3 contract is to constructD5,6,7:3L5⊕3L6⊕3L7→T6⊕T7⊕T8 from actual restricted representatives around the fixed I9 -base, compute the coefficient row μ4B4 over A2=R/(4,t), and verify rankD5,6,7=60,rank(D5,6,7μ4B4)=61.That rank jump is the executable certificate that the continuation kernel toggles the fixed μ4=1 scalar to 0.\n\nI produced the requested executable verifier:Download turn73_d3_stackrank_verifier.py and its output:Download turn73_d3_stackrank_verifier_output.txt\n\nThe output is:dim actual reps L1..L8: [2, 3, 2, 6, 6, 11, 18, 36]base residual terms degrees 1..8: [0, 0, 0, 0, 0, 0, 0, 0]D_5,6,7 columns: 105 rank(D_5,6,7): 60 rank(e0..e5): 6 mu-transfer functional exists: True fixed A2 f5 equals beta4(e0+e2+e3+e4,0,0): True fixed mu4: 1 rank([D_5,6,7 ; mu4 B4]): 61 What this adds beyond Turn 72 is that the D.3 contract is now an actual script, not just a manuscript specification. The script reconstructs actual restricted representatives, not just primitive initial forms; checks the fixed residual I9 -base; builds D5,6,7 by postmultiplying Y0,Y1,q by representatives in degrees 5,6,7; constructs the A2=R/(4,t) coefficient-2 ghost row; and verifies the stack rank. This addresses the earlier warning that D5,6,7 and μ4B4 require actual restricted representatives, the fixed I9 -base, and coefficient-Bockstein projection data, not only the canonical primitive basis.The script also keeps the structural invariant clear: it does not use a fragile chosen vector κ. It verifies the rank jump directly. This is the certificate form identified earlier as preferable because H4(2)is one-dimensional, so the rank jump is exactly the statement that μ4B4 is nonzero on kerD5,6,7.This does not reopen any obstruction layer. It strengthens the reproducibility layer supporting the already-frozen proof: the attached sweep proves the stronger statement that there is an over-G automorphism Φ:F→F withΦ(rS−1)=rH,which descends toΓS≅GΓH.The problem’s requested statement is exactly this over-G isomorphism.\n\nESTABLISHED: The D.3 nonlinear verifier contract from Turn 72 has now been turned into an executable script. It verifies the actual-representative residual checks, constructs D5,6,7, computes the A2 -coefficient row μ4B4, and confirms the decisive stack-rank jump 60→61. This supplies the missing executable D.3 reproducibility artifact.\n\nGAP: No structural mathematical gap remains inside the attached sweep. The remaining external reproducibility work, for a standalone paper, is to attach similarly executable scripts or explicit pivot tables for the other nonlinear Certificate D blocks D.1, D.2, and D.4, although their structural witnesses are already recorded in the history.\n\nNEXT: Package turn73_d3_stackrank_verifier.py into the manuscript appendix under Certificate D.3, then add either verifier scripts or compact pivot tables for D.1, D.2, and D.4 without reopening any new Magnus or coefficient case.[TURN73-D3-EXECUTABLE-STACKRANK-VERIFIER]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "f688da6d54b3e12cf4e8a67ad0b606e93c47581eee8fb08d5cf3d8285c2d7a68",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "f688da6d54b3e12cf4e8a67ad0b606e93c47581eee8fb08d5cf3d8285c2d7a68",
+  "title": null,
+  "turn": 73
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="David Roe's account of the AI-assisted search for a presentation of the absolute Galois group of the 2-adic numbers.">
+<title>Finding the Presentation of the 2-adic Absolute Galois Group | David Roe</title>
+<link rel="stylesheet" href="../../site.css?v=20260718-2">
+<link rel="stylesheet" href="../../vendor/katex.min.css">
+<script defer src="../../vendor/katex.min.js"></script>
+<script defer src="../../vendor/auto-render.min.js"></script>
+<script>
+  // deferred scripts run before DOMContentLoaded, so renderMathInElement
+  // is defined by the time this fires. Same delimiters as the dev page.
+  window.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$",  right: "$",  display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+</head>
+<body class="account-page">
+
+<header class="page-header">
+  <a class="back" href="../">&#8592; Development record</a>
+  <h1>Finding the Presentation of the 2-adic Absolute Galois Group: David Roe's Account</h1>
+</header>
+
+<main>
+  <article class="prose">
+    <p>I have been interested in finding a presentation of the absolute Galois group of $\mathbb{Q}_2$ for almost a decade.  My journey toward this paper began when I discovered that you could use the presentation for odd $p$ to count extensions with a given finite group.  I hoped to use these counts to investigate the feasibility of creating a database of $p$-adic tori of bounded dimension (for each $n$ there are finitely many conjugacy classes of subgroups $G$ of $\operatorname{GL}_n(\mathbb{Z})$, and you can roughly enumerate $\mathbb{Q}_p$-tori of dimension $n$ by enumerating field extensions with Galois group $G$).  The general story was impeded by the lack of a presentation for $\mathbb{Q}_2$, but I published a <a href="https://doi.org/10.2140/obs.2019.2.393">paper</a> in <a href="https://antsmath.org/ANTSXIII/">ANTS XIII</a> using the odd presentation to count extensions and give finite-level criteria ruling out certain Galois groups.</p>
+
+    <p>I am not an expert on profinite groups and I struggle to read German, so I did not pursue the problem, but it remained in the back of my mind.  So when Epoch AI approached me in September 2025 about contributing problems to the <a href="https://epoch.ai/frontiermath/open-problems">Open Problems challenge</a> it was a natural candidate.  I was able to adapt my code from the ANTS XIII paper to produce a <a href="../../verifier/">verifier</a>; while not a guarantee of correctness I believed that it would provide good evidence that a purported solution was correct.  Indeed, David Turturean reached out with potential presentations on March 11, 13, and 15, but none passed the verifier.</p>
+
+    <p>Anthropic's Fable 5 model was first released on June 9; I was attending an <a href="https://icerm.brown.edu/">ICERM</a> workshop on <a href="https://icerm.brown.edu/program/topical_workshop/tw-26-nfc">Number field counting in the LMFDB</a> and we had an approach toward computing the leading coefficient in Malle's conjecture that required having a presentation for the absolute Galois group of $\mathbb{Q}_p$ for all $p$ (following <a href="https://arxiv.org/abs/2606.04983">Loughran-Santens</a>).  I decided to ask Fable to find a presentation for $p=2$ and it came back overnight with a presentation that passed my verification scripts, together with a partial proof of correctness.  Occupied with the workshop, I asked it over the next several days to fill in the gaps without providing any guidance.  It did not succeed, and on June 12 the US government forced Anthropic to withdraw Fable.</p>
+
+    <p>In the middle of the three weeks that Fable was unavailable, David Turturean reached out again on June 24 with news that GPT had found another presentation, together with a proof of correctness.  This time, the presentation passed the verification script, leaving us with a 60 page paper that might be right.  Skimming the paper, it looked reasonable, but I was not confident in my ability to spot subtle errors (especially given my summer travel schedule).  David began an effort to autoformalize the proof using GPT; when Fable access was restored on July 1 I was attending a <a href="https://multramate.github.io/lean-lmfdb/">workshop</a> on <a href="https://github.com/leanprover-community/mathlib4">Lean</a> and I started a parallel effort using Fable 5 and Opus 4.8.</p>
+
+    <p>I found the autoformalization process amazing.  I provided Fable with the paper and asked it to make a plan.  It determined that several foundational results in class field theory and quadratic forms would be huge projects, and suggested taking them as axioms.  After I agreed to allow axioms that had exact matches in the mathematical literature, it created a plan and got to work.  Most of my interactions merely involved delegating tasks to Fable and Opus agents, and occasionally asking it to split harder chunks into subtasks for more effective parallelization.  It did seem to struggle with parts (as evidenced by how many times certain pieces of the proof were split into smaller chunks), but succeeded at producing a formalization after one week.</p>
+
+    <p>We were left with a paper written by GPT, proven correct using Fable (subject to checking the axioms and associated definitions).  The paper was not yet ready for human readers: it lacked context and background on the problem, explanation of which aspects of the proof were interesting or novel, discussion of followup questions, sufficient references to the literature, as well as transparency about the process.  Given the role that AI agents had played in the story so far, I decided to try to address these issues iteratively with Fable's assistance rather than starting from scratch.</p>
+
+    <p>I believe that AI models can help us produce more comprehensible mathematical writing.  Different readers approach a text with different levels of background, yet the author has traditionally had to choose a level of exposition.  Building upon <a href="www.lmfdb.org/knowledge/">knowls</a> in the LMFDB and <a href="https://pretextbook.org/">PreTeXt</a>, I aim to allow the reader to control the level of detail they see, and to provide easy access to definitions and notation at the point of use to functionally expand the reader's context window.  The ability to create such documents has existed for over a decade, but it is tedious work.  AI makes the authoring process much smoother.  As part of drafting this paper, I created the accompanying open source <a href="https://github.com/roed-math/paperforge/">PaperForge</a> project, which I hope will develop into a set of AI-based tools for improving mathematical exposition.  I think these methods have particular promise in the current context, where an AI-written paper is accompanied by a Lean formalization, since this allows the AI writing to continually connect to mathematically correct foundation.  This work is still at an early stage, and I welcome feedback and pull requests!</p>
+
+    <p>Several factors contributed to the success of this project.  First, the verification script provided an external validation of the approach before the expense of formalization. Since formalization is still a substantial undertaking, this allowed GPT to cheaply iterate, only committing to a Lean proof once the informal proof was already expected to be correct.  This crutch may not be necessary for long: Fable successfully found candidates without iteration (though without proofs), and tighter integration of formalization with proof exploration may obviate the benefit of external verification.</p>
+
+    <p>Second, Epoch AI's Open Problems list brought new eyes to the problem, bringing in others who were experimenting with AI orchestration methods.  I think that influx brought this problem to a quicker conclusion, but we can all learn these methods: the way we used GPT and Claude does not require particular expertise.  However, it does require some financial resources (and the corresponding, well-documented resource usage of the data centers underpinning these systems).  While the amount of money spent is not outlandish for faculty with grants, it is more of a stretch for graduate students and infeasible for many.  David and I are grateful to <a href="https://fulcrum.inc/">Fulcrum</a> and the <a href="https://www.simonsfoundation.org/">Simons Foundation</a> for funding this work.</p>
+
+    <p>Third, the advances in AI capabilities are very noticable.  We noticed a qualitative difference in the models that became available this summer.  Opus would frequently get stuck in the formalization tasks, but switching to Fable quickly resolved the issues.  With models continuing to improve, I expect that more problems will become amenable to these kinds of approaches.</p>
+
+    <p>Finally, I am grateful to the humans who have built up the capabilities of Lean and Mathlib.  The formalization would not have been possible without Mathlib to build upon, and manual verification of the proof that GPT produced to a sufficient level of confidence would have been long and painful.</p>
+
+    <p>I found this project exciting to be a part of, and I am happy to discuss its implications, both mathematical and methodological.  Find us on Zulip.</p>
+  </article>
+</main>
+
+<footer>
+  <a href="../../">Return to the project homepage</a>.
+  Built with
+  <a class="pf-credit" href="https://github.com/roed-math/paperforge"><svg class="pf-glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+    <defs>
+      <mask id="pf-glyph-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+        <rect width="24" height="24" fill="white"/>
+        <path d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Z" fill="black"/>
+      </mask>
+    </defs>
+    <path fill="currentColor" mask="url(#pf-glyph-cut)" d="M2 7h5l2-2h6l2 2h5c-1 4-4 7-8 8-2 1-2 3 0 5l1 1h-4l-1-2H7l-1 2H3v-2l2-2c2-2 0-3-3-4Z"/>
+    <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Zm13-5c0 3-1 5-4 6"/>
+  </svg>PaperForge</a>.
+</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "key": "frontiermath_q2_galois__turn_152",
+  "lane": "frontiermath_q2_galois",
+  "link": null,
+  "msgs": [
+    {
+      "ct": 1782198177.979,
+      "role": "user",
+      "text": "# Scorched-Earth Erdős Sweep — Turn 152\n\nThis is turn 152. Turns 1 through 151 are consolidated in `turns_history__frontiermath_q2_galois.md` (attached). Re-read it before answering.\nAlso re-read `mega_prompt.md` and `problem_statement.md`.\n\nCRITICAL — use ONLY the files attached to THIS message. Do NOT open, import, retrieve, or cite any file from your File Library / previously uploaded files, even one named similarly (e.g. another `turns_history…md`). Other unrelated problems use similarly named history files in the same account, and importing one will silently switch you onto the wrong problem. If the attached `turns_history__frontiermath_q2_galois.md` appears missing, do NOT continue from partial context. Reply only with `MISSING_REQUIRED_ATTACHMENT` and name the missing file(s); never substitute a library file.\n\nIf this turn drifts into hammering one specific case or sub-instance, step back and ask whether the case is revealing a structural pattern that would close many cases at once. Prefer arguments whose conclusion is a uniform statement.\n\nEnd this response with ESTABLISHED / GAP / NEXT + tag.\nContinue with Turn 152."
+    },
+    {
+      "ct": 1782198773.638897,
+      "role": "assistant",
+      "text": "## Turn 152 — independent machine audit of the frozen \\(h_0\\) boundary\n\nThe byte-exact submission was reconstructed again: **256 bytes**, LF endings, SHA-256  \n`4f81b04ae00e737a244f2445d70b095333a427508958f11489e3cabdc0192fdc`, matching Turns 149–151. \n\n[Download the exact \\(h_0\\) submission](sandbox:/mnt/data/q2_galois_h0_submission.txt)\n\nA separate free-word and Magnus-expansion audit then verified:\n\n- The pro-\\(2\\) specialization is exactly\n  \\[\n  x_0^{\\sigma^2}x_0[x_1,\\sigma]=1.\n  \\]\n- After the stated change of generators, its cyclic reduction agrees with the inverse of the standard local Demuškin relator.\n- Its abelianized exponent vector is \\((0,2,0)\\) on \\((\\sigma,x_0,x_1)\\), giving the required \\(\\mathbf Z_2^2\\oplus C_2\\) shape.\n- Its mod-\\(2\\) quadratic Magnus term is\n  \\[\n  X_0^2+SX_1+X_1S,\n  \\]\n  whose cup/Bockstein matrix has rank \\(3\\).\n\n[Download the reproducible boundary-audit script](sandbox:/mnt/data/h0_boundary_audit.py)\n\n**ESTABLISHED**: Independently machine-verified the exact marked maximal pro-\\(2\\) boundary of the frozen \\(h_0\\) word, including its standard-relator equivalence, abelianization, and nondegenerate quadratic Magnus form. No modification is indicated.\n\n**GAP**: The private 5402-group verifier remains unrun, and the full proof has not received independent external manuscript review.\n\n**NEXT**: Submit the exact frozen file unchanged. Any failure should be localized to the lowest rejected framed-certificate node before altering the presentation.\n\n[CONTINUE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "fetched",
+  "source_detail": {
+    "artifact_sha256": "d18c3804039920da4f171c5447f6e87c70b0f505520a439c84f4b3c906928dbb",
+    "kind": "backend_fetched"
+  },
+  "source_file_sha256": "d18c3804039920da4f171c5447f6e87c70b0f505520a439c84f4b3c906928dbb",
+  "title": "Scorched-Earth Erdős Sweep",
+  "turn": 152
+}

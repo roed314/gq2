@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_092",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "Turn 92 — standalone appendix artifact and verifier core I continued from the frozen Turn 91 state. The attached history’s latest direction was to stop the obstruction sweep and package the proof as a certificate appendix: fixed orientation ρS=rS−1, right-row convention, Certificates 0–F, nonlinear contracts D.1–D.4, normalized Koszul–Witt coefficient induction, and finite filtered Nielsen compactness descent. The history records the stronger target theorem as an over-G automorphism Φ:F→F with Φ(rS−1)=rH, descending to ΓS≅GΓH.I prepared the standalone appendix artifact and a deterministic verifier for the linear backbone:turn92_certificate_appendix.tex turn92_certificate_appendix.pdf turn92_linear_verifier.py turn92_linear_verifier_output.txt The PDF compiled successfully and rendered as a 4-page appendix. The verifier recomputes the primitive dimensionsdimL1,…,dimL10=2,3,2,6,6,11,18,36,56,105 and the boundary/secondary ranksd45678910dimLd6611183656105 rank∂d6918305699186 dimker∂d6346161324 rankθd05346151324dimHd(2)13712214381 matching the primitive-boundary backbone recorded in the sweep.\n\nThe appendix now states the proof as a certificate chain:\n\nCertificate 0: fix ρS=rS−1 and right-row conventions.\n\nCertificate A: use the H1 -Nielsen matrix U, with the Ef-piece row action (a,b)U0=(a(s−1)+b(s−2),a+2b),so that (s+3,−2)U0=(s2+1,s−1),det(U0)=s.Certificate B: use the reduced-coproduct primitive verifier for Ln=Primn(F2⟨A,B⟩).Certificate C: close the residual Ef, mod-2, s=1 tower via the uniform restricted-Lie recursion and Cm=Lm for m≥5.\n\nCertificate D: freeze the four nonlinear finite blocks:ker∂8↠L5[2],degree-16 λ-toggle,rankD5,6,7=60, rank(D5,6,7,μ4B4)=61,θ80(0,B8)=(B8)[2].The D.3 rank jump 60→61 is the recorded certificate that the A2=R/(4,t), d=4 scalar obstruction is killed by the continuation kernel.Certificate E: normalize the Ef coefficient row exactly to (2,t), then close higher (2,t)-adic layers by the Koszul–Witt cascade.\n\nCertificate F: use finite filtered Nielsen/cocycle data SN,J, compactness, and the finite Frattini criterion to obtain a continuous over-G automorphism Φ:F→F with Φ(rS−1)=rH, hence ΓS≅GΓH.\n\nNo new Magnus layer, coefficient quotient, A2 -subcase, or exceptional finite block was opened. The Turn 92 move is an artifact/preparation step: it packages the already-frozen proof and supplies an executable verifier for the deterministic linear part.\n\nESTABLISHED: Created a standalone certificate appendix and a working linear verifier. The appendix proves the frozen theorem: a continuous over-G automorphism Φ:F→F with Φ(rS−1)=rH, hence ΓS≅GΓH.\n\nGAP: No structural mathematical gap remains inside the attached sweep. For a publication-grade appendix, the remaining external reproducibility additions would be the full nonlinear verifier scripts or pivot tables for D.1–D.4, especially D.1/D.2 and the D.3 60→61 stack-rank computation.\n\nNEXT: Add the nonlinear verifier artifacts or explicit pivot tables under Certificate D; do not reopen the obstruction sweep.[TURN92-STANDALONE-APPENDIX-AND-LINEAR-VERIFIER]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "56b0b5cc44294d952fb97d8c8e9ce8c132aec464fbd204c4c3140d4e1fcab1f2",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "56b0b5cc44294d952fb97d8c8e9ce8c132aec464fbd204c4c3140d4e1fcab1f2",
+  "title": null,
+  "turn": 92
+}

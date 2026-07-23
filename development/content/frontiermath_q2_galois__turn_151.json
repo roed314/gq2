@@ -1,0 +1,26 @@
+{
+  "key": "frontiermath_q2_galois__turn_151",
+  "lane": "frontiermath_q2_galois",
+  "link": null,
+  "msgs": [
+    {
+      "ct": 1782197519.741,
+      "role": "user",
+      "text": "# Scorched-Earth Erdős Sweep — Turn 151\n\nThis is turn 151. Turns 1 through 150 are consolidated in `turns_history__frontiermath_q2_galois.md` (attached). Re-read it before answering.\nAlso re-read `mega_prompt.md` and `problem_statement.md`.\n\nCRITICAL — use ONLY the files attached to THIS message. Do NOT open, import, retrieve, or cite any file from your File Library / previously uploaded files, even one named similarly (e.g. another `turns_history…md`). Other unrelated problems use similarly named history files in the same account, and importing one will silently switch you onto the wrong problem. If the attached `turns_history__frontiermath_q2_galois.md` appears missing, do NOT continue from partial context. Reply only with `MISSING_REQUIRED_ATTACHMENT` and name the missing file(s); never substitute a library file.\n\nIf this turn drifts into hammering one specific case or sub-instance, step back and ask whether the case is revealing a structural pattern that would close many cases at once. Prefer arguments whose conclusion is a uniform statement.\n\nEnd this response with ESTABLISHED / GAP / NEXT + tag.\nContinue with Turn 151."
+    },
+    {
+      "ct": 1782198020.057476,
+      "role": "assistant",
+      "text": "## Turn 151 — byte-exact verifier artifact restored\n\nI regenerated the frozen \\(h_0\\) submission from the current attachments only. It preserves the required omitted tame relation, 2-core semantics for \\(x_0,x_1\\), and exponent residue modulo \\(M=85667662080\\). \n\n[Download the byte-exact submission](sandbox:/mnt/data/q2_galois_h0_submission.txt)\n\n- Size: **256 bytes**\n- Line endings: **LF**\n- SHA-256: `4f81b04ae00e737a244f2445d70b095333a427508958f11489e3cabdc0192fdc`\n\nThis independently matches the frozen Turn-149/150 artifact. \n\n**ESTABLISHED**: Recreated and checksum-verified the exact frozen \\(h_0\\) verifier file in the current sandbox; no presentation change is indicated.\n\n**GAP**: The private 5402-group verifier remains unrun, and the proof has not received independent external manuscript review.\n\n**NEXT**: Submit this exact file unchanged. On failure, construct the first failing target’s framed certificate and descend to its lowest rejected node before modifying the word.\n\n[CONTINUE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "fetched",
+  "source_detail": {
+    "artifact_sha256": "16b3220f3c126fccdb0c1c81293715e042749d60589d71dad29ed2abacda74ed",
+    "kind": "backend_fetched"
+  },
+  "source_file_sha256": "16b3220f3c126fccdb0c1c81293715e042749d60589d71dad29ed2abacda74ed",
+  "title": "Turn 151 Response",
+  "turn": 151
+}

@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_100",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "According to the current attached history document from 2026-06-28, Turn 100 should not reopen the Magnus tower, the coefficient tower, degree 16, the A2 -layer, the t-layer, or any Certificate D subcase. The state remains a two-coordinate state:(THEOREM_STATE,MEASURED_CERTIFICATE_D_STATE)=(ΓS≅GΓH, NO_MEASURED_INPUT).The theorem coordinate is unchanged: the attached sweep supports the stronger F=P⋊G-level statement that there is a continuous over-G automorphism Φ:F→F with Φ(rS−1)=rH, which descends to ΓS≅GΓH. The compactness mechanism uses finite filtered Nielsen/cocycle data SN,J, finite Frattini at each coefficient-and-degree truncation, and an inverse-limit automorphism over G.\n\nTurn 99’s provenance firewall also remains unchanged: the current attachments are only the prompt/problem/history ledger, not object-level nonlinear Certificate D artifacts. History-derived summaries, copied expected outputs, or JSON files manufactured from the ledger are not measured input and must be classified as REJECTED_AS_LEDGER_DERIVED, not PASS.So Turn 100’s useful addition is a stop-rule in state-machine form:future input no object-level D artifact ledger-derived expected values only measured artifacts matching contractmeasured artifacts contradicting contract\n\nCertificate D gate state NO_MEASURED_INPUT REJECTED_AS_LEDGER_DERIVEDPASSFAIL effect theorem unchanged theorem unchanged external reproducibility strengthenedlocalize Certificate D audit defect A future FAIL would not mean “try a new obstruction layer.” It would mean that one of the frozen nonlinear Certificate D measurements conflicts with the contract and must be localized to D.1, D.2, D.3, or D.4. Turn 97 already separated the theorem coordinate from the measured-certificate coordinate, and Turn 99 strengthened that separation by rejecting ledger-derived artifacts as non-measured.The minimum genuine measured packet is still exactly the four nonlinear Certificate D artifacts: D.1 measured matrix/pivots for S10=(∂8,B10) with ranks 56,62; D.2 measured evaluator/pivots for rankΘ16=35, λ(Ω16fix)=1, λ(Ω16η)=0; D.3 measured D5,6,7 and S4 ranks 60,61; and D.4 a direct measured check of (0,B8)∈ker, θ80(0,B8)=(B8)[2], λ=1.\n\nTurn 100 — terminal sweep state\n\nThe proof ledger remains:H1 -Nielsen equivalence+ residual restricted-Lie induction+ normalized Koszul–Witt coefficient induction+D.1–D.4+ finite filtered Nielsen compactness⟹ΓS≅GΓH.\n\nThe strict measured gate remains:NO_MEASURED_INPUT.No new structural question is opened.\n\nESTABLISHED: The attached sweep’s theorem coordinate remains ΓS≅GΓH, via an over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH. The strict Certificate D provenance coordinate remains NO_MEASURED_INPUT; ledger-derived artifacts remain non-measured.\n\nGAP: No structural mathematical gap is reopened. The only gap is external reproducibility: no genuine object-level measured nonlinear D.1–D.4 artifacts are attached in this message.\n\nNEXT: Keep the obstruction sweep closed. The only valid next move is to attach object-level measured D.1–D.4 scripts, matrices, pivots, or measured-output logs not derived from the history, then run the strict gate as PASS or FAIL.[TURN100-TERMINAL-TWO-COORDINATE-STATE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "541174e7e86b6a77bfb08247677dd080659eac48a29b0d4b25efbdaec91c9042",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "541174e7e86b6a77bfb08247677dd080659eac48a29b0d4b25efbdaec91c9042",
+  "title": null,
+  "turn": 100
+}

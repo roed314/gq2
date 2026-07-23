@@ -1,0 +1,20 @@
+{
+  "key": "q2_candidate_iso__turn_103",
+  "lane": "q2_candidate_iso",
+  "link": null,
+  "msgs": [
+    {
+      "role": "assistant",
+      "text": "According to the attached document from 2026-06-28, Turn 103 is another attachment-only continuation: the three required current-turn attachments are present, and I did not use File Library material. The target remains exactly the over-G isomorphism question stated in the prompt: whether there is a continuous Φ:ΓS→ΓH with πH∘Φ=πS.\n\nTurn 102’s terminal state is unchanged:(THEOREM_STATE,MEASURED_CERTIFICATE_D_STATE)=(ΓS≅GΓH, NO_MEASURED_INPUT).\n\nThe theorem coordinate remains ΓS≅GΓH, supported in the sweep by the stronger F=P⋊G-level statement that there is a continuous over-G automorphism Φ:F→F,Φ(rS−1)=rH,which descends to the quotient isomorphism because rS and rS−1 generate the same closed normal subgroup.No new structural computation should be opened. The frozen proof chain remainsH1 -Nielsen equivalence+ residual restricted-Lie induction+ normalized Koszul–Witt coefficient induction+D.1–D.4+ finite filtered Nielsen compactness⟹ΓS≅GΓH.The compactness descent is still the final global mechanism: finite filtered Nielsen/cocycle data give compatible finite over-G automorphisms; their inverse limit gives Φ:F→F with Φ(rS−1)=rH; the descended quotient map satisfies πH∘Φ=πS.The measured-certificate coordinate also remains unchanged. The current attachments are prompt/problem/history only; they do not include object-level nonlinear Certificate D artifacts such as measured scripts, matrices, pivots, or measured-output logs. History-recorded verifier claims are ledger evidence for the theorem state, but they are not themselves measured input for the strict Certificate D gate.\n\nSo the strict gate remains:\n\nNO_MEASURED_INPUT,not PASS, not FAIL, and not REJECTED_AS_LEDGER_DERIVED. PASS would require genuine object-level measured D.1–D.4 artifacts matching the frozen contract; FAIL would require genuine measured artifacts contradicting it; a ledger-derived expected-values file would be rejected as non-measured.\n\nESTABLISHED: Turn 103 is idempotent under the same attachment-only conditions as Turn 102. The theorem coordinate remains ΓS≅GΓH, via an over-G automorphism Φ:F→F satisfying Φ(rS−1)=rH. The measured Certificate D coordinate remains NO_MEASURED_INPUT.\n\nGAP: No structural mathematical gap is reopened. The only remaining gap is external reproducibility: no genuine object-level measured nonlinear D.1–D.4 artifacts are attached in this turn.\n\nNEXT: Keep the obstruction sweep closed. The only valid next move is to attach genuine measured D.1–D.4 scripts, matrices, pivots, or measured-output logs not derived from the history, then run the strict gate as PASS or FAIL.[TURN103-ATTACHMENT-ONLY-IDEMPOTENT-GATE]"
+    }
+  ],
+  "schema_version": 2,
+  "source": "demangled",
+  "source_detail": {
+    "artifact_sha256": "653831785fbb621915a65590f01e4e411404ab1332d598c74100baa3e1578493",
+    "kind": "reconstructed"
+  },
+  "source_file_sha256": "653831785fbb621915a65590f01e4e411404ab1332d598c74100baa3e1578493",
+  "title": null,
+  "turn": 103
+}

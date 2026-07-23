@@ -3,41 +3,191 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="How the presentation of the absolute Galois group of the 2-adic numbers and its formalizations were developed.">
-<title>Development · A Presentation of the Absolute Galois Group of Q₂</title>
+<meta name="description" content="A chronological record of the search, proof development, and Lean formalization behind a presentation of the absolute Galois group of the 2-adic numbers." data-editorial-id="ui.document.description">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; connect-src 'self'; font-src 'self'; form-action 'none'; frame-src 'none'; img-src 'self'; media-src 'none'; object-src 'none'; script-src 'self'; style-src 'self'; worker-src 'none'">
+<title data-editorial-id="ui.document.title">Development record | A Presentation of the Absolute Galois Group of &#x211A;&#x2082;</title>
 <link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../vendor/katex.min.css">
+<link rel="stylesheet" href="dashboard.css">
+<script defer src="data.js"></script>
+<script defer src="../vendor/katex.min.js"></script>
+<script defer src="../vendor/auto-render.min.js"></script>
+<script defer src="../vendor/marked.min.js"></script>
+<script defer src="../vendor/purify.min.js"></script>
+<script defer src="app.js"></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content" data-editorial-id="ui.skip-link">Skip to the development record</a>
 
-<header class="page-header">
-  <a class="back" href="../">&#8592; A Presentation of the Absolute Galois Group of&nbsp;&#x211A;<sub>2</sub></a>
-  <h1>Behind the project</h1>
-</header>
-
-<main>
-  <div class="resource-grid">
-    <div class="resource-card">
-      <span class="res-title-soon">Development record</span><span class="badge">Coming&nbsp;soon</span>
-      <p>A source-checked account of how the candidate, proof, and
-      formalizations were developed.</p>
+<div id="app" class="dashboard-shell">
+  <header class="page-header dashboard-header">
+    <a class="back" href="../" data-editorial-id="ui.header.back">&larr; A Presentation of the Absolute Galois Group of&nbsp;&#x211A;<sub>2</sub></a>
+    <div class="header-copy">
+      <p class="eyebrow" data-editorial-id="ui.header.eyebrow">Trace the development</p>
+      <h1 data-editorial-id="ui.header.title">Development record</h1>
+      <p class="lede" data-editorial-id="ui.header.lede">This record follows the search for the presentation, the tests it underwent, and the development and correction of its proof.</p>
+      <p class="record-scope" data-editorial-id="ui.header.record-scope"><strong id="recordTotal">Loading records</strong><span id="recordBreakdown"></span></p>
     </div>
-  </div>
-</main>
+  </header>
 
-<footer>
-  The interactive paper offers expandable proofs, notation hovers, adjustable
-  detail, and links from each statement into the formalizations.
-  Built with
-  <a class="pf-credit" href="https://github.com/roed-math/paperforge"><svg class="pf-glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
-    <defs>
-      <mask id="pf-glyph-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-        <rect width="24" height="24" fill="white"/>
-        <path d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Z" fill="black"/>
-      </mask>
-    </defs>
-    <path fill="currentColor" mask="url(#pf-glyph-cut)" d="M2 7h5l2-2h6l2 2h5c-1 4-4 7-8 8-2 1-2 3 0 5l1 1h-4l-1-2H7l-1 2H3v-2l2-2c2-2 0-3-3-4Z"/>
-    <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Zm13-5c0 3-1 5-4 6"/>
-  </svg>PaperForge</a>.
-</footer>
+  <nav class="view-tabs" aria-label="Development record views" data-editorial-id="ui.tabs.label">
+    <div class="tab-list" id="viewSeg" role="tablist" aria-orientation="horizontal">
+      <button id="tab-timeline" class="view-tab on" type="button" role="tab" aria-selected="true" aria-controls="timelineview" tabindex="0" data-v="timeline" data-view="timeline" data-editorial-id="ui.tabs.timeline">Timeline</button>
+      <button id="tab-key" class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="keyview" tabindex="-1" data-v="key" data-view="key-records" data-editorial-id="ui.tabs.key">Key records</button>
+      <button id="tab-list" class="view-tab" type="button" role="tab" aria-selected="false" aria-controls="listview" tabindex="-1" data-v="list" data-view="all-records" data-editorial-id="ui.tabs.all">All records</button>
+    </div>
+  </nav>
+
+  <section class="record-controls" aria-label="Find and filter records" data-editorial-id="ui.filters.region-label">
+    <div class="search-control">
+      <label for="search" data-editorial-id="ui.search.label">Search the record</label>
+      <div class="search-row">
+        <input id="search" type="search" name="query" autocomplete="off" placeholder="Search titles and summaries" data-editorial-id="ui.search.placeholder">
+        <button id="clearFilters" class="text-button" type="button" data-editorial-id="ui.filters.clear">Clear</button>
+      </div>
+    </div>
+
+    <details class="filter-drawer">
+      <summary data-editorial-id="ui.filters.summary">Filters</summary>
+      <div class="filter-groups">
+        <fieldset class="filter-group">
+          <legend data-editorial-id="ui.filters.importance.label">Importance</legend>
+          <div class="seg" id="focusSeg" role="group" aria-label="Filter by record importance" data-editorial-id="ui.filters.importance.group-label">
+            <button type="button" class="on" aria-pressed="true" data-f="all" data-editorial-id="ui.filters.importance.all">All</button>
+            <button type="button" aria-pressed="false" data-f="decisive" data-editorial-id="ui.filters.importance.decisive">Key and substantive</button>
+            <button type="button" aria-pressed="false" data-f="pivotal" data-editorial-id="ui.filters.importance.key">Key only</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend data-editorial-id="ui.filters.conversation.label">Conversation</legend>
+          <div id="laneFilters" class="filter-options" aria-label="Conversation filters" data-editorial-id="ui.filters.conversation.group-label"></div>
+        </fieldset>
+
+        <fieldset class="filter-group">
+          <legend data-editorial-id="ui.filters.type.label">Record type</legend>
+          <div class="legend filter-options" id="legend" aria-label="Record type filters" data-editorial-id="ui.filters.type.group-label"></div>
+        </fieldset>
+      </div>
+    </details>
+
+    <div class="filter-status">
+      <output id="resultCount" for="search" aria-live="polite" data-editorial-id="ui.filters.result-count">Loading records</output>
+      <div id="activeFilters" class="active-filters" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <div id="main" class="dashboard-main">
+      <section id="stage" class="view-stage" aria-label="Development records" data-editorial-id="ui.records.region-label">
+        <section id="timelineview" class="view-panel timeline-view" role="tabpanel" aria-labelledby="tab-timeline" tabindex="0">
+          <aside id="story" class="stage-index" aria-labelledby="stage-index-title">
+            <div class="stage-index-heading">
+              <h2 id="stage-index-title" data-editorial-id="ui.timeline.stages-title">Stages</h2>
+            </div>
+            <div id="chapters" class="stage-list" role="group" aria-labelledby="stage-index-title"></div>
+          </aside>
+
+          <div class="timeline-column">
+            <section id="stage-summary" class="stage-summary" aria-live="polite" aria-label="Timeline selection summary" data-editorial-id="ui.timeline.selected-stage-label">
+              <p class="stage-summary-label" data-editorial-id="ui.timeline.summary-label">All stages</p>
+              <h2 data-editorial-id="ui.timeline.summary-title">The full record</h2>
+              <p data-editorial-id="ui.timeline.summary-help">Dates with no recorded work are compressed on the map; stage and date labels mark each compressed interval.</p>
+            </section>
+
+            <div class="timeline-tools">
+              <fieldset id="timelineRange" class="date-range">
+                <legend data-editorial-id="ui.timeline.range.label">Map range</legend>
+                <label for="dateStart" data-editorial-id="ui.timeline.range.from">From</label>
+                <input id="dateStart" type="date" name="date-start">
+                <label for="dateEnd" data-editorial-id="ui.timeline.range.to">To</label>
+                <input id="dateEnd" type="date" name="date-end">
+                <button id="fitRangeBtn" class="text-button" type="button" data-editorial-id="ui.timeline.range.fit">Fit range</button>
+              </fieldset>
+              <button id="mobileMapToggle" class="mobile-map-toggle text-button" type="button" aria-controls="tlwrap" aria-expanded="false" data-editorial-id="ui.timeline.mobile-map-toggle">Open horizontal map</button>
+            </div>
+
+            <div id="timelineLegend" class="timeline-dot-legend" role="group" aria-labelledby="timelineLegendTitle">
+              <span id="timelineLegendTitle" class="timeline-legend-title" data-editorial-id="ui.timeline.legend-title">Record types</span>
+              <div id="timelineLegendItems" class="timeline-legend-items" role="list"></div>
+            </div>
+
+            <div id="mobileTimeline" class="mobile-timeline timeline-vertical" aria-label="Vertical chronological timeline" data-editorial-id="ui.timeline.vertical-label"></div>
+
+            <div id="tlwrap" class="timeline-map" role="region" aria-label="Horizontal chronological map" tabindex="0" data-editorial-id="ui.timeline.map-label">
+              <svg id="edges" aria-hidden="true"></svg>
+              <div id="timeline" class="timeline-overlay" aria-label="Timeline records"></div>
+              <div class="zoombar" role="group" aria-label="Map controls" data-editorial-id="ui.timeline.map-controls-label">
+                <button id="zout" type="button" aria-label="Zoom out" data-editorial-id="ui.timeline.zoom-out">&minus;</button>
+                <button id="zin" type="button" aria-label="Zoom in" data-editorial-id="ui.timeline.zoom-in">+</button>
+                <button id="fitBtn" class="fit-button" type="button" data-editorial-id="ui.timeline.fit-all">Fit all</button>
+              </div>
+              <p id="tlhelp" class="visually-hidden" data-editorial-id="ui.timeline.map-help">The horizontal map supports panning and zooming.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="keyview" class="view-panel records-view" role="tabpanel" aria-labelledby="tab-key" tabindex="0" hidden>
+          <header class="view-heading">
+            <h2 data-editorial-id="ui.key.title">Key records</h2>
+            <p data-editorial-id="ui.key.intro">Records that changed the candidate, exposed an error, repaired the proof, fixed the submission, or began the formalization.</p>
+          </header>
+          <div id="keyRecords" class="record-list"></div>
+        </section>
+
+        <section id="listview" class="view-panel records-view" role="tabpanel" aria-labelledby="tab-list" tabindex="0" hidden>
+          <header class="view-heading">
+            <h2 data-editorial-id="ui.all.title">All records</h2>
+            <p data-editorial-id="ui.all.intro">The complete public corpus is grouped by conversation, with each published message sequence retained.</p>
+          </header>
+          <div id="allRecords" class="record-list"></div>
+        </section>
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="project-footer">
+    <span data-editorial-id="ui.footer.built-with">Built with</span>
+    <a class="pf-credit" href="https://github.com/roed-math/paperforge" data-editorial-id="ui.footer.paperforge-link"><svg class="pf-glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+      <defs>
+        <mask id="pf-glyph-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+          <rect width="24" height="24" fill="white"></rect>
+          <path d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Z" fill="black"></path>
+        </mask>
+      </defs>
+      <path fill="currentColor" mask="url(#pf-glyph-cut)" d="M2 7h5l2-2h6l2 2h5c-1 4-4 7-8 8-2 1-2 3 0 5l1 1h-4l-1-2H7l-1 2H3v-2l2-2c2-2 0-3-3-4Z"></path>
+      <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Zm13-5c0 3-1 5-4 6"></path>
+    </svg>PaperForge.</a>
+  </footer>
+
+  <div id="detail-backdrop" class="detail-backdrop" hidden></div>
+  <aside id="detail" class="record-detail" role="dialog" aria-modal="false" aria-labelledby="d-title" aria-describedby="d-meta" tabindex="-1" aria-hidden="true">
+    <div class="dhead">
+      <div class="drow">
+        <div class="detail-heading-copy">
+          <h2 id="d-title" data-editorial-id="ui.detail.default-title">Record detail</h2>
+          <div class="meta" id="d-meta"></div>
+        </div>
+        <button class="close icon-button" id="d-close" type="button" aria-label="Close record detail" data-editorial-id="ui.detail.close">&times;</button>
+      </div>
+      <div class="why" id="d-why"></div>
+      <div class="navbtns" aria-label="Move between records" data-editorial-id="ui.detail.navigation-label">
+        <button id="d-prev" type="button" data-editorial-id="ui.detail.previous">&larr; Previous</button>
+        <button id="d-next" type="button" data-editorial-id="ui.detail.next">Next &rarr;</button>
+        <span class="pos" id="d-pos" aria-live="polite"></span>
+      </div>
+    </div>
+    <section class="detail-terms" id="d-terms" aria-labelledby="d-terms-title" hidden>
+      <h3 id="d-terms-title" data-editorial-id="ui.detail.terms-title">Names in this record</h3>
+      <div id="d-term-definitions"></div>
+    </section>
+    <div class="srcnote" id="d-src"></div>
+    <div class="body" id="d-body" data-artifact-root="message-sequence"></div>
+  </aside>
+</div>
+
+<div id="tooltip" role="tooltip" aria-hidden="true"></div>
 </body>
 </html>

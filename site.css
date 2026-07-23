@@ -105,6 +105,14 @@ h1 {
 .prose a { color: var(--ink); text-decoration-color: rgba(40, 160, 90, 0.5); }
 .prose a:hover { text-decoration-color: var(--accent); }
 
+/* baseline for links anywhere in page content (cards, intros, stage lists):
+   browser-default blue is near-invisible on the dark background */
+main a {
+  color: var(--ink);
+  text-decoration-color: rgba(40, 160, 90, 0.5);
+}
+main a:hover { text-decoration-color: var(--accent); }
+
 .account-page .page-header,
 .account-page main,
 .account-page footer {

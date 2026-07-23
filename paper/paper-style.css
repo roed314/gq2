@@ -131,3 +131,50 @@
   box-shadow: none;
   border-radius: 4px;
 }
+
+/* -- dark mode. The theme drives dark entirely via a .dark-mode class on
+   :root (readability-options.js adds it from prefers-color-scheme and the
+   user toggle; theme.css has no media queries). Every literal light value
+   above therefore needs its counterpart here, else the theme's light text
+   lands on our light panels (white-on-white paras, #111 links on a dark
+   body). Palette sits a step off the theme's dark body (#23241f). -- */
+:root.dark-mode .ptx-sidebar .ptx-toc, :root.dark-mode .ptx-toc {
+  background: #202119;
+}
+:root.dark-mode .ptx-toc .toc-item, :root.dark-mode .ptx-toc .toc-title-box a,
+:root.dark-mode .ptx-toc a {
+  color: #cfd0ca;
+}
+:root.dark-mode .ptx-toc .toc-item.active, :root.dark-mode .ptx-toc .toc-current a {
+  background: #33342c;
+  color: #f2f2f2;
+}
+:root.dark-mode .ptx-content a.internal, :root.dark-mode .ptx-content .xref {
+  color: #f2f2f2;
+  text-decoration-color: #66665f;
+}
+:root.dark-mode .ptx-content a.internal:hover,
+:root.dark-mode .ptx-content .xref:hover {
+  text-decoration-color: #f2f2f2;
+}
+:root.dark-mode .ptx-content details.born-hidden-knowl {
+  background: #2c2d27;
+}
+:root.dark-mode .ptx-content details.born-hidden-knowl > summary.knowl__link,
+:root.dark-mode .ptx-content details.born-hidden-knowl > summary.knowl__link .heading {
+  color: #f2f2f2;
+}
+:root.dark-mode .ptx-content details.born-hidden-knowl div.knowl__content[id^="knowl-uid-"],
+:root.dark-mode .ptx-content details.born-hidden-knowl details.born-hidden-knowl,
+:root.dark-mode .ptx-content details.born-hidden-knowl .lean-knowl,
+:root.dark-mode .ptx-content details.born-hidden-knowl .section-knowl,
+:root.dark-mode .ptx-content div.knowl__content[id^="knowl-uid-"] div.knowl__content[id^="knowl-uid-"],
+:root.dark-mode .ptx-content div.knowl__content[id^="knowl-uid-"] details.born-hidden-knowl,
+:root.dark-mode .ptx-content div.knowl__content[id^="knowl-uid-"] .lean-knowl,
+:root.dark-mode .ptx-content div.knowl__content[id^="knowl-uid-"] .section-knowl {
+  background: #1d1e19;
+  border-color: #4a4b44;
+}
+:root.dark-mode .ptx-content .knowl__content {
+  background: #2a2b25;
+}

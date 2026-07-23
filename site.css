@@ -265,6 +265,51 @@ a.stage-title:hover { text-decoration-color: var(--accent); }
   color: var(--accent);
 }
 .axiom-lean-links { margin: 0.5rem 0 0; font-size: 0.92rem; }
+.axiom-hint { color: var(--muted); }
+
+/* nested Lean knowls inside axiom statements */
+a.lk {
+  color: var(--accent);
+  text-decoration: underline dotted 1.5px;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+a.lk.lk-open {
+  text-decoration-style: solid;
+  text-decoration-thickness: 2px;
+  font-weight: 700;
+}
+.lknowl-panel {
+  margin: 0.55em 0 0.75em;
+  padding: 0.55em 0.8em;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 0.45rem 0.45rem 0;
+  background: var(--card);
+  font-size: 0.95em;
+}
+.lknowl-panel .decl_header { white-space: pre-wrap; overflow-wrap: anywhere; }
+.lknowl-panel p {
+  margin: 0.45em 0 0;
+  font-family: Georgia, serif;
+  white-space: normal;
+}
+.lknowl-panel ul.structure_fields {
+  list-style: none;
+  margin: 0.45em 0 0;
+  padding-left: 0.2em;
+}
+.lknowl-panel li.structure_field {
+  margin: 0.35em 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.lknowl-panel li.structure_field p { font-size: 0.94em; color: var(--muted); }
+.lknowl-foot {
+  margin-top: 0.5em !important;
+  font-family: system-ui, sans-serif !important;
+  font-size: 0.86em;
+}
 .pres-math > p {
   margin: 0.6rem 0 0;
   color: var(--muted);

@@ -151,6 +151,30 @@ details.hiddenproof:not([open]) .detail-next-btn { display: none; }
 .lean-knowl-foot { margin-top: .45em; text-align: right; font-size: .92em; }
 .lean-knowl a { color: #111; }
 
+/* homepage links injected by addHomeLinks(): quiet, matching the site's
+   back-link voice; colors inherit so both schemes work */
+.site-home-link {
+  padding: .45rem 1rem .1rem;
+  font: 650 0.85rem/1.2 system-ui, sans-serif;
+}
+.site-home-link a, .site-home-return a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(40, 160, 90, 0.55);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+.site-home-link a:hover, .site-home-return a:hover {
+  text-decoration-color: currentColor;
+}
+.site-home-return {
+  max-width: 58rem;
+  margin: 1.4rem auto 0;
+  padding: 0.9rem 0 0.4rem;
+  border-top: 1px solid rgba(128, 128, 128, 0.3);
+  font-size: 0.95rem;
+}
+
 /* dark counterparts for every literal light value above (same .dark-mode
    signal as the theme; panels sit a step off the dark body #23241f) */
 :root.dark-mode .detail-next-btn { background: #33342c; color: #d5d6d0; }

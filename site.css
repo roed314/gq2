@@ -254,6 +254,17 @@ a.stage-title:hover { text-decoration-color: var(--accent); }
   white-space: pre;
 }
 .pres-math { margin-top: 0.9rem; overflow-x: auto; }
+.axiom-list { display: grid; gap: 1rem; }
+.axiom-card .pres-math { overflow-x: visible; }
+.pres-math > p.axiom-stmt { color: var(--ink); }
+.axiom-sig { white-space: pre-wrap; overflow-wrap: anywhere; }
+.axiom-lean { margin-top: 0.8rem; }
+.axiom-lean > summary {
+  cursor: pointer;
+  font: 650 0.9rem/1.3 system-ui, sans-serif;
+  color: var(--accent);
+}
+.axiom-lean-links { margin: 0.5rem 0 0; font-size: 0.92rem; }
 .pres-math > p {
   margin: 0.6rem 0 0;
   color: var(--muted);

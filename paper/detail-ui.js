@@ -835,6 +835,26 @@ window.PAPERFORGE_SECTION_SUMMARIES = {"sec-introduction-and-main-theorem": {"la
     });
   }
 
+  // Links back to the project homepage, top and bottom (the paper is the
+  // one subpage PreTeXt generates, so they are injected rather than authored).
+  function addHomeLinks() {
+    var masthead = document.querySelector('.ptx-masthead');
+    if (masthead && !masthead.querySelector('.site-home-link')) {
+      var top = document.createElement('div');
+      top.className = 'site-home-link';
+      top.innerHTML = '<a href="../">← Project homepage</a>';
+      masthead.insertBefore(top, masthead.firstChild);
+    }
+    var host = document.querySelector('.ptx-content-footer') ||
+               document.querySelector('.ptx-main') || document.body;
+    if (!host.querySelector('.site-home-return')) {
+      var bottom = document.createElement('div');
+      bottom.className = 'site-home-return';
+      bottom.innerHTML = '<a href="../">Return to the project homepage</a>.';
+      host.appendChild(bottom);
+    }
+  }
+
   ready(function () {
     hideTocOnLoad();
     buildHeaderControls();
@@ -843,5 +863,6 @@ window.PAPERFORGE_SECTION_SUMMARIES = {"sec-introduction-and-main-theorem": {"la
     wireNotation();
     wireLeanKnowls();
     wireSectionSummaries();
+    addHomeLinks();
   });
 })();

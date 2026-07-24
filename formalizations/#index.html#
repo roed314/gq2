@@ -37,15 +37,15 @@
 
   <h2>Lean formalizations</h2>
   <p class="section-intro">The presentation has been formalized twice, in two
-  separate Lean projects.  Both started from the same <a class="res-title" href="../artifacts/turturean-q2-manuscript-2026-06-25.pdf">source manuscript</a> produced by GPT 5.5.</p>
+  separate Lean projects.</p>
   <div class="resource-grid">
     <div class="resource-card">
       <div class="card-heading">
         <a class="res-title" href="https://github.com/roed-math/gq2-lean">David Roe's formalization</a>
         <span class="badge">Complete</span>
       </div>
-      <p>A Lean 4 formalization of the presentation theorem with no
-      <code>sorry</code> placeholders, built using Fable 5 and Opus 4.8. Lean treats
+      <p>An end-to-end Lean proof of the presentation theorem with no
+      <code>sorry</code> placeholders. Lean treats
       <a href="axioms/">nine named mathematical results</a> from the
       literature as given, with a specific citation recorded for each. The
       source is on

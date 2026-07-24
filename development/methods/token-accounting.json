@@ -1,0 +1,192 @@
+{
+  "definitions": {
+    "non_cache_subtotal": "Fresh input plus cache creation/write plus output. It excludes cache reads and does not measure unique semantic content.",
+    "processed_tokens": "All logged fresh input, cache creation/write, cache read, and output. For Codex, total_tokens already includes input and output; cached input is a subset of input and is never added a second time.",
+    "reasoning_estimate": "The scenario estimate applies 100, 250, or 500 hidden tokens per recorded thinking second. OpenAI does not expose historical ChatGPT Pro hidden-reasoning usage. Formalization browser calls use the successful campaign's observed mean thinking time per dashboard record.",
+    "visible_tokens": "Local o200k_base tokenization of preserved text. Provider billing may use a different count."
+  },
+  "exclusions": [
+    "All GPT-5.2 and GPT-5.4 attempts before the successful second-half-of-June campaign.",
+    "The June 27–28 presentation-comparison lane, which did not establish a result used by either Lean proof.",
+    "Raw human messages, tool payloads, and hidden reasoning from the published formalization corpora. Every top-level human message was read in a private editorial review.",
+    "Unrelated QuantumJune, Epochal, BFSS, and website-maintenance sessions."
+  ],
+  "formalization_phase": {
+    "estimate": {
+      "hidden_reasoning_central": 60660250,
+      "hidden_reasoning_high": 121320500,
+      "hidden_reasoning_low": 24264100,
+      "non_cache_measured_plus_reasoning_central": 622304205,
+      "non_cache_measured_plus_reasoning_high": 682964455,
+      "non_cache_measured_plus_reasoning_low": 585908055,
+      "processed_total_central": 18859155366,
+      "processed_total_high": 18919815616,
+      "processed_total_low": 18822759216
+    },
+    "estimated_chatgpt_pro_thinking_seconds": 242641,
+    "formalization_plan": {
+      "messages": {
+        "assistant": 4
+      },
+      "records": 4,
+      "thinking_hours": 0.661,
+      "thinking_seconds": 2379,
+      "visible_tokens_o200k": {
+        "assistant": 21317
+      },
+      "visible_tokens_total": 21317
+    },
+    "preserved_chatgpt_pro_outputs": {
+      "bytes": 957591,
+      "candidate_files": 346,
+      "chronology": "The preserved response bodies are deduplicated by content hash. Their original browser-turn chronology cannot be reconstructed from the retained files.",
+      "content_set_sha256": "2afa811ebaffc6482f89f069d5a33f449765b4df4e93737e2bbfbabde360c533",
+      "unique_content_hashes": 277,
+      "visible_tokens_o200k": 222767
+    },
+    "reasoning_rates_tokens_per_second": {
+      "central": 250,
+      "high": 500,
+      "low": 100
+    },
+    "roe": {
+      "non_cache_measured": 237670739,
+      "official_archive": "https://math.mit.edu/~roed/gq2-lean-session-logs.tar.gz",
+      "processed_measured": 9228803766,
+      "public_messages": 9978,
+      "usage": {
+        "Fable 5": {
+          "cache_create": 62526484,
+          "cache_read": 3092996935,
+          "calls": 6918,
+          "input": 1380133,
+          "output": 17422802
+        },
+        "Opus 4.8": {
+          "cache_create": 122617400,
+          "cache_read": 5898136092,
+          "calls": 12762,
+          "input": 2590794,
+          "output": 31133126
+        }
+      }
+    },
+    "scope": "Lean autoformalization, June 29–July 10, 2026, counted separately.",
+    "turturean": {
+      "non_cache_measured": 323973216,
+      "processed_measured": 9569447266,
+      "public_messages": 9999,
+      "usage": {
+        "Fable 5": {
+          "cache_create": 111877373,
+          "cache_read": 1787363065,
+          "calls": 5021,
+          "input": 781280,
+          "output": 3675067
+        },
+        "GPT-5.5 (Codex)": {
+          "cached_input": 954362496,
+          "input": 1014361029,
+          "output": 5310903,
+          "reasoning_output": 2180520,
+          "sessions": 214,
+          "total": 1019671932
+        },
+        "GPT-5.6 Sol (Codex)": {
+          "cached_input": 6005222912,
+          "input": 6098159815,
+          "output": 6899367,
+          "reasoning_output": 2484609,
+          "sessions": 34,
+          "total": 6105059182
+        },
+        "Opus 4.8": {
+          "cache_create": 40101516,
+          "cache_read": 498525577,
+          "calls": 2401,
+          "input": 670213,
+          "output": 1722061
+        }
+      }
+    }
+  },
+  "generated_utc": "2026-07-24T02:03:05+00:00",
+  "human_message_editorial_review": {
+    "human_message_occurrences_reviewed": 1078,
+    "method": "Manual editorial reading of every top-level human message. Automated patterns were used only as secondary safety flags.",
+    "raw_human_messages_published": 0,
+    "response_occurrences_excluded": 78,
+    "response_occurrences_included": 1000,
+    "unique_human_messages_reviewed": 837
+  },
+  "schema_version": 1,
+  "solution_phase": {
+    "claude_controller_usage": {
+      "Opus 4.8": {
+        "cache_create": 16445559,
+        "cache_read": 261399302,
+        "calls": 1371,
+        "input": 606095,
+        "output": 1469599
+      }
+    },
+    "codex_usage": {
+      "GPT-5.5 (Codex)": {
+        "cached_input": 3014144,
+        "input": 3778517,
+        "output": 167423,
+        "reasoning_output": 130075,
+        "sessions": 7,
+        "total": 3945940
+      }
+    },
+    "dashboard_candidate_and_repair": {
+      "messages": {
+        "assistant": 200,
+        "note": 5,
+        "tool": 411,
+        "user": 193
+      },
+      "records": 174,
+      "thinking_hours": 41.923,
+      "thinking_seconds": 150923,
+      "visible_tokens_o200k": {
+        "assistant": 356161,
+        "note": 95,
+        "tool": 5115599,
+        "user": 53488
+      },
+      "visible_tokens_total": 5525343
+    },
+    "estimate": {
+      "hidden_reasoning_central": 37730750,
+      "hidden_reasoning_high": 75461500,
+      "hidden_reasoning_low": 15092300,
+      "processed_total_central": 327249006,
+      "processed_total_high": 364979756,
+      "processed_total_low": 304610556
+    },
+    "reasoning_rates_tokens_per_second": {
+      "central": 250,
+      "high": 500,
+      "low": 100
+    },
+    "scope": "Successful candidate and natural-language proof campaign, June 18–26, 2026.",
+    "selected_manual_reviews": {
+      "messages": {
+        "assistant": 66,
+        "tool": 12,
+        "user": 66
+      },
+      "records": 23,
+      "thinking_hours": 0.0,
+      "thinking_seconds": 0,
+      "visible_tokens_o200k": {
+        "assistant": 109317,
+        "tool": 423,
+        "user": 16678
+      },
+      "visible_tokens_total": 126418
+    }
+  }
+}

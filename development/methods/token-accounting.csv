@@ -1,0 +1,42 @@
+phase,owner_or_surface,model,metric,tokens,classification
+solution,Turturean,Opus 4.8,input,606095,measured
+solution,Turturean,Opus 4.8,cache_create,16445559,measured
+solution,Turturean,Opus 4.8,cache_read,261399302,measured
+solution,Turturean,Opus 4.8,output,1469599,measured
+solution,Turturean,GPT-5.5 (Codex),input,3778517,measured
+solution,Turturean,GPT-5.5 (Codex),cached_input,3014144,measured
+solution,Turturean,GPT-5.5 (Codex),output,167423,measured
+solution,Turturean,GPT-5.5 (Codex),reasoning_output,130075,measured
+solution,Turturean,GPT-5.5 (Codex),total,3945940,measured
+formalization,Turturean,Fable 5,input,781280,measured
+formalization,Turturean,Fable 5,cache_create,111877373,measured
+formalization,Turturean,Fable 5,cache_read,1787363065,measured
+formalization,Turturean,Fable 5,output,3675067,measured
+formalization,Turturean,GPT-5.5 (Codex),input,1014361029,measured
+formalization,Turturean,GPT-5.5 (Codex),cached_input,954362496,measured
+formalization,Turturean,GPT-5.5 (Codex),output,5310903,measured
+formalization,Turturean,GPT-5.5 (Codex),reasoning_output,2180520,measured
+formalization,Turturean,GPT-5.5 (Codex),total,1019671932,measured
+formalization,Turturean,GPT-5.6 Sol (Codex),input,6098159815,measured
+formalization,Turturean,GPT-5.6 Sol (Codex),cached_input,6005222912,measured
+formalization,Turturean,GPT-5.6 Sol (Codex),output,6899367,measured
+formalization,Turturean,GPT-5.6 Sol (Codex),reasoning_output,2484609,measured
+formalization,Turturean,GPT-5.6 Sol (Codex),total,6105059182,measured
+formalization,Turturean,Opus 4.8,input,670213,measured
+formalization,Turturean,Opus 4.8,cache_create,40101516,measured
+formalization,Turturean,Opus 4.8,cache_read,498525577,measured
+formalization,Turturean,Opus 4.8,output,1722061,measured
+formalization,Roe,Fable 5,input,1380133,measured
+formalization,Roe,Fable 5,cache_create,62526484,measured
+formalization,Roe,Fable 5,cache_read,3092996935,measured
+formalization,Roe,Fable 5,output,17422802,measured
+formalization,Roe,Opus 4.8,input,2590794,measured
+formalization,Roe,Opus 4.8,cache_create,122617400,measured
+formalization,Roe,Opus 4.8,cache_read,5898136092,measured
+formalization,Roe,Opus 4.8,output,31133126,measured
+solution,combined,all,processed_total_low,304610556,estimate
+solution,combined,all,processed_total_central,327249006,estimate
+solution,combined,all,processed_total_high,364979756,estimate
+formalization,combined,all,processed_total_low,18822759216,estimate
+formalization,combined,all,processed_total_central,18859155366,estimate
+formalization,combined,all,processed_total_high,18919815616,estimate

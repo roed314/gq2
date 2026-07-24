@@ -1,0 +1,301 @@
+{
+  "counts": {
+    "existing_public_records": 445,
+    "final_public_records": 474,
+    "generated_records": 29,
+    "roe_public_messages": 9978,
+    "turturean_public_messages": 9999
+  },
+  "generated_utc": "2026-07-24T02:03:05+00:00",
+  "human_message_editorial_review": {
+    "human_message_occurrences_reviewed": 1078,
+    "method": "Manual editorial reading of every top-level human message. Automated patterns were used only as secondary safety flags.",
+    "raw_human_messages_published": 0,
+    "response_occurrences_excluded": 78,
+    "response_occurrences_included": 1000,
+    "unique_human_messages_reviewed": 837
+  },
+  "inputs": {
+    "roe_archive_sha256": "b4c939a7c4c74f300c33af9eb1a81ef49ecc1b31b569cc076e4e355b5e2fcb48",
+    "roe_sources": {
+      "first_timestamp": "2026-07-01T12:20:18Z",
+      "last_timestamp": "2026-07-11T01:11:16Z",
+      "published_messages": 9978,
+      "source_file_count": 20,
+      "source_set_sha256": "936f5ba4e29cc75c5ad94feccf7305656b3fae3a767b6dfe206a643fb576f327"
+    },
+    "turturean_sources": {
+      "first_timestamp": "2026-06-29T01:24:13Z",
+      "last_timestamp": "2026-07-19T17:27:31.335Z",
+      "published_messages": 3145,
+      "source_file_count": 361,
+      "source_set_sha256": "fb41845fdb109f58ebf97f48b32df3d7018719edfa7ba1b7c29d117398186c12"
+    }
+  },
+  "outputs": [
+    {
+      "key": "turturean_formalization__20260629",
+      "messages": 4141,
+      "models": [
+        "ChatGPT Pro (browser; backend not recorded)",
+        "GPT-5.5 (Codex)",
+        "Opus 4.8"
+      ],
+      "sha256": "1dd5019f23e7abaef1abd96bc1ec66aaeefeb3ec1e214718d15b762ddf4300eb"
+    },
+    {
+      "key": "turturean_formalization__20260630",
+      "messages": 4095,
+      "models": [
+        "GPT-5.5 (Codex)",
+        "gpt-5.3-codex-spark"
+      ],
+      "sha256": "3ddd95dda65ea70200d86437d7de89dce897c682df659848ac7ef36172e08ae5"
+    },
+    {
+      "key": "turturean_formalization__20260701",
+      "messages": 7,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "584162aacea852602f9961ed3dac3fe7fe4ee5c3dff45465c928542c767032f8"
+    },
+    {
+      "key": "turturean_formalization__20260702",
+      "messages": 34,
+      "models": [
+        "Fable 5"
+      ],
+      "sha256": "3349b1a0fbe5596434ba618096d28cb8466e89145aa9fc324921815680294fed"
+    },
+    {
+      "key": "turturean_formalization__20260706",
+      "messages": 25,
+      "models": [
+        "Fable 5"
+      ],
+      "sha256": "bbc13b3bb37dc892edac24845243993e59e1dadbce0cbdc84f8e9941e52173b1"
+    },
+    {
+      "key": "turturean_formalization__20260707",
+      "messages": 176,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "334176c1bd3f616b60a2f5170f2b87ee0e8db5ce73addb97a6b0e3ef35079b63"
+    },
+    {
+      "key": "turturean_formalization__20260708",
+      "messages": 560,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "fede156841f3df1617d549b779a13d2fbc52a4d3cc566a25aa6b971247f0cd58"
+    },
+    {
+      "key": "turturean_formalization__20260709",
+      "messages": 797,
+      "models": [
+        "Fable 5",
+        "GPT-5.6 Sol (Codex)",
+        "Opus 4.8"
+      ],
+      "sha256": "e978244f30d984978afe82ca232c6b34d2748931cd6d3093b554153f6a6e7cea"
+    },
+    {
+      "key": "turturean_formalization__20260710",
+      "messages": 164,
+      "models": [
+        "GPT-5.6 Sol (Codex)"
+      ],
+      "sha256": "361b7b3421822b8375589bbdf64f1a61126afb5144c24ef5a8e09a54b5c9e53e"
+    },
+    {
+      "key": "roe_formalization__session_01",
+      "messages": 222,
+      "models": [
+        "Opus 4.8"
+      ],
+      "sha256": "6eb2d1fdc02a0418b0062520bdeb9fa9b21375f088cfc6fd3e8a81214fb65c4f"
+    },
+    {
+      "key": "roe_formalization__session_02",
+      "messages": 330,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "7abe1c0d7031edd7d125fb84eed382e3e770c0c5010953effffd9e78cca32d7f"
+    },
+    {
+      "key": "roe_formalization__session_03",
+      "messages": 976,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "11f02a105055895f2ce0801b701d17d46b4218a8ddd9c8bafa576e59299af6b5"
+    },
+    {
+      "key": "roe_formalization__session_04",
+      "messages": 925,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "d5f144a1181a5c82afdf1a9c1335e6cc9400c8f27345ee0fe13cf57ebabb161e"
+    },
+    {
+      "key": "roe_formalization__session_05",
+      "messages": 1100,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "1b9d039cc47990802441d539d11ef9874cacec831645aee00a6d24c836631c4e"
+    },
+    {
+      "key": "roe_formalization__session_06",
+      "messages": 897,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "2368ba0c6e95c777a74c6363e237aa392c58169c65087fce4585e1a26e8bc268"
+    },
+    {
+      "key": "roe_formalization__session_07",
+      "messages": 975,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "d3ab7a03c85b42851140a8d4c5493c5ec17e4101c0b2322ef11d4a3754e31cc5"
+    },
+    {
+      "key": "roe_formalization__session_08",
+      "messages": 831,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "e8404a5a32bbb47e1622a27ab2af835dc2e6b97f7be278f648de47d520a7ae35"
+    },
+    {
+      "key": "roe_formalization__session_09",
+      "messages": 641,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "4e9dbab67ea2db8b0f8ac3cf1f037cc088bce47cdc7c2022d3bd91d9f9dcb0d7"
+    },
+    {
+      "key": "roe_formalization__session_10",
+      "messages": 318,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "18f5ecd73a0c95daa98302aa25ea5e5bb3c6b69ba675475cb61440bd1e2f5c9f"
+    },
+    {
+      "key": "roe_formalization__session_11",
+      "messages": 469,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "2c13a6f52828b95ae69edbe086d5e07ee78ac3e3e847f0cb05b5724da5b7e482"
+    },
+    {
+      "key": "roe_formalization__session_12",
+      "messages": 446,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "6d9245e3b271fcab3be68d8b13e3f28a52ad78b8fb9dddf867030af1b9c37c25"
+    },
+    {
+      "key": "roe_formalization__session_13",
+      "messages": 649,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "c918cfd0167f0437eab6b365775f553875a3912433219b510a8fda9306d67d84"
+    },
+    {
+      "key": "roe_formalization__session_14",
+      "messages": 326,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "a0eb0445a4343940af85d92eabfa61a67c714b90786a56fe4f2096654f149b65"
+    },
+    {
+      "key": "roe_formalization__session_15",
+      "messages": 134,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "3c6f06485fed7128597b21fa9405ac21c2d8822845b98c9e184cf3a43b79e322"
+    },
+    {
+      "key": "roe_formalization__session_16",
+      "messages": 202,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "c29f32646730504c7cd6b3a5d858939e5307992eec9d327b62e681600e9ce29b"
+    },
+    {
+      "key": "roe_formalization__session_17",
+      "messages": 107,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "78756b269ea74c841e5fc3501d6dd7e0caf8e395f8f9f71ab82569dbe369cbef"
+    },
+    {
+      "key": "roe_formalization__session_18",
+      "messages": 120,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "e7358d09d1d272956976085feec66ccb0cb19725035f1839117a70edf5f65056"
+    },
+    {
+      "key": "roe_formalization__session_19",
+      "messages": 159,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "706176ea925742d643bad49826a3964818d1383f2318133ae8b5199c9ad14698"
+    },
+    {
+      "key": "roe_formalization__session_20",
+      "messages": 151,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "43efd0be3f202fcb0e3b3088ace2318a4d794c8f49a35285f60216ab90a98198"
+    }
+  ],
+  "policy": {
+    "human_messages": "Raw human text is omitted. Every top-level human message was read during a private editorial review; model responses to private, personal, or unrelated turns were excluded.",
+    "included": "formalization records"
+  },
+  "schema_version": 1
+}

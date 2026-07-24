@@ -6,6 +6,22 @@
 <meta name="description" content="David Turturean's account of the AI-assisted search for a presentation of the absolute Galois group of the 2-adic numbers.">
 <title>Finding the Presentation of the 2-adic Absolute Galois Group | David Turturean</title>
 <link rel="stylesheet" href="../../site.css?v=20260718-2">
+<link rel="stylesheet" href="../../vendor/katex.min.css">
+<script defer src="../../vendor/katex.min.js"></script>
+<script defer src="../../vendor/auto-render.min.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+      throwOnError: false
+    });
+  });
+</script>
 </head>
 <body class="account-page">
 
@@ -16,11 +32,16 @@
 
 <main>
   <article class="prose">
+    <p class="account-crosslink"><a href="../success/">David Roe’s account</a>
+    covers verification, formalization, and writing. The
+    <a href="../">development record</a> gives the full chronology.</p>
+
     <p>By early 2026, it had become clear that AI was poised to solve a lot
     of open problem in mathematics.</p>
 
-    <p>AI was starting to eat away at the Erdős Problems list by solving
-    some of them with just one prompt. AI was also now able to do cognitive
+    <p>AI was starting to eat away at the
+    <a href="https://www.erdosproblems.com/">Erdős Problems list</a> by
+    solving some of them with just one prompt. AI was also now able to do cognitive
     labor that would take a human a workday (so a few hours) in other
     fields. In January of 2026, I thought to myself: why not make AI work
     for many workdays in a row towards a certain problem, the way a research
@@ -52,13 +73,17 @@
     approach onto Claude Code, I let Claude Code auto-discover what is the
     best way to do that for itself.</p>
 
-    <p>I naturally became interested in the FrontierMath Open Problems set,
-    which I <a href="https://epoch.ai/frontiermath/open-problems/explicit-deformations">then</a>
-    <a href="https://epoch.ai/frontiermath/open-problems/ramsey-book-graphs">chipped</a>
-    at. Being part of the Open Problems set, I started
-    sending David Roe promising candidate presentations for the 2-adic
-    Absolute Galois Group. Unfortunately, none of the three ones I had sent
-    before June 2026, found and elaborated by ChatGPT-5.2-Pro and
+    <p>I next turned to the
+    <a href="https://epoch.ai/frontiermath/open-problems">FrontierMath Open
+    Problems set</a>, first chipping away at
+    <a href="https://epoch.ai/frontiermath/open-problems/explicit-deformations">explicit
+    deformations</a> and <a href="https://epoch.ai/frontiermath/open-problems/ramsey-book-graphs">Ramsey
+    book graphs</a>, then sending David Roe promising candidate
+    presentations for the
+    <a href="https://epoch.ai/frontiermath/open-problems/q2-absolute-galois">2-adic
+    Absolute Galois Group</a>. Unfortunately, none
+    of the three ones I had sent before June 2026, found and elaborated by
+    ChatGPT-5.2-Pro and
     ChatGPT-5.4-Pro, passed David Roe's computation verifier. Motivated by
     the nonlinear connections LLMs pick up on in math through their
     training, I had tried to get the models to first guess a promising
@@ -76,34 +101,40 @@
     was significantly better and thought for longer. So I attempted this
     problem again.</p>
 
-    <p>During a ~26-hour autonomous stretch, Pro found a candidate called A2
+    <p>During a ~26-hour autonomous stretch, Pro found
+    <a href="../../presentations/#candidate-a2">a candidate called A2</a>
     and developed a substantial proof around it. It worked out calculations
     over finite target groups, organized inductions intended to cover a lot
     of interactions between it and other groups, and generated a
     journal-style manuscript. At this point, I had also asked separately
     GPT-5.6-Pro to develop a number of tests of varying oddity and
     complexity to verify the candidate: every case my local package could
-    handle agreed with A2.</p>
+    handle agreed with <a href="../../presentations/#candidate-a2">A2</a>.</p>
 
-    <p>I opened a separate ChatGPT Pro review of the A2 manuscript. It found
-    that a Lemma 3.4 in this manuscript motivating the correctness of A2 was
-    false. A few turns of ChatGPT-Pro doing analysis located the defect in
-    the candidate itself: A2 was incompatible with data that the known
-    Galois group requires.</p>
+    <p>I opened a separate ChatGPT Pro review of the
+    <a href="../../presentations/#candidate-a2">A2 manuscript</a>. It found
+    that a Lemma 3.4 in this manuscript motivating the correctness of
+    <a href="../../presentations/#candidate-a2">A2</a> was false. A few turns
+    of ChatGPT-Pro doing analysis located the defect in the candidate itself:
+    <a href="../../presentations/#candidate-a2">A2</a> was incompatible with
+    data that the known Galois group requires.</p>
 
     <p>My next instruction was to find a more general candidate that
     preserved the usable part of the proof while making the missing step
     possible. Pro immediately derived a corrected relation, tantamount to a
-    generalization of the initial A2 candidate and proposed the presentation
-    proved here, that we have verified in the meantime, and that motivated
-    the existence of this website.</p>
+    generalization of the initial
+    <a href="../../presentations/#candidate-a2">A2 candidate</a>, and proposed
+    <a href="../../presentations/#proven-presentation">the presentation proved
+    here</a>, whose corrected wild relation is
+    $h_0u_1^{-1}x_1^{\sigma}c_0=1$. We have since verified it, and it
+    motivated the existence of this website.</p>
 
     <p>Much of this work done to solve this problem was done by voice. With
     a lot of the infrastructure already in place from solving other open
     problems, I used Claude Code as the operational controller and most
-    often just spoke to it the mathematical or procedural instruction I
-    wanted it to carry out. This was partly motivated by the fact that I was
-    trying to solve a lot of problems in parallel, partly motivated by the
+    often gave it procedural instructions by voice. This was partly
+    motivated by the fact that I was trying to solve a lot of problems in
+    parallel, partly motivated by the
     fact that voice simply allows for more natural intention expressivity,
     which coding agents can now pick up on. I also used speech-to-text in
     the ChatGPT conversations while developing the manuscript.<br>
@@ -116,21 +147,38 @@
     of thing that you predict becomes possible a few tens of months before
     you can make things float with just your voice.</p>
 
-    <p>After I produced the 60-page manuscript that motivated the
-    presentation we have today, I sent to solution over to David Roe, who
+    <p>After I produced the
+    <a href="../../artifacts/turturean-q2-manuscript-2026-06-25.pdf">preserved
+    60-page manuscript</a> that motivated the presentation we have today, I
+    sent the solution over to David Roe, who
     ran the finite-group verifier he had built for EpochAI.</p>
 
     <p>After submission passed every one of his tests, he also read the
     manuscript and confirmed the natural-language proof.</p>
 
-    <p>Roe and I separately formalized the solution with coding agents: he
-    used Fable 5, while I used a combination of GPT-5.5-xhigh and
-    ChatGPT-5.5-Pro, followed by Fable 5 once it became available again. To
-    start, I asked GPT-5.5-Pro for a rough autoformalization plan based on
-    the manuscript, then let GPT-5.5-xhigh in Codex query ChatGPT-5.5-Pro
+    <p>Roe and I separately formalized the solution with coding agents. His
+    official logs record Fable 5 and Opus 4.8, with Fable 5 used most often.
+    I used GPT-5.5 in Codex and ChatGPT-5.5-Pro, followed by Fable 5 and some
+    Opus 4.8 work once Fable became available again. To start, I
+    asked GPT-5.5-Pro for a rough autoformalization plan based on the
+    manuscript, then let GPT-5.5 in Codex query ChatGPT-5.5-Pro
     in-browser for incremental new formalization patches of Lean 4 code, and
-    had xhigh integrate and compile each new piece of Lean code from
-    Pro.</p>
+    had Codex integrate and compile each new piece of Lean code from Pro.
+    The <a href="../#accounting">development record</a> includes the
+    formalization records and machine-readable token audit.</p>
+
+    <p>Once Fable became available again, I used it for the last details. I had
+    seen people on X describe it as state of the art, and in practice it
+    repeatedly produced 700-plus-line patches of Lean in a single response,
+    many times in succession. Roe had never attempted an autoformalization
+    before, yet his Fable-led effort produced a separate development containing
+    roughly 90,000 tracked lines of Lean source within about two weeks. This
+    came immediately after my
+    <a href="https://github.com/davidturturean/erdos-870">Erd&#337;s Problem
+    #870 formalization</a>, which, as far as I could find at the end of June,
+    was the largest one-person autoformalization of a single problem. The
+    compression in required experience and elapsed time points toward a future
+    where &ldquo;you can just formalize things.&rdquo;</p>
 
     <p>After Roe's autoformalization finished, I completed my development
     with a patch from his separately developed formalization; this patch
@@ -138,15 +186,15 @@
     can get slow and lazy towards the last-mile delivery of an
     autoformalization.</p>
 
-    <p>I used computing resources provided by
-    <a href="https://fulcrum.inc">Fulcrum</a> throughout the solution search
-    and Lean formalization.</p>
+    <p><a href="https://fulcrum.inc">Fulcrum</a> provided the great majority
+    of the compute I used throughout the successful solution search and my
+    Lean formalization.</p>
 
     <p>Roe created <a href="https://github.com/roed-math/paperforge">PaperForge</a>
     and assembled the PDF, interactive paper, formalizations, and development
     record into the site where this account appears. He has been immensely
     helpful in corroborating the artifacts
-    that mathematician would find necessary to digest an AI-generated
+    that a mathematician would find necessary to digest an AI-generated
     result.</p>
   </article>
 </main>

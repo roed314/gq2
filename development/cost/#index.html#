@@ -1,0 +1,16 @@
+
+
+Cost in tokens
+
+* David Turturean's conversations finding the presentation
+* David Turturean's formalization
+* David Roe's formalization
+* David Roe's Lean cleanup
+
+Cost in dollars
+
+It is difficult to translate the token usage above into a dollar figure, for several reasons.  Both authors had subscription accounts, and David Turturean also support from Fulcrum for providing API credits.  If you just directly translate the token usage into API credits, the presentation and informal proof would have cost roughly $7,000 and the formalizations would have cost roughly $30,000 (both of these numbers have quite a bit of variance).  However, the authors did not spend nearly this much, for two reasons.  First, fully utilizing a subscription provides vast leverage: you can run several parallel lanes using GPT Pro in the browser without being rate limited, and there is no overall usage cap.  Indeed, you can run 2-3 parallel sessions on GPT 5.5 Pro and roughly 6 parallel sessions on GPT 5.6 Pro.  The coding agents (Codex and Claude Code) to have overall usage limits, but if you use them to the maximum extent the number of tokens available in a Pro/Max20 subscription is far more than the API credits you could buy with the cost of the subscription.
+
+The other reason that it is difficult to translate token usage into dollars is that the authors prioritized finding results in a short overall time (partly due to the lack of clarity on the availability of Fable 5), and would have needed fewer subscriptions if they had drawn out the project over months rather than weeks.
+
+With optimal usage drawn out over more time, this work could have accomplished by one month of GPT Pro subscription and one month of a Claude Max20 subscription for a total cost of $400.  The actual amount spent by the authors was roughly $6000: one GPT Pro subscription for $200, three Claude Max20 subscriptions for $600, and roughly $5000 of Fable API tokens.  All of these costs were covered by David Roe's SSRFA grant from the Simons Foundation and David Turturean's support from Fulcrum.

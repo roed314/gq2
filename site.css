@@ -258,7 +258,29 @@ a.stage-title:hover { text-decoration-color: var(--accent); }
 .axiom-card .pres-math { overflow-x: visible; }
 .pres-math > p.axiom-stmt { color: var(--ink); }
 .axiom-sig { white-space: normal; overflow-wrap: anywhere; }
-.axiom-sig .decl_type, .lknowl-panel .decl_type { display: inline; }
+/* doc-gen4's own whitespace model: a forced break after the declaration
+   name, hanging indents, and pre-wrap only inside .fn groups — where the
+   Lean pretty-printer's intentional newlines live. Newlines between spans
+   are markup formatting and collapse as normal whitespace. */
+.axiom-sig .decl_header, .lknowl-panel .decl_header {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-indent: -6ex;
+  padding-left: 6ex;
+}
+.axiom-sig .decl_name::after, .lknowl-panel .decl_name::after {
+  content: "\A";
+  white-space: pre;
+}
+.axiom-sig .fn, .lknowl-panel .fn {
+  display: inline-block;
+  text-indent: -1ex;
+  padding-left: 1ex;
+  white-space: pre-wrap;
+  vertical-align: top;
+}
+.axiom-sig .impl_arg, .axiom-sig .implicits,
+.lknowl-panel .impl_arg, .lknowl-panel .implicits { white-space: normal; }
 .axiom-lean { margin-top: 0.8rem; }
 .axiom-lean > summary {
   cursor: pointer;
@@ -267,6 +289,39 @@ a.stage-title:hover { text-decoration-color: var(--accent); }
 }
 .axiom-lean-links { margin: 0.5rem 0 0; font-size: 0.92rem; }
 .axiom-hint { color: var(--muted); }
+
+.dead-ends-section {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.dead-ends-disclosure > summary {
+  width: fit-content;
+  margin: 1rem 0;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  color: var(--accent);
+  background: var(--card);
+  font: 700 0.9rem/1.3 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.dead-end-grid {
+  margin-top: 1rem;
+}
+
+.resource-card:target {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.account-crosslink {
+  padding: 0.75rem 0.9rem;
+  border-left: 3px solid var(--accent);
+  background: var(--panel);
+}
 
 /* nested Lean knowls inside axiom statements */
 a.lk {
@@ -289,7 +344,6 @@ a.lk.lk-open {
   background: var(--card);
   font-size: 0.95em;
 }
-.lknowl-panel .decl_header { white-space: normal; overflow-wrap: anywhere; }
 .lknowl-panel .attributes { color: var(--muted); font-size: 0.9em; }
 .lknowl-eqns { margin: 0.4em 0 0; }
 .lknowl-eqns > summary {
@@ -307,8 +361,10 @@ a.lk.lk-open {
 .lknowl-panel ul.structure_fields {
   list-style: none;
   margin: 0.45em 0 0;
-  padding-left: 0.2em;
+  text-indent: -2ex;
+  padding-left: 2ex;
 }
+.lknowl-panel .structure_field_doc { text-indent: 0; }
 .lknowl-panel li.structure_field {
   margin: 0.35em 0;
   white-space: normal;

@@ -58,16 +58,37 @@
   const LINK_NOT_PUBLISHED = editorial('link.not-published', 'Link not published');
   const ATTACHMENT_NOT_INCLUDED = editorial('link.attachment-missing', 'Attachment not included');
   const DETAIL_TERM_DEFINITIONS = Object.freeze({
-    h0: editorial('detail.terms.h0', 'h0 is an auxiliary expression used to shorten the proposed wild relation h0 u1^-1 x1^sigma c0 = 1. It supplies the first factor of that relation.'),
-    gammaA2: editorial('detail.terms.gamma-a2', 'Γ_A2 denotes the profinite group defined by the rejected A2 presentation in these early records. The final Lean theorem concerns the later presentation.'),
-    gammaA: editorial('detail.terms.gamma-a', 'Γ_A denotes the candidate profinite group defined by the presentation being discussed. In the final Lean files, GammaA refers to the final presentation; earlier records can use similar notation for proposals later rejected.'),
+    candidateA1: editorial('detail.terms.candidate-a1', 'Candidate A1 was the first late-June proposal. It passed several local finite checks but failed the required rank calculation.'),
+    candidateA2: editorial('detail.terms.candidate-a2', 'Candidate A2 passed the available local finite checks, but a manuscript review exposed a false proposition and marked-abelianization obstruction.'),
+    finalCandidate: editorial('detail.terms.final-candidate', 'The final candidate replaced A2 with the corrected relation $h_0u_1^{-1}x_1^{\\sigma}c_0=1$ and is the presentation proved in the paper and Lean developments.'),
+    h0: editorial('detail.terms.h0', '$h_0$ is an auxiliary expression used to shorten the proposed wild relation $h_0u_1^{-1}x_1^{\\sigma}c_0=1$. It supplies the first factor of that relation.'),
+    gammaA2: editorial('detail.terms.gamma-a2', '$\\Gamma_{A2}$ denotes the profinite group defined by the rejected A2 presentation in these early records. The final Lean theorem concerns the later presentation.'),
+    gammaA: editorial('detail.terms.gamma-a', '$\\Gamma_A$ denotes the candidate profinite group defined by the presentation being discussed. In the final Lean files, `GammaA` refers to the final presentation; earlier records can use similar notation for proposals later rejected.'),
   });
   const BRIEF_TERM_DEFINITIONS = Object.freeze({
-    h0: editorial('record.terms.h0', 'h0 is an auxiliary expression in the proposed wild relation.'),
-    gammaA2: editorial('record.terms.gamma-a2', 'Γ_A2 is the group defined by the rejected A2 proposal.'),
-    gammaA: editorial('record.terms.gamma-a', 'Γ_A denotes the candidate profinite group defined by the presentation being discussed.'),
+    candidateA1: editorial('record.terms.candidate-a1', 'A1 was rejected after the rank calculation.'),
+    candidateA2: editorial('record.terms.candidate-a2', 'A2 passed local checks and was later structurally refuted.'),
+    finalCandidate: editorial('record.terms.final-candidate', 'The final candidate is the presentation proved in the paper.'),
+    h0: editorial('record.terms.h0', '$h_0$ is an auxiliary expression in the corrected wild relation.'),
+    gammaA2: editorial('record.terms.gamma-a2', '$\\Gamma_{A2}$ is the group defined by the rejected A2 proposal.'),
+    gammaA: editorial('record.terms.gamma-a', '$\\Gamma_A$ denotes the candidate profinite group defined by the presentation being discussed.'),
+  });
+  const TERM_LINKS = Object.freeze({
+    candidateA1: '../presentations/#candidate-a1',
+    candidateA2: '../presentations/#candidate-a2',
+    finalCandidate: '../presentations/#proven-presentation',
+    h0: '../presentations/#proven-presentation',
+  });
+  const TERM_LINK_LABELS = Object.freeze({
+    candidateA1: editorial('candidate.link.a1', 'Candidate A1'),
+    candidateA2: editorial('candidate.link.a2', 'Candidate A2'),
+    finalCandidate: editorial('candidate.link.final', 'Proven presentation'),
+    h0: editorial('candidate.link.h0', 'Proven presentation'),
   });
   const TERM_PATTERNS = Object.freeze({
+    candidateA1: /\bA1\b/i,
+    candidateA2: /\bA2\b/i,
+    finalCandidate: /(?:\bfinal candidate\b|\bcorrected (?:candidate|presentation|relation)\b)/i,
     h0: /(?:\bh0\b|h_0|h_\{0\}|h₀)/,
     gammaA2: /(?:GammaA2|Gamma_A2|Γ_A2|ΓA2|\\Gamma_\{A_?2\}|\\Gamma_A2)(?![A-Za-z0-9₂])/,
     gammaA: /(?:GammaA|Gamma_A|Γ_A|ΓA|\\Gamma_\{A\}|\\Gamma_A)(?![A-Za-z0-9₂])/,
@@ -121,12 +142,98 @@
     return termKeysFor(...values).map((term) => BRIEF_TERM_DEFINITIONS[term]).join(' ');
   }
 
+  function appendCandidateText(container, text) {
+    const value = String(text ?? '');
+    const pattern = /\b(?:Candidate\s+)?A([12])\b/gi;
+    let cursor = 0;
+    for (const match of value.matchAll(pattern)) {
+      container.append(value.slice(cursor, match.index));
+      const key = `candidateA${match[1]}`;
+      container.append(Object.assign(make('a', 'candidate-inline-link', match[0]), {href: TERM_LINKS[key]}));
+      cursor = match.index + match[0].length;
+    }
+    container.append(value.slice(cursor));
+    return container;
+  }
+
+  function makeCandidateText(tag, className, text) {
+    return appendCandidateText(make(tag, className), text);
+  }
+
+  function replaceCandidateText(container, text) {
+    container.replaceChildren();
+    return appendCandidateText(container, text);
+  }
+
   function updateDetailTerms(...values) {
     const terms = termKeysFor(...values);
     const box = $('d-terms');
     const definitions = $('d-term-definitions');
-    definitions.replaceChildren(...terms.map((term) => make('p', '', DETAIL_TERM_DEFINITIONS[term])));
+    definitions.replaceChildren(...terms.map((term) => {
+      const paragraph = makeCandidateText('p', '', DETAIL_TERM_DEFINITIONS[term]);
+      if (TERM_LINKS[term]) {
+        paragraph.append(' ', Object.assign(make('a', 'candidate-detail-link', editorial('detail.terms.view-presentation', 'Presentation page')), {href: TERM_LINKS[term]}));
+      }
+      return paragraph;
+    }));
     box.hidden = terms.length === 0;
+    renderEditorialMath(definitions);
+  }
+
+  function appendCandidateLinks(container, ...values) {
+    const links = new Map();
+    termKeysFor(...values).forEach((term) => {
+      if (TERM_LINKS[term]) links.set(TERM_LINKS[term], TERM_LINK_LABELS[term]);
+    });
+    if (!links.size) return;
+    const paragraph = make('p', 'stage-candidate-links');
+    paragraph.append(`${editorial('candidate.link.label', 'Presentation details')} · `);
+    [...links].forEach(([href, label], index) => {
+      if (index) paragraph.append(' · ');
+      paragraph.append(Object.assign(make('a', '', label), {href}));
+    });
+    container.append(paragraph);
+  }
+
+  function attributionRuleFor(node) {
+    return (D.model_attribution?.rules || []).find((rule) => {
+      const selector = rule.selector || {};
+      if (selector.lanes && !selector.lanes.includes(node.lane)) return false;
+      if (selector.turn_min != null && Number(node.turn) < Number(selector.turn_min)) return false;
+      if (selector.turn_max != null && Number(node.turn) > Number(selector.turn_max)) return false;
+      return true;
+    });
+  }
+
+  function modelAttributionFor(node) {
+    if (node.model_public_text) return node.model_public_text;
+    const rule = attributionRuleFor(node);
+    if (rule?.public_text) return rule.public_text;
+    return editorial('model.unattributed', 'Model not established from the retained artifact.');
+  }
+
+  function modelLabelFor(node) {
+    if (node.model_public_text) return node.model_public_text;
+    const rule = attributionRuleFor(node);
+    return rule?.observed_label || editorial('model.unattributed-short', 'Model not established');
+  }
+
+  function renderEditorialMath(root) {
+    if (!root || typeof window.renderMathInElement !== 'function') return;
+    window.renderMathInElement(root, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\[', right: '\\]', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+      ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+      throwOnError: false,
+      trust: false,
+      output: 'mathml',
+      maxExpand: 1000,
+    });
+    normalizeMathMLScriptChildren(root);
   }
 
   const laneOrder = [...(D.lane_order || [])];
@@ -259,6 +366,7 @@
     return Number.isFinite(number) ? Math.min(max, Math.max(min, number)) : fallback;
   }
 
+  const accountingLinkRequested = window.location.hash === '#accounting';
   let state = parseState(window.location.hash);
   let disabledClasses = new Set(state.disabledClasses);
   let disabledLanes = new Set(state.disabledLanes);
@@ -307,11 +415,13 @@
 
   function matches(node) {
     if (disabledClasses.has(node.class) || disabledLanes.has(node.lane)) return false;
+    const selectedStages = selectedStageIds();
+    if (state.view === 'list' && selectedStages.length && !selectedStages.includes(stageIdFor(node))) return false;
     if (state.focus === 'pivotal' && node.class !== 'pivotal') return false;
     if (state.focus === 'decisive' && !DECISIVE.has(node.class) && node.class !== 'manual') return false;
     if (!state.query) return true;
     const query = state.query.toLocaleLowerCase();
-    return [node.key, node.summary, node.why, node.tag, node.class, laneTitle(node.lane), stages.get(stageIdFor(node))?.title,
+    return [node.key, node.summary, node.why, node.tag, node.class, modelAttributionFor(node), laneTitle(node.lane), stages.get(stageIdFor(node))?.title,
       node.turn == null ? '' : `turn ${node.turn}`, node.turn == null ? '' : `t${node.turn}`]
       .some((value) => String(value || '').toLocaleLowerCase().includes(query));
   }
@@ -434,6 +544,7 @@
     const active = [];
     if (state.query) active.push(editorial('filter.control.active-search', 'Search term applied'));
     if (state.focus !== 'all') active.push(editorial('filter.active.importance', 'Importance level selected'));
+    if (state.view === 'list' && selectedStageIds().length) active.push(editorial('filter.active.stage', 'Stage selected'));
     if (disabledClasses.size) active.push(editorial('filter.active.type', 'Some record types hidden'));
     if (disabledLanes.size) active.push(editorial('filter.active.conversation', 'Some conversations hidden'));
     $('activeFilters').textContent = active.join(' · ');
@@ -443,26 +554,31 @@
     const box = $('chapters');
     box.replaceChildren();
     const selected = new Set(selectedStageIds());
-    const all = make('button', 'stage-button');
-    all.type = 'button';
-    all.dataset.stageId = '';
-    all.setAttribute('aria-pressed', String(selected.size === 0));
-    all.append(make('span', 'stage-title', editorial('stage.all.title', 'All stages')), make('span', 'stage-count', String(D.nodes.length)));
-    all.addEventListener('click', () => selectStage(''));
+    const all = make('div', 'stage-button');
+    const allAction = makeButton('stage-button-action');
+    allAction.dataset.stageId = '';
+    allAction.setAttribute('aria-label', editorial('stage.all.title', 'All stages'));
+    allAction.setAttribute('aria-pressed', String(selected.size === 0));
+    all.classList.toggle('is-selected', selected.size === 0);
+    all.append(allAction, make('span', 'stage-title', editorial('stage.all.title', 'All stages')), make('span', 'stage-count', String(D.nodes.length)));
+    allAction.addEventListener('click', () => selectStage(''));
     box.append(all);
     stageOrder.forEach((id, index) => {
       const stage = stages.get(id);
       const nodes = stageNodes.get(id) || [];
-      const button = make('button', 'stage-button');
-      button.type = 'button';
-      button.dataset.stageId = id;
-      button.setAttribute('aria-pressed', String(selected.has(id)));
-      button.append(make('span', 'stage-number', String(index + 1)), make('span', 'stage-title', stage.title), make('span', 'stage-count', `${nodes.length} ${editorial('stage.records', 'records')}`));
-      if (stage.date_label) button.append(make('span', 'stage-blurb', stage.date_label));
-      button.addEventListener('click', () => selectStage(id));
-      box.append(button);
+      const item = make('div', 'stage-button');
+      const action = makeButton('stage-button-action');
+      action.dataset.stageId = id;
+      action.setAttribute('aria-label', `${editorial('stage.action.toggle', 'Toggle stage')} ${index + 1}: ${stage.title}`);
+      action.setAttribute('aria-pressed', String(selected.has(id)));
+      item.classList.toggle('is-selected', selected.has(id));
+      item.append(action, make('span', 'stage-number', String(index + 1)), makeCandidateText('span', 'stage-title', stage.title), make('span', 'stage-count', `${nodes.length} ${editorial('stage.records', 'records')}`));
+      if (stage.date_label) item.append(make('span', 'stage-blurb', stage.date_label));
+      action.addEventListener('click', () => selectStage(id));
+      box.append(item);
     });
     renderStageSummary();
+    renderEditorialMath($('stage'));
   }
 
   function selectStage(id) {
@@ -487,8 +603,9 @@
     }
     if (ids.length === 1) {
       const stage = stages.get(ids[0]);
-      box.append(make('p', 'stage-summary-label', stage.date_label || editorial('stage.summary.selected', 'Selected stage')), make('h2', '', stage.title));
-      if (stage.summary) box.append(make('p', '', stage.summary));
+      box.append(make('p', 'stage-summary-label', stage.date_label || editorial('stage.summary.selected', 'Selected stage')), makeCandidateText('h2', '', stage.title));
+      if (stage.summary) box.append(makeCandidateText('p', '', stage.summary));
+      appendCandidateLinks(box, stage.title, stage.summary);
       return;
     }
     box.append(make('p', 'stage-summary-label', editorial('stage.summary.multiple', 'Selected stages')));
@@ -496,29 +613,32 @@
     ids.forEach((stageId) => {
       const stage = stages.get(stageId);
       const item = make('section', 'stage-summary-item');
-      item.append(make('h2', '', stage.title));
+      item.append(makeCandidateText('h2', '', stage.title));
       if (stage.date_label) item.append(make('p', 'stage-summary-date', stage.date_label));
-      if (stage.summary) item.append(make('p', '', stage.summary));
+      if (stage.summary) item.append(makeCandidateText('p', '', stage.summary));
+      appendCandidateLinks(item, stage.title, stage.summary);
       list.append(item);
     });
     box.append(list);
   }
 
   function recordButton(node, extraClass, reason) {
-    const button = makeButton(`record-row ${extraClass || ''}`.trim());
+    const row = make('div', `record-row ${extraClass || ''}`.trim());
+    const button = makeButton('record-row-open');
     button.dataset.recordKey = node.key;
     button.setAttribute('aria-label', recordAriaLabel(node));
     const marker = make('span', `record-class-marker ${node.class}`);
     marker.setAttribute('aria-hidden', 'true');
-    button.append(marker);
-    button.append(make('span', 'record-turn', node.turn == null ? editorial('record.separate.short', 'Conversation') : `${editorial('record.turn.short', 'Turn')} ${node.turn}`));
-    button.append(make('span', 'record-summary', node.summary || node.key));
-    button.append(make('span', 'record-meta', formatTimestamp(node)));
+    row.append(button, marker);
+    row.append(make('span', 'record-turn', node.turn == null ? editorial('record.separate.short', 'Conversation') : `${editorial('record.turn.short', 'Turn')} ${node.turn}`));
+    row.append(makeCandidateText('span', 'record-summary', node.summary || node.key));
+    row.append(make('span', 'record-meta', formatTimestamp(node)));
+    row.append(make('span', 'record-model', modelLabelFor(node)));
     const termNote = termBrief(node.summary, node.why);
-    if (termNote) button.append(make('span', 'record-term-note', termNote));
-    if (reason) button.append(make('span', 'record-reason', reason));
+    if (termNote) row.append(makeCandidateText('span', 'record-term-note', termNote));
+    if (reason) row.append(makeCandidateText('span', 'record-reason', reason));
     button.addEventListener('click', (event) => openRecord(node, {history: 'push', opener: event.currentTarget}));
-    return button;
+    return row;
   }
   function recordAriaLabel(node) {
     const prefix = node.turn == null ? editorial('record.action.open-conversation', 'Open conversation') : editorial('record.action.open-turn', 'Open turn');
@@ -549,7 +669,7 @@
       section.setAttribute('aria-labelledby', headingId);
 
       const header = make('header', 'key-stage-header');
-      const heading = make('h3', 'key-stage-heading', stage.title);
+      const heading = makeCandidateText('h3', 'key-stage-heading', stage.title);
       heading.id = headingId;
       header.append(heading);
       if (stage.date_label) header.append(make('p', 'key-stage-date', stage.date_label));
@@ -594,7 +714,7 @@
       if (!nodes.length) return;
       const stage = stages.get(id);
       const section = make('section', 'mobile-stage');
-      const heading = make('h3', 'mobile-stage-heading', stage.title);
+      const heading = makeCandidateText('h3', 'mobile-stage-heading', stage.title);
       const rows = make('div', 'mobile-stage-records');
       nodes.forEach((node) => rows.append(recordButton(node, 'mobile-record')));
       section.append(heading, rows);
@@ -765,16 +885,18 @@
 
   function mapStageControl(range) {
     const stage = stages.get(range.id);
-    const button = makeButton('map-stage-button');
-    button.dataset.stageId = range.id;
-    button.dataset.mapStart = String(range.start);
-    button.dataset.mapEnd = String(range.end);
-    button.title = stage.title;
-    button.setAttribute('aria-label', `${editorial('stage.action.toggle', 'Toggle stage')} ${range.index + 1}: ${stage.title}`);
-    button.setAttribute('aria-pressed', String(selectedStageIds().includes(range.id)));
-    button.append(make('span', 'map-stage-index', String(range.index + 1)), make('span', 'map-stage-name', stage.title));
-    button.addEventListener('click', () => selectStage(range.id));
-    return button;
+    const item = make('div', 'map-stage-button');
+    const action = makeButton('map-stage-button-action');
+    item.dataset.stageId = range.id;
+    item.dataset.mapStart = String(range.start);
+    item.dataset.mapEnd = String(range.end);
+    action.title = stage.title;
+    action.setAttribute('aria-label', `${editorial('stage.action.toggle', 'Toggle stage')} ${range.index + 1}: ${stage.title}`);
+    action.setAttribute('aria-pressed', String(selectedStageIds().includes(range.id)));
+    item.classList.toggle('is-selected', selectedStageIds().includes(range.id));
+    item.append(action, make('span', 'map-stage-index', String(range.index + 1)), makeCandidateText('span', 'map-stage-name', stage.title));
+    action.addEventListener('click', () => selectStage(range.id));
+    return item;
   }
 
   function mapDateControl(time) {
@@ -829,7 +951,9 @@
       button.style.left = `${left}px`;
       button.style.width = `${visibleWidth}px`;
       button.classList.toggle('is-compact', visibleWidth < 112);
-      button.setAttribute('aria-pressed', String(selectedStageIds().includes(button.dataset.stageId)));
+      const selected = selectedStageIds().includes(button.dataset.stageId);
+      button.classList.toggle('is-selected', selected);
+      button.querySelector('.map-stage-button-action')?.setAttribute('aria-pressed', String(selected));
     });
 
     let lastDateX = -Infinity;
@@ -898,6 +1022,7 @@
     const termNote = termBrief(node.summary, node.why);
     tip.replaceChildren(content);
     if (termNote) tip.append(make('span', 'tooltip-term-note', termNote));
+    renderEditorialMath(tip);
     tip.hidden = false;
     tip.setAttribute('aria-hidden', 'false');
     const anchorRect = anchor.getBoundingClientRect();
@@ -929,6 +1054,7 @@
     buildMobileTimeline();
     buildMap();
     syncControls();
+    renderEditorialMath($('stage'));
   }
 
   function openRecord(node, options = {}) {
@@ -939,12 +1065,13 @@
     if (options.history !== 'none') commit(options.history || 'push');
     openDetailShell();
     const classLabel = CLASS_INFO[node.class]?.label || node.class;
-    $('d-title').textContent = `${classLabel}: ${node.summary || node.key}`;
-    const pieces = [laneTitle(node.lane), node.turn == null ? editorial('detail.meta.conversation', 'Separate conversation') : `${editorial('detail.meta.turn', 'Turn')} ${node.turn}`, formatTimestamp(node)];
+    replaceCandidateText($('d-title'), `${classLabel}: ${node.summary || node.key}`);
+    const pieces = [laneTitle(node.lane), node.turn == null ? editorial('detail.meta.conversation', 'Separate conversation') : `${editorial('detail.meta.turn', 'Turn')} ${node.turn}`, formatTimestamp(node), modelAttributionFor(node)];
     if (node.tag) pieces.push(node.tag);
     $('d-meta').textContent = pieces.join(' · ');
-    $('d-why').textContent = node.why || '';
+    replaceCandidateText($('d-why'), node.why || '');
     updateDetailTerms(node.summary, node.why);
+    renderEditorialMath($('detail'));
     const sequence = (laneNodes.get(node.lane) || []).filter(matches);
     const fallback = laneNodes.get(node.lane) || [];
     const active = sequence.some((item) => item.key === node.key) ? sequence : fallback;
@@ -965,14 +1092,14 @@
     state.record = ''; state.event = event.id || '';
     if (options.history !== 'none') commit(options.history || 'push');
     openDetailShell();
-    $('d-title').textContent = `${editorial('detail.event.label', 'Contextual event')}: ${event.title}`;
+    replaceCandidateText($('d-title'), `${editorial('detail.event.label', 'Contextual event')}: ${event.title}`);
     $('d-meta').textContent = formatTimestamp(event);
-    $('d-why').textContent = event.contemporary_status || '';
+    replaceCandidateText($('d-why'), event.contemporary_status || '');
     updateDetailTerms(event.title, event.contemporary_status, event.later_status);
     $('d-prev').disabled = true; $('d-next').disabled = true; $('d-pos').textContent = '';
     $('d-src').hidden = true;
     const body = $('d-body'); body.replaceChildren();
-    if (event.later_status) body.append(make('p', '', event.later_status));
+    if (event.later_status) body.append(makeCandidateText('p', '', event.later_status));
   }
 
   function openDetailShell() {
@@ -1033,6 +1160,7 @@
         const block = make('section', `msg ${message.role}`);
         let roleLabel = MESSAGE_ROLE_LABELS[message.role];
         if (message.role === 'assistant' && ['demangled', 'reconstructed'].includes(sourceKind)) roleLabel = editorial('detail.role.reconstructed', 'Reconstructed model response');
+        if (message.role === 'assistant' && message.model) roleLabel = `${roleLabel} · ${message.model}`;
         block.append(make('h3', 'rolelbl', roleLabel), renderMessageArtifact(message));
         fragment.append(block);
       }
@@ -1054,6 +1182,8 @@
   }
 
   function sourceLabel(kind) {
+    const normalizedKind = String(kind || '').toLowerCase().replace(/[-_]/g, '');
+    if (normalizedKind.startsWith('assistantonly') || normalizedKind === 'formalizationrecord') return editorial('source.formalization', 'Formalization record');
     if (['archived', 'archived_saved_response', 'saved', 'saved-response'].includes(kind)) return editorial('source.archived', 'Archived saved response');
     if (['demangled', 'reconstructed'].includes(kind)) return editorial('source.reconstructed', 'Reconstructed from a saved rendering of the response');
     if (['fetched', 'backend-fetched', 'backend_fetched'].includes(kind)) return editorial('source.fetched', 'Backend-fetched conversation text');
@@ -1255,6 +1385,11 @@
     bindControls();
     renderAllViews();
     commit('replace');
+    if (accountingLinkRequested) {
+      const note = $('accounting');
+      note.open = true;
+      requestAnimationFrame(() => note.scrollIntoView({block: 'start'}));
+    }
     if (state.record) openRecord(byKey.get(state.record), {history: 'none'});
     else if (state.event) openEvent(eventList.find((event) => event.id === state.event), {history: 'none'});
   }

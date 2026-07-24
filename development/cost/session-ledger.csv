@@ -1,0 +1,35 @@
+category,session,session_id,title,first_timestamp,last_timestamp,models,api_calls,input_tokens,output_tokens,cache_creation_tokens,cache_read_tokens,processed_tokens,non_cache_tokens
+roe_formalization,formalization-01,85d7dfd7,Formalize absolute Galois group of Qp in Lean,2026-07-01T12:20:04.455Z,2026-07-02T01:24:12.724Z,Opus 4.8,309,34424,757894,5321827,154660529,160774674,6114145
+roe_formalization,formalization-02,c0bf230d,Recover deleted session history after clear command,2026-07-02T01:27:01.103Z,2026-07-02T23:26:53.343Z,Fable 5; Haiku 4.5; Opus 4.8,742,96623,1335453,5266285,262878343,269576704,6698361
+roe_formalization,formalization-03,0a9e66c8,Work on Q2 absolute galois Lean proof ticket T-05,2026-07-02T23:28:18.449Z,2026-07-06T14:21:24.177Z,Fable 5; Haiku 4.5; Opus 4.8,2143,541467,5474549,17509140,886723568,910248724,23525156
+roe_formalization,formalization-04,6d440b27,Work on Q2 absolute Galois Lean proof ticket T-07,2026-07-02T23:31:32.383Z,2026-07-06T14:22:45.281Z,Fable 5; Haiku 4.5; Opus 4.8,1714,253493,4525728,15661287,800086324,820526832,20440508
+roe_formalization,formalization-05,3b23946a,Work on Q2 absolute Galois Lean proof ticket T-13,2026-07-02T23:32:06.873Z,2026-07-06T15:03:54.438Z,Fable 5; Haiku 4.5; Opus 4.8,1910,394381,4696113,15297134,823189050,843576678,20387628
+roe_formalization,formalization-06,85a579ac,Work on Q2 Galois Lean proof ticket T-15,2026-07-02T23:32:34.138Z,2026-07-06T14:24:29.525Z,Fable 5; Haiku 4.5; Opus 4.8,2012,335241,4624811,14959125,943649254,963568431,19919177
+roe_formalization,formalization-07,5544fb65,Work on ticket T-16 in gq2-lean,2026-07-02T23:33:16.200Z,2026-07-06T14:21:55.475Z,Fable 5; Haiku 4.5; Opus 4.8,1711,415921,4472619,17165643,713691179,735745362,22054183
+roe_formalization,formalization-08,898d983e,Work on Q2 absolute Galois proof ticket T-17,2026-07-02T23:33:32.169Z,2026-07-06T14:07:59.068Z,Fable 5; Haiku 4.5; Opus 4.8,1812,399622,4733981,16191746,843969426,865294775,21325349
+roe_formalization,formalization-09,bf8998ac,Set up lean formalization project environment,2026-07-06T18:23:37.330Z,2026-07-09T19:25:50.187Z,Fable 5; Opus 4.8,894,149552,2121054,9923283,398267588,410461477,12193889
+roe_formalization,formalization-10,01e5a294,Start Lean formalization project P-d16a,2026-07-06T18:31:48.140Z,2026-07-08T22:48:28.092Z,Fable 5; Opus 4.8,538,94726,1137934,7455165,222041213,230729038,8687825
+roe_formalization,formalization-11,8ccf5f4b,Start lean formalization project task P-15f,2026-07-06T18:34:14.786Z,2026-07-09T13:45:00.830Z,Fable 5; Haiku 4.5; Opus 4.8,1043,238661,2431038,10680788,451490212,464840699,13350487
+roe_formalization,formalization-12,9cd6c94c,Work on lean formalization P-16d6d,2026-07-06T18:35:30.022Z,2026-07-10T12:06:56.590Z,Fable 5; Haiku 4.5; Opus 4.8,1147,259454,2015008,10064043,386164311,398502816,12338505
+roe_formalization,formalization-13,07f15cc3,Work on P-17d2 Lean formalization project,2026-07-06T18:37:30.166Z,2026-07-11T01:11:16.691Z,Fable 5; Haiku 4.5; Opus 4.8,2529,865047,5334469,26288578,866050624,898538718,32488094
+roe_formalization,formalization-14,e5ebf6ba,Work on P-17e4 lean formalization project,2026-07-06T18:38:30.014Z,2026-07-09T21:19:18.663Z,Fable 5; Haiku 4.5; Opus 4.8,771,85651,1805793,4823187,318032467,324747098,6714631
+roe_formalization,formalization-15,dca97dd6,Review P-17e4 handoff and plan next steps,2026-07-07T13:49:39.609Z,2026-07-07T23:50:10.411Z,Fable 5; Opus 4.8,359,34149,746214,2915195,158917615,162613173,3695558
+roe_formalization,formalization-16,3ed6d0c7,Review P-16d6 handoff and list next steps,2026-07-07T13:49:02.800Z,2026-07-08T16:03:33.519Z,Fable 5; Opus 4.8,816,125865,1727487,7586626,360895534,370335512,9439978
+roe_formalization,formalization-17,bb35d158,Review P-17i handoff and list next steps,2026-07-07T13:50:16.826Z,2026-07-07T22:05:07.586Z,Fable 5; Opus 4.8,251,23732,581856,3904079,100325460,104835127,4509667
+roe_formalization,formalization-18,0039e780,Review P-15f handoff and list next steps,2026-07-07T13:48:20.295Z,2026-07-07T21:27:58.021Z,Fable 5; Opus 4.8,244,47257,579706,2293748,102508095,105428806,2920711
+roe_formalization,formalization-19,bd22cccf,Start P-15f2 formalization task,2026-07-07T13:57:23.753Z,2026-07-08T15:57:01.751Z,Fable 5; Opus 4.8,380,43313,1017623,3410022,180544991,185015949,4470958
+roe_formalization,formalization-20,965d5c62,Review handoff docs and list open tickets,2026-07-07T14:05:43.471Z,2026-07-08T14:15:04.491Z,Fable 5; Opus 4.8,527,87030,893096,4479299,206388870,211848295,5459425
+roe_cleanup,cleanup-01,3d9b5061,Review mathlib-quality cleanup decisions and token issues,2026-07-11T01:25:02.643Z,2026-07-13T10:43:32.297Z,Fable 5; Opus 4.8,3589,1552373,6965349,34114992,551219090,593851804,42632714
+roe_cleanup,cleanup-02,963f2131,Continue deferred-pass work in Lean,2026-07-13T14:14:23.055Z,2026-07-14T19:37:54.216Z,Fable 5; Opus 4.8,2104,649240,2240043,24724597,269278649,296892529,27613880
+roe_cleanup,cleanup-03,7b936cf6,Update gq2-lean license from GPL to Apache-2.0,2026-07-14T13:21:04.726Z,2026-07-14T13:44:05.855Z,Opus 4.8,15,12390,16996,38653,826362,894401,68039
+roe_cleanup,cleanup-04,04b6a140,Make Axioms.lean self-contained,2026-07-23T11:28:55.379Z,2026-07-23T19:52:46.065Z,Fable 5,161,313,198876,608690,38265781,39073660,807879
+roe_cleanup,cleanup-05,5ef5b391,Fix incomplete atlas-graph.json dependency extraction,2026-07-24T04:54:03.648Z,2026-07-24T05:01:08.821Z,Fable 5,3,6,3763,25559,117682,147010,29328
+roe_cleanup,cleanup-06,90554e4b,Address Lean code review feedback on GQ2 formalization,2026-07-24T05:04:35.992Z,2026-07-24T07:32:52.693Z,Fable 5; Opus 4.8,159,6797,335984,1401750,34941328,36685859,1744531
+roe_website,website-01,,Resume five tasks from handoff document,2026-07-11T01:18:58.533Z,2026-07-23T01:59:54.678Z,Fable 5; Opus 4.8,839,94450,633292,9097703,376490583,386316028,9825445
+roe_website,website-02,,Design math paper generation from AI and Lean code,2026-07-08T16:47:26.918Z,2026-07-24T05:17:21.020Z,Fable 5; Opus 4.8,1460,277464,1737510,17950699,642381040,662346713,19965673
+roe_website,website-03,,Design logo for PaperForge,2026-07-10T22:00:21.288Z,2026-07-10T22:54:40.342Z,Fable 5,132,29475,140720,394888,19659825,20224908,565083
+roe_website,website-04,,Integrate approved content into paperforge document,2026-07-13T14:15:50.449Z,2026-07-14T19:26:53.367Z,Fable 5; Opus 4.8,126,18388,169917,953299,26297404,27439008,1141604
+roe_website,website-05,,Review GitHub pull request,2026-07-13T15:29:13.909Z,2026-07-14T12:44:54.303Z,Fable 5,165,15500,99191,1655532,27596982,29367205,1770223
+roe_website,website-06,,Claude code session logs storage location,2026-07-12T00:50:02.880Z,2026-07-12T01:37:47.525Z,Opus 4.8,31,14009,44673,74600,2130966,2264248,133282
+roe_website,website-07,,Update Development page with cost analysis and session records,2026-07-24T04:53:30.259Z,2026-07-24T07:36:20.876Z,Fable 5,266,2306,388240,1936931,55705391,58032868,2327477
+context_only,precursor-01,,Find Galois group presentation for Q2,2026-06-09T23:51:36.442Z,2026-07-02T01:26:53.148Z,Fable 5; Opus 4.8,267,62608,710988,2032999,106274476,109081071,2806595

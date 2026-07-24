@@ -1,17 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="What the search, proof, formalizations, cleanup, and website behind the presentation of the absolute Galois group of the 2-adic numbers cost, in tokens and in dollars.">
+<title>Cost of the Project | A Presentation of the Absolute Galois Group of &#x211A;&#x2082;</title>
+<link rel="stylesheet" href="../../site.css?v=20260718-2">
+<style>
+.cost-table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+.cost-table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+.cost-table th, .cost-table td { border: 1px solid rgba(127,127,127,0.35); padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; }
+.cost-table th { font-weight: 600; }
+.cost-table td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cost-note { font-size: 0.9rem; opacity: 0.85; }
+</style>
+</head>
+<body class="account-page">
 
+<header class="page-header">
+  <a class="back" href="../">&#8592; Development record</a>
+  <h1>The Cost of the Project</h1>
+</header>
 
-Cost in tokens
+<main>
+  <article class="prose">
+    <p>This page accounts for what the project consumed: first in tokens,
+    then in dollars. The token figures follow the definitions of the
+    published <a href="../methods/">token audit</a> &mdash;
+    <strong>processed tokens</strong> count all logged fresh input, cache
+    creation, cache reads, and output, while the
+    <strong>non-cache subtotal</strong> excludes cache reads. Cache reads
+    dominate every agentic total below, so the two numbers differ by more
+    than an order of magnitude; neither measures unique semantic content.
+    Measured figures come from session logs; where a provider hides usage
+    (ChatGPT&nbsp;Pro in the browser), the audit estimates it from recorded
+    thinking time and states the range.</p>
 
-* David Turturean's conversations finding the presentation
-* David Turturean's formalization
-* David Roe's formalization
-* David Roe's Lean cleanup
-* David Roe's work on this website and Paperforge
+    <h2>Cost in tokens</h2>
 
-Cost in dollars
+    <p>The work divides into five categories: David Turturean&rsquo;s
+    conversations finding the presentation, his Lean formalization,
+    David Roe&rsquo;s independent Lean formalization, Roe&rsquo;s cleanup of
+    the finished Lean repository, and Roe&rsquo;s work on this website and
+    PaperForge.</p>
 
-It is difficult to translate the token usage above into a dollar figure, for several reasons.  Both authors had subscription accounts, and David Turturean also support from Fulcrum for providing API credits.  If you just directly translate the token usage into API credits, the presentation and informal proof would have cost roughly $7,000 and the formalizations would have cost roughly $30,000 (both of these numbers have quite a bit of variance).  However, the authors did not spend nearly this much, for two reasons.  First, fully utilizing a subscription provides vast leverage: you can run several parallel lanes using GPT Pro in the browser without being rate limited, and there is no overall usage cap.  Indeed, you can run 2-3 parallel sessions on GPT 5.5 Pro and roughly 6 parallel sessions on GPT 5.6 Pro.  The coding agents (Codex and Claude Code) to have overall usage limits, but if you use them to the maximum extent the number of tokens available in a Pro/Max20 subscription is far more than the API credits you could buy with the cost of the subscription.
+    <div class="cost-table-wrap">
+    <table class="cost-table">
+      <thead>
+        <tr><th>Category</th><th>Dates (2026)</th><th>Models</th><th class="num">Processed tokens</th><th class="num">Excluding cache reads</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1. Turturean: finding the presentation and its proof</td>
+          <td>June 18&ndash;26</td>
+          <td>ChatGPT Pro (browser), GPT-5.5 (Codex), Opus 4.8</td>
+          <td class="num">&asymp;327 million<br><span class="cost-note">305&ndash;365 million</span></td>
+          <td class="num">&mdash;</td>
+        </tr>
+        <tr>
+          <td>2. Turturean: Lean formalization</td>
+          <td>June 29&ndash;July 10</td>
+          <td>GPT-5.5 &amp; GPT-5.6 Sol (Codex), ChatGPT Pro, Fable 5, Opus 4.8</td>
+          <td class="num">9.57 billion measured<br><span class="cost-note">&asymp;9.63 billion with hidden reasoning</span></td>
+          <td class="num">324 million measured<br><span class="cost-note">348&ndash;445 million with hidden reasoning</span></td>
+        </tr>
+        <tr>
+          <td>3. Roe: Lean formalization</td>
+          <td>July 1&ndash;10</td>
+          <td>Fable 5, Opus 4.8</td>
+          <td class="num">9.23 billion<br><span class="cost-note">9.44 billion incl. subagents</span></td>
+          <td class="num">238 million<br><span class="cost-note">257 million incl. subagents</span></td>
+        </tr>
+        <tr>
+          <td>4. Roe: Lean cleanup</td>
+          <td>July 11&ndash;24</td>
+          <td>Fable 5, Opus 4.8</td>
+          <td class="num"><span data-ledger="roe_cleanup.processed_m">968 million</span></td>
+          <td class="num"><span data-ledger="roe_cleanup.non_cache_m">73 million</span></td>
+        </tr>
+        <tr>
+          <td>5. Roe: website and PaperForge</td>
+          <td>July 8&ndash;24</td>
+          <td>Fable 5, Opus 4.8</td>
+          <td class="num"><span data-ledger="roe_website.processed_b">1.19 billion</span></td>
+          <td class="num"><span data-ledger="roe_website.non_cache_m">36 million</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
 
-The other reason that it is difficult to translate token usage into dollars is that the authors prioritized finding results in a short overall time (partly due to the lack of clarity on the availability of Fable 5), and would have needed fewer subscriptions if they had drawn out the project over months rather than weeks.
+    <p><strong>1. Finding the presentation.</strong> The successful
+    candidate and natural-language proof campaign ran June 18&ndash;26 on
+    ChatGPT&nbsp;Pro in the browser, with a small Codex lane and an
+    Opus&nbsp;4.8 controller. Because OpenAI does not expose historical
+    hidden-reasoning usage for ChatGPT&nbsp;Pro, the audit reconstructs it
+    from 41.9 recorded hours of thinking time at 100&ndash;500 hidden tokens
+    per second: about <strong>327 million processed tokens</strong>, with an
+    estimated range of 305&ndash;365 million. A non-cache subtotal is not
+    meaningful here, since the browser interface exposes no cache
+    accounting.</p>
 
-With optimal usage drawn out over more time, this work could have accomplished by one month of GPT Pro subscription and one month of a Claude Max20 subscription for a total cost of $400.  The actual amount spent by the authors was roughly $6000: one GPT Pro subscription for $200, three Claude Max20 subscriptions for $600, and roughly $5000 of Fable API tokens.  All of these costs were covered by David Roe's SSRFA grant from the Simons Foundation and David Turturean's support from Fulcrum.
+    <p><strong>2. Turturean&rsquo;s formalization.</strong> Turturean&rsquo;s
+    continuous Codex/GPT workflow, ChatGPT&nbsp;Pro consultations, and later
+    Claude work measured <strong>9.57 billion processed tokens</strong>
+    (324.0 million excluding cache reads) in session logs. Adding the
+    estimated hidden reasoning behind his ChatGPT&nbsp;Pro formalization
+    consultations (24&ndash;121 million tokens, central estimate 61 million)
+    gives roughly 9.63 billion processed and 348&ndash;445 million excluding
+    cache reads.</p>
+
+    <p><strong>3. Roe&rsquo;s formalization.</strong> The twenty archived
+    Claude Code sessions of Roe&rsquo;s one-week formalization measured
+    <strong>9.23 billion processed tokens</strong> and 237.7 million
+    excluding cache reads (6,918 Fable&nbsp;5 and 12,762 Opus&nbsp;4.8 API
+    calls) &mdash; the figures pinned in the published token audit. A fuller
+    recount for this page, which also sweeps every background subagent
+    transcript and the Haiku&nbsp;4.5 housekeeping calls the audit omitted,
+    reaches 9.44 billion processed and 256.7 million non-cache; the same
+    fuller method produces the totals for categories 4 and 5.</p>
+
+    <p><strong>4. Lean cleanup.</strong> After the proof was complete, Roe
+    ran a cleanup effort on the repository July 11&ndash;24: style and
+    documentation passes over every file, splitting the six largest files,
+    relicensing, axiom reduction, and responses to external review. The
+    <span data-ledger="roe_cleanup.sessions">6</span> sessions,
+    published as records in the
+    <a href="../#view=list&amp;stage=roe-cleanup-corpus">cleanup corpus</a>,
+    measured <strong><span data-ledger="roe_cleanup.processed">967,545,263</span>
+    processed tokens</strong>
+    (<span data-ledger="roe_cleanup.non_cache">72,896,371</span> excluding cache
+    reads). Most of the work ran in swarms of parallel subagents, which the
+    ledger includes.</p>
+
+    <p><strong>5. Website and PaperForge.</strong> Roe&rsquo;s work on this
+    site and on <a href="https://github.com/roed-math/paperforge">PaperForge</a>
+    &mdash; the paper pipeline, the development record, the interactive
+    pages, and this cost accounting itself &mdash; spans
+    <span data-ledger="roe_website.sessions">7</span> sessions from
+    July 8 onward and measured
+    <strong><span data-ledger="roe_website.processed">1,185,990,978</span> processed
+    tokens</strong>
+    (<span data-ledger="roe_website.non_cache">35,728,787</span> excluding cache
+    reads). This category is a moving snapshot: sessions were still active
+    when the ledger was generated at
+    <span data-ledger="generated">2026-07-24T07:36:21Z</span>, and the numbers grow as the
+    site does &mdash; including by the act of writing this page.</p>
+
+    <p class="cost-note">One conversation predates all five categories:
+    Roe&rsquo;s own exchange with Fable&nbsp;5 (June 9&ndash;July 2), which
+    produced a first candidate presentation that passed his finite-quotient
+    verifier along with a partial proof, and which was set aside when
+    Fable was withdrawn on June 12. It measured
+    <span data-ledger="context_only.processed_m">109 million</span> processed
+    tokens and is counted in no category above.</p>
+
+    <h2>Downloads</h2>
+
+    <ul>
+      <li><a href="../methods/token-accounting.json">Token audit</a>
+        (<a href="../methods/token-accounting.csv">CSV</a>) &mdash; the
+        published accounting for categories 1&ndash;3; its definitions,
+        exclusions, and estimation method are recorded inside the JSON.</li>
+      <li><a href="../corpora/q2-research-records.tar.gz">Research
+        conversation records</a> &mdash; every published record outside the
+        three session corpora (445 records: the search, the June campaign
+        behind category 1, and the separate manual conversations), bundled
+        byte-identical from the site&rsquo;s per-record files.</li>
+      <li><a href="session-ledger.json">Per-session ledger</a>
+        (<a href="session-ledger.csv">CSV</a>) &mdash; deduplicated
+        per-session token totals for categories 3&ndash;5, generated for
+        this page: dates, models, API calls, and token sums per session,
+        subagent transcripts included.</li>
+      <li><a href="../corpora/turturean-formalization-records.tar.gz">Turturean&rsquo;s
+        formalization archive</a> &mdash; the published record corpus behind
+        category 2.</li>
+      <li><a href="https://math.mit.edu/~roed/gq2-lean-session-logs.tar.gz">Roe&rsquo;s
+        formalization archive</a> &mdash; the twenty full session logs
+        behind category 3, lightly redacted, hosted on MIT.</li>
+      <li><a href="../corpora/gq2-lean-cleanup-session-logs.tar.gz">Roe&rsquo;s
+        cleanup archive</a> &mdash; the sanitized assistant-message
+        extraction behind category 4.</li>
+    </ul>
+
+    <h2>Cost in dollars</h2>
+
+    <p>It is difficult to translate the token usage above into a dollar
+    figure, for several reasons. Both authors had subscription accounts,
+    and David Turturean also had support from
+    <a href="https://fulcrum.inc/">Fulcrum</a> for providing API credits.
+    If you just directly translate the token usage into API credits, the
+    presentation and informal proof would have cost roughly
+    <strong>$7,000</strong> and the formalizations would have cost roughly
+    <strong>$30,000</strong> (both of these numbers have quite a bit of
+    variance &mdash; the largest single uncertainty is the rate attributed
+    to ChatGPT&nbsp;Pro&rsquo;s hidden reasoning, which is not billed or
+    metered per token in the browser). The two later categories are
+    smaller: at current Claude list prices the cleanup sessions translate
+    to roughly <span data-ledger="roe_cleanup.usd">$1,700</span> of API
+    usage and the website and PaperForge work to roughly
+    <span data-ledger="roe_website.usd">$1,600</span> more.</p>
+
+    <p>However, the authors did not spend nearly this much, for two
+    reasons. First, fully utilizing a subscription provides vast leverage:
+    you can run several parallel lanes using GPT&nbsp;Pro in the browser
+    without being rate limited, and there is no overall usage cap. Indeed,
+    you can run 2&ndash;3 parallel sessions on GPT&nbsp;5.5&nbsp;Pro and
+    roughly 6 parallel sessions on GPT&nbsp;5.6&nbsp;Pro. The coding agents
+    (Codex and Claude Code) do have overall usage limits, but if you use
+    them to the maximum extent, the number of tokens available in a
+    Pro/Max20 subscription is far more than the API credits you could buy
+    with the cost of the subscription.</p>
+
+    <p>The other reason that it is difficult to translate token usage into
+    dollars is that the authors prioritized finding results in a short
+    overall time (partly due to the lack of clarity on the availability of
+    Fable&nbsp;5), and would have needed fewer subscriptions if they had
+    drawn out the project over months rather than weeks.</p>
+
+    <p>With optimal usage drawn out over more time, this work could have
+    been accomplished by one month of a GPT&nbsp;Pro subscription and one
+    month of a Claude Max20 subscription, for a total cost of
+    <strong>$400</strong>. The actual amount spent by the authors was
+    roughly <strong>$6,000</strong>: one GPT&nbsp;Pro subscription for
+    $200, three Claude Max20 subscriptions for $600, and roughly $5,000 of
+    Fable API tokens. All of these costs were covered by David Roe&rsquo;s
+    SSRFA grant from the <a href="https://www.simonsfoundation.org/">Simons
+    Foundation</a> and David Turturean&rsquo;s support from Fulcrum.</p>
+
+    <h2>Efficiency in retrospect</h2>
+
+    <p class="cost-note">This analysis was prepared by Claude Fable&nbsp;5
+    from the per-session ledger above and the project&rsquo;s session
+    transcripts; call counts refer to the July&nbsp;24 snapshot.</p>
+
+    <p><strong>Where the tokens actually went.</strong> In every agentic
+    category, model output is 0.5&ndash;1% of the processed total and cache
+    reads are 92&ndash;97%. The bill was not for writing proofs; it was for
+    holding long-lived contexts warm. Roe&rsquo;s formalization made 21,852
+    API calls averaging roughly 430,000 processed tokens <em>each</em> &mdash;
+    nearly all of it the same repository context, ticket boards, and
+    conversation history re-read from cache on every call. Turturean&rsquo;s
+    Codex lanes have the same shape (about 98% of GPT-5.6 input was served
+    from cache). Efficiency here means context discipline, not terser
+    answers.</p>
+
+    <p><strong>Small fresh contexts beat large persistent ones.</strong> The
+    cleanup phase ran as an orchestrator dispatching per-file workers that
+    started fresh, did one job against a tight brief, and reported back; its
+    average call carried about 160,000 processed tokens, versus 430,000 in
+    the formalization&rsquo;s long-lived lanes &mdash; a 2.7&times; lighter
+    context per call. The formalization&rsquo;s hardest design work genuinely
+    needed shared context, but a larger share of its well-specified tickets
+    could have run worker-style from the start, and that is the single
+    largest token saving we can identify in hindsight.</p>
+
+    <p><strong>Parallelism paid twice for coordination failures.</strong>
+    Six simultaneous lanes each carried a copy of essentially the same
+    repository context, and when the shared ticket board went stale the
+    lanes did overlapping work: on July&nbsp;7 the tree was compiling with
+    two <code>sorry</code> placeholders left while the board still listed
+    open tickets, and two lanes raced to fill neighboring fields of the same
+    structure. Cheap, frequent, automated status sweeps computed from the
+    compiler&rsquo;s ground truth &mdash; rather than from anyone&rsquo;s
+    bookkeeping &mdash; would have kept the lanes from re-deriving each
+    other&rsquo;s state. Related version-control losses (a harness reset
+    that discarded uncommitted edits, an over-broad <code>git add</code>)
+    turned hours of work into re-spend; commit-immediately-after-green and
+    one-new-file-per-lane conventions cost nothing and would have prevented
+    all of it.</p>
+
+    <p><strong>Unattended runs must be unattended-safe.</strong> One
+    overnight cleanup run stalled for five hours on a permission prompt no
+    one was awake to answer. Under subscription pricing the scarce resource
+    is wall-clock, not tokens, so every idle hour of a paid-for lane is pure
+    loss; pre-approving the expected command surface before leaving a run
+    alone is the fix.</p>
+
+    <p><strong>Route work down-tier by default.</strong> The project already
+    routed by difficulty &mdash; design-heavy tickets to Fable&nbsp;5,
+    well-specified ones to Opus&nbsp;4.8 (13,103 and 7,716 calls
+    respectively in the formalization recount), housekeeping to
+    Haiku&nbsp;4.5 (1,033 calls) &mdash; and the cleanup phase showed the
+    mechanical end of the spectrum runs fine on delegated workers. Pushing
+    lint fixes, file splits, and documentation passes further down-tier,
+    with escalation only on failure, is cheap to try and easy to reverse.</p>
+
+    <p><strong>Define what &ldquo;done&rdquo; means before opening a long
+    lane.</strong> The one lane that consumed serious tokens without a
+    durable result was the 161-response attempt to compare the two
+    presentations, which ended only when a checker asked for calculation
+    records produced independently of the proof narrative and none could be
+    supplied. Stating that acceptance test in the first message, not the
+    last, would have either produced the records or ended the lane a
+    hundred responses sooner.</p>
+
+    <p><strong>What we would not economize.</strong> The redundancy that
+    looks most expensive on this page &mdash; two independent
+    formalizations, fresh-context adversarial reviews, exhaustive
+    finite-quotient testing &mdash; is what made the result trustworthy,
+    and the reviews in particular were among the cheapest line items per
+    unit of value: A2&rsquo;s fatal flaw and the manuscript&rsquo;s false
+    proposition were both found by short review threads, not by the long
+    lanes that built them. Between finding the presentation
+    (&asymp;327&nbsp;million tokens) and certifying it (&asymp;19
+    billion), certification dominated by a factor of nearly sixty; if
+    anything, the efficient move is to spend <em>more</em> of the budget on
+    early, cheap refutation so that expensive certification only ever runs
+    on statements that survive it.</p>
+  </article>
+</main>
+
+<footer>
+  <a href="../../">Return to the project homepage</a>.
+</footer>
+</body>
+</html>

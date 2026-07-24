@@ -451,15 +451,6 @@
     else closeDetail({history: 'none'});
   }
 
-  function buildCounts() {
-    const census = D.dataset || D.census || {};
-    const total = Number(census.public_records ?? census.public_record_count ?? D.nodes.length);
-    const scaffold = Number(census.scaffold_records ?? census.scaffold_record_count ?? D.nodes.filter((n) => n.lane !== 'manual').length);
-    const manual = Number(census.published_manual_records ?? census.manual_record_count ?? D.nodes.filter((n) => n.lane === 'manual').length);
-    $('recordTotal').textContent = `${total} ${editorial('count.records', 'published records')}`;
-    $('recordBreakdown').textContent = ` · ${scaffold} ${editorial('count.scaffold', 'responses from the main research conversations')} · ${manual} ${editorial('count.separate', 'separate conversations')}`;
-  }
-
   function buildFilters() {
     const laneBox = $('laneFilters');
     laneBox.replaceChildren();
@@ -1379,7 +1370,6 @@
   }
 
   function boot() {
-    buildCounts();
     buildFilters();
     buildTimelineLegend();
     bindControls();

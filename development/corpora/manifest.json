@@ -1,8 +1,11 @@
 {
+  "cleanup_generated_utc": "2026-07-24T07:36:24Z",
   "counts": {
+    "cleanup_generated_records": 6,
     "existing_public_records": 445,
-    "final_public_records": 474,
+    "final_public_records": 480,
     "generated_records": 29,
+    "roe_cleanup_public_messages": 426,
     "roe_public_messages": 9978,
     "turturean_public_messages": 9999
   },
@@ -16,7 +19,21 @@
     "unique_human_messages_reviewed": 837
   },
   "inputs": {
+    "research_archive_sha256": "3ee04c886a8bf931c4011706fbc4fa2679ff68518a3f8bde2aab7bc8e265ea0e",
+    "research_sources": {
+      "records": 445,
+      "source": "byte-identical bundle of the published content/<key>.json files for every record outside the three session corpora"
+    },
     "roe_archive_sha256": "b4c939a7c4c74f300c33af9eb1a81ef49ecc1b31b569cc076e4e355b5e2fcb48",
+    "roe_cleanup_archive_sha256": "7a74e86bc2f3d9435ba797acc1780361deb7d0bff7a99bb94facb15c9e1363b2",
+    "roe_cleanup_sources": {
+      "first_timestamp": "2026-07-11T01:25:14Z",
+      "last_timestamp": "2026-07-24T07:32:52Z",
+      "published_messages": 426,
+      "sanitized_member_set_sha256": "90cb6c302abbf17ce00b00349cee2ce77b8bb61a9de0e5a8db1ad9a6deee713c",
+      "sanitized_member_set_sha256_definition": "sha256 of the newline-joined sorted sha256 hashes of the sanitized archive members (assistant-only extraction; raw transcripts stay private).",
+      "source_file_count": 6
+    },
     "roe_sources": {
       "first_timestamp": "2026-07-01T12:20:18Z",
       "last_timestamp": "2026-07-11T01:11:16Z",
@@ -24,6 +41,8 @@
       "source_file_count": 20,
       "source_set_sha256": "936f5ba4e29cc75c5ad94feccf7305656b3fae3a767b6dfe206a643fb576f327"
     },
+    "turturean_records_archive_note": "rebuilt 2026-07-24 from the published content files; the original tarball predated the residual-reference sanitization pass in two members",
+    "turturean_records_archive_sha256": "a94aafbf17c22b2556c834ce8716de858c079fed57f389229448d158f2efe253",
     "turturean_sources": {
       "first_timestamp": "2026-06-29T01:24:13Z",
       "last_timestamp": "2026-07-19T17:27:31.335Z",
@@ -291,9 +310,59 @@
         "Opus 4.8"
       ],
       "sha256": "43efd0be3f202fcb0e3b3088ace2318a4d794c8f49a35285f60216ab90a98198"
+    },
+    {
+      "key": "roe_cleanup__session_01",
+      "messages": 224,
+      "models": [
+        "Fable 5",
+        "Opus 4.8"
+      ],
+      "sha256": "6dfb599edea29954a34bb1e456238af70fc5d23cfeadfe0b616faa85387ced79"
+    },
+    {
+      "key": "roe_cleanup__session_02",
+      "messages": 144,
+      "models": [
+        "Fable 5"
+      ],
+      "sha256": "9f293849ffe69efd6a1582f7b873a5b7ffaa7e188cd0d617bb4d5e6cdd7e75e3"
+    },
+    {
+      "key": "roe_cleanup__session_03",
+      "messages": 14,
+      "models": [
+        "Opus 4.8"
+      ],
+      "sha256": "9a5e8f2fa232a498f6726c03e4e1db262fc8023016c02ebd8e86ab033546fdb8"
+    },
+    {
+      "key": "roe_cleanup__session_04",
+      "messages": 24,
+      "models": [
+        "Fable 5"
+      ],
+      "sha256": "1d33d155b9b996dd9e56eedd2f554bc0ebb5eb4fc7528ae9ed41520adc1004dc"
+    },
+    {
+      "key": "roe_cleanup__session_05",
+      "messages": 1,
+      "models": [
+        "Fable 5"
+      ],
+      "sha256": "c756bf0b0afc36a77c4889b0892ad65477a9be1adb7446ba9310a391a65e00cf"
+    },
+    {
+      "key": "roe_cleanup__session_06",
+      "messages": 19,
+      "models": [
+        "Fable 5"
+      ],
+      "sha256": "5903f21b4313aaedad55218c56d10ddaf296914365c2cb2cb30cb1a4e25dd729"
     }
   ],
   "policy": {
+    "cleanup_included": "cleanup records: assistant messages only, sanitized per the published policy; no raw human text.",
     "human_messages": "Raw human text is omitted. Every top-level human message was read during a private editorial review; model responses to private, personal, or unrelated turns were excluded.",
     "included": "formalization records"
   },

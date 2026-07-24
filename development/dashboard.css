@@ -154,15 +154,25 @@ a:focus-visible,
 
 .dashboard-header {
   width: min(72rem, 100%);
-  margin: 0 auto 0.8rem;
+  margin: 0 auto 1.3rem;
   text-align: center;
 }
 
 .dashboard-header .back {
-  display: inline-flex;
+  display: inline-block;
   color: var(--accent);
   font: 650 0.9rem/1.3 var(--system);
   text-decoration: none;
+}
+
+/* Inside the old inline-flex box the <sub> became a flex item, where
+   vertical-align is ignored, so the 2 in ℚ2 sat at superscript height. */
+.dashboard-header .back sub {
+  position: relative;
+  top: 0.34em;
+  font-size: 0.72em;
+  line-height: 0;
+  vertical-align: baseline;
 }
 
 .dashboard-header .back:hover {
@@ -201,75 +211,22 @@ a:focus-visible,
   margin-top: 0.35rem;
 }
 
-.account-links {
-  margin: 0.7rem auto 0;
-  font-size: 1.02rem;
+/* The homepage-style button row (base styles in site.css) needs its own
+   vertical rhythm inside the header column. */
+.dashboard-header .actions {
+  margin: 1.15rem auto 0.15rem;
 }
 
-.account-links-label {
-  display: block;
-  color: var(--muted);
-  font: 650 0.82rem/1.3 var(--system);
-}
-
-.account-link-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-  margin-top: 0.28rem;
-}
-
-.account-link-list a {
-  color: var(--accent);
-}
-
-.record-scope {
-  margin: 0.55rem 0 0;
-  color: var(--muted);
-  font: 0.83rem/1.45 var(--system);
-}
-
-.development-resources {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.5rem;
-  max-width: 68rem;
-  margin: 0.7rem auto 0;
-}
-
-.development-resources a {
-  display: flex;
-  flex-direction: column;
-  gap: 0.16rem;
-  padding: 0.55rem 0.7rem;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  color: var(--ink);
-  background: var(--card);
-  font-family: var(--system);
-  text-align: center;
-  text-decoration: none;
-}
-
-.development-resources a:hover {
-  border-color: var(--accent);
-}
-
-.development-resources strong {
-  color: var(--accent);
-  font-size: 0.82rem;
-}
-
-.development-resources span {
-  color: var(--muted);
-  font-size: 0.72rem;
-  line-height: 1.35;
+.record-guide {
+  max-width: 72ch;
+  margin: 1.05rem auto 0.2rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
 }
 
 .accounting-note {
   max-width: 68rem;
-  margin: 0.5rem auto 0;
+  margin: 0.85rem auto 0;
   color: var(--muted);
   font: 0.78rem/1.45 var(--system);
 }
@@ -296,7 +253,7 @@ a:focus-visible,
 
 .accounting-note-body {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 0.45rem 1rem;
   margin-top: 0.45rem;
   padding: 0.65rem 0.75rem;
@@ -1934,27 +1891,6 @@ a:focus-visible,
   .dashboard-shell {
     width: 100%;
     padding: 1.25rem 1rem 3rem;
-  }
-
-  .development-resources {
-    grid-template-columns: 1fr;
-  }
-
-  .development-resources a {
-    display: grid;
-    grid-template-columns: minmax(8rem, 0.85fr) minmax(0, 1.15fr);
-    align-items: center;
-    column-gap: 0.65rem;
-    text-align: left;
-  }
-
-  .accounting-note-body {
-    grid-template-columns: 1fr;
-  }
-
-  .accounting-scope,
-  .accounting-links {
-    grid-column: 1;
   }
 
   .dashboard-header h1 {

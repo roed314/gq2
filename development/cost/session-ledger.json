@@ -1,0 +1,768 @@
+{
+ "category_labels": {
+  "context_only": "Precursor conversation (outside the five categories)",
+  "roe_cleanup": "Roe Lean cleanup (category 4)",
+  "roe_formalization": "Roe formalization (category 3)",
+  "roe_website": "Website and PaperForge (category 5)"
+ },
+ "category_totals": {
+  "context_only": {
+   "first_timestamp": "2026-06-09T23:51:36.442Z",
+   "last_timestamp": "2026-07-02T01:26:53.148Z",
+   "non_cache_tokens": 2806595,
+   "per_model": {
+    "Fable 5": {
+     "cache_creation_input_tokens": 1539605,
+     "cache_read_input_tokens": 88875520,
+     "calls": 224,
+     "input_tokens": 56199,
+     "output_tokens": 580510
+    },
+    "Opus 4.8": {
+     "cache_creation_input_tokens": 493394,
+     "cache_read_input_tokens": 17398956,
+     "calls": 43,
+     "input_tokens": 6409,
+     "output_tokens": 130478
+    }
+   },
+   "processed_tokens": 109081071,
+   "sessions": 1
+  },
+  "roe_cleanup": {
+   "first_timestamp": "2026-07-11T01:25:02.643Z",
+   "last_timestamp": "2026-07-24T07:32:52.693Z",
+   "non_cache_tokens": 72896371,
+   "per_model": {
+    "Fable 5": {
+     "cache_creation_input_tokens": 37025470,
+     "cache_read_input_tokens": 538731225,
+     "calls": 2777,
+     "input_tokens": 646808,
+     "output_tokens": 3583052
+    },
+    "Opus 4.8": {
+     "cache_creation_input_tokens": 23888771,
+     "cache_read_input_tokens": 355917667,
+     "calls": 3254,
+     "input_tokens": 1574311,
+     "output_tokens": 6177959
+    }
+   },
+   "processed_tokens": 967545263,
+   "sessions": 6
+  },
+  "roe_formalization": {
+   "first_timestamp": "2026-07-01T12:20:04.455Z",
+   "last_timestamp": "2026-07-11T01:11:16.691Z",
+   "non_cache_tokens": 256734235,
+   "per_model": {
+    "Fable 5": {
+     "cache_creation_input_tokens": 72971316,
+     "cache_read_input_tokens": 3223019647,
+     "calls": 7716,
+     "input_tokens": 1740809,
+     "output_tokens": 18937224
+    },
+    "Haiku 4.5": {
+     "cache_creation_input_tokens": 2913491,
+     "cache_read_input_tokens": 51051180,
+     "calls": 1033,
+     "input_tokens": 6475,
+     "output_tokens": 333240
+    },
+    "Opus 4.8": {
+     "cache_creation_input_tokens": 125311393,
+     "cache_read_input_tokens": 5906403826,
+     "calls": 13103,
+     "input_tokens": 2778325,
+     "output_tokens": 31741962
+    }
+   },
+   "processed_tokens": 9437208888,
+   "sessions": 20
+  },
+  "roe_website": {
+   "first_timestamp": "2026-07-08T16:47:26.918Z",
+   "last_timestamp": "2026-07-24T07:36:20.876Z",
+   "non_cache_tokens": 35728787,
+   "per_model": {
+    "Fable 5": {
+     "cache_creation_input_tokens": 27916603,
+     "cache_read_input_tokens": 1070668622,
+     "calls": 2713,
+     "input_tokens": 422958,
+     "output_tokens": 2852039
+    },
+    "Opus 4.8": {
+     "cache_creation_input_tokens": 4147049,
+     "cache_read_input_tokens": 79593569,
+     "calls": 306,
+     "input_tokens": 28634,
+     "output_tokens": 361504
+    }
+   },
+   "processed_tokens": 1185990978,
+   "sessions": 7
+  }
+ },
+ "definitions": {
+  "method": "Deduplicated by API message id (last occurrence wins) across each session's main transcript and all of its subagent transcripts; synthetic placeholder lines excluded.",
+  "non_cache_tokens": "input + output + cache creation; excludes cache reads.",
+  "processed_tokens": "input + output + cache creation + cache read, matching methods/token-accounting.json.",
+  "session_id": "Present only for sessions whose id an existing public archive already exposes.",
+  "snapshot": "Website/PaperForge sessions and the newest cleanup sessions were still active when measured; totals are a snapshot at generated_utc."
+ },
+ "generated_utc": "2026-07-24T07:36:21Z",
+ "sessions": [
+  {
+   "api_calls": 309,
+   "cache_creation_tokens": 5321827,
+   "cache_read_tokens": 154660529,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-01T12:20:04.455Z",
+   "input_tokens": 34424,
+   "last_timestamp": "2026-07-02T01:24:12.724Z",
+   "models": [
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 6114145,
+   "output_tokens": 757894,
+   "processed_tokens": 160774674,
+   "session": "formalization-01",
+   "session_id": "85d7dfd7",
+   "title": "Formalize absolute Galois group of Qp in Lean"
+  },
+  {
+   "api_calls": 742,
+   "cache_creation_tokens": 5266285,
+   "cache_read_tokens": 262878343,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-02T01:27:01.103Z",
+   "input_tokens": 96623,
+   "last_timestamp": "2026-07-02T23:26:53.343Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 6698361,
+   "output_tokens": 1335453,
+   "processed_tokens": 269576704,
+   "session": "formalization-02",
+   "session_id": "c0bf230d",
+   "title": "Recover deleted session history after clear command"
+  },
+  {
+   "api_calls": 2143,
+   "cache_creation_tokens": 17509140,
+   "cache_read_tokens": 886723568,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-02T23:28:18.449Z",
+   "input_tokens": 541467,
+   "last_timestamp": "2026-07-06T14:21:24.177Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 23525156,
+   "output_tokens": 5474549,
+   "processed_tokens": 910248724,
+   "session": "formalization-03",
+   "session_id": "0a9e66c8",
+   "title": "Work on Q2 absolute galois Lean proof ticket T-05"
+  },
+  {
+   "api_calls": 1714,
+   "cache_creation_tokens": 15661287,
+   "cache_read_tokens": 800086324,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-02T23:31:32.383Z",
+   "input_tokens": 253493,
+   "last_timestamp": "2026-07-06T14:22:45.281Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 20440508,
+   "output_tokens": 4525728,
+   "processed_tokens": 820526832,
+   "session": "formalization-04",
+   "session_id": "6d440b27",
+   "title": "Work on Q2 absolute Galois Lean proof ticket T-07"
+  },
+  {
+   "api_calls": 1910,
+   "cache_creation_tokens": 15297134,
+   "cache_read_tokens": 823189050,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-02T23:32:06.873Z",
+   "input_tokens": 394381,
+   "last_timestamp": "2026-07-06T15:03:54.438Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 20387628,
+   "output_tokens": 4696113,
+   "processed_tokens": 843576678,
+   "session": "formalization-05",
+   "session_id": "3b23946a",
+   "title": "Work on Q2 absolute Galois Lean proof ticket T-13"
+  },
+  {
+   "api_calls": 2012,
+   "cache_creation_tokens": 14959125,
+   "cache_read_tokens": 943649254,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-02T23:32:34.138Z",
+   "input_tokens": 335241,
+   "last_timestamp": "2026-07-06T14:24:29.525Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 19919177,
+   "output_tokens": 4624811,
+   "processed_tokens": 963568431,
+   "session": "formalization-06",
+   "session_id": "85a579ac",
+   "title": "Work on Q2 Galois Lean proof ticket T-15"
+  },
+  {
+   "api_calls": 1711,
+   "cache_creation_tokens": 17165643,
+   "cache_read_tokens": 713691179,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-02T23:33:16.200Z",
+   "input_tokens": 415921,
+   "last_timestamp": "2026-07-06T14:21:55.475Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 22054183,
+   "output_tokens": 4472619,
+   "processed_tokens": 735745362,
+   "session": "formalization-07",
+   "session_id": "5544fb65",
+   "title": "Work on ticket T-16 in gq2-lean"
+  },
+  {
+   "api_calls": 1812,
+   "cache_creation_tokens": 16191746,
+   "cache_read_tokens": 843969426,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-02T23:33:32.169Z",
+   "input_tokens": 399622,
+   "last_timestamp": "2026-07-06T14:07:59.068Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 21325349,
+   "output_tokens": 4733981,
+   "processed_tokens": 865294775,
+   "session": "formalization-08",
+   "session_id": "898d983e",
+   "title": "Work on Q2 absolute Galois proof ticket T-17"
+  },
+  {
+   "api_calls": 894,
+   "cache_creation_tokens": 9923283,
+   "cache_read_tokens": 398267588,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-06T18:23:37.330Z",
+   "input_tokens": 149552,
+   "last_timestamp": "2026-07-09T19:25:50.187Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 12193889,
+   "output_tokens": 2121054,
+   "processed_tokens": 410461477,
+   "session": "formalization-09",
+   "session_id": "bf8998ac",
+   "title": "Set up lean formalization project environment"
+  },
+  {
+   "api_calls": 538,
+   "cache_creation_tokens": 7455165,
+   "cache_read_tokens": 222041213,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-06T18:31:48.140Z",
+   "input_tokens": 94726,
+   "last_timestamp": "2026-07-08T22:48:28.092Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 8687825,
+   "output_tokens": 1137934,
+   "processed_tokens": 230729038,
+   "session": "formalization-10",
+   "session_id": "01e5a294",
+   "title": "Start Lean formalization project P-d16a"
+  },
+  {
+   "api_calls": 1043,
+   "cache_creation_tokens": 10680788,
+   "cache_read_tokens": 451490212,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-06T18:34:14.786Z",
+   "input_tokens": 238661,
+   "last_timestamp": "2026-07-09T13:45:00.830Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 13350487,
+   "output_tokens": 2431038,
+   "processed_tokens": 464840699,
+   "session": "formalization-11",
+   "session_id": "8ccf5f4b",
+   "title": "Start lean formalization project task P-15f"
+  },
+  {
+   "api_calls": 1147,
+   "cache_creation_tokens": 10064043,
+   "cache_read_tokens": 386164311,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-06T18:35:30.022Z",
+   "input_tokens": 259454,
+   "last_timestamp": "2026-07-10T12:06:56.590Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 12338505,
+   "output_tokens": 2015008,
+   "processed_tokens": 398502816,
+   "session": "formalization-12",
+   "session_id": "9cd6c94c",
+   "title": "Work on lean formalization P-16d6d"
+  },
+  {
+   "api_calls": 2529,
+   "cache_creation_tokens": 26288578,
+   "cache_read_tokens": 866050624,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-06T18:37:30.166Z",
+   "input_tokens": 865047,
+   "last_timestamp": "2026-07-11T01:11:16.691Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 32488094,
+   "output_tokens": 5334469,
+   "processed_tokens": 898538718,
+   "session": "formalization-13",
+   "session_id": "07f15cc3",
+   "title": "Work on P-17d2 Lean formalization project"
+  },
+  {
+   "api_calls": 771,
+   "cache_creation_tokens": 4823187,
+   "cache_read_tokens": 318032467,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-06T18:38:30.014Z",
+   "input_tokens": 85651,
+   "last_timestamp": "2026-07-09T21:19:18.663Z",
+   "models": [
+    "Fable 5",
+    "Haiku 4.5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 6714631,
+   "output_tokens": 1805793,
+   "processed_tokens": 324747098,
+   "session": "formalization-14",
+   "session_id": "e5ebf6ba",
+   "title": "Work on P-17e4 lean formalization project"
+  },
+  {
+   "api_calls": 359,
+   "cache_creation_tokens": 2915195,
+   "cache_read_tokens": 158917615,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-07T13:49:39.609Z",
+   "input_tokens": 34149,
+   "last_timestamp": "2026-07-07T23:50:10.411Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 3695558,
+   "output_tokens": 746214,
+   "processed_tokens": 162613173,
+   "session": "formalization-15",
+   "session_id": "dca97dd6",
+   "title": "Review P-17e4 handoff and plan next steps"
+  },
+  {
+   "api_calls": 816,
+   "cache_creation_tokens": 7586626,
+   "cache_read_tokens": 360895534,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-07T13:49:02.800Z",
+   "input_tokens": 125865,
+   "last_timestamp": "2026-07-08T16:03:33.519Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 9439978,
+   "output_tokens": 1727487,
+   "processed_tokens": 370335512,
+   "session": "formalization-16",
+   "session_id": "3ed6d0c7",
+   "title": "Review P-16d6 handoff and list next steps"
+  },
+  {
+   "api_calls": 251,
+   "cache_creation_tokens": 3904079,
+   "cache_read_tokens": 100325460,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-07T13:50:16.826Z",
+   "input_tokens": 23732,
+   "last_timestamp": "2026-07-07T22:05:07.586Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 4509667,
+   "output_tokens": 581856,
+   "processed_tokens": 104835127,
+   "session": "formalization-17",
+   "session_id": "bb35d158",
+   "title": "Review P-17i handoff and list next steps"
+  },
+  {
+   "api_calls": 244,
+   "cache_creation_tokens": 2293748,
+   "cache_read_tokens": 102508095,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-07T13:48:20.295Z",
+   "input_tokens": 47257,
+   "last_timestamp": "2026-07-07T21:27:58.021Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 2920711,
+   "output_tokens": 579706,
+   "processed_tokens": 105428806,
+   "session": "formalization-18",
+   "session_id": "0039e780",
+   "title": "Review P-15f handoff and list next steps"
+  },
+  {
+   "api_calls": 380,
+   "cache_creation_tokens": 3410022,
+   "cache_read_tokens": 180544991,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-07T13:57:23.753Z",
+   "input_tokens": 43313,
+   "last_timestamp": "2026-07-08T15:57:01.751Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 4470958,
+   "output_tokens": 1017623,
+   "processed_tokens": 185015949,
+   "session": "formalization-19",
+   "session_id": "bd22cccf",
+   "title": "Start P-15f2 formalization task"
+  },
+  {
+   "api_calls": 527,
+   "cache_creation_tokens": 4479299,
+   "cache_read_tokens": 206388870,
+   "category": "roe_formalization",
+   "first_timestamp": "2026-07-07T14:05:43.471Z",
+   "input_tokens": 87030,
+   "last_timestamp": "2026-07-08T14:15:04.491Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 5459425,
+   "output_tokens": 893096,
+   "processed_tokens": 211848295,
+   "session": "formalization-20",
+   "session_id": "965d5c62",
+   "title": "Review handoff docs and list open tickets"
+  },
+  {
+   "api_calls": 3589,
+   "cache_creation_tokens": 34114992,
+   "cache_read_tokens": 551219090,
+   "category": "roe_cleanup",
+   "first_timestamp": "2026-07-11T01:25:02.643Z",
+   "input_tokens": 1552373,
+   "last_timestamp": "2026-07-13T10:43:32.297Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 42632714,
+   "output_tokens": 6965349,
+   "processed_tokens": 593851804,
+   "session": "cleanup-01",
+   "session_id": "3d9b5061",
+   "title": "Review mathlib-quality cleanup decisions and token issues"
+  },
+  {
+   "api_calls": 2104,
+   "cache_creation_tokens": 24724597,
+   "cache_read_tokens": 269278649,
+   "category": "roe_cleanup",
+   "first_timestamp": "2026-07-13T14:14:23.055Z",
+   "input_tokens": 649240,
+   "last_timestamp": "2026-07-14T19:37:54.216Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 27613880,
+   "output_tokens": 2240043,
+   "processed_tokens": 296892529,
+   "session": "cleanup-02",
+   "session_id": "963f2131",
+   "title": "Continue deferred-pass work in Lean"
+  },
+  {
+   "api_calls": 15,
+   "cache_creation_tokens": 38653,
+   "cache_read_tokens": 826362,
+   "category": "roe_cleanup",
+   "first_timestamp": "2026-07-14T13:21:04.726Z",
+   "input_tokens": 12390,
+   "last_timestamp": "2026-07-14T13:44:05.855Z",
+   "models": [
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 68039,
+   "output_tokens": 16996,
+   "processed_tokens": 894401,
+   "session": "cleanup-03",
+   "session_id": "7b936cf6",
+   "title": "Update gq2-lean license from GPL to Apache-2.0"
+  },
+  {
+   "api_calls": 161,
+   "cache_creation_tokens": 608690,
+   "cache_read_tokens": 38265781,
+   "category": "roe_cleanup",
+   "first_timestamp": "2026-07-23T11:28:55.379Z",
+   "input_tokens": 313,
+   "last_timestamp": "2026-07-23T19:52:46.065Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 807879,
+   "output_tokens": 198876,
+   "processed_tokens": 39073660,
+   "session": "cleanup-04",
+   "session_id": "04b6a140",
+   "title": "Make Axioms.lean self-contained"
+  },
+  {
+   "api_calls": 3,
+   "cache_creation_tokens": 25559,
+   "cache_read_tokens": 117682,
+   "category": "roe_cleanup",
+   "first_timestamp": "2026-07-24T04:54:03.648Z",
+   "input_tokens": 6,
+   "last_timestamp": "2026-07-24T05:01:08.821Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 29328,
+   "output_tokens": 3763,
+   "processed_tokens": 147010,
+   "session": "cleanup-05",
+   "session_id": "5ef5b391",
+   "title": "Fix incomplete atlas-graph.json dependency extraction"
+  },
+  {
+   "api_calls": 159,
+   "cache_creation_tokens": 1401750,
+   "cache_read_tokens": 34941328,
+   "category": "roe_cleanup",
+   "first_timestamp": "2026-07-24T05:04:35.992Z",
+   "input_tokens": 6797,
+   "last_timestamp": "2026-07-24T07:32:52.693Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 1744531,
+   "output_tokens": 335984,
+   "processed_tokens": 36685859,
+   "session": "cleanup-06",
+   "session_id": "90554e4b",
+   "title": "Address Lean code review feedback on GQ2 formalization"
+  },
+  {
+   "api_calls": 839,
+   "cache_creation_tokens": 9097703,
+   "cache_read_tokens": 376490583,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-11T01:18:58.533Z",
+   "input_tokens": 94450,
+   "last_timestamp": "2026-07-23T01:59:54.678Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 9825445,
+   "output_tokens": 633292,
+   "processed_tokens": 386316028,
+   "session": "website-01",
+   "session_id": null,
+   "title": "Resume five tasks from handoff document"
+  },
+  {
+   "api_calls": 1460,
+   "cache_creation_tokens": 17950699,
+   "cache_read_tokens": 642381040,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-08T16:47:26.918Z",
+   "input_tokens": 277464,
+   "last_timestamp": "2026-07-24T05:17:21.020Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 19965673,
+   "output_tokens": 1737510,
+   "processed_tokens": 662346713,
+   "session": "website-02",
+   "session_id": null,
+   "title": "Design math paper generation from AI and Lean code"
+  },
+  {
+   "api_calls": 132,
+   "cache_creation_tokens": 394888,
+   "cache_read_tokens": 19659825,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-10T22:00:21.288Z",
+   "input_tokens": 29475,
+   "last_timestamp": "2026-07-10T22:54:40.342Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 565083,
+   "output_tokens": 140720,
+   "processed_tokens": 20224908,
+   "session": "website-03",
+   "session_id": null,
+   "title": "Design logo for PaperForge"
+  },
+  {
+   "api_calls": 126,
+   "cache_creation_tokens": 953299,
+   "cache_read_tokens": 26297404,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-13T14:15:50.449Z",
+   "input_tokens": 18388,
+   "last_timestamp": "2026-07-14T19:26:53.367Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 1141604,
+   "output_tokens": 169917,
+   "processed_tokens": 27439008,
+   "session": "website-04",
+   "session_id": null,
+   "title": "Integrate approved content into paperforge document"
+  },
+  {
+   "api_calls": 165,
+   "cache_creation_tokens": 1655532,
+   "cache_read_tokens": 27596982,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-13T15:29:13.909Z",
+   "input_tokens": 15500,
+   "last_timestamp": "2026-07-14T12:44:54.303Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 1770223,
+   "output_tokens": 99191,
+   "processed_tokens": 29367205,
+   "session": "website-05",
+   "session_id": null,
+   "title": "Review GitHub pull request"
+  },
+  {
+   "api_calls": 31,
+   "cache_creation_tokens": 74600,
+   "cache_read_tokens": 2130966,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-12T00:50:02.880Z",
+   "input_tokens": 14009,
+   "last_timestamp": "2026-07-12T01:37:47.525Z",
+   "models": [
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 133282,
+   "output_tokens": 44673,
+   "processed_tokens": 2264248,
+   "session": "website-06",
+   "session_id": null,
+   "title": "Claude code session logs storage location"
+  },
+  {
+   "api_calls": 266,
+   "cache_creation_tokens": 1936931,
+   "cache_read_tokens": 55705391,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-24T04:53:30.259Z",
+   "input_tokens": 2306,
+   "last_timestamp": "2026-07-24T07:36:20.876Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 2327477,
+   "output_tokens": 388240,
+   "processed_tokens": 58032868,
+   "session": "website-07",
+   "session_id": null,
+   "title": "Update Development page with cost analysis and session records"
+  },
+  {
+   "api_calls": 267,
+   "cache_creation_tokens": 2032999,
+   "cache_read_tokens": 106274476,
+   "category": "context_only",
+   "first_timestamp": "2026-06-09T23:51:36.442Z",
+   "input_tokens": 62608,
+   "last_timestamp": "2026-07-02T01:26:53.148Z",
+   "models": [
+    "Fable 5",
+    "Opus 4.8"
+   ],
+   "non_cache_tokens": 2806595,
+   "output_tokens": 710988,
+   "processed_tokens": 109081071,
+   "session": "precursor-01",
+   "session_id": null,
+   "title": "Find Galois group presentation for Q2"
+  }
+ ]
+}

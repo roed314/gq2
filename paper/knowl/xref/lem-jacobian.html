@@ -22,7 +22,7 @@
 <span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Evaluated Jacobian.</span>
 </h2>
 <div class="para logical">
-<div class="para">Write the lift variables on <span class="process-math">\((\notn{sigma}{\sigma},\notn{tau}{\tau},\notn{x0}{x_0},\notnfar{x1}{x_1})\)</span> as <span class="process-math">\((a,b,c,d)\in \notn{Amod}{A}^4\text{.}\)</span>  On a simple tame module the actual relation differential is</div>
+<div class="para">Write the lift variables on <span class="process-math">\((\notn{sigma}{\sigma},\notn{tau}{\tau},\notn{x0}{x_0},\notnfar{x1}{x_1})\)</span> as <span class="process-math">\((a,b,c,d)\in \notn{Amod}{A}^4\text{.}\)</span>  On a simple tame module the actual <span class="ptxnotn-bgRelationDiff ptxbg">relation differential</span> is</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-Ltactual.html">
 \begin{equation}
 d^1_{\rho,\notn{Amod}{A}}=
@@ -41,13 +41,13 @@ L_{\mathrm w}
 &amp;=Pb+(\notn{Pnorm}{P}+\notn{opS}{\mathsf S}^{-1})d.\tag{5.6}
 \end{align}
 </div>
-<div class="para">Postcomposing the tame defect coordinate by <span class="process-math">\(\notn{opS}{\mathsf S}\)</span> gives the row-normalized expression</div>
+<div class="para">Postcomposing the <span class="ptxnotn-inTameDefect ptxbg">tame defect coordinate</span> by <span class="process-math">\(\notn{opS}{\mathsf S}\)</span> gives the row-normalized expression</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-Ltactual.html">
 \begin{equation*}
 (1+\notn{opT}{\mathsf T})a+\bigl(1+\notn{opS}{\mathsf S}(1+\notn{opT}{\mathsf T})\bigr)b,
 \end{equation*}
 </div>
-<div class="para">which may be used for rank calculations only.  The word complex, the mixed derivative, and the endpoint maps below use the unnormalized row <a href="#lem-jacobian-2-1-4" class="xref" data-knowl="./knowl/xref/eq-Ltactual.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.5">(5.5)</a>.</div>
+<div class="para">which may be used for rank calculations only.  The <span class="ptxnotn-bgWordComplex ptxbg">word complex</span>, the <span class="ptxnotn-inDerivatives ptxbg">mixed derivative</span>, and the <span class="ptxnotn-inEndpoint ptxbg">endpoint maps</span> below use the <span class="ptxnotn-inTameWildRow ptxbg">unnormalized row</span> <a href="#lem-jacobian-2-1-5" class="xref" data-knowl="./knowl/xref/eq-Ltactual.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.5">(5.5)</a>.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-jacobian-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <a class="lean-link lean-proj-gq2-gpt" href="../lean/gq2-gpt/find/?pattern=Q2Presentation.Lifting.d1_trivial#doc" data-lean-ref="Q2Presentation.Lifting.d1_trivial" data-lean-project="gq2-gpt" title="Formalized as Q2Presentation.Lifting.d1_trivial in gq2-gpt">Lean</a><div class="autopermalink" aria-hidden="true" data-description="Lemma 5.5: Evaluated Jacobian"><a tabindex="-1" href="#lem-jacobian" title="Copy heading and permalink for Lemma 5.5: Evaluated Jacobian" aria-label="Copy heading and permalink for Lemma 5.5: Evaluated Jacobian">🔗</a></div>
@@ -62,11 +62,11 @@ L_{\mathrm w}
 =\notn{opS}{\mathsf S}^{-1}(\notn{opT}{\mathsf T}-1)a+\bigl(\notn{opS}{\mathsf S}^{-1}-(1+\notn{opT}{\mathsf T})\bigr)b.
 \end{equation*}
 </div>
-<div class="para">Over <span class="process-math">\(\F_2\)</span> this is exactly <a href="#lem-jacobian-2-1-4" class="xref" data-knowl="./knowl/xref/eq-Ltactual.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.5">(5.5)</a>.</div>
+<div class="para">Over <span class="process-math">\(\F_2\)</span> this is exactly <a href="#lem-jacobian-2-1-5" class="xref" data-knowl="./knowl/xref/eq-Ltactual.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.5">(5.5)</a>.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-jacobian-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">For an odd-order <span class="process-math">\(\notn{opT}{\mathsf T}\)</span>-orbit, differentiation of a <span class="process-math">\(\notn{w}{\w}\)</span>-power gives the norm projector <span class="process-math">\(\notn{Pnorm}{P}\text{.}\)</span>  By <a href="#lem-h0shadow" class="xref" data-knowl="./knowl/xref/lem-h0shadow.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.3: The elementary and class-two shadow of h_0">Lemma 5.3</a>, the word <span class="process-math">\(h_0\)</span> has the first-order value of <span class="process-math">\(\notn{x0}{x_0}^2\text{,}\)</span> hence zero.  The remaining wild factors give</div>
+<div class="para">For an odd-order <span class="process-math">\(\notn{opT}{\mathsf T}\)</span>-orbit, <span class="ptxnotn-bgDifferentiating ptxbg">differentiation</span> of a <span class="process-math">\(\notn{w}{\w}\)</span>-power gives the <span class="ptxnotn-bgNormProjector ptxbg">norm projector</span> <span class="process-math">\(\notn{Pnorm}{P}\text{.}\)</span>  By <a href="#lem-h0shadow" class="xref" data-knowl="./knowl/xref/lem-h0shadow.html" data-reveal-label="Reveal" data-close-label="Close" title="Lemma 5.3: The elementary and class-two shadow of h_0">Lemma 5.3</a>, the word <span class="process-math">\(h_0\)</span> has the <span class="ptxnotn-inFirstOrder ptxbg">first-order value</span> of <span class="process-math">\(\notn{x0}{x_0}^2\text{,}\)</span> hence zero.  The remaining wild factors give</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem-h0shadow.html ./knowl/xref/eq-Lwactual.html">
 \begin{equation*}
 \begin{array}{c|cccc}
@@ -78,7 +78,7 @@ u_1^{-1}&amp;0&amp;\notn{Pnorm}{P}&amp;0&amp;\notn{Pnorm}{P}\\
 \end{array}
 \end{equation*}
 </div>
-<div class="para">Their sum is <a href="#lem-jacobian-2-1-4" class="xref" data-knowl="./knowl/xref/eq-Lwactual.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.6">(5.6)</a>.  Without the simplicity assumption, the same finite Fox rules define the word complex; the displayed reduction is the simple-factor calculation used in the devissage.</div>
+<div class="para">Their sum is <a href="#lem-jacobian-2-1-5" class="xref" data-knowl="./knowl/xref/eq-Lwactual.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 5.6">(5.6)</a>.  Without the simplicity assumption, the same <span class="ptxnotn-bgFoxRules ptxbg">finite Fox rules</span> define the word complex; the displayed reduction is the simple-factor calculation used in the <span class="ptxnotn-bgCone ptxbg">devissage</span>.</div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#lem-jacobian-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Proof 5.5.1"><a tabindex="-1" href="#lem-jacobian-4" title="Copy heading and permalink for Proof 5.5.1" aria-label="Copy heading and permalink for Proof 5.5.1">🔗</a></div>

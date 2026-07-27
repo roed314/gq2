@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Commands to rebuild both Lean formalizations from clean checkouts, print the axiom footprint of the main theorem, run the comparator and the finite-quotient verifier, and regenerate the paper and this site.">
-<title>Reproducibility — A Presentation of the Absolute Galois Group of Q₂</title>
+<title>Reproducibility · A Presentation of the Absolute Galois Group of Q₂</title>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="../favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,7 @@
 </header>
 
 <main>
-  <p class="section-intro" style="max-width: 72ch;">Every checkable claim on
+  <p class="section-intro" style="max-width: 84ch;">Every checkable claim on
   this site is backed by an artifact that can be rebuilt from a clean checkout.
   This page collects the exact commands, the platform they were last tested on,
   and the outputs to expect.  Version identifiers for all components appear in
@@ -26,7 +26,7 @@
   (<a href="../status.json"><code>status.json</code></a>).</p>
 
   <h2>Tested platform</h2>
-  <div class="prose" style="max-width: 72ch;">
+  <div class="prose" style="max-width: 84ch;">
     <p>Last verified on macOS 15 (Apple Silicon, Darwin 24.6) with
     <a href="https://github.com/leanprover/elan"><code>elan</code></a> managing
     Lean toolchains (each repository pins its own via
@@ -40,7 +40,7 @@
   </div>
 
   <h2>1. Build the Roe formalization and print its axiom footprint</h2>
-  <div class="prose" style="max-width: 76ch;">
+  <div class="prose" style="max-width: 84ch;">
     <p>The pinned commit for this site release is shown in the footer.
     A clean build takes under an hour after the Mathlib cache download:</p>
 <pre><code>git clone https://github.com/roed-math/gq2-lean
@@ -52,10 +52,10 @@ lake build             # builds the GQ2 library; no sorry anywhere
     <code>GQ2.main_presentation_literal&nbsp;: Nonempty (ContinuousMulEquiv GammaA AbsGalQ2)</code>
     in <code>GQ2/PresentationLiteral.lean</code>, and its equivalent
     finite-counting form is <code>GQ2.SectionTen.main_surjection_count'</code>.
-    The axiom audit &mdash; every capstone theorem must print exactly the three
+    The axiom audit (every capstone theorem must print exactly the three
     standard Lean axioms plus the
     <a href="../formalizations/axioms/">nine-interface literature census</a>,
-    with no <code>sorry</code> and no <code>native_decide</code> &mdash; is
+    with no <code>sorry</code> and no <code>native_decide</code>) is
     scripted:</p>
 <pre><code>scripts/check_axioms.sh
 </code></pre>
@@ -68,7 +68,7 @@ lake build             # builds the GQ2 library; no sorry anywhere
   </div>
 
   <h2>2. Build the Turturean formalization</h2>
-  <div class="prose" style="max-width: 76ch;">
+  <div class="prose" style="max-width: 84ch;">
     <p>The standalone release deliberately has no root module, so build the
     capstone target directly:</p>
 <pre><code>git clone https://github.com/davidturturean/gq2-lean-turturean
@@ -83,7 +83,7 @@ lake build Q2Presentation.PresentationCorrect
   </div>
 
   <h2>3. Run the comparator</h2>
-  <div class="prose" style="max-width: 76ch;">
+  <div class="prose" style="max-width: 84ch;">
     <p>The comparator checks that an untrusted challenge statement is proved
     by the library with only the permitted axioms.  In
     <code>gq2-lean</code>, the challenge/solution pair is
@@ -95,14 +95,14 @@ lake build Q2Presentation.PresentationCorrect
     <p>The challenge theorems
     (<code>challenge_main_presentation_literal</code>,
     <code>challenge_main_presentation_literal_roe_unconditional</code>) carry
-    <code>sorry</code> in <code>Challenge.lean</code> by design &mdash; they
-    are the untrusted statements &mdash; and are discharged by
+    <code>sorry</code> in <code>Challenge.lean</code> by design (they
+    are the untrusted statements) and are discharged by
     <code>Solution.lean</code>; audit them with <code>#print axioms</code> as
     above.</p>
   </div>
 
   <h2>4. Run the finite-quotient verifier</h2>
-  <div class="prose" style="max-width: 76ch;">
+  <div class="prose" style="max-width: 84ch;">
     <p>The <a href="../verifier/">verifier</a> lives in the
     <a href="https://github.com/roed314/padicIGP">padicIGP</a> repository and
     runs under Sage.  It checks the presentation's predicted count of Galois
@@ -125,10 +125,20 @@ PYTHONHASHSEED=0 ./verify -j 8
   </div>
 
   <h2>5. Regenerate the paper and this site</h2>
-  <div class="prose" style="max-width: 76ch;">
-    <p>The paper and site are built from the
+  <div class="prose" style="max-width: 84ch;">
+    <p>The paper and site are built with the public
     <a href="https://github.com/roed-math/paperforge">PaperForge</a> pipeline
-    with this project's sources.  From the project instance root:</p>
+    applied to this project's source instance (the LaTeX draft, PreTeXt
+    insertions, crosswalk data, and build scripts).  Unlike the
+    formalization and verifier repositories above, the source instance is
+    not currently public; contact the first author for access.  Every
+    artifact the pipeline produces is published on this site: the
+    <a href="../paper/paper.html">interactive paper</a>, the
+    <a href="../paper.pdf">PDF</a>, both
+    <a href="../blueprint/">blueprints</a>, the
+    <a href="../lean/gq2-claude/">API documentation subsets</a>, and
+    <a href="../status.json"><code>status.json</code></a>.  For the record,
+    the build entry points from the instance root are:</p>
 <pre><code>scripts/build-web.sh        # LaTeX draft -> PreTeXt -> interactive HTML
 pretext build arxiv         # the arXiv-style PDF (output/arxiv/main.pdf)
 blueprint/scripts/ci-pages.sh       # Verso blueprint, Roe formalization
@@ -140,7 +150,7 @@ scripts/build-site.sh       # assemble output/site/ (runs the status stamper)
     build: the <a href="../formalizations/axioms/">axioms page</a> from the
     docstring census of <code>GQ2/Foundations/Axioms.lean</code>
     (<code>scripts/gen-axioms-page.py</code>), the dependency graphs from the
-    Lean environment's kernel-level dependency export, and the status box and
+    Lean environment's kernel-level dependency export, and the
     footer version identifiers on these pages from
     <a href="../status.json"><code>status.json</code></a>
     (<code>scripts/gen-status.py</code>, whose <code>--check</code> mode fails
@@ -150,20 +160,20 @@ scripts/build-site.sh       # assemble output/site/ (runs the status stamper)
 </main>
 
 <footer>
-  <!-- versions:begin (regenerated by scripts/gen-status.py from status.json) -->
   <div class="version-line">
-    Manuscript July 26, 2026 &middot;
-    Roe formalization <a href="https://github.com/roed-math/gq2-lean"><code>0ffb390</code></a>
-    (Mathlib pinned June 12, 2026, <code>ec410d2</code>) &middot;
-    Turturean formalization <a href="https://github.com/davidturturean/gq2-lean-turturean"><code>e868b9e</code></a> &middot;
-    axiom census: 9 interfaces &middot;
-    verifier dataset: 5,402 groups &middot; PDF sha256 <code>076b07f1bb8b&hellip;</code> &middot;
-    <a href="../reproducibility/">reproducibility</a>
-  </div>
+  <!-- versions:begin (regenerated by scripts/gen-status.py from status.json) -->
+    Manuscript <a href="#" class="vknowl" data-vknowl="version-details"
+       aria-expanded="false" title="Version identifiers">July 26, 2026</a>
+    <span class="vknowl-panel" id="version-details" hidden>
+      Roe formalization <a href="https://github.com/roed-math/gq2-lean"><code>0ffb390</code></a>
+      (Mathlib pinned June 12, 2026, <code>ec410d2</code>) &middot;
+      Turturean formalization <a href="https://github.com/davidturturean/gq2-lean-turturean"><code>e868b9e</code></a> &middot;
+      axiom census: 9 interfaces &middot;
+      verifier dataset: 5,402 groups &middot; PDF sha256 <code>b970a92625ce&hellip;</code> &middot;
+      <a href="../reproducibility/">reproducibility</a>
+    </span>
   <!-- versions:end -->
-  <a href="../">Return to the project homepage</a>.
-  Built with
-  <a class="pf-credit" href="https://github.com/roed-math/paperforge"><svg class="pf-glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
+  &middot; Built with <a class="pf-credit" href="https://github.com/roed-math/paperforge"><svg class="pf-glyph" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-hidden="true">
     <defs>
       <mask id="pf-glyph-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
         <rect width="24" height="24" fill="white"/>
@@ -173,6 +183,20 @@ scripts/build-site.sh       # assemble output/site/ (runs the status stamper)
     <path fill="currentColor" mask="url(#pf-glyph-cut)" d="M2 7h5l2-2h6l2 2h5c-1 4-4 7-8 8-2 1-2 3 0 5l1 1h-4l-1-2H7l-1 2H3v-2l2-2c2-2 0-3-3-4Z"/>
     <path fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" d="m4 12 3-7h8l2 2c2 0 3 0 5-1-1 4-5 7-9 7H4Zm13-5c0 3-1 5-4 6"/>
   </svg>PaperForge</a>.
+  </div>
+  <script>
+  (function () {
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest(".vknowl") : null;
+      if (!a) return;
+      e.preventDefault();
+      var p = document.getElementById(a.getAttribute("data-vknowl"));
+      if (!p) return;
+      p.hidden = !p.hidden;
+      a.setAttribute("aria-expanded", p.hidden ? "false" : "true");
+    });
+  })();
+  </script>
 </footer>
 </body>
 </html>

@@ -31,26 +31,26 @@
   },
   "roe_cleanup": {
    "first_timestamp": "2026-07-11T01:25:02.643Z",
-   "last_timestamp": "2026-07-24T07:32:52.693Z",
-   "non_cache_tokens": 72896371,
+   "last_timestamp": "2026-07-24T14:50:41.461Z",
+   "non_cache_tokens": 78528519,
    "per_model": {
     "Fable 5": {
-     "cache_creation_input_tokens": 37025470,
-     "cache_read_input_tokens": 538731225,
-     "calls": 2777,
-     "input_tokens": 646808,
-     "output_tokens": 3583052
+     "cache_creation_input_tokens": 39488814,
+     "cache_read_input_tokens": 575025304,
+     "calls": 2899,
+     "input_tokens": 647045,
+     "output_tokens": 3884984
     },
     "Opus 4.8": {
-     "cache_creation_input_tokens": 23888771,
-     "cache_read_input_tokens": 355917667,
-     "calls": 3254,
-     "input_tokens": 1574311,
-     "output_tokens": 6177959
+     "cache_creation_input_tokens": 26213590,
+     "cache_read_input_tokens": 396438042,
+     "calls": 3470,
+     "input_tokens": 1575480,
+     "output_tokens": 6718606
     }
    },
-   "processed_tokens": 967545263,
-   "sessions": 6
+   "processed_tokens": 1049991865,
+   "sessions": 7
   },
   "roe_formalization": {
    "first_timestamp": "2026-07-01T12:20:04.455Z",
@@ -82,17 +82,47 @@
    "processed_tokens": 9437208888,
    "sessions": 20
   },
-  "roe_website": {
-   "first_timestamp": "2026-07-08T16:47:26.918Z",
-   "last_timestamp": "2026-07-24T07:36:20.876Z",
-   "non_cache_tokens": 35728787,
+  "roe_squarecommutator": {
+   "first_timestamp": "2026-07-07T14:05:43.471Z",
+   "last_timestamp": "2026-07-27T00:10:17.256Z",
+   "non_cache_tokens": 53183297,
    "per_model": {
     "Fable 5": {
-     "cache_creation_input_tokens": 27916603,
-     "cache_read_input_tokens": 1070668622,
-     "calls": 2713,
-     "input_tokens": 422958,
-     "output_tokens": 2852039
+     "cache_creation_input_tokens": 20711374,
+     "cache_read_input_tokens": 512463163,
+     "calls": 1733,
+     "input_tokens": 122547,
+     "output_tokens": 4787600
+    },
+    "Opus 4.8": {
+     "cache_creation_input_tokens": 8087652,
+     "cache_read_input_tokens": 223991054,
+     "calls": 1034,
+     "input_tokens": 96341,
+     "output_tokens": 2565101
+    },
+    "claude-opus-5": {
+     "cache_creation_input_tokens": 12924851,
+     "cache_read_input_tokens": 468782899,
+     "calls": 2728,
+     "input_tokens": 118662,
+     "output_tokens": 3769169
+    }
+   },
+   "processed_tokens": 1258420413,
+   "sessions": 6
+  },
+  "roe_website": {
+   "first_timestamp": "2026-07-08T16:47:26.918Z",
+   "last_timestamp": "2026-07-27T06:56:45.343Z",
+   "non_cache_tokens": 49758838,
+   "per_model": {
+    "Fable 5": {
+     "cache_creation_input_tokens": 37409109,
+     "cache_read_input_tokens": 1472044523,
+     "calls": 4581,
+     "input_tokens": 434580,
+     "output_tokens": 5048900
     },
     "Opus 4.8": {
      "cache_creation_input_tokens": 4147049,
@@ -100,10 +130,17 @@
      "calls": 306,
      "input_tokens": 28634,
      "output_tokens": 361504
+    },
+    "claude-opus-5": {
+     "cache_creation_input_tokens": 1975612,
+     "cache_read_input_tokens": 71592553,
+     "calls": 416,
+     "input_tokens": 9223,
+     "output_tokens": 344227
     }
    },
-   "processed_tokens": 1185990978,
-   "sessions": 7
+   "processed_tokens": 1672989483,
+   "sessions": 20
   }
  },
  "definitions": {
@@ -113,7 +150,7 @@
   "session_id": "Present only for sessions whose id an existing public archive already exposes.",
   "snapshot": "Website/PaperForge sessions and the newest cleanup sessions were still active when measured; totals are a snapshot at generated_utc."
  },
- "generated_utc": "2026-07-24T07:36:21Z",
+ "generated_utc": "2026-07-27T06:56:43Z",
  "sessions": [
   {
    "api_calls": 309,
@@ -598,23 +635,41 @@
    "title": "Fix incomplete atlas-graph.json dependency extraction"
   },
   {
-   "api_calls": 159,
-   "cache_creation_tokens": 1401750,
-   "cache_read_tokens": 34941328,
+   "api_calls": 466,
+   "cache_creation_tokens": 5347180,
+   "cache_read_tokens": 108739772,
    "category": "roe_cleanup",
    "first_timestamp": "2026-07-24T05:04:35.992Z",
-   "input_tokens": 6797,
-   "last_timestamp": "2026-07-24T07:32:52.693Z",
+   "input_tokens": 8148,
+   "last_timestamp": "2026-07-24T10:28:12.044Z",
    "models": [
     "Fable 5",
     "Opus 4.8"
    ],
-   "non_cache_tokens": 1744531,
-   "output_tokens": 335984,
-   "processed_tokens": 36685859,
+   "non_cache_tokens": 6449311,
+   "output_tokens": 1093983,
+   "processed_tokens": 115189083,
    "session": "cleanup-06",
    "session_id": "90554e4b",
    "title": "Address Lean code review feedback on GQ2 formalization"
+  },
+  {
+   "api_calls": 31,
+   "cache_creation_tokens": 842733,
+   "cache_read_tokens": 3016010,
+   "category": "roe_cleanup",
+   "first_timestamp": "2026-07-24T07:02:44.939Z",
+   "input_tokens": 55,
+   "last_timestamp": "2026-07-24T14:50:41.461Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 927368,
+   "output_tokens": 84580,
+   "processed_tokens": 3943378,
+   "session": "cleanup-07",
+   "session_id": "847521e7",
+   "title": "Fix dead docstring links in GQ2 Lean files"
   },
   {
    "api_calls": 839,
@@ -642,7 +697,7 @@
    "category": "roe_website",
    "first_timestamp": "2026-07-08T16:47:26.918Z",
    "input_tokens": 277464,
-   "last_timestamp": "2026-07-24T05:17:21.020Z",
+   "last_timestamp": "2026-07-24T22:43:26.199Z",
    "models": [
     "Fable 5",
     "Opus 4.8"
@@ -728,22 +783,261 @@
    "title": "Claude code session logs storage location"
   },
   {
-   "api_calls": 266,
-   "cache_creation_tokens": 1936931,
-   "cache_read_tokens": 55705391,
+   "api_calls": 277,
+   "cache_creation_tokens": 1948157,
+   "cache_read_tokens": 60073729,
    "category": "roe_website",
    "first_timestamp": "2026-07-24T04:53:30.259Z",
-   "input_tokens": 2306,
-   "last_timestamp": "2026-07-24T07:36:20.876Z",
+   "input_tokens": 2328,
+   "last_timestamp": "2026-07-24T07:38:12.670Z",
    "models": [
     "Fable 5"
    ],
-   "non_cache_tokens": 2327477,
-   "output_tokens": 388240,
-   "processed_tokens": 58032868,
+   "non_cache_tokens": 2342422,
+   "output_tokens": 391937,
+   "processed_tokens": 62416151,
    "session": "website-07",
    "session_id": null,
    "title": "Update Development page with cost analysis and session records"
+  },
+  {
+   "api_calls": 81,
+   "cache_creation_tokens": 308295,
+   "cache_read_tokens": 10894361,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-24T05:17:58.970Z",
+   "input_tokens": 152,
+   "last_timestamp": "2026-07-24T08:41:36.360Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 405665,
+   "output_tokens": 97218,
+   "processed_tokens": 11300026,
+   "session": "website-08",
+   "session_id": null,
+   "title": "Fix broken documentation links in gq2-claude folder"
+  },
+  {
+   "api_calls": 68,
+   "cache_creation_tokens": 144396,
+   "cache_read_tokens": 8162409,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-24T14:59:58.172Z",
+   "input_tokens": 128,
+   "last_timestamp": "2026-07-24T15:31:10.999Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 214607,
+   "output_tokens": 70083,
+   "processed_tokens": 8377016,
+   "session": "website-09",
+   "session_id": null,
+   "title": "Enable abstract and paragraph editing in gp2-paper review"
+  },
+  {
+   "api_calls": 755,
+   "cache_creation_tokens": 2820822,
+   "cache_read_tokens": 106330058,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-24T16:21:03.820Z",
+   "input_tokens": 9049,
+   "last_timestamp": "2026-07-24T18:40:53.873Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 3707742,
+   "output_tokens": 877871,
+   "processed_tokens": 110037800,
+   "session": "website-10",
+   "session_id": null,
+   "title": "Add background sections and notation references to paper"
+  },
+  {
+   "api_calls": 216,
+   "cache_creation_tokens": 2900799,
+   "cache_read_tokens": 100739103,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-25T17:14:18.821Z",
+   "input_tokens": 431,
+   "last_timestamp": "2026-07-26T03:35:52.202Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 3241961,
+   "output_tokens": 340731,
+   "processed_tokens": 103981064,
+   "session": "website-11",
+   "session_id": null,
+   "title": "Add appendix links and sort bibliography"
+  },
+  {
+   "api_calls": 43,
+   "cache_creation_tokens": 221569,
+   "cache_read_tokens": 2990971,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-26T06:02:55.401Z",
+   "input_tokens": 85,
+   "last_timestamp": "2026-07-26T06:18:48.224Z",
+   "models": [
+    "Fable 5",
+    "claude-opus-5"
+   ],
+   "non_cache_tokens": 285249,
+   "output_tokens": 63595,
+   "processed_tokens": 3276220,
+   "session": "website-12",
+   "session_id": null,
+   "title": "Optimize check_axioms shell script performance"
+  },
+  {
+   "api_calls": 30,
+   "cache_creation_tokens": 108159,
+   "cache_read_tokens": 2260126,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-26T06:02:32.949Z",
+   "input_tokens": 56,
+   "last_timestamp": "2026-07-26T06:42:32.785Z",
+   "models": [
+    "Fable 5",
+    "claude-opus-5"
+   ],
+   "non_cache_tokens": 142984,
+   "output_tokens": 34769,
+   "processed_tokens": 2403110,
+   "session": "website-13",
+   "session_id": null,
+   "title": "Regenerate atlas-audit.md with lake tooling"
+  },
+  {
+   "api_calls": 129,
+   "cache_creation_tokens": 272596,
+   "cache_read_tokens": 25360188,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-26T06:26:57.626Z",
+   "input_tokens": 292,
+   "last_timestamp": "2026-07-26T07:07:29.189Z",
+   "models": [
+    "Fable 5"
+   ],
+   "non_cache_tokens": 407980,
+   "output_tokens": 135092,
+   "processed_tokens": 25768168,
+   "session": "website-14",
+   "session_id": null,
+   "title": "Revise paper structure and fix HTML review framework"
+  },
+  {
+   "api_calls": 52,
+   "cache_creation_tokens": 165172,
+   "cache_read_tokens": 7480522,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-26T08:14:03.294Z",
+   "input_tokens": 6239,
+   "last_timestamp": "2026-07-26T08:32:35.617Z",
+   "models": [
+    "claude-opus-5"
+   ],
+   "non_cache_tokens": 233990,
+   "output_tokens": 62579,
+   "processed_tokens": 7714512,
+   "session": "website-15",
+   "session_id": null,
+   "title": "Review mathematical content and style of GQ2 documentation"
+  },
+  {
+   "api_calls": 92,
+   "cache_creation_tokens": 361059,
+   "cache_read_tokens": 11789633,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-26T08:00:35.276Z",
+   "input_tokens": 172,
+   "last_timestamp": "2026-07-26T15:27:51.790Z",
+   "models": [
+    "claude-opus-5"
+   ],
+   "non_cache_tokens": 419416,
+   "output_tokens": 58185,
+   "processed_tokens": 12209049,
+   "session": "website-16",
+   "session_id": null,
+   "title": "Verify twisted-square presentation with padic verifier"
+  },
+  {
+   "api_calls": 146,
+   "cache_creation_tokens": 638144,
+   "cache_read_tokens": 29066293,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-26T06:40:39.609Z",
+   "input_tokens": 943,
+   "last_timestamp": "2026-07-26T08:12:51.876Z",
+   "models": [
+    "Fable 5",
+    "claude-opus-5"
+   ],
+   "non_cache_tokens": 799790,
+   "output_tokens": 160703,
+   "processed_tokens": 29866083,
+   "session": "website-17",
+   "session_id": null,
+   "title": "Add hybrid presentation and comparison page to paper"
+  },
+  {
+   "api_calls": 243,
+   "cache_creation_tokens": 813141,
+   "cache_read_tokens": 71863543,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-26T21:41:56.989Z",
+   "input_tokens": 485,
+   "last_timestamp": "2026-07-27T00:09:44.114Z",
+   "models": [
+    "Fable 5",
+    "claude-opus-5"
+   ],
+   "non_cache_tokens": 1042311,
+   "output_tokens": 228685,
+   "processed_tokens": 72905854,
+   "session": "website-18",
+   "session_id": null,
+   "title": "Implement paper review recommendations for GQ2"
+  },
+  {
+   "api_calls": 41,
+   "cache_creation_tokens": 89668,
+   "cache_read_tokens": 3713902,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-26T23:48:17.378Z",
+   "input_tokens": 1695,
+   "last_timestamp": "2026-07-27T01:28:16.674Z",
+   "models": [
+    "claude-opus-5"
+   ],
+   "non_cache_tokens": 133113,
+   "output_tokens": 41750,
+   "processed_tokens": 3847015,
+   "session": "website-19",
+   "session_id": null,
+   "title": "Add mathbb Q_2 favicon to website"
+  },
+  {
+   "api_calls": 377,
+   "cache_creation_tokens": 2613072,
+   "cache_read_tokens": 87949007,
+   "category": "roe_website",
+   "first_timestamp": "2026-07-27T01:30:32.039Z",
+   "input_tokens": 1096,
+   "last_timestamp": "2026-07-27T06:56:45.343Z",
+   "models": [
+    "Fable 5",
+    "claude-opus-5"
+   ],
+   "non_cache_tokens": 2980298,
+   "output_tokens": 366130,
+   "processed_tokens": 90929305,
+   "session": "website-20",
+   "session_id": null,
+   "title": "Draft pull-quote for GQ2 project release"
   },
   {
    "api_calls": 267,

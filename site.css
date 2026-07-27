@@ -94,31 +94,75 @@ h1 {
 }
 
 /* ---------------- prose sections ---------------- */
-/* Status box: generated block near the top of the homepage (and mirrored on
-   the formalizations/verifier pages) summarizing manuscript, formalization,
-   and verification status. Content between the status:begin/end comment
-   markers is kept in sync with status.json by scripts/gen-status.py. */
-.status-box {
-  margin: 0 auto clamp(2rem, 5vw, 3rem);
-  max-width: 62rem;
-  padding: 0.85rem 1.2rem;
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--accent);
-  border-radius: 6px;
-  background: var(--card);
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-.status-box strong { color: var(--ink); }
-.status-box a { color: var(--ink); text-decoration-color: rgba(40,160,90,.5); }
-.status-box a:hover { text-decoration-color: var(--accent); }
-
-/* Per-page version identifiers in the footer (generated, see .status-box). */
+/* Per-page version identifiers in the footer: one generated line (between the
+   versions:begin/end comment markers, kept in sync with status.json by
+   scripts/gen-status.py) reading "Manuscript <date> · Built with PaperForge",
+   where the date is a knowl that expands the full identifiers in place. */
 footer .version-line {
   margin-bottom: 0.55rem;
   font-size: 0.84rem;
   line-height: 1.7;
 }
+footer .vknowl {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--muted);
+  cursor: pointer;
+}
+footer .vknowl:hover { color: var(--ink); border-bottom-color: var(--accent); }
+footer .vknowl[aria-expanded="true"] {
+  color: var(--ink);
+  border-bottom: 1px solid var(--accent);
+}
+/* The expanded panel opens in place, knowl-style, splitting the footer line. */
+footer .vknowl-panel {
+  display: block;
+  margin: 0.55rem auto;
+  max-width: 62rem;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--muted);
+  text-align: left;
+}
+footer .vknowl-panel[hidden] { display: none; }
+
+/* Homepage background knowls: dashed-underline terms opening an inline
+   panel extracted from the paper's background appendix (bg-knowls.js). */
+.prose .bgknowl {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--muted);
+  cursor: pointer;
+}
+.prose .bgknowl:hover { color: var(--ink); border-bottom-color: var(--accent); }
+.prose .bgknowl.bgknowl-open {
+  color: var(--ink);
+  border-bottom: 1px solid var(--accent);
+}
+.bg-knowl-panel {
+  margin: 0.6rem 0 0.9rem;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  background: var(--card);
+  font-size: 0.95rem;
+}
+.bg-knowl-panel .bg-knowl-title {
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+}
+.bg-knowl-foot { margin-top: 0.4rem; font-size: 0.9rem; }
+
+/* Status-badge legend (presentations comparison page, #status-badges). */
+.badge-legend { margin: 0 auto 1.5rem; }
+.badge-legend > div { margin-bottom: 0.75rem; }
+.badge-legend dt { margin-bottom: 0.2rem; }
+.badge-legend dd { margin: 0; color: var(--muted); }
 footer .version-line code {
   font-size: 0.92em;
   background: var(--card);

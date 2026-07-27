@@ -178,3 +178,13 @@
 :root.dark-mode .ptx-content .knowl__content {
   background: #2a2b25;
 }
+
+/* ToC visible by default on wide screens (owner request 2026-07-27). The
+   theme's toggle still works: closing adds .hidden, which wins here. */
+@media screen and (min-width: 1000px) {
+  .ptx-sidebar:not(.hidden) { display: block; }
+}
+
+/* Single-page article: the Prev/Up/Next tree buttons are permanently
+   disabled, so remove them from the navbar entirely. */
+.ptx-navbar .treebuttons { display: none; }

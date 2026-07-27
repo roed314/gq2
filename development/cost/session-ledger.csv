@@ -24,12 +24,26 @@ roe_cleanup,cleanup-02,963f2131,Continue deferred-pass work in Lean,2026-07-13T1
 roe_cleanup,cleanup-03,7b936cf6,Update gq2-lean license from GPL to Apache-2.0,2026-07-14T13:21:04.726Z,2026-07-14T13:44:05.855Z,Opus 4.8,15,12390,16996,38653,826362,894401,68039
 roe_cleanup,cleanup-04,04b6a140,Make Axioms.lean self-contained,2026-07-23T11:28:55.379Z,2026-07-23T19:52:46.065Z,Fable 5,161,313,198876,608690,38265781,39073660,807879
 roe_cleanup,cleanup-05,5ef5b391,Fix incomplete atlas-graph.json dependency extraction,2026-07-24T04:54:03.648Z,2026-07-24T05:01:08.821Z,Fable 5,3,6,3763,25559,117682,147010,29328
-roe_cleanup,cleanup-06,90554e4b,Address Lean code review feedback on GQ2 formalization,2026-07-24T05:04:35.992Z,2026-07-24T07:32:52.693Z,Fable 5; Opus 4.8,159,6797,335984,1401750,34941328,36685859,1744531
+roe_cleanup,cleanup-06,90554e4b,Address Lean code review feedback on GQ2 formalization,2026-07-24T05:04:35.992Z,2026-07-24T10:28:12.044Z,Fable 5; Opus 4.8,466,8148,1093983,5347180,108739772,115189083,6449311
+roe_cleanup,cleanup-07,847521e7,Fix dead docstring links in GQ2 Lean files,2026-07-24T07:02:44.939Z,2026-07-24T14:50:41.461Z,Fable 5,31,55,84580,842733,3016010,3943378,927368
 roe_website,website-01,,Resume five tasks from handoff document,2026-07-11T01:18:58.533Z,2026-07-23T01:59:54.678Z,Fable 5; Opus 4.8,839,94450,633292,9097703,376490583,386316028,9825445
-roe_website,website-02,,Design math paper generation from AI and Lean code,2026-07-08T16:47:26.918Z,2026-07-24T05:17:21.020Z,Fable 5; Opus 4.8,1460,277464,1737510,17950699,642381040,662346713,19965673
+roe_website,website-02,,Design math paper generation from AI and Lean code,2026-07-08T16:47:26.918Z,2026-07-24T22:43:26.199Z,Fable 5; Opus 4.8,1460,277464,1737510,17950699,642381040,662346713,19965673
 roe_website,website-03,,Design logo for PaperForge,2026-07-10T22:00:21.288Z,2026-07-10T22:54:40.342Z,Fable 5,132,29475,140720,394888,19659825,20224908,565083
 roe_website,website-04,,Integrate approved content into paperforge document,2026-07-13T14:15:50.449Z,2026-07-14T19:26:53.367Z,Fable 5; Opus 4.8,126,18388,169917,953299,26297404,27439008,1141604
 roe_website,website-05,,Review GitHub pull request,2026-07-13T15:29:13.909Z,2026-07-14T12:44:54.303Z,Fable 5,165,15500,99191,1655532,27596982,29367205,1770223
 roe_website,website-06,,Claude code session logs storage location,2026-07-12T00:50:02.880Z,2026-07-12T01:37:47.525Z,Opus 4.8,31,14009,44673,74600,2130966,2264248,133282
-roe_website,website-07,,Update Development page with cost analysis and session records,2026-07-24T04:53:30.259Z,2026-07-24T07:36:20.876Z,Fable 5,266,2306,388240,1936931,55705391,58032868,2327477
+roe_website,website-07,,Update Development page with cost analysis and session records,2026-07-24T04:53:30.259Z,2026-07-24T07:38:12.670Z,Fable 5,277,2328,391937,1948157,60073729,62416151,2342422
+roe_website,website-08,,Fix broken documentation links in gq2-claude folder,2026-07-24T05:17:58.970Z,2026-07-24T08:41:36.360Z,Fable 5,81,152,97218,308295,10894361,11300026,405665
+roe_website,website-09,,Enable abstract and paragraph editing in gp2-paper review,2026-07-24T14:59:58.172Z,2026-07-24T15:31:10.999Z,Fable 5,68,128,70083,144396,8162409,8377016,214607
+roe_website,website-10,,Add background sections and notation references to paper,2026-07-24T16:21:03.820Z,2026-07-24T18:40:53.873Z,Fable 5,755,9049,877871,2820822,106330058,110037800,3707742
+roe_website,website-11,,Add appendix links and sort bibliography,2026-07-25T17:14:18.821Z,2026-07-26T03:35:52.202Z,Fable 5,216,431,340731,2900799,100739103,103981064,3241961
+roe_website,website-12,,Optimize check_axioms shell script performance,2026-07-26T06:02:55.401Z,2026-07-26T06:18:48.224Z,Fable 5; claude-opus-5,43,85,63595,221569,2990971,3276220,285249
+roe_website,website-13,,Regenerate atlas-audit.md with lake tooling,2026-07-26T06:02:32.949Z,2026-07-26T06:42:32.785Z,Fable 5; claude-opus-5,30,56,34769,108159,2260126,2403110,142984
+roe_website,website-14,,Revise paper structure and fix HTML review framework,2026-07-26T06:26:57.626Z,2026-07-26T07:07:29.189Z,Fable 5,129,292,135092,272596,25360188,25768168,407980
+roe_website,website-15,,Review mathematical content and style of GQ2 documentation,2026-07-26T08:14:03.294Z,2026-07-26T08:32:35.617Z,claude-opus-5,52,6239,62579,165172,7480522,7714512,233990
+roe_website,website-16,,Verify twisted-square presentation with padic verifier,2026-07-26T08:00:35.276Z,2026-07-26T15:27:51.790Z,claude-opus-5,92,172,58185,361059,11789633,12209049,419416
+roe_website,website-17,,Add hybrid presentation and comparison page to paper,2026-07-26T06:40:39.609Z,2026-07-26T08:12:51.876Z,Fable 5; claude-opus-5,146,943,160703,638144,29066293,29866083,799790
+roe_website,website-18,,Implement paper review recommendations for GQ2,2026-07-26T21:41:56.989Z,2026-07-27T00:09:44.114Z,Fable 5; claude-opus-5,243,485,228685,813141,71863543,72905854,1042311
+roe_website,website-19,,Add mathbb Q_2 favicon to website,2026-07-26T23:48:17.378Z,2026-07-27T01:28:16.674Z,claude-opus-5,41,1695,41750,89668,3713902,3847015,133113
+roe_website,website-20,,Draft pull-quote for GQ2 project release,2026-07-27T01:30:32.039Z,2026-07-27T06:56:45.343Z,Fable 5; claude-opus-5,377,1096,366130,2613072,87949007,90929305,2980298
 context_only,precursor-01,,Find Galois group presentation for Q2,2026-06-09T23:51:36.442Z,2026-07-02T01:26:53.148Z,Fable 5; Opus 4.8,267,62608,710988,2032999,106274476,109081071,2806595

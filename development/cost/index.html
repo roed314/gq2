@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="What the search, proof, formalizations, cleanup, and website behind the presentation of the absolute Galois group of the 2-adic numbers cost, in tokens and in dollars.">
+<meta name="description" content="What the search, proof, formalizations, cleanup, square-commutator campaign, and website behind the presentation of the absolute Galois group of the 2-adic numbers cost, in tokens and in dollars.">
 <title>Cost of the Project | A Presentation of the Absolute Galois Group of &#x211A;&#x2082;</title>
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
@@ -29,7 +29,7 @@
   <article class="prose">
     <p>This page accounts for what the project consumed: first in tokens,
     then in dollars. The token figures follow the definitions of the
-    published <a href="../methods/">token audit</a> &mdash;
+    published <a href="../methods/">token audit</a>:
     <strong>processed tokens</strong> count all logged fresh input, cache
     creation, cache reads, and output, while the
     <strong>non-cache subtotal</strong> excludes cache reads. Cache reads
@@ -41,10 +41,11 @@
 
     <h2>Cost in tokens</h2>
 
-    <p>The work divides into five categories: David Turturean&rsquo;s
+    <p>The work divides into six categories: David Turturean&rsquo;s
     conversations finding the presentation, his Lean formalization,
     David Roe&rsquo;s separately developed Lean formalization, Roe&rsquo;s cleanup of
-    the finished Lean repository, and Roe&rsquo;s work on this website and
+    the finished Lean repository, Roe&rsquo;s follow-up campaign formalizing the
+    square-commutator presentation, and Roe&rsquo;s work on this website and
     PaperForge.</p>
 
     <div class="cost-table-wrap">
@@ -58,7 +59,7 @@
           <td>June 18&ndash;26</td>
           <td>ChatGPT Pro (browser), GPT-5.5 (Codex), Opus 4.8</td>
           <td class="num">&asymp;327 million<br><span class="cost-note">305&ndash;365 million</span></td>
-          <td class="num">&mdash;</td>
+          <td class="num">&ndash;</td>
         </tr>
         <tr>
           <td>2. Turturean: Lean formalization</td>
@@ -76,17 +77,24 @@
         </tr>
         <tr>
           <td>4. Roe: Lean cleanup</td>
-          <td>July 11&ndash;24</td>
+          <td>July 11&ndash;26</td>
           <td>Fable 5, Opus 4.8</td>
-          <td class="num"><span data-ledger="roe_cleanup.processed_m">968 million</span></td>
-          <td class="num"><span data-ledger="roe_cleanup.non_cache_m">73 million</span></td>
+          <td class="num"><span data-ledger="roe_cleanup.processed_m">1050 million</span></td>
+          <td class="num"><span data-ledger="roe_cleanup.non_cache_m">79 million</span></td>
         </tr>
         <tr>
-          <td>5. Roe: website and PaperForge</td>
-          <td>July 8&ndash;24</td>
+          <td>5. Roe: square-commutator formalization</td>
+          <td>July 24&ndash;26</td>
           <td>Fable 5, Opus 4.8</td>
-          <td class="num"><span data-ledger="roe_website.processed_b">1.19 billion</span></td>
-          <td class="num"><span data-ledger="roe_website.non_cache_m">36 million</span></td>
+          <td class="num"><span data-ledger="roe_squarecommutator.processed_m">1258 million</span></td>
+          <td class="num"><span data-ledger="roe_squarecommutator.non_cache_m">53 million</span></td>
+        </tr>
+        <tr>
+          <td>6. Roe: website and PaperForge</td>
+          <td>July 8&ndash;27</td>
+          <td>Fable 5, Opus 4.8</td>
+          <td class="num"><span data-ledger="roe_website.processed_b">1.67 billion</span></td>
+          <td class="num"><span data-ledger="roe_website.non_cache_m">50 million</span></td>
         </tr>
       </tbody>
     </table>
@@ -116,40 +124,56 @@
     Claude Code sessions of Roe&rsquo;s one-week formalization measured
     <strong>9.23 billion processed tokens</strong> and 237.7 million
     excluding cache reads (6,918 Fable&nbsp;5 and 12,762 Opus&nbsp;4.8 API
-    calls) &mdash; the figures pinned in the published token audit. A fuller
+    calls), the figures pinned in the published token audit. A fuller
     recount for this page, which also sweeps every background subagent
     transcript and the Haiku&nbsp;4.5 housekeeping calls the audit omitted,
     reaches 9.44 billion processed and 256.7 million non-cache; the same
     fuller method produces the totals for categories 4 and 5.</p>
 
     <p><strong>4. Lean cleanup.</strong> After the proof was complete, Roe
-    ran a cleanup effort on the repository July 11&ndash;24: style and
+    ran a cleanup effort on the repository July 11&ndash;26: style and
     documentation passes over every file, splitting the six largest files,
     relicensing, axiom reduction, and responses to external review. The
-    <span data-ledger="roe_cleanup.sessions">6</span> sessions,
+    <span data-ledger="roe_cleanup.sessions">7</span> sessions,
     published as records in the
     <a href="../#view=list&amp;stage=roe-cleanup-corpus">cleanup corpus</a>,
-    measured <strong><span data-ledger="roe_cleanup.processed">967,545,263</span>
+    measured <strong><span data-ledger="roe_cleanup.processed">1,049,991,865</span>
     processed tokens</strong>
-    (<span data-ledger="roe_cleanup.non_cache">72,896,371</span> excluding cache
+    (<span data-ledger="roe_cleanup.non_cache">78,528,519</span> excluding cache
     reads). Most of the work ran in swarms of parallel subagents, which the
     ledger includes.</p>
 
-    <p><strong>5. Website and PaperForge.</strong> Roe&rsquo;s work on this
+    <p><strong>5. Square-commutator formalization.</strong> When GPT&nbsp;5.6
+    produced a proof note for the square-commutator candidate (the
+    presentation Fable&nbsp;5 had proposed in early June), Roe ran a second,
+    smaller formalization campaign July 24&ndash;26 to verify it in Lean:
+    the replacement theorem over the new source, the agreement of the two
+    admissible-marking semantics, and the in-repo proof of the required
+    Labute-classification instance, ending with the unconditional
+    <code>GQ2.main_presentation_literal_roe_unconditional</code> now cited
+    in the paper&rsquo;s Appendix&nbsp;C. Its
+    <span data-ledger="roe_squarecommutator.sessions">6</span> sessions
+    measured
+    <strong><span data-ledger="roe_squarecommutator.processed">1,258,420,413</span>
+    processed tokens</strong>
+    (<span data-ledger="roe_squarecommutator.non_cache">53,183,297</span>
+    excluding cache reads), again mostly in parallel-subagent swarms.</p>
+
+    <p><strong>6. Website and PaperForge.</strong> Roe&rsquo;s work on this
     site and on <a href="https://github.com/roed-math/paperforge">PaperForge</a>
-    &mdash; the paper pipeline, the development record, the interactive
-    pages, and this cost accounting itself &mdash; spans
-    <span data-ledger="roe_website.sessions">7</span> sessions from
+    (the paper pipeline, the development record, the interactive
+    pages, and this cost accounting itself) spans
+    <span data-ledger="roe_website.sessions">20</span> sessions from
     July 8 onward and measured
-    <strong><span data-ledger="roe_website.processed">1,185,990,978</span> processed
+    <strong><span data-ledger="roe_website.processed">1,672,989,483</span> processed
     tokens</strong>
-    (<span data-ledger="roe_website.non_cache">35,728,787</span> excluding cache
+    (<span data-ledger="roe_website.non_cache">49,758,838</span> excluding cache
     reads). This category is a moving snapshot: sessions were still active
     when the ledger was generated at
-    <span data-ledger="generated">2026-07-24T07:36:21Z</span>, and the numbers grow as the
-    site does &mdash; including by the act of writing this page.</p>
+    <span data-ledger="generated">2026-07-27T06:56:43Z</span>, and the numbers grow as the
+    site does, including by the act of writing this page.</p>
 
-    <p class="cost-note">One conversation predates all five categories:
+    <p class="cost-note">One conversation predates all six categories:
     Roe&rsquo;s own exchange with Fable&nbsp;5 (June 9&ndash;July 2), which
     produced a first candidate presentation that passed his finite-quotient
     verifier along with a partial proof, and which was set aside when
@@ -161,27 +185,27 @@
 
     <ul>
       <li><a href="../methods/token-accounting.json">Token audit</a>
-        (<a href="../methods/token-accounting.csv">CSV</a>) &mdash; the
+        (<a href="../methods/token-accounting.csv">CSV</a>): the
         published accounting for categories 1&ndash;3; its definitions,
         exclusions, and estimation method are recorded inside the JSON.</li>
       <li><a href="../corpora/q2-research-records.tar.gz">Research
-        conversation records</a> &mdash; every published record outside the
+        conversation records</a>: every published record outside the
         three session corpora (445 records: the search, the June campaign
         behind category 1, and the separate manual conversations), bundled
         byte-identical from the site&rsquo;s per-record files.</li>
       <li><a href="session-ledger.json">Per-session ledger</a>
-        (<a href="session-ledger.csv">CSV</a>) &mdash; deduplicated
+        (<a href="session-ledger.csv">CSV</a>): deduplicated
         per-session token totals for categories 3&ndash;5, generated for
         this page: dates, models, API calls, and token sums per session,
         subagent transcripts included.</li>
       <li><a href="../corpora/turturean-formalization-records.tar.gz">Turturean&rsquo;s
-        formalization archive</a> &mdash; the published record corpus behind
+        formalization archive</a>: the published record corpus behind
         category 2.</li>
       <li><a href="https://math.mit.edu/~roed/gq2-lean-session-logs.tar.gz">Roe&rsquo;s
-        formalization archive</a> &mdash; the twenty full session logs
+        formalization archive</a>: the twenty full session logs
         behind category 3, lightly redacted, hosted on MIT.</li>
       <li><a href="../corpora/gq2-lean-cleanup-session-logs.tar.gz">Roe&rsquo;s
-        cleanup archive</a> &mdash; the sanitized assistant-message
+        cleanup archive</a>: the sanitized assistant-message
         extraction behind category 4.</li>
     </ul>
 
@@ -195,13 +219,13 @@
     presentation and informal proof would have cost roughly
     <strong>$7,000</strong> and the formalizations would have cost roughly
     <strong>$30,000</strong> (both of these numbers have quite a bit of
-    variance &mdash; the largest single uncertainty is the rate attributed
+    variance; the largest single uncertainty is the rate attributed
     to ChatGPT&nbsp;Pro&rsquo;s hidden reasoning, which is not billed or
     metered per token in the browser). The two later categories are
     smaller: at current Claude list prices the cleanup sessions translate
-    to roughly <span data-ledger="roe_cleanup.usd">$1,700</span> of API
+    to roughly <span data-ledger="roe_cleanup.usd">$1,800</span> of API
     usage and the website and PaperForge work to roughly
-    <span data-ledger="roe_website.usd">$1,600</span> more.</p>
+    <span data-ledger="roe_website.usd">$2,300</span> more.</p>
 
     <p>However, the authors did not spend nearly this much, for two
     reasons. First, fully utilizing a subscription provides vast leverage:
@@ -240,7 +264,7 @@
     category, model output is 0.5&ndash;1% of the processed total and cache
     reads are 92&ndash;97%. The bill was not for writing proofs; it was for
     holding long-lived contexts warm. Roe&rsquo;s formalization made 21,852
-    API calls averaging roughly 430,000 processed tokens <em>each</em> &mdash;
+    API calls averaging roughly 430,000 processed tokens <em>each</em>,
     nearly all of it the same repository context, ticket boards, and
     conversation history re-read from cache on every call. Turturean&rsquo;s
     Codex lanes have the same shape (about 98% of GPT-5.6 input was served
@@ -251,7 +275,7 @@
     cleanup phase ran as an orchestrator dispatching per-file workers that
     started fresh, did one job against a tight brief, and reported back; its
     average call carried about 160,000 processed tokens, versus 430,000 in
-    the formalization&rsquo;s long-lived lanes &mdash; a 2.7&times; lighter
+    the formalization&rsquo;s long-lived lanes, a 2.7&times; lighter
     context per call. The formalization&rsquo;s hardest design work genuinely
     needed shared context, but a larger share of its well-specified tickets
     could have run worker-style from the start, and that is the single
@@ -264,8 +288,8 @@
     two <code>sorry</code> placeholders left while the board still listed
     open tickets, and two lanes raced to fill neighboring fields of the same
     structure. Cheap, frequent, automated status sweeps computed from the
-    compiler&rsquo;s ground truth &mdash; rather than from anyone&rsquo;s
-    bookkeeping &mdash; would have kept the lanes from re-deriving each
+    compiler&rsquo;s ground truth, rather than from anyone&rsquo;s
+    bookkeeping, would have kept the lanes from re-deriving each
     other&rsquo;s state. Related version-control losses (a harness reset
     that discarded uncommitted edits, an over-broad <code>git add</code>)
     turned hours of work into re-spend; commit-immediately-after-green and
@@ -280,10 +304,10 @@
     alone is the fix.</p>
 
     <p><strong>Route work down-tier by default.</strong> The project already
-    routed by difficulty &mdash; design-heavy tickets to Fable&nbsp;5,
+    routed by difficulty: design-heavy tickets to Fable&nbsp;5,
     well-specified ones to Opus&nbsp;4.8 (13,103 and 7,716 calls
     respectively in the formalization recount), housekeeping to
-    Haiku&nbsp;4.5 (1,033 calls) &mdash; and the cleanup phase showed the
+    Haiku&nbsp;4.5 (1,033 calls). The cleanup phase showed the
     mechanical end of the spectrum runs fine on delegated workers. Pushing
     lint fixes, file splits, and documentation passes further down-tier,
     with escalation only on failure, is cheap to try and easy to reverse.</p>
@@ -298,9 +322,9 @@
     hundred responses sooner.</p>
 
     <p><strong>What we would not economize.</strong> The redundancy that
-    looks most expensive on this page &mdash; two separately initiated
+    looks most expensive on this page (two separately initiated
     formalizations, fresh-context adversarial reviews, exhaustive
-    finite-quotient testing &mdash; is what made the result trustworthy,
+    finite-quotient testing) is what made the result trustworthy,
     and the reviews in particular were among the cheapest line items per
     unit of value: A2&rsquo;s fatal flaw and the manuscript&rsquo;s false
     proposition were both found by short review threads, not by the long

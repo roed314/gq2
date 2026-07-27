@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A five-component complexity comparison of three presentations of the absolute Galois group of the 2-adic numbers — the collector, square-commutator, and twisted-square presentations — measuring word length and the difficulty of each stage of the proof.">
+<meta name="description" content="A five-component complexity comparison of three presentations of the absolute Galois group of the 2-adic numbers (the collector, square-commutator, and twisted-square presentations), measuring word length and the difficulty of each stage of the proof.">
 <title>Comparing the presentations · A Presentation of the Absolute Galois Group of Q₂</title>
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
@@ -30,8 +30,8 @@
 <!-- Page assembled by Claude (Fable 5), 2026-07-26, summarizing the
      complexity-comparison note authored by GPT the same day
      (presentation-complexity-comparison.tex at the repository root; the PDF
-     is served alongside this page). The structural names — collector,
-     square-commutator, twisted-square — are introduced on this page; the
+     is served alongside this page). The structural names (collector,
+     square-commutator, twisted-square) are introduced on this page; the
      note calls the same objects the paper, Roe, and hybrid presentations.
      2026-07-26 (Claude, Opus 5): the twisted-square presentation passed the
      padicIGP verifier (5402/5402 test groups), so the two statements that it
@@ -39,7 +39,7 @@
      2026-07-26 (Claude, Fable 5): the square-commutator presentation is now
      proved and formalized (Appendix C of the paper), so the two places that
      called it unproven are updated. The complexity scores are again
-     unaffected — the model measures the presentations, not their status.
+     unaffected: the model measures the presentations, not their status.
      The Limitations note that a new Nielsen transformation might lower two of
      its coordinates is also updated: the appendix proves no triple of words
      identifies the two maximal pro-2 quotients, so no such transformation
@@ -143,6 +143,46 @@
     </div>
   </details>
 
+  <h2 id="status-badges">Status badges</h2>
+
+  <p class="section-intro" style="max-width: 132ch;">Every candidate card on
+  the <a href="../">presentations page</a> and on this page carries a status
+  badge from a fixed five-level scale.  "Proven" on its own is too compressed
+  for this project, where a claim can be proved in the manuscript, checked in
+  Lean modulo the axiom census, proved equivalent to a proven presentation,
+  or merely supported through a finite range of tests.  Solid badges mark
+  theorem-level status, outlined badges mark experimental status, and red
+  badges mark refuted proposals.</p>
+
+  <dl class="badge-legend" style="max-width: 132ch;">
+    <div><dt><span class="badge badge-solid">Manuscript theorem</span></dt>
+    <dd>Proved in the current manuscript with a complete human-readable
+    proof (in the main text or an appendix).</dd></div>
+    <div><dt><span class="badge badge-solid">Lean-checked</span></dt>
+    <dd>The statement has a <code>sorry</code>-free Lean&nbsp;4 proof resting
+    only on the project's <a href="../../formalizations/axioms/">nine named
+    external interfaces</a>; "&#215;2" means two independently initiated
+    formalizations.</dd></div>
+    <div><dt><span class="badge badge-solid">Proved-equivalent
+    reformulation</span></dt>
+    <dd>Obtained from a proven presentation by an explicit change of
+    generators (Nielsen or Tietze moves), so its correctness follows from
+    the proven one.  No current candidate carries this badge; it is defined
+    for future proposals.</dd></div>
+    <div><dt><span class="badge">Verifier-supported</span></dt>
+    <dd>Passed the <a href="../../verifier/">finite-quotient verifier</a> on
+    all 5,402 test groups.  Strong evidence, not a proof.  An amber
+    qualifier badge records any additional non-formal evidence (an AI proof
+    sketch, or an AI-checked but unformalized proof).</dd></div>
+    <div><dt><span class="badge badge-neutral">Untested candidate</span></dt>
+    <dd>Proposed, but not yet run through the verifier and without a
+    proof.</dd></div>
+    <div><dt><span class="badge badge-red">Verifier-failed</span>
+    <span class="badge badge-red">Incorrect</span></dt>
+    <dd>Refuted: the verifier found a finite group with the wrong count, or
+    a direct computation showed the proposal wrong.</dd></div>
+  </dl>
+
   <h2>The model</h2>
 
   <p class="section-intro" style="max-width: 132ch;">A single number cannot
@@ -195,16 +235,16 @@
     </table>
   </div>
   <ul class="cmp-list">
-    <li>$C_{\text{pro-2}}$ — the work needed to identify the maximal
+    <li>$C_{\text{pro-2}}$: the work needed to identify the maximal
       pro-$2$ quotient abstractly with the rank-three dyadic Demushkin
       group;</li>
-    <li>$C_{\text{Fox}}$ — the candidate-specific work needed to obtain the
+    <li>$C_{\text{Fox}}$: the candidate-specific work needed to obtain the
       evaluated simple-factor Fox Jacobian, the linear (first-order) input
       to the deformation argument;</li>
-    <li>$C_{\text{quad}}$ — the work needed to identify the mixed Heisenberg
+    <li>$C_{\text{quad}}$: the work needed to identify the mixed Heisenberg
       pairing and the extraspecial determinant quadratic form, the
       class-two (second-order) input;</li>
-    <li>$C_{\text{mark}}$ — the additional work needed to pin down the full
+    <li>$C_{\text{mark}}$: the additional work needed to pin down the full
       integral unramified character, not merely its reduction
       modulo&nbsp;$2$.</li>
   </ul>
@@ -214,7 +254,7 @@
   initial form while placing the unramified $\mathbb{Z}_2$-coordinate
   differently in their abelianizations. And one caveat applies throughout:
   the scores measure the proof route furnished by the methods of the paper.
-  They are not evidence of correctness — the collector presentation remains
+  They are not evidence of correctness: the collector presentation remains
   the only proven one.</p>
 
   <h2>The scores</h2>
@@ -239,7 +279,7 @@
   presentation is decisively shortest in this grammar. (The twisted-square
   split charges $(x_0d^{-1})^{\sigma_2^2}x_0d$ as one reusable block;
   counting straight off the displayed relator instead gives $7$ definitions
-  and $13$ relator operations — the same total.)</p>
+  and $13$ relator operations, the same total.)</p>
 
   <p class="section-intro" style="max-width: 132ch;"><strong>Pro-$2$ quotient
   and integral marking.</strong> In a finite $2$-group quotient $\tau$ dies
@@ -248,7 +288,7 @@
   the <em>same</em> relation, $x_0^{\sigma^2}x_0[x_1,\sigma]=1$, and an
   explicit <a class="knowl-open" href="#knowl-nielsen">Nielsen
   substitution</a> identifies it with the standard marked Demushkin
-  presentation — abstract identification and integral marking in one stroke,
+  presentation: abstract identification and integral marking in one stroke,
   so both presentations score $1$ on both coordinates. The square-commutator
   relator collapses instead to
   $(x_0^\sigma)^{-1}x_0^{-3}x_1^2[x_1,x_1^\sigma]=1$; its degree-two initial
@@ -289,13 +329,13 @@
   <p class="section-intro" style="max-width: 132ch;"><strong>First order:
   Fox calculus.</strong> All three presentations share the tame row of the
   <a class="knowl-open" href="#knowl-jacobian">evaluated Fox Jacobian</a>,
-  and all three land on essentially the same matrix — the square-commutator
+  and all three land on essentially the same matrix: the square-commutator
   Jacobian is the collector Jacobian with its two wild columns interchanged.
   The difference is the work needed to get there. The square-commutator
   relator differentiates directly (its square and commutator have vanishing
   first derivative in characteristic $2$): score $1$. The collector
-  presentation needs a separate shadow lemma — that the long word $h_0$ has
-  the elementary shadow of $x_0^2$ — extracted from the full finite-word
+  presentation needs a separate shadow lemma (that the long word $h_0$ has
+  the elementary shadow of $x_0^2$) extracted from the full finite-word
   ledger: score $3$. The twisted-square block&#x2019;s first derivative
   vanishes by a short two-case split: score $2$.</p>
 
@@ -320,14 +360,14 @@
 
   <p class="section-intro" style="max-width: 132ch;"><strong>Second order:
   the quadratic layer.</strong> The sharpest separation is at class two.
-  The square-commutator relator wears its quadratic data on its sleeve: the
+  The square-commutator relator wears its quadratic data on its sleeve; the
   literal square and commutator directly give the normalized form
   $q(d)+b_q(d,\mathsf{U}^{-1}d)$, where $q$ is the extraspecial determinant
-  form and $b_q$ its polar pairing — score $1$. The twisted-square block is
+  form and $b_q$ its polar pairing: score $1$. The twisted-square block is
   governed by a <a class="knowl-open" href="#knowl-square-identity">two-case
   square identity</a> in central extensions showing it carries exactly the
-  class-two data of $x_0^2$ — score $2$. The collector presentation reaches
-  the same conclusion only through the full collector ledger — score $3$.
+  class-two data of $x_0^2$: score $2$. The collector presentation reaches
+  the same conclusion only through the full collector ledger: score $3$.
   The three resulting forms agree: the collector and twisted-square forms
   coincide outright, and match the square-commutator form after exchanging
   the wild coordinates.</p>
@@ -383,7 +423,7 @@
       </div>
       <p>Shortest and cohomologically simplest. The best choice when the
       goal is the shortest theorem statement or the smallest
-      candidate-specific Fox calculation — at the price of a genuinely
+      candidate-specific Fox calculation, at the price of a genuinely
       $2$-adic marked normalization.</p>
     </div>
     <div class="resource-card">
@@ -393,7 +433,7 @@
       </div>
       <p>Simplest balanced marked proof. The best choice when the goal is to
       minimize the complete proof while keeping the full unramified marking
-      explicit — at the price of eight more straight-line operations.</p>
+      explicit, at the price of eight more straight-line operations.</p>
     </div>
   </div>
 
@@ -422,7 +462,7 @@
   not an artifact of not having looked hard enough. Conversely, a different
   proof strategy could make the full finite
   word, rather than its first two jets, the dominant cost. The length
-  coordinate depends on the chosen grammar — charging $\omega_2$-powers by
+  coordinate depends on the chosen grammar: charging $\omega_2$-powers by
   their cost in finite quotients would change all three totals. What the
   conventions buy is not canonicity but reproducibility.</p>
 </main>

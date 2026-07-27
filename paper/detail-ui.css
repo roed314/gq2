@@ -61,14 +61,17 @@ body.notation-links-off [class*="ptxnotn-"]:hover {
   background: #22262b; color: #e8e8e8; border-color: rgba(255,255,255,.18);
 }
 
-/* ============ Formalization badges (<lean> as child of a theorem block) ============ */
-article.theorem-like > .lean-link, section > .lean-link {
+/* ============ Formalization badges (<lean> as child of a theorem block,
+   and inline in the intro trust-base table's dl) ============ */
+article.theorem-like > .lean-link, section > .lean-link,
+.ptx-content dl .lean-link {
   display: inline-block; font-size: .78rem; font-family: ui-monospace, monospace;
   padding: .1rem .5rem; margin: .2rem .3rem .2rem 0;
   border: 1px solid rgba(25,100,60,.4); border-radius: 999px;
   background: rgba(40,160,90,.08); text-decoration: none;
 }
-article.theorem-like > .lean-link::before { content: "⚙ "; }
+article.theorem-like > .lean-link::before,
+.ptx-content dl .lean-link::before { content: "⚙ "; }
 /* Two independent formalizations, distinguished by color:
    gq2-claude (the GQ2 library) keeps the green above;
    gq2-gpt (Q2Presentation) gets indigo. Tooltips name the project. */
@@ -214,7 +217,8 @@ details.hiddenproof:not([open]) .detail-next-btn { display: none; }
   color: #f2f2f2;
 }
 :root.dark-mode article.theorem-like > .lean-link,
-:root.dark-mode section > .lean-link {
+:root.dark-mode section > .lean-link,
+:root.dark-mode .ptx-content dl .lean-link {
   border-color: rgba(120, 200, 150, 0.45);
 }
 :root.dark-mode .ptx-content .lean-link.lean-proj-gq2-gpt {

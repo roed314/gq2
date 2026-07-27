@@ -8,6 +8,8 @@
   --paper: #f6f6f3;
   --card: #ffffff;
   --line: #dcdedb;
+  --panel: #f0f1ee;             /* inset panels; matches dashboard.css */
+  --focus: #2169a8;             /* :target and focus outlines; matches dashboard.css */
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -18,6 +20,8 @@
     --paper: #16181c;
     --card: #1e2126;
     --line: #33373d;
+    --panel: #22262b;
+    --focus: #77b7ea;
   }
 }
 @font-face {
@@ -128,6 +132,16 @@ footer .vknowl-panel {
   text-align: left;
 }
 footer .vknowl-panel[hidden] { display: none; }
+footer .vknowl-panel pre {
+  margin: 0 0 0.5rem;
+  padding: 0.55rem 0.8rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--panel);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
 
 /* Homepage background knowls: dashed-underline terms opening an inline
    panel extracted from the paper's background appendix (bg-knowls.js). */
@@ -157,6 +171,29 @@ footer .vknowl-panel[hidden] { display: none; }
   margin-bottom: 0.35rem;
 }
 .bg-knowl-foot { margin-top: 0.4rem; font-size: 0.9rem; }
+/* Statement knowls carry the paper's display equations and Lean badges.
+   Wide equations scroll inside the panel rather than widening the column. */
+.bg-knowl-panel .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.15rem 0;
+  margin: 0.6rem 0;
+}
+.bg-knowl-panel .para { margin: 0.4rem 0; }
+.bg-knowl-panel .lean-link {
+  display: inline-block;
+  margin: 0.3rem 0.35rem 0 0;
+  padding: 0.02rem 0.55rem;
+  font-size: 0.78rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  text-decoration: none;
+}
+.bg-knowl-panel .lean-link:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
 
 /* Status-badge legend (presentations comparison page, #status-badges). */
 .badge-legend { margin: 0 auto 1.5rem; }

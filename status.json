@@ -1,11 +1,21 @@
 {
-  "_comment": "Single machine-readable source for project status and version identifiers (review 2026-07-26 \u00a73.1/\u00a73.2). scripts/gen-status.py renders this into the status:begin/end and versions:begin/end marker blocks of the site pages and verifies it against the live artifacts (axiom census, submodule pins); the build fails on drift. Fields ending in _auto are refreshed by the script \u2014 edit the others by hand.",
+  "_comment": "Single machine-readable source for project status and version identifiers (review 2026-07-26 \u00a73.1/\u00a73.2). paperforge sitegen/gen_status.py renders this into the status:begin/end and versions:begin/end marker blocks of the site pages and verifies it against the live artifacts (axiom census, submodule pins); the build fails on drift. Fields ending in _auto are refreshed by the script \u2014 edit the others by hand.",
   "manuscript_date": "July 26, 2026",
   "status_date": "July 26, 2026",
   "review_status": "Current manuscript, not yet externally peer reviewed.",
   "axiom_interfaces": 9,
   "verifier_groups": 5402,
   "verifier_dataset": "padicIGP verification DATA/2 (5,402 potentially 2-realizable test groups)",
+  "verifier": {
+    "repo": "https://github.com/roed314/padicIGP",
+    "repo_commit": "a8fd2662ff8726059bee61aaf0720e23f9db3bba",
+    "dataset_sha256": {
+      "gps.txt": "c9232d8dccd3f8c36496a6bb8737e995dbd503333ca9e85506a7e0a7826d0137",
+      "cnts.txt": "8fcc008adce2bf9c33ab013ca6c8f87052e09e92b680e53284f8e825bcb6eedb",
+      "rel.txt": "c1b8a0baa8757d39a6c3d724e025bf4904293dfe3bee8dee3514d484472ba770"
+    },
+    "artifacts": "verifier/gps.txt, verifier/cnts.txt, verifier/rel.txt (mirrored from the pinned commit)"
+  },
   "formalizations": {
     "gq2-claude": {
       "name": "Roe formalization",
@@ -23,6 +33,6 @@
       "mathlib_commit_auto": "8f9d9cf"
     }
   },
-  "pdf_sha256_auto": "b970a92625ce5bede8da98419f81b5660eb4bc650b3c363def85795b3b643207",
-  "pdf_pages_auto": 91
+  "pdf_sha256_auto": "5bb48731c45d83e686204653995062465ad1e92884fd83ef431a3a55ea0f1de2",
+  "pdf_pages_auto": 92
 }

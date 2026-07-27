@@ -54,7 +54,10 @@
   <p class="section-intro" style="max-width: 132ch;">Three of the proposed
   presentations of $\operatorname{Gal}(\overline{\mathbb{Q}}_2/\mathbb{Q}_2)$
   are developed enough to compare head to head: the presentation proved in
-  the paper, David Roe&#x2019;s shorter verifier-passed candidate, and a new
+  the paper, David Roe&#x2019;s shorter presentation (verifier-passed when
+  this comparison was built, since proved in
+  <a href="../../paper/paper.html#app-squarecommutator">Appendix&nbsp;C</a>
+  and checked in Lean), and a new
   hybrid that GPT proposed on July&nbsp;26, 2026 in the course of building
   exactly this comparison. This page fixes names for the three, explains the
   comparison model, and records its conclusions; the complete calculation is
@@ -421,8 +424,8 @@
         <span class="res-title-soon">Square-commutator</span>
         <span class="badge">Pareto-optimal</span>
       </div>
-      <p>Shortest and cohomologically simplest. The best choice when the
-      goal is the shortest theorem statement or the smallest
+      <p>Shortest and cohomologically simplest. Favored by this scoring
+      model when the goal is the shortest theorem statement or the smallest
       candidate-specific Fox calculation, at the price of a genuinely
       $2$-adic marked normalization.</p>
     </div>
@@ -431,9 +434,10 @@
         <span class="res-title-soon">Twisted-square</span>
         <span class="badge">Pareto-optimal</span>
       </div>
-      <p>Simplest balanced marked proof. The best choice when the goal is to
-      minimize the complete proof while keeping the full unramified marking
-      explicit, at the price of eight more straight-line operations.</p>
+      <p>Simplest balanced marked proof. Favored by this scoring model when
+      the goal is to minimize the complete proof while keeping the full
+      unramified marking explicit, at the price of eight more straight-line
+      operations.</p>
     </div>
   </div>
 

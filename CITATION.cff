@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you reference this project, please cite the manuscript below."
+title: "A Presentation of the Absolute Galois Group of the 2-adic Numbers (project site)"
+authors:
+  - family-names: Roe
+    given-names: David
+  - family-names: Turturean
+    given-names: David
+url: "https://roed314.github.io/gq2/"
+date-released: 2026-07-26
+preferred-citation:
+  type: unpublished
+  title: "A Presentation of the Absolute Galois Group of Q_2"
+  authors:
+    - family-names: Roe
+      given-names: David
+    - family-names: Turturean
+      given-names: David
+  year: 2026
+  url: "https://roed314.github.io/gq2/"
+  notes: "Manuscript; not yet externally peer reviewed. This URL is the canonical location until an archival preprint is posted."

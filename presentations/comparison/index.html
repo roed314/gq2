@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A five-component complexity comparison of three presentations of the absolute Galois group of the 2-adic numbers — the collector, square-commutator, and twisted-square presentations — measuring word length and the difficulty of each stage of the proof.">
 <title>Comparing the presentations · A Presentation of the Absolute Galois Group of Q₂</title>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../site.css">
 <link rel="stylesheet" href="../../vendor/katex.min.css">
 <script defer src="../../vendor/katex.min.js"></script>
@@ -29,7 +32,18 @@
      (presentation-complexity-comparison.tex at the repository root; the PDF
      is served alongside this page). The structural names — collector,
      square-commutator, twisted-square — are introduced on this page; the
-     note calls the same objects the paper, Roe, and hybrid presentations. -->
+     note calls the same objects the paper, Roe, and hybrid presentations.
+     2026-07-26 (Claude, Opus 5): the twisted-square presentation passed the
+     padicIGP verifier (5402/5402 test groups), so the two statements that it
+     was untested are updated. The complexity scores are unaffected.
+     2026-07-26 (Claude, Fable 5): the square-commutator presentation is now
+     proved and formalized (Appendix C of the paper), so the two places that
+     called it unproven are updated. The complexity scores are again
+     unaffected — the model measures the presentations, not their status.
+     The Limitations note that a new Nielsen transformation might lower two of
+     its coordinates is also updated: the appendix proves no triple of words
+     identifies the two maximal pro-2 quotients, so no such transformation
+     exists. -->
 
 <header class="page-header">
   <a class="back" href="../">&#8592; The Presentations</a>
@@ -97,7 +111,9 @@
   <details class="knowl" id="knowl-square-commutator">
     <summary>The square-commutator presentation</summary>
     <div class="knowl-panel">
-      <p class="knowl-note">Verifier-passed but unproven; found by David Roe
+      <p class="knowl-note">Verifier-passed, and proved and formalized on
+      July&nbsp;26, 2026 (<a href="../../paper/paper.html#app-squarecommutator">Appendix&nbsp;C</a>);
+      found by David Roe
       with Fable&nbsp;5 on June&nbsp;10, 2026. Named for the literal
       square-and-commutator block $x_1^2[x_1,x_1^{\sigma_2}]$ that closes its
       relator.</p>
@@ -115,7 +131,7 @@
     <summary>The twisted-square presentation</summary>
     <div class="knowl-panel">
       <p class="knowl-note">Proposed by GPT on July&nbsp;26, 2026, together
-      with this comparison; not yet verifier-tested. Named for its principal
+      with this comparison; verifier-passed the same day. Named for its principal
       block $(x_0d^{-1})^{\sigma_2^2}x_0d$, which equals the twisted square
       $y^{\sigma_2^2}y\,d^2$ for $y=x_0d^{-1}$.</p>
       <p>Put</p>
@@ -382,20 +398,29 @@
   </div>
 
   <p class="section-intro" style="max-width: 132ch;">None of this changes
-  the epistemic ordering: the collector presentation is proven and
-  formalized, the square-commutator presentation is verifier-passed but
-  unproven, and the twisted-square presentation has an AI proof sketch along
-  the paper&#x2019;s architecture but has not yet been run through the
-  <a href="../../verifier/">finite-quotient verifier</a>.</p>
+  the epistemic ordering: the collector and square-commutator presentations
+  are both proven and formalized, the second in
+  <a href="../../paper/paper.html#app-squarecommutator">Appendix&nbsp;C</a>,
+  unconditionally and on the same axiom base as the first. The twisted-square
+  presentation has passed the
+  <a href="../../verifier/">finite-quotient verifier</a> but remains unproven,
+  carrying an AI proof sketch along the paper&#x2019;s
+  architecture that has not itself been checked.</p>
 
   <h2>Limitations</h2>
 
   <p class="section-intro" style="max-width: 132ch;">The four proof-stage
   scores are ordinal assessments, not intrinsic invariants: they presuppose
   the proof architecture of the paper and treat the integral marking as a
-  separate load-bearing input. A new explicit Nielsen transformation for the
-  square-commutator pro-$2$ relator would lower two of its coordinates at a
-  stroke; conversely, a different proof strategy could make the full finite
+  separate load-bearing input. The square-commutator presentation&#x2019;s two
+  marking coordinates looked at first like a gap that a new explicit Nielsen
+  transformation might close; the proof in
+  <a href="../../paper/paper.html#app-squarecommutator">Appendix&nbsp;C</a>
+  settles that the other way, by showing that no triple of words in the
+  generators of either pro-$2$ quotient generates the other and satisfies its
+  relation, so those coordinates are a real feature of the presentation and
+  not an artifact of not having looked hard enough. Conversely, a different
+  proof strategy could make the full finite
   word, rather than its first two jets, the dominant cost. The length
   coordinate depends on the chosen grammar — charging $\omega_2$-powers by
   their cost in finite quotients would change all three totals. What the

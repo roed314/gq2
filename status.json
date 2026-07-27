@@ -1,0 +1,28 @@
+{
+  "_comment": "Single machine-readable source for project status and version identifiers (review 2026-07-26 \u00a73.1/\u00a73.2). scripts/gen-status.py renders this into the status:begin/end and versions:begin/end marker blocks of the site pages and verifies it against the live artifacts (axiom census, submodule pins); the build fails on drift. Fields ending in _auto are refreshed by the script \u2014 edit the others by hand.",
+  "manuscript_date": "July 26, 2026",
+  "status_date": "July 26, 2026",
+  "review_status": "Current manuscript, not yet externally peer reviewed.",
+  "axiom_interfaces": 9,
+  "verifier_groups": 5402,
+  "verifier_dataset": "padicIGP verification DATA/2 (5,402 potentially 2-realizable test groups)",
+  "formalizations": {
+    "gq2-claude": {
+      "name": "Roe formalization",
+      "repo": "https://github.com/roed-math/gq2-lean",
+      "commit_auto": "0ffb390",
+      "mathlib_note": "Mathlib pinned June 12, 2026",
+      "mathlib_commit_auto": "ec410d2",
+      "toolchain_auto": "leanprover/lean4:v4.31.0-rc2"
+    },
+    "gq2-gpt": {
+      "name": "Turturean formalization",
+      "repo": "https://github.com/davidturturean/gq2-lean-turturean",
+      "commit_auto": "e868b9e",
+      "toolchain_auto": "leanprover/lean4:v4.28.0",
+      "mathlib_commit_auto": "8f9d9cf"
+    }
+  },
+  "pdf_sha256_auto": "076b07f1bb8bd33d1b26d4659e74993aed864b4cf6dd3c061e79b6cd6707ae07",
+  "pdf_pages_auto": 92
+}

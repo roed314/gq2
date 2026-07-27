@@ -1,0 +1,429 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>GQ2.Roe.WildRow</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="GQ2.Roe.WildRow";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">GQ2</span>.<span class="name">Roe</span>.<span class="name">WildRow</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././GQ2/FoxHeisenberg/WildRow.html">GQ2.FoxHeisenberg.WildRow</a></li><li><a href="../.././GQ2/Roe/FoxBasic.html">GQ2.Roe.FoxBasic</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-GQ2.Roe.WildRow" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_conjP_x0_sigma_u"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_conjP_x0_sigma_u</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_aR_g_smul"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_aR_g_smul</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_aR_u"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_aR_u</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_aR_g_ramified"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_aR_g_ramified</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_aR_u_ramified"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_aR_u_ramified</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_x1_sq_g_smul"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_x1_sq_g_smul</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_x1_sq_u"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_x1_sq_u</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_y1R_g_smul"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_y1R_g_smul</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_cR_g_smul"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_cR_g_smul</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_cR_u"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_cR_u</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_wildValueR_u"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_wildValueR_u</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_wildValueR_u_ramified"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_wildValueR_u_ramified</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_wildValueR_u_eq_swap"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_wildValueR_u_eq_swap</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.liftMarking_wildValueR_u_ramified_eq_swap"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_wildValueR_u_ramified_eq_swap</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.d1FunR_of_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">d1FunR_of_trivial</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.FoxH.d1R_of_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">d1R_of_trivial</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Proposition-4-1-the-evaluated-wild-Fox-row-of-the-Roe-relator-prop-jacobian" class="markdown-heading">Proposition 4.1: the evaluated wild Fox row of the Roe relator  (⟦prop:jacobian⟧) <a class="hover-link" href="#Proposition-4-1-the-evaluated-wild-Fox-row-of-the-Roe-relator-prop-jacobian">#</a></h1><p>The <code>Γ_R</code> counterpart of <code><a href="../.././GQ2/FoxHeisenberg/WildRow.html">GQ2.FoxHeisenberg.WildRow</a></code>: at a tame lower map (the wild inertia
+<code>x₀, x₁</code> acting trivially on the coefficient module <code>V</code>) the first Fox derivatives of the four
+factors of</p><p><code>r_R = (x₀^σ)⁻¹ · a · x₁² · c</code>,   <code>a = (x₀⁻³τ)^{ω₂}</code>,   <code>c = [x₁, x₁^{σ₂}]</code></p><p>collapse to plain <code>𝔽₂</code>-combinations of the lift offsets <code>x</code> (indices <code>0,1,2,3 = σ,τ,x₀,x₁</code>;
+the note's lift variables <code>(a, b, c, d)</code>), giving the wild row of the note's display
+⟦eq:jacobian⟧</p><p><code>d¹_{R,ρ,V} = [ S⁻¹(1+T)  S⁻¹+1+T  0  0 ;  0  P  P+S⁻¹  0 ]</code>.</p><p>Per-factor ledger (the note's proof of ⟦prop:jacobian⟧, quoted):</p><ul><li>&quot;<code>D((x₀^σ)⁻¹) = S⁻¹c</code>&quot; — <code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_conjP_x0_sigma_u">liftMarking_conjP_x0_sigma_u</a></code> (+ the char-2 sign flip in the
+assembled rows);</li><li>&quot;For <code>g = x₀⁻³τ</code>, one has <code>Dg = (−3)c + b = c + b</code> in characteristic 2, and <code>g</code> acts on <code>V</code>
+as <code>T</code>.  The profinite power/norm rule used in [RT Lemma 5.5] gives <code>D(g^{ω₂}) = P(c+b)</code>&quot; —
+<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_aR_u">liftMarking_aR_u</a></code> (split, <code>T = 1</code>, <code>P = 1</code>) and <code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_aR_u_ramified">liftMarking_aR_u_ramified</a></code> (<code>V^T = 0</code>,
+<code>P = 0</code>), via <code>WordLift.powOmega2_u_of_trivial</code> / <code>powOmega2_u_of_oddFixedPointFree</code>;</li><li>&quot;<code>D(x₁²) = (1+1)d = 0</code>&quot; — <code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_x1_sq_u">liftMarking_x1_sq_u</a></code>;</li><li>&quot;both entries of <code>[x₁, x₁^{σ₂}]</code> act trivially, so its first derivative is zero&quot; —
+<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_cR_u">liftMarking_cR_u</a></code> (<code>WordLift.commP_u_of_trivial</code>; no <code>σ₂</code>-hypothesis — <code>σ₂</code> is only a
+conjugator in <code>r_R</code>).</li></ul><p>Assembled rows: <strong>split</strong> <code>L_w = b + (1 + S⁻¹)c</code> (<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_wildValueR_u">liftMarking_wildValueR_u</a></code>); <strong>ramified</strong>
+<code>L_w = S⁻¹c</code> (<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_wildValueR_u_ramified">liftMarking_wildValueR_u_ramified</a></code>) — the note's <code>L_w = Pb + (P + S⁻¹)c</code> at
+<code>P = 1</code> resp. <code>P = 0</code>.  The note's &quot;Thus it is exactly the matrix in [RT (5.4)] after
+interchanging the two wild columns&quot; is mechanised by the stress tests
+<code>liftMarking_wildValueR_u_eq_swap(_ramified)</code>.</p><p>Also here, the first half of Lemma 4.3 ⟦lem:trivial⟧: &quot;For <code>V = 𝔽₂</code> with trivial action,
+<code>d¹_R(a,b,c,d) = (b,b)</code>&quot; (<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.d1FunR_of_trivial">d1FunR_of_trivial</a></code>/<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.d1R_of_trivial">d1R_of_trivial</a></code> — set <code>S = T = P = 1</code> in
+⟦eq:jacobian⟧); the Gram second half ⟦eq:scalarform⟧ is ticket R25.</p><p>Organisation mirrors <code><a href="../.././GQ2/FoxHeisenberg/WildRow.html">GQ2/FoxHeisenberg/WildRow.lean</a></code> 1:1 (per-factor <code>u</code>-ledger and
+base-triviality lemmas, then the assembled rows), so the <code>Γ_A</code> ↔ <code>Γ_R</code> correspondence is
+line-readable; this file is far shorter — <code>r_R</code> has no class-two <code>h₀</code>-word, and two of its four
+factors have zero first derivative outright.</p></div><div class="decl" id="GQ2.FoxH.liftMarking_conjP_x0_sigma_u"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L67-L75">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_conjP_x0_sigma_u"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_conjP_x0_sigma_u</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx0</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/Words.html#GQ2.conjP">conjP</a> <span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span> <span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.σ">σ</a></span>)</span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.σ">σ</a></span><span class="fn">⁻¹</span></span> <span class="fn">•</span> <span class="fn"><span class="fn">x</span> <span class="fn">2</span></span></span></span></div></div><p><strong><code>D(x₀^σ) = S⁻¹·x₂</code></strong> (tame case): conjugating by <code>σ</code> shifts the <code>x₀</code>-offset by <code>t.σ⁻¹</code>,
+and the <code>σ</code>-offsets contributed by the two <code>σ</code>'s cancel — the <code>x₀</code>-analogue of
+<code>liftMarking_conjP_x1_sigma_u</code>.  (The relator's first factor is the <em>inverse</em>; the char-2 sign
+flip happens in the assembled rows.)</p></div></div><div class="mod_doc"><h3 id="The-a-=-x₀⁻³τ-^-ω₂-ledger" class="markdown-heading">The <code>a = (x₀⁻³τ)^{ω₂}</code>-ledger <a class="hover-link" href="#The-a-=-x₀⁻³τ-^-ω₂-ledger">#</a></h3><p>The base word <code>x₀⁻³τ</code> acts as <code>T</code> on <code>V</code> (the <code>x₀</code>-part is trivial), so the <code>ω₂</code>-power collapses
+by <code>powOmega2_u_of_trivial</code> in the split case and is annihilated by
+<code>powOmega2_u_of_oddFixedPointFree</code> in the ramified case — the note's <code>D(g^{ω₂}) = P(c+b)</code>.</p></div><div class="decl" id="GQ2.FoxH.liftMarking_aR_g_smul"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L99-L103">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_aR_g_smul"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_aR_g_smul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx0</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htau</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn">V</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.aR">aR</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.g">g</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></div></div><p><strong>Split base-triviality of <code>a</code></strong>: any <code>ω₂</code>-power of a trivially-acting base acts
+trivially.</p></div></div><div class="decl" id="GQ2.FoxH.liftMarking_aR_u"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L105-L126">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_aR_u"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_aR_u</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hV₂</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn">v</span> <span class="fn">+</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx0</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htau</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.aR">aR</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">x</span> <span class="fn">2</span></span> <span class="fn">+</span> <span class="fn"><span class="fn">x</span> <span class="fn">1</span></span></span></span></div></div><p><strong><code>D(a) = x₂ + x₁</code></strong> (split case) — the note's &quot;<code>Dg = (−3)c + b = c + b</code> in characteristic
+2&quot; followed by &quot;<code>D(g^{ω₂}) = P(c+b)</code>&quot; at <code>P = 1</code>: with <code>x₀, τ</code> acting trivially the <code>ω₂</code>-power
+in <code>a = (x₀⁻³τ)^{ω₂}</code> collapses (odd exponent, char 2) to its base-word offset
+<code>D(x₀⁻³τ) = −3·x₂ + x₁ = x₂ + x₁</code>.</p></div></div><div class="decl" id="GQ2.FoxH.liftMarking_aR_g_ramified"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L128-L146">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_aR_g_ramified"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_aR_g_ramified</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx0</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hTodd</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><a href="../.././GQ2/Words.html#GQ2.powOmega2">powOmega2</a> <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn">V</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.aR">aR</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.g">g</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></div></div><p><strong>Ramified base-triviality of <code>a</code></strong>: with <code>τ</code> acting with odd order (trivial 2-part,
+<code>hTodd</code>), the base of <code>a = (x₀⁻³τ)^{ω₂}</code> still acts <em>trivially</em> on <code>V</code> — its action is the
+2-part of the <code>τ</code>-action.  Mirrors <code>liftMarking_u0_g_ramified</code> (finite-exponent independence
+<code>powOmega2_pow_eq</code> + <code>powOmega2_smul_of_trivial_mul</code>).</p></div></div><div class="decl" id="GQ2.FoxH.liftMarking_aR_u_ramified"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L148-L163">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_aR_u_ramified"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_aR_u_ramified</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx0</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htau</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span> → <span class="fn"><span class="fn">v</span> <span class="fn">=</span> <span class="fn">0</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hTodd</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><a href="../.././GQ2/Words.html#GQ2.powOmega2">powOmega2</a> <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.aR">aR</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span> <span class="fn">=</span> <span class="fn">0</span></span></div></div><p><strong>Ramified <code>D(a) = 0</code></strong> — the note's <code>D(g^{ω₂}) = P(c+b)</code> at <code>P = 0</code>: the <code>ω₂</code>-norm over
+the fixed-point-free odd-order <code>τ</code>-base vanishes (<code>powOmega2_u_of_oddFixedPointFree</code>).</p></div></div><div class="mod_doc"><h3 id="The-x₁²-and-c-=-x₁-y₁-ledgers" class="markdown-heading">The <code>x₁²</code>- and <code>c = [x₁, y₁]</code>-ledgers <a class="hover-link" href="#The-x₁²-and-c-=-x₁-y₁-ledgers">#</a></h3><p>Both die at the first derivative: <code>x₁²</code> by char 2, the commutator because both entries are
+trivially-based (<code>x₁</code> by wild-core triviality, <code>y₁ = x₁^{σ₂}</code> as a <em>conjugate</em> of <code>x₁</code> — for any
+conjugator, so no <code>σ₂</code>-tameness hypothesis enters, unlike the <code>Γ_A</code> aux-word ledger).</p></div><div class="decl" id="GQ2.FoxH.liftMarking_x1_sq_g_smul"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L172-L177">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_x1_sq_g_smul"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_x1_sq_g_smul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx1</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn">V</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">^</span> <span class="fn">2</span>)</span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.g">g</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></div></div><p>Base-triviality of <code>x₁²</code>.</p></div></div><div class="decl" id="GQ2.FoxH.liftMarking_x1_sq_u"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L180-L186">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_x1_sq_u"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_x1_sq_u</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hV₂</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn">v</span> <span class="fn">+</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx1</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">^</span> <span class="fn">2</span>)</span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span> <span class="fn">=</span> <span class="fn">0</span></span></div></div><p><strong><code>D(x₁²) = 0</code></strong> — the note's &quot;<code>D(x₁²) = (1+1)d = 0</code>&quot; (char 2).</p></div></div><div class="decl" id="GQ2.FoxH.liftMarking_y1R_g_smul"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L189-L194">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_y1R_g_smul"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_y1R_g_smul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx1</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn">V</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.y1R">y1R</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.g">g</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></div></div><p>Base-triviality of <code>y₁ = x₁^{σ₂}</code>: a conjugate of the trivially-acting <code>x₁</code> acts trivially,
+for <em>any</em> conjugator — no hypothesis on the <code>σ₂</code>-action is needed.</p></div></div><div class="decl" id="GQ2.FoxH.liftMarking_cR_g_smul"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L197-L201">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_cR_g_smul"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_cR_g_smul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx1</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn">V</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.cR">cR</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.g">g</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></div></div><p>Base-triviality of <code>c = [x₁, y₁]</code>.</p></div></div><div class="decl" id="GQ2.FoxH.liftMarking_cR_u"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L204-L209">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_cR_u"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_cR_u</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx1</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.cR">cR</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span> <span class="fn">=</span> <span class="fn">0</span></span></div></div><p><strong><code>D(c) = 0</code></strong> — the note's &quot;both entries of <code>[x₁, x₁^{σ₂}]</code> act trivially, so its first
+derivative is zero&quot; (<code>commP_u_of_trivial</code>).  Holds in the split <em>and</em> ramified cases alike.</p></div></div><div class="mod_doc"><h3 id="The-assembled-wild-rows-prop-jacobian-display-eq-jacobian" class="markdown-heading">The assembled wild rows (⟦prop:jacobian⟧, display ⟦eq:jacobian⟧) <a class="hover-link" href="#The-assembled-wild-rows-prop-jacobian-display-eq-jacobian">#</a></h3></div><div class="decl" id="GQ2.FoxH.liftMarking_wildValueR_u"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L213-L238">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_wildValueR_u"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_wildValueR_u</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hV₂</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn">v</span> <span class="fn">+</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx0</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx1</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htau</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.wildValueR">wildValueR</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">x</span> <span class="fn">1</span></span> <span class="fn">+</span> <span class="fn"><span class="fn">x</span> <span class="fn">2</span></span></span> <span class="fn">+</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.σ">σ</a></span><span class="fn">⁻¹</span></span> <span class="fn">•</span> <span class="fn"><span class="fn">x</span> <span class="fn">2</span></span></span></span></span></div></div><p><strong>The split wild row</strong> (⟦prop:jacobian⟧, <code>T = 1</code>, <code>P = 1</code>):
+<code>L_w = D((x₀^σ)⁻¹) + D(a) + D(x₁²) + D(c) = S⁻¹·x₂ + (x₂ + x₁) + 0 + 0 = x₁ + (1 + S⁻¹)·x₂</code> —
+the note's <code>L_w = Pb + (P + S⁻¹)c</code> at <code>P = 1</code>.  This is <code>(d1FunR t x).2</code> at a split simple tame
+module: <code>Γ_A</code>'s row with the two wild columns interchanged
+(<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_wildValueR_u_eq_swap">liftMarking_wildValueR_u_eq_swap</a></code>).  Note <strong>no <code>σ₂</code>-tameness hypothesis <code>hU</code></strong>, unlike
+<code>liftMarking_wildValue_u</code> — <code>σ₂</code> enters <code>r_R</code> only as a conjugator.</p></div></div><div class="decl" id="GQ2.FoxH.liftMarking_wildValueR_u_ramified"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L240-L263">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_wildValueR_u_ramified"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_wildValueR_u_ramified</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hV₂</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn">v</span> <span class="fn">+</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx0</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx1</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htau</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span> → <span class="fn"><span class="fn">v</span> <span class="fn">=</span> <span class="fn">0</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hTodd</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><a href="../.././GQ2/Words.html#GQ2.powOmega2">powOmega2</a> <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.wildValueR">wildValueR</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.σ">σ</a></span><span class="fn">⁻¹</span></span> <span class="fn">•</span> <span class="fn"><span class="fn">x</span> <span class="fn">2</span></span></span></span></div></div><p><strong>The ramified wild row</strong> (⟦prop:jacobian⟧, <code>V^T = 0</code>, <code>P = 0</code>):
+<code>L_w = D((x₀^σ)⁻¹) + D(a) + D(x₁²) + D(c) = S⁻¹·x₂ + 0 + 0 + 0 = S⁻¹·x₂</code> — the note's
+<code>L_w = Pb + (P + S⁻¹)c</code> at <code>P = 0</code>.  This is <code>(d1FunR t x).2</code> at a ramified simple module —
+the wild half forcing <code>c = x₂ = 0</code> in the normal form (ticket R22).</p></div></div><div class="mod_doc"><h3 id="Stress-tests-the-column-swap-and-the-trivial-module" class="markdown-heading">Stress tests: the column swap and the trivial module <a class="hover-link" href="#Stress-tests-the-column-swap-and-the-trivial-module">#</a></h3></div><div class="decl" id="GQ2.FoxH.liftMarking_wildValueR_u_eq_swap"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L267-L277">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_wildValueR_u_eq_swap"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_wildValueR_u_eq_swap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hV₂</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn">v</span> <span class="fn">+</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx0</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx1</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htau</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hU</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.sigma2">sigma2</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.wildValueR">wildValueR</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn"><span class="fn">![</span><span class="fn"><span class="fn">x</span> <span class="fn">0</span></span><span class="fn">,</span> <span class="fn"><span class="fn">x</span> <span class="fn">1</span></span><span class="fn">,</span> <span class="fn"><span class="fn">x</span> <span class="fn">3</span></span><span class="fn">,</span> <span class="fn"><span class="fn">x</span> <span class="fn">2</span></span><span class="fn">]</span></span>)</span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.Marking.wildValue">wildValue</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span></span></div></div><p><strong>Stress test (the column swap, split)</strong>: the note's &quot;Thus it is exactly the matrix in
+[RT (5.4)] after interchanging the two wild columns&quot; — the split <code>Γ_R</code> wild row at offsets <code>x</code>
+equals the <code>Γ_A</code> wild row at the offsets with the two wild coordinates <code>x₂ ↔ x₃</code>
+interchanged.</p></div></div><div class="decl" id="GQ2.FoxH.liftMarking_wildValueR_u_ramified_eq_swap"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L279-L287">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_wildValueR_u_ramified_eq_swap"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">liftMarking_wildValueR_u_ramified_eq_swap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hV₂</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn">v</span> <span class="fn">+</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx0</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hx1</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htau</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span> → <span class="fn"><span class="fn">v</span> <span class="fn">=</span> <span class="fn">0</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hTodd</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn"><a href="../.././GQ2/Words.html#GQ2.powOmega2">powOmega2</a> <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.τ">τ</a></span></span> <span class="fn">•</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">v</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn">x</span>)</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.wildValueR">wildValueR</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.liftMarking">liftMarking</a> <span class="fn">t</span> <span class="fn"><span class="fn">![</span><span class="fn"><span class="fn">x</span> <span class="fn">0</span></span><span class="fn">,</span> <span class="fn"><span class="fn">x</span> <span class="fn">1</span></span><span class="fn">,</span> <span class="fn"><span class="fn">x</span> <span class="fn">3</span></span><span class="fn">,</span> <span class="fn"><span class="fn">x</span> <span class="fn">2</span></span><span class="fn">]</span></span>)</span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.Marking.wildValue">wildValue</a></span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.FoxH.WordLift.u">u</a></span></span></div></div><p><strong>Stress test (the column swap, ramified)</strong>: both ramified wild rows see only the
+<code>S⁻¹</code>-column, which the swap moves from <code>x₃</code> (<code>Γ_A</code>) to <code>x₂</code> (<code>Γ_R</code>).</p></div></div><div class="decl" id="GQ2.FoxH.d1FunR_of_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L289-L307">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.d1FunR_of_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">d1FunR_of_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.WildRelR">WildRelR</a></span> →
+  <span class="fn">∀ (<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn">a</span></span> <span class="fn">=</span> <span class="fn">a</span></span></span>) (<span class="fn">hV₂</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn">v</span> <span class="fn">+</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>) (<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>), <span class="fn"><span class="fn"><a href="../.././GQ2/Roe/FoxBasic.html#GQ2.FoxH.d1FunR">d1FunR</a> <span class="fn">t</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(</span><span class="fn"><span class="fn">x</span> <span class="fn">1</span></span><span class="fn">,</span> <span class="fn"><span class="fn">x</span> <span class="fn">1</span></span><span class="fn">)</span></span></span></span></span></div></div><p><strong>Lemma 4.3 ⟦lem:trivial⟧, first half</strong>: on the trivial module <code>d¹_R</code> collapses to the
+diagonal <code>x ↦ (x₁, x₁)</code> — the note's &quot;For <code>V = 𝔽₂</code> with trivial action, <code>d¹_R(a,b,c,d) = (b,b)</code>&quot; (set <code>S = T = P = 1</code> in ⟦eq:jacobian⟧).  Tame row: <code>Γ_A</code>'s, via <code>d1FunR_tame</code>, giving
+<code>x₁</code>; wild row: <code>x₁ + x₂ + x₂ = x₁</code> (char 2).  Mirrors <code>d1Fun_of_trivial</code>
+(<code><a href="../.././GQ2/TrivialSelfDual.html">GQ2/TrivialSelfDual.lean</a></code>); R25's <code>trivialSelfDual_R</code> consumes this together with the Gram
+⟦eq:scalarform⟧.</p></div></div><div class="decl" id="GQ2.FoxH.d1R_of_trivial"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/WildRow.lean#L309-L314">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.d1R_of_trivial"><span class="name">GQ2</span>.<span class="name">FoxH</span>.<span class="name">d1R_of_trivial</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">C</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">C</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DistribMulAction</span> <span class="fn">C</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">t</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">C</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">ht</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hw</span> : <span class="fn"><span class="fn">t</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.WildRelR">WildRelR</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htriv</span> : <span class="fn">∀ (<span class="fn">c</span> : <span class="fn">C</span>) (<span class="fn">a</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn">c</span> <span class="fn">•</span> <span class="fn">a</span></span> <span class="fn">=</span> <span class="fn">a</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hV₂</span> : <span class="fn">∀ (<span class="fn">v</span> : <span class="fn">V</span>), <span class="fn"><span class="fn"><span class="fn">v</span> <span class="fn">+</span> <span class="fn">v</span></span> <span class="fn">=</span> <span class="fn">0</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">x</span> : <span class="fn"><span class="fn"><span class="fn">Fin</span> <span class="fn">4</span></span> → <span class="fn">V</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././GQ2/Roe/FoxBasic.html#GQ2.FoxH.d1R">d1R</a> <span class="fn">t</span>)</span> <span class="fn">x</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">(</span><span class="fn"><span class="fn">x</span> <span class="fn">1</span></span><span class="fn">,</span> <span class="fn"><span class="fn">x</span> <span class="fn">1</span></span><span class="fn">)</span></span></span></div></div><p><code>d¹_R</code> bundled, on the trivial module: <code>d1R t x = (x 1, x 1)</code> — the note's
+<code>d¹_R(a,b,c,d) = (b,b)</code>.</p></div></div><div class="mod_doc"><h3 id="Paper-tag-ledger-Roe-note-paper-roe-presentation-verification-tex-hand-maintained" class="markdown-heading">Paper-tag ledger (Roe note <code>paper/roe-presentation-verification.tex</code>; hand-maintained) <a class="hover-link" href="#Paper-tag-ledger-Roe-note-paper-roe-presentation-verification-tex-hand-maintained">#</a></h3><ul><li>Proposition 4.1 (Evaluated Jacobian) = ⟦prop:jacobian⟧ — the per-factor ledger
+(<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_conjP_x0_sigma_u">liftMarking_conjP_x0_sigma_u</a></code>, <code>liftMarking_aR_u(_ramified)</code>, <code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_x1_sq_u">liftMarking_x1_sq_u</a></code>,
+<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.liftMarking_cR_u">liftMarking_cR_u</a></code>) and the assembled rows <code>liftMarking_wildValueR_u(_ramified)</code>;
+display ⟦eq:jacobian⟧.</li><li>&quot;the matrix in [RT (5.4)] after interchanging the two wild columns&quot; =
+<code>liftMarking_wildValueR_u_eq_swap(_ramified)</code>.</li><li>Lemma 4.3 (Trivial coefficient) = ⟦lem:trivial⟧, first half —
+<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.d1FunR_of_trivial">d1FunR_of_trivial</a></code>/<code><a href="../.././GQ2/Roe/WildRow.html#GQ2.FoxH.d1R_of_trivial">d1R_of_trivial</a></code> (<code>d¹_R(a,b,c,d) = (b,b)</code>); the scalar Gram
+⟦eq:scalarform⟧ second half is ticket R25.</li></ul></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

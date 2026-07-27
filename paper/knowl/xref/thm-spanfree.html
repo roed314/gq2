@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../../../favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">C.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Span theorem.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(F\)</span> be the free pro-<span class="process-math">\(2\)</span> group on three generators, filtered by <a href="#eq-lambdatower" class="xref" data-knowl="./knowl/xref/eq-lambdatower.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation C.9">(C.9)</a>, and let <span class="process-math">\(\bar d_k\)</span> be either <a href="#eq-dbarzero" class="xref" data-knowl="./knowl/xref/eq-dbarzero.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation C.10">(C.10)</a> or <a href="#eq-dbartwo" class="xref" data-knowl="./knowl/xref/eq-dbartwo.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation C.11">(C.11)</a> evaluated at the generators.  For every <span class="process-math">\(k\ge3\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq-lambdatower.html ./knowl/xref/eq-dbarzero.html ./knowl/xref/eq-dbartwo.html ./knowl/xref/eq-lambdatower.html">
+\begin{equation}
+Z_k(F)=\im\bar d_k
++\angles{g_i^{2^{k-1}},\,g_j^{2^{k-1}}},\tag{C.12}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(g_i,g_j\)</span> are the two untwisted generators: <span class="process-math">\(\notnfar{Sgen}{S},\notn{Ygen}{Y}\)</span> for <span class="process-math">\(\notn{r0}{r_0}\)</span> and <span class="process-math">\(s,x\)</span> for <span class="process-math">\(r_2\text{.}\)</span>  The corresponding power of the twisted generator already lies in <span class="process-math">\(\im\bar d_k\text{.}\)</span>  The same identity holds in <span class="process-math">\(Z_k(D)\)</span> for any quotient <span class="process-math">\(D\)</span> of <span class="process-math">\(F\)</span> and any generating triple, because the filtration <a href="#eq-lambdatower" class="xref" data-knowl="./knowl/xref/eq-lambdatower.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation C.9">(C.9)</a> is verbal.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-spanfree-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<a class="lean-link lean-proj-gq2-claude" href="../lean/gq2-claude/find/?pattern=GQ2.Roe.Labute.span_free_r0#doc" data-lean-ref="GQ2.Roe.Labute.span_free_r0" data-lean-project="gq2-claude" title="Formalized as GQ2.Roe.Labute.span_free_r0 in gq2-claude">Lean (free form, first shape)</a><a class="lean-link lean-proj-gq2-claude" href="../lean/gq2-claude/find/?pattern=GQ2.Roe.Labute.span_free_r2#doc" data-lean-ref="GQ2.Roe.Labute.span_free_r2" data-lean-project="gq2-claude" title="Formalized as GQ2.Roe.Labute.span_free_r2 in gq2-claude">Lean (free form, second shape)</a><a class="lean-link lean-proj-gq2-claude" href="../lean/gq2-claude/find/?pattern=GQ2.Roe.Labute.span_descent_r2#doc" data-lean-ref="GQ2.Roe.Labute.span_descent_r2" data-lean-project="gq2-claude" title="Formalized as GQ2.Roe.Labute.span_descent_r2 in gq2-claude">Lean (descent)</a><div class="autopermalink" aria-hidden="true" data-description="Theorem C.15: Span theorem"><a tabindex="-1" href="#thm-spanfree" title="Copy heading and permalink for Theorem C.15: Span theorem" aria-label="Copy heading and permalink for Theorem C.15: Span theorem">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para">Because the filtration is verbal, <span class="process-math">\(Z_k\)</span> is generated by the classes of <span class="process-math">\(v^2\)</span> and <span class="process-math">\([v,g]\)</span> with <span class="process-math">\(v\in\lambda_{k-1}\)</span> and <span class="process-math">\(g\in F\text{.}\)</span>  We reduce both families into the right-hand side of <a href="#eq-spanfree" class="xref" data-knowl="./knowl/xref/eq-spanfree.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation C.12">(C.12)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-spanfree-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Bracket atoms.</em>  For fixed <span class="process-math">\(v\)</span> the class of <span class="process-math">\([v,g]\)</span> is multiplicative in <span class="process-math">\(g\)</span> and central, so <span class="process-math">\(g\)</span> may be taken to be a generator.  Against either untwisted generator, <span class="process-math">\([v,g_i]\)</span> is by definition a value of <span class="process-math">\(\bar d_k\text{,}\)</span> namely the one with <span class="process-math">\(v\)</span> in the corresponding slot and <span class="process-math">\(1\)</span> in the others.  Against the twisted generator <span class="process-math">\(t\)</span> one has, also by definition, <span class="process-math">\([v,t]=(v^2)^{-1}\bar d_k(v,1,1)\text{.}\)</span>  So the bracket atoms lie in <span class="process-math">\(\im\bar d_k\)</span> together with the square atoms.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-spanfree-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">
+<em class="emphasis">Square atoms, by induction on <span class="process-math">\(k\text{.}\)</span></em>  Let <span class="process-math">\(v\in\lambda_{k-1}\text{.}\)</span>  By the statement one level down, the image of <span class="process-math">\(v\)</span> in <span class="process-math">\(Z_{k-1}\)</span> is a product of values of <span class="process-math">\(\bar d_{k-1}\)</span> and of the two level-<span class="process-math">\((k-1)\)</span> powers.  Lift that factorization back into <span class="process-math">\(\lambda_{k-1}\text{;}\)</span> the ambiguity is an element of <span class="process-math">\(Z_k\text{,}\)</span> a central involution, which dies on squaring.  Squaring is multiplicative on <span class="process-math">\(\lambda_{k-1}\)</span>-classes because <span class="process-math">\([\lambda_{k-1},\lambda_{k-1}]\subseteq\lambda_{k+1}\text{,}\)</span> so it suffices to square each factor.  A lifted power <span class="process-math">\(g_i^{2^{k-2}}\)</span> squares to the level-<span class="process-math">\(k\)</span> power <span class="process-math">\(g_i^{2^{k-1}}\text{,}\)</span> and a lifted value of <span class="process-math">\(\bar d_{k-1}\)</span> squares to a value of <span class="process-math">\(\bar d_k\)</span> by the transport identity</div>
+<div class="displaymath process-math">
+\begin{equation}
+\bar d_k(w)^2=\bar d_k(w^2),\tag{C.13}
+\end{equation}
+</div>
+<div class="para">read slotwise.  Its proof is the same layer calculus: the four factors of <span class="process-math">\(\bar d_k(w)\)</span> lie one step deeper, squares of products of such elements are products of squares, and the correction term in <span class="process-math">\([u,g]^2=[u^2,g]\)</span> is <span class="process-math">\([[u,g],u]\in[\lambda_{k-1},\lambda_{k-2}]\subseteq\lambda_{2k-3}\text{,}\)</span> which is trivial in <span class="process-math">\(Q_{k+1}\)</span> as soon as <span class="process-math">\(k\ge4\text{.}\)</span>  This closes the induction, and no termination measure beyond <span class="process-math">\(k\)</span> is needed, because the recursion is exactly the statement one level down.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-spanfree-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">
+<em class="emphasis">Base case.</em>  For <span class="process-math">\(k=3\)</span> the computation takes place in <span class="process-math">\(Q_4\text{,}\)</span> where the layer calculus is exact: <span class="process-math">\((uv)^4=u^4v^4[v,u]^2\text{,}\)</span> and <span class="process-math">\([u,v]^2\)</span> is bimultiplicative.  Both atom families then close under the same reductions, using <span class="process-math">\([u^2,z]=[u,z][[u,z],u][u,z]\)</span> for the squares of bracket atoms, and the diagonal identity <span class="process-math">\(t^4=\bar d_3(t^2,1,1)\text{,}\)</span> valid because <span class="process-math">\(t\)</span> commutes with <span class="process-math">\(t^2\text{,}\)</span> for the twisted generator’s fourth power.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#thm-spanfree-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof C.15.1"><a tabindex="-1" href="#thm-spanfree-6" title="Copy heading and permalink for Proof C.15.1" aria-label="Copy heading and permalink for Proof C.15.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="#thm-spanfree">In Context</a></span>
+</body>
+</html>

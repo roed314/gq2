@@ -1,0 +1,169 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>GQ2.Roe.CoverLiftR</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="GQ2.Roe.CoverLiftR";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">GQ2</span>.<span class="name">Roe</span>.<span class="name">CoverLiftR</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/CoverLiftR.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://leanprover-community.github.io/mathlib4_docs/Init.html">Init</a></li><li><a href="../.././GQ2/Roe/CorrectionR.html">GQ2.Roe.CorrectionR</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-GQ2.Roe.CoverLiftR" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#GQ2.RStageGammaR.redValues_eq_of_coverLift_R"><span class="name">GQ2</span>.<span class="name">RStageGammaR</span>.<span class="name">redValues_eq_of_coverLift_R</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.RStageGammaR.exists_pushR_eq_of_relatorFree"><span class="name">GQ2</span>.<span class="name">RStageGammaR</span>.<span class="name">exists_pushR_eq_of_relatorFree</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.RStageGammaR.isPGroup_wildCore_of_proj"><span class="name">GQ2</span>.<span class="name">RStageGammaR</span>.<span class="name">isPGroup_wildCore_of_proj</span></a></div><div class="nav_link"><a class="break_within" href="#GQ2.RStageGammaR.lift_of_relatorFree_markingR"><span class="name">GQ2</span>.<span class="name">RStageGammaR</span>.<span class="name">lift_of_relatorFree_markingR</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="The-Γ-R-cover-lift-kernel-L4-and-relator-free-descent-L5" class="markdown-heading">The <code>Γ_R</code> cover-lift kernel (L4) and relator-free descent (L5) <a class="hover-link" href="#The-Γ-R-cover-lift-kernel-L4-and-relator-free-descent-L5">#</a></h1><p>The Roe-candidate twin of the <code>CoverLift</code>/<code>Descend</code> sections of <code><a href="../.././GQ2/RStage/GammaA.html">GQ2/RStage/GammaA.lean</a></code>
+(<code>:726–954</code>) — the two lemmas the <code>Γ_R</code> separation arguments run on.  Both are stated <strong>free of
+any <code>(136)</code>-frame context</strong> (no <code>H</code>/<code>E</code>/<code>T</code>/<code>Blk</code>/<code>RecursionFrame</code>), because they have two
+independent consumers: the <code>(136)</code> R-stage (<code><a href="../.././GQ2/RStage/GammaR.html">GQ2/RStage/GammaR.lean</a></code>, ticket R31e) and the <code>(140)</code>
+T-stage (ticket R31f), whose <code>Γ_A</code> originals instantiate the shared <code>Y</code> at the section variable
+and at the frame field <code>RF.YB</code> respectively.</p><h2 id="L4-redValues-eq-of-coverLift-R" class="markdown-heading">L4 — <code><a href="../.././GQ2/Roe/CoverLiftR.html#GQ2.RStageGammaR.redValues_eq_of_coverLift_R">redValues_eq_of_coverLift_R</a></code> <a class="hover-link" href="#L4-redValues-eq-of-coverLift-R">#</a></h2><p>If a boundary map <code>g_B : Γ_R → B₀</code> lifts through a central double cover <code>Q</code>, then any set-lift
+marking <code>t_Y</code> of <code>g_B</code> has <strong>equal</strong> tame and Roe-wild relator values after reduction along
+<code>red : Y → Q.cover</code>.  Both <code>t_Y.map red</code> and the lift's pushed marking cover <code>g_B</code>'s marking, so
+they differ by corrections in the central 2-torsion kernel <code>⟨z⟩</code>; the correction ledger
+(<code>tameValue_correction</code>, shared with <code>Γ_A</code>, and <code>wildValueR_correction</code>,
+<code><a href="../.././GQ2/Roe/CorrectionR.html">GQ2/Roe/CorrectionR.lean</a></code>) evaluates <em>both</em> reduced relator values to the same <code>r̄₁</code> — this is
+exactly why the two Roe rows had to shift by the <em>same</em> central involution.</p><p>Statement shape is binder-for-binder the <code>Γ_A</code> original <code>RStageGammaA.redValues_eq_of_coverLift</code>,
+with <code>Marking.push → Marking.pushR</code>, <code>gammaGen → gammaGenR</code>, <code>GA → GR</code>, <code>wildValue → wildValueR</code>;
+the instance context is even <em>weaker</em> (no <code>TopologicalSpace</code>/<code>DiscreteTopology</code> on <code>Y</code> or <code>B₀</code>).</p><h2 id="L5-the-relator-free-descent-factored" class="markdown-heading">L5 — the relator-free descent, factored <a class="hover-link" href="#L5-the-relator-free-descent-factored">#</a></h2><p>The <code>Γ_A</code> original (<code>RStage/GammaA.lean:829</code>) is <code>private</code> <strong>and</strong> hard-wired to the block frame
+(<code>blockFrameImpl T Blk hE2</code>, <code>Blk.frattiniK</code>), which is precisely why <code>GQ2/Phase140/GammaA/</code>
+could not reuse it and re-proved a generalised variant (<code>mlift_of_relatorFree_marking</code>,
+<code>Foundation.lean:461</code>).  To avoid repeating that split on the Roe side, the descent is factored
+here into three public pieces:</p><ul><li><code><a href="../.././GQ2/Roe/CoverLiftR.html#GQ2.RStageGammaR.exists_pushR_eq_of_relatorFree">exists_pushR_eq_of_relatorFree</a></code> — the <strong>frame-free core</strong>: a marking of <code>Y</code> that kills both
+<code>Γ_R</code> relators and has a pro-2 wild core <em>is</em> the pushforward of a continuous <code>φ : Γ_R → Y</code>.
+No <code>π</code>, no <code>B₀</code>, no surjectivity: the cleanest form of &quot;<code>Γ_R</code> classifies relator-free markings&quot;.</li><li><code><a href="../.././GQ2/Roe/CoverLiftR.html#GQ2.RStageGammaR.isPGroup_wildCore_of_proj">isPGroup_wildCore_of_proj</a></code> — the <code>Pro2Core</code> transfer: an upstairs pro-2 certificate from a
+downstairs one plus 2-torsion of <code>ker π</code> (the <code>hcoreJ</code> chase of the <code>Γ_A</code> original, restated in
+<code>Y</code> so it can be reused independently).</li><li><code><a href="../.././GQ2/Roe/CoverLiftR.html#GQ2.RStageGammaR.lift_of_relatorFree_markingR">lift_of_relatorFree_markingR</a></code> — the consumer-facing splice of the two, over an <strong>abstract</strong>
+<code>π : Y →* B₀</code>.  Strictly more general than the <code>Γ_A</code> original: <code>π</code> is arbitrary (not
+<code>blockFrameImpl.piB</code>), the kernel torsion is a hypothesis (not <code>hR2</code> + <code>ker_piB</code>), and the
+<code>Pro2Core</code> input is taken directly rather than through <code>Function.Surjective g_B</code> — so the
+non-surjective T-stage of R31f can supply it after its corestriction, instead of cloning.</li></ul><h2 id="Reused-verbatim-from-GQ2-RStage-GammaA-lean-never-cloned" class="markdown-heading">Reused verbatim from <code><a href="../.././GQ2/RStage/GammaA.html">GQ2/RStage/GammaA.lean</a></code>, never cloned <a class="hover-link" href="#Reused-verbatim-from-GQ2-RStage-GammaA-lean-never-cloned">#</a></h2><p><code>corrMark</code>, <code>marking_ext</code>, <code>tameValue_correction</code> (the tame relator is <strong>shared</strong> with <code>Γ_A</code>).
+The Roe-specific inputs are <code>RStageGammaR.push_tameRelR</code> / <code>push_wildRelR</code> /
+<code>wildValueR_correction</code> (<code><a href="../.././GQ2/Roe/CorrectionR.html">GQ2/Roe/CorrectionR.lean</a></code>), <code>Marking.pushR</code> / <code>Marking.descendR</code> /
+<code>Marking.pushR_descendR</code> (<code><a href="../.././GQ2/Roe/Prop23.html">GQ2/Roe/Prop23.lean</a></code>) and <code>gammaGenR</code> (<code><a href="../.././GQ2/WordCohBridgeR.html">GQ2/WordCohBridgeR.lean</a></code>).</p><p><strong>Module-system note.</strong>  Plain <code>import</code> (non-<code>module</code>), like its import <code><a href="../.././GQ2/Roe/CorrectionR.html">GQ2.Roe.CorrectionR</a></code> and
+that file's own import <code><a href="../.././GQ2/RStage/GammaA.html">GQ2.RStage.GammaA</a></code>: <code>module</code>-style files cannot import plain ones.</p><p>Axioms: none introduced (std-3 only).</p></div><div class="mod_doc"><h2 id="L4-core-a-cover-lift-forces-equal-reduced-relator-values" class="markdown-heading">L4 core: a cover lift forces equal reduced relator values <a class="hover-link" href="#L4-core-a-cover-lift-forces-equal-reduced-relator-values">#</a></h2></div><div class="decl" id="GQ2.RStageGammaR.redValues_eq_of_coverLift_R"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/CoverLiftR.lean#L78-L160">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/CoverLiftR.html#GQ2.RStageGammaR.redValues_eq_of_coverLift_R"><span class="name">GQ2</span>.<span class="name">RStageGammaR</span>.<span class="name">redValues_eq_of_coverLift_R</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Y</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B0</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">B0</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">B0</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">TopologicalSpace</span> <span class="fn">B0</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">Q</span> : <span class="fn"><a href="../.././GQ2/RadicalEdge/Data.html#GQ2.SectionEight.CentralCover">SectionEight.CentralCover</a> <span class="fn">B0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">piB</span> : <span class="fn"><span class="fn">Y</span> <span class="fn">→*</span> <span class="fn">B0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">red</span> : <span class="fn"><span class="fn">Y</span> <span class="fn">→*</span> <span class="fn"><span class="fn">Q</span>.<a href="../.././GQ2/RadicalEdge/Data.html#GQ2.SectionEight.CentralCover.cover">cover</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hred_p</span> : <span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">Q</span>.<a href="../.././GQ2/RadicalEdge/Data.html#GQ2.SectionEight.CentralCover.p">p</a></span>.<span class="fn">comp</span></span> <span class="fn">red</span></span> <span class="fn">=</span> <span class="fn">piB</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">gB</span> : <span class="fn"><a href="../.././GQ2/WordCohBridgeR.html#GQ2.WordCohBridgeR.GR">WordCohBridgeR.GR</a> <span class="fn">→ₜ*</span> <span class="fn">B0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">gc</span> : <span class="fn"><a href="../.././GQ2/WordCohBridgeR.html#GQ2.WordCohBridgeR.GR">WordCohBridgeR.GR</a> <span class="fn">→ₜ*</span> <span class="fn"><span class="fn">Q</span>.<a href="../.././GQ2/RadicalEdge/Data.html#GQ2.SectionEight.CentralCover.cover">cover</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hgc</span> : <span class="fn">∀ (<span class="fn">γ</span> : <a href="../.././GQ2/WordCohBridgeR.html#GQ2.WordCohBridgeR.GR">WordCohBridgeR.GR</a>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">Q</span>.<a href="../.././GQ2/RadicalEdge/Data.html#GQ2.SectionEight.CentralCover.p">p</a></span> <span class="fn">(<span class="fn">gc</span> <span class="fn">γ</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">gB</span> <span class="fn">γ</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">tY</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hproj</span> : <span class="fn"><span class="fn"><a href="../.././GQ2/Subdirect.html#GQ2.Marking.map">Marking.map</a> <span class="fn">piB</span> <span class="fn">tY</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././GQ2/Roe/Prop23.html#GQ2.Marking.pushR">Marking.pushR</a> <span class="fn">gB</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">red</span> <span class="fn"><span class="fn">tY</span>.<a href="../.././GQ2/FoxHeisenberg/Basic.html#GQ2.Marking.tameValue">tameValue</a></span></span> <span class="fn">=</span> <span class="fn"><span class="fn">red</span> <span class="fn"><span class="fn">tY</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.wildValueR">wildValueR</a></span></span></span></div></div><p><strong>The per-cover L4 core for <code>Γ_R</code></strong>, abstractly over a bare central cover: if <code>g_B</code> lifts
+through <code>Q</code> (via <code>gc</code>), then any set-lift marking <code>tY</code> of <code>g_B</code> has equal tame and <strong>Roe</strong>-wild
+relator values after reduction along <code>red</code>.  Both <code>tY.map red</code> and the lift's pushed marking cover
+<code>g_B</code>'s marking, so they differ by corrections in the central 2-torsion kernel
+(<code>CentralCover.central</code>/<code>z_sq</code>); the correction calculus (<code>tameValue_correction</code>, shared with
+<code>Γ_A</code>, and <code>wildValueR_correction</code>) evaluates both reduced relator values to the same <code>r̄₁</code>.</p><p><code>Γ_R</code> twin of <code>RStageGammaA.redValues_eq_of_coverLift</code>, binder-for-binder.  Deliberately free of
+frame context so that both the <code>(136)</code> R-stage (R31e) and the <code>(140)</code> T-stage (R31f) can
+instantiate <code>Y</code> at their own carriers.</p></div></div><div class="mod_doc"><h2 id="L5-descent-a-relator-free-covering-marking-of-Y-descends-from-Γ-R" class="markdown-heading">L5 descent: a relator-free covering marking of <code>Y</code> descends from <code>Γ_R</code> <a class="hover-link" href="#L5-descent-a-relator-free-covering-marking-of-Y-descends-from-Γ-R">#</a></h2></div><div class="decl" id="GQ2.RStageGammaR.exists_pushR_eq_of_relatorFree"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/CoverLiftR.lean#L171-L229">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/CoverLiftR.html#GQ2.RStageGammaR.exists_pushR_eq_of_relatorFree"><span class="name">GQ2</span>.<span class="name">RStageGammaR</span>.<span class="name">exists_pushR_eq_of_relatorFree</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Y</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">TopologicalSpace</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DiscreteTopology</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">tHat</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htame</span> : <span class="fn"><span class="fn">tHat</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hwild</span> : <span class="fn"><span class="fn">tHat</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.WildRelR">WildRelR</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcore</span> : <span class="fn"><span class="fn">IsPGroup</span> <span class="fn">2</span> <span class="fn">↥<span class="fn">(<span class="fn">Subgroup.normalClosure</span> <span class="fn"><span class="fn">{</span><span class="fn"><span class="fn">tHat</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span><span class="fn">,</span> <span class="fn"><span class="fn">tHat</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span><span class="fn">}</span></span>)</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">φ</span> : <span class="fn"><a href="../.././GQ2/WordCohBridgeR.html#GQ2.WordCohBridgeR.GR">WordCohBridgeR.GR</a> <span class="fn">→ₜ*</span> <span class="fn">Y</span></span>), <span class="fn"><span class="fn"><a href="../.././GQ2/Roe/Prop23.html#GQ2.Marking.pushR">Marking.pushR</a> <span class="fn">φ</span></span> <span class="fn">=</span> <span class="fn">tHat</span></span></span></div></div><p><strong>L5 core, frame-free</strong>: a marking of <code>Y</code> that kills both <code>Γ_R</code> relators and whose wild core
+is pro-2 <strong>is</strong> the pushforward of a continuous <code>φ : Γ_R → Y</code>.  The marking generates a subgroup
+<code>J ≤ Y</code> on which it is <code>R</code>-admissible (<code>Generates</code> by construction; <code>TameRel</code>/<code>WildRelR</code> by
+subtype injectivity; <code>Pro2Core</code> by pulling the <code>Y</code>-certificate back along the injective
+<code>J.subtype</code>), hence <code>Marking.descendR</code> applies and <code>Marking.pushR_descendR</code> returns the marking.</p><p>This is the honest content of the <code>Γ_A</code> original <code>lift_of_relatorFree_marking</code>, stripped of the
+block frame — the <code>π</code>/<code>g_B</code> projection statement is the corollary
+<code><a href="../.././GQ2/Roe/CoverLiftR.html#GQ2.RStageGammaR.lift_of_relatorFree_markingR">lift_of_relatorFree_markingR</a></code> below.</p></div></div><div class="decl" id="GQ2.RStageGammaR.isPGroup_wildCore_of_proj"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/CoverLiftR.lean#L232-L264">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/CoverLiftR.html#GQ2.RStageGammaR.isPGroup_wildCore_of_proj"><span class="name">GQ2</span>.<span class="name">RStageGammaR</span>.<span class="name">isPGroup_wildCore_of_proj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Y</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B0</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">B0</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">TopologicalSpace</span> <span class="fn">B0</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">π</span> : <span class="fn"><span class="fn">Y</span> <span class="fn">→*</span> <span class="fn">B0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hker2</span> : <span class="fn">∀ <span class="fn">y</span> ∈ <span class="fn"><span class="fn">π</span>.<span class="fn">ker</span></span>, <span class="fn"><span class="fn"><span class="fn">y</span> <span class="fn">*</span> <span class="fn">y</span></span> <span class="fn">=</span> <span class="fn">1</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">gB</span> : <span class="fn"><a href="../.././GQ2/WordCohBridgeR.html#GQ2.WordCohBridgeR.GR">WordCohBridgeR.GR</a> <span class="fn">→ₜ*</span> <span class="fn">B0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcoreB</span> : <span class="fn"><span class="fn">(<a href="../.././GQ2/Roe/Prop23.html#GQ2.Marking.pushR">Marking.pushR</a> <span class="fn">gB</span>)</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.Pro2Core">Pro2Core</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">tHat</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hproj</span> : <span class="fn"><span class="fn"><a href="../.././GQ2/Subdirect.html#GQ2.Marking.map">Marking.map</a> <span class="fn">π</span> <span class="fn">tHat</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././GQ2/Roe/Prop23.html#GQ2.Marking.pushR">Marking.pushR</a> <span class="fn">gB</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">IsPGroup</span> <span class="fn">2</span> <span class="fn">↥<span class="fn">(<span class="fn">Subgroup.normalClosure</span> <span class="fn"><span class="fn">{</span><span class="fn"><span class="fn">tHat</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₀">x₀</a></span><span class="fn">,</span> <span class="fn"><span class="fn">tHat</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.x₁">x₁</a></span><span class="fn">}</span></span>)</span></span></span></div></div><p><strong>The <code>Pro2Core</code> transfer.</strong>  If <code>t_Y</code> covers <code>g_B</code>'s marking through <code>π</code> and the elements of
+<code>ker π</code> are involutions, then a pro-2 wild core downstairs gives one upstairs: an element of the
+normal closure of <code>{x₀, x₁}</code> in <code>Y</code> maps into the normal closure downstairs, so some <code>2^k</code>-th
+power lands in <code>ker π</code>, and one more squaring kills it.</p><p>This is the <code>hcoreJ</code> chase of <code>RStageGammaA.lift_of_relatorFree_marking</code> (<code>:877–916</code>), restated
+in <code>Y</code> and detached from <code>blockFrameImpl</code>/<code>Blk.frattiniK</code> so that both <code>Γ_R</code> stages can feed it
+their own kernel-torsion certificate.</p></div></div><div class="decl" id="GQ2.RStageGammaR.lift_of_relatorFree_markingR"><div class="theorem"><div class="gh_link"><a href="https://github.com/roed-math/gq2-lean/blob/0ffb3908c72f9a61bc1142567fb6bd9f2e67aaa3/GQ2/Roe/CoverLiftR.lean#L266-L297">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././GQ2/Roe/CoverLiftR.html#GQ2.RStageGammaR.lift_of_relatorFree_markingR"><span class="name">GQ2</span>.<span class="name">RStageGammaR</span>.<span class="name">lift_of_relatorFree_markingR</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Y</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">TopologicalSpace</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DiscreteTopology</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">Y</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B0</span> : <a href="../.././foundational_types.html">Type</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Group</span> <span class="fn">B0</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">TopologicalSpace</span> <span class="fn">B0</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DiscreteTopology</span> <span class="fn">B0</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Finite</span> <span class="fn">B0</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">π</span> : <span class="fn"><span class="fn">Y</span> <span class="fn">→*</span> <span class="fn">B0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hker2</span> : <span class="fn">∀ <span class="fn">y</span> ∈ <span class="fn"><span class="fn">π</span>.<span class="fn">ker</span></span>, <span class="fn"><span class="fn"><span class="fn">y</span> <span class="fn">*</span> <span class="fn">y</span></span> <span class="fn">=</span> <span class="fn">1</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">gB</span> : <span class="fn"><a href="../.././GQ2/WordCohBridgeR.html#GQ2.WordCohBridgeR.GR">WordCohBridgeR.GR</a> <span class="fn">→ₜ*</span> <span class="fn">B0</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hcoreB</span> : <span class="fn"><span class="fn">(<a href="../.././GQ2/Roe/Prop23.html#GQ2.Marking.pushR">Marking.pushR</a> <span class="fn">gB</span>)</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.Pro2Core">Pro2Core</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">tHat</span> : <span class="fn"><a href="../.././GQ2/Words.html#GQ2.Marking">Marking</a> <span class="fn">Y</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hproj</span> : <span class="fn"><span class="fn"><a href="../.././GQ2/Subdirect.html#GQ2.Marking.map">Marking.map</a> <span class="fn">π</span> <span class="fn">tHat</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././GQ2/Roe/Prop23.html#GQ2.Marking.pushR">Marking.pushR</a> <span class="fn">gB</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">htame</span> : <span class="fn"><span class="fn">tHat</span>.<a href="../.././GQ2/Words.html#GQ2.Marking.TameRel">TameRel</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hwild</span> : <span class="fn"><span class="fn">tHat</span>.<a href="../.././GQ2/Roe/Words.html#GQ2.Marking.WildRelR">WildRelR</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">φ</span> : <span class="fn"><span class="fn">↑<span class="fn"><span class="fn"><a href="../.././GQ2/Roe/GammaR.html#GQ2.GammaR">GammaR</a>.<span class="fn">toProfinite</span></span>.<span class="fn">toTop</span></span></span> <span class="fn">→ₜ*</span> <span class="fn">Y</span></span>), <span class="fn">∀ (<span class="fn">γ</span> : <span class="fn">↑<span class="fn"><span class="fn"><a href="../.././GQ2/Roe/GammaR.html#GQ2.GammaR">GammaR</a>.<span class="fn">toProfinite</span></span>.<span class="fn">toTop</span></span></span>), <span class="fn"><span class="fn"><span class="fn">π</span> <span class="fn">(<span class="fn">φ</span> <span class="fn">γ</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">gB</span> <span class="fn">γ</span></span></span></span></span></div></div><p><strong>L5, the descent</strong> (consumer-facing form): a marking of <code>Y</code> that covers <code>g_B</code>'s marking
+through an arbitrary <code>π : Y →* B₀</code> and kills both <code>Γ_R</code> relators descends to a continuous
+<code>φ : Γ_R → Y</code> with <code>π ∘ φ = g_B</code>.  The projection identity holds because two <code>F₄</code>-classified homs
+with equal pushed markings agree (<code>Marking.toHom_hom_univMarking_map</code>).</p><p><code>Γ_R</code> twin of the <code>private</code> <code>RStageGammaA.lift_of_relatorFree_marking</code>, and strictly more general:
+<code>π</code> is abstract, the kernel torsion is a hypothesis, and <code>Pro2Core</code> is taken directly instead of
+via <code>Function.Surjective g_B</code> — which is exactly what the non-surjective <code>(140)</code> T-stage needs
+(cf. <code>GQ2/Phase140/GammaA/Foundation.lean:461</code>, where the <code>Γ_A</code> side had to clone).</p></div></div><div class="mod_doc"><h3 id="Paper-tag-ledger-Roe-note-paper-roe-presentation-verification-tex-hand-maintained" class="markdown-heading">Paper-tag ledger (Roe note <code>paper/roe-presentation-verification.tex</code>; hand-maintained) <a class="hover-link" href="#Paper-tag-ledger-Roe-note-paper-roe-presentation-verification-tex-hand-maintained">#</a></h3><ul><li>eq. (1.2) = ⟦eq:relators⟧ — the Roe wild relator whose central-involution correction ledger
+(<code>wildValueR_correction</code>) makes the two reduced relator values coincide in L4.</li><li>Definition 1.1 = ⟦def:GammaR⟧ — <code>N_R</code>/<code>AdmissibleR</code>, via <code>Marking.descendR</code> in L5.</li></ul></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

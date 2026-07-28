@@ -20,7 +20,7 @@
     "gq2-claude": {
       "name": "Roe formalization",
       "repo": "https://github.com/roed-math/gq2-lean",
-      "commit_auto": "0ffb390",
+      "commit_auto": "d0714a7",
       "mathlib_note": "Mathlib pinned June 12, 2026",
       "mathlib_commit_auto": "ec410d2",
       "toolchain_auto": "leanprover/lean4:v4.31.0-rc2"

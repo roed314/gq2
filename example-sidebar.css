@@ -1,0 +1,158 @@
+/* Running-example sidebar for the paper page (injected by build-site.sh).
+   All classes are prefixed gqx- to stay clear of PreTeXt's namespace. */
+:root {
+  --gqx-ink: #16181d;
+  --gqx-muted: #565d66;
+  --gqx-accent: #1e5c3a;
+  --gqx-accent-ink: #ffffff;
+  --gqx-card: #ffffff;
+  --gqx-paper: #f6f6f3;
+  --gqx-line: #dcdedb;
+  --gqx-tint: #eef4ef;
+  --gqx-tintline: #cfdcd2;
+  --gqx-ok: #1e5c3a;
+  --gqx-bad: #a33d2e;
+  --gqx-badtint: #f7ece9;
+  --gqx-focus: #2169a8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --gqx-ink: #e8e9ec;
+    --gqx-muted: #9aa1ab;
+    --gqx-accent: #3f9c6b;
+    --gqx-accent-ink: #0d1210;
+    --gqx-card: #1e2126;
+    --gqx-paper: #16181c;
+    --gqx-line: #33373d;
+    --gqx-tint: #1b2420;
+    --gqx-tintline: #2e3d34;
+    --gqx-ok: #4fae7c;
+    --gqx-bad: #d07a6b;
+    --gqx-badtint: #2b201d;
+    --gqx-focus: #77b7ea;
+  }
+}
+
+#gqx-toggle {
+  position: fixed; right: 0; top: 40%; z-index: 1900;
+  writing-mode: vertical-rl; text-orientation: mixed;
+  background: var(--gqx-accent); color: var(--gqx-accent-ink);
+  border: 0; border-radius: 8px 0 0 8px; padding: 12px 6px;
+  font: 600 12.5px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  letter-spacing: .06em; cursor: pointer;
+}
+#gqx-toggle:focus-visible { outline: 2px solid var(--gqx-focus); }
+
+/* --gqx-top / --gqx-bottom track the page chrome (masthead + sticky navbar on
+   desktop, bottom navbar on phones) so the drawer never covers the header. */
+#gqx-drawer {
+  position: fixed; right: 0; top: var(--gqx-top, 0px); bottom: var(--gqx-bottom, 0px); z-index: 2000;
+  width: 352px; max-width: 92vw; overflow-y: auto;
+  background: var(--gqx-card); color: var(--gqx-ink);
+  border-left: 1px solid var(--gqx-line);
+  box-shadow: -6px 0 22px rgba(0,0,0,.12);
+  padding: 12px 16px 40px;
+  font: 13.5px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+body[data-gqx="closed"] #gqx-drawer { display: none; }
+
+/* Push mode: from 1050px up, an open drawer reserves its 352px instead of
+   covering the text, and the page band re-centers in the remaining space
+   (1552 = 352 + the theme's 1200px .ptx-page cap).  Below 1050px the drawer
+   stays an on-demand overlay.  Keep the 1050px breakpoint in sync with W_ONE
+   in example-sidebar.js. */
+@media (min-width: 1050px) {
+  body[data-gqx="open"] .ptx-page {
+    max-width: min(1200px, calc(100% - 352px));
+    margin-right: calc(352px + max(0px, (100% - 1552px) / 2));
+  }
+  /* keep the toggle tab reachable on the drawer's edge while open */
+  body[data-gqx="open"] #gqx-toggle { right: 352px; z-index: 2001; }
+}
+#gqx-drawer a { color: var(--gqx-ink); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--gqx-accent) 55%, transparent); }
+#gqx-drawer a:hover { text-decoration-color: var(--gqx-accent); }
+
+.gqx-head { display: flex; align-items: center; gap: 8px; margin-bottom: 2px; }
+.gqx-head .gqx-title { font-size: 12px; letter-spacing: .09em; color: var(--gqx-accent); font-weight: 700; }
+.gqx-head button {
+  margin-left: auto; border: 1px solid var(--gqx-line); background: transparent; color: var(--gqx-muted);
+  border-radius: 6px; padding: 1px 8px; cursor: pointer; font-size: 12px;
+}
+.gqx-crumb { color: var(--gqx-muted); font-size: 11.5px; margin-bottom: 10px; }
+
+.gqx-sec { border-left: 2px solid transparent; padding-left: 9px; margin: 0 0 15px -11px; }
+.gqx-sec.gqx-lens { border-left-color: var(--gqx-accent); }
+.gqx-sec h4 { margin: 0 0 7px; font-size: 11px; letter-spacing: .08em; color: var(--gqx-accent); font-weight: 700; }
+
+.gqx-pick { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.gqx-pick button {
+  border: 1px solid var(--gqx-line); border-radius: 8px; background: var(--gqx-card); color: var(--gqx-ink);
+  padding: 5px 8px; cursor: pointer; text-align: left; font-size: 12.5px; line-height: 1.3;
+}
+.gqx-pick button b { display: block; }
+.gqx-pick button span { color: var(--gqx-muted); font-size: 11px; }
+.gqx-pick button[aria-pressed="true"] { border-color: var(--gqx-accent); box-shadow: inset 0 0 0 1px var(--gqx-accent); }
+.gqx-row { display: flex; align-items: center; gap: 7px; margin-top: 8px; flex-wrap: wrap; }
+.gqx-row label { color: var(--gqx-muted); font-size: 11.5px; }
+#gqx-drawer input[type="text"], #gqx-drawer select, #gqx-drawer textarea {
+  border: 1px solid var(--gqx-line); border-radius: 7px; background: var(--gqx-card); color: var(--gqx-ink);
+  font-size: 12.5px; padding: 3px 6px; max-width: 100%;
+}
+.gqx-stat { color: var(--gqx-muted); font-size: 11.5px; margin-top: 6px; line-height: 1.55; }
+.gqx-msg { color: var(--gqx-muted); font-size: 11.5px; margin-top: 6px; }
+
+.gqx-step { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+.gqx-step button {
+  border: 1px solid var(--gqx-line); border-radius: 7px; background: var(--gqx-card); color: var(--gqx-ink);
+  padding: 1px 10px; cursor: pointer; font-size: 12.5px;
+}
+.gqx-step button:disabled { opacity: .35; cursor: default; }
+.gqx-step .gqx-pos { color: var(--gqx-muted); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+
+.gqx-quad { display: grid; grid-template-columns: auto 1fr; gap: 3px 8px; font-size: 12.5px; margin: 6px 0; }
+.gqx-quad .gqx-gen { font-style: italic; font-family: Georgia, serif; }
+.gqx-quad .gqx-val { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 11px; overflow-wrap: anywhere; }
+
+.gqx-checks { display: flex; gap: 5px; flex-wrap: wrap; margin: 8px 0 0; }
+.gqx-chk { font-size: 11px; border-radius: 999px; padding: 0 8px; border: 1px solid var(--gqx-tintline); }
+.gqx-chk.gqx-ok { color: var(--gqx-ok); border-color: color-mix(in srgb, var(--gqx-ok) 40%, transparent); background: color-mix(in srgb, var(--gqx-ok) 9%, transparent); }
+.gqx-chk.gqx-bad { color: var(--gqx-bad); border-color: color-mix(in srgb, var(--gqx-bad) 45%, transparent); background: var(--gqx-badtint); }
+.gqx-chk.gqx-pre { color: var(--gqx-muted); }
+
+table.gqx-ledger { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+table.gqx-ledger td { padding: 2px 8px 2px 0; vertical-align: baseline; }
+table.gqx-ledger td.gqx-w { font-style: italic; font-family: Georgia, serif; white-space: nowrap; width: 1%; }
+table.gqx-ledger td.gqx-v { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 11px; overflow-wrap: anywhere; }
+table.gqx-ledger tr.gqx-rel td { border-top: 1px solid var(--gqx-tintline); padding-top: 5px; font-weight: 600; }
+
+.gqx-card {
+  background: var(--gqx-tint); border: 1px solid var(--gqx-tintline); border-radius: 8px;
+  padding: 7px 10px; margin-top: 8px; font-size: 12px; line-height: 1.55;
+}
+.gqx-count { font-size: 14px; margin: 2px 0 4px; font-variant-numeric: tabular-nums; }
+.gqx-count b { color: var(--gqx-accent); }
+.gqx-mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 11px; }
+.gqx-dimtxt { color: var(--gqx-muted); }
+
+/* The playground is not about the chosen target above — give it a hard
+   visual break: a full-width rule plus an italic scope note. */
+#gqx-sec-play { border-top: 2px solid var(--gqx-line); margin-top: 22px; padding-top: 14px; }
+.gqx-kicker { color: var(--gqx-muted); font-size: 11.5px; font-style: italic; margin-bottom: 8px; line-height: 1.5; }
+
+.gqx-presets { margin-bottom: 6px; }
+.gqx-prow { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; margin-bottom: 4px; }
+.gqx-plabel { font-size: 10px; letter-spacing: .07em; color: var(--gqx-muted); text-transform: uppercase; flex: 0 0 66px; }
+.gqx-presets button {
+  border: 1px solid var(--gqx-line); border-radius: 999px; background: var(--gqx-card); color: var(--gqx-ink);
+  padding: 1px 9px; cursor: pointer; font-size: 11.5px;
+}
+.gqx-presets button[aria-pressed="true"] { border-color: var(--gqx-accent); color: var(--gqx-accent); }
+#gqx-prog { width: 100%; min-height: 130px; line-height: 1.45; white-space: pre;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 11.5px; }
+.gqx-run {
+  border: 1px solid var(--gqx-accent); border-radius: 7px; background: var(--gqx-accent); color: var(--gqx-accent-ink);
+  padding: 3px 11px; cursor: pointer; font-size: 12.5px; margin-top: 7px;
+}
+.gqx-sweep { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 7px; }
+.gqx-err { color: var(--gqx-bad); font-size: 11.5px; margin-top: 5px; }
+.gqx-foot { color: var(--gqx-muted); font-size: 10.5px; margin-top: 16px; border-top: 1px solid var(--gqx-line); padding-top: 8px; line-height: 1.5; }

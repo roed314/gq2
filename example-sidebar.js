@@ -462,13 +462,25 @@
         : 'no faithful transitive action of degree ≤ 47 — none of LMFDB\'s 2-adic fields has this Galois group') + '</span>';
       return;
     }
+    var pres = b.presentations.collector || b.presentations.square_commutator;
+    var N = pres ? pres.count : 0;
+    if (!N) {
+      // no G-extension at all: the sibling list would only say "0 fields"
+      // per realization, so just record that LMFDB agrees (or does not)
+      var lfTotal = s.r.reduce(function (a, x) { return a + x[3]; }, 0);
+      var degs = s.r.map(function (x) { return parseInt(x[0], 10); }).filter(function (d, i, a) { return a.indexOf(d) === i; });
+      el.innerHTML = lfTotal === 0
+        ? '<span class="gqx-dimtxt">no Galois extension of ℚ₂ has this group, and LMFDB agrees: none of its 2-adic fields has this Galois group ' +
+          '(any would appear in degree ' + degs.join(', ') + ')</span>'
+        : '<span class="gqx-err">LMFDB lists ' + plural(lfTotal, '2-adic field') + ' with this Galois group, but the verifier found no extension ✗</span>';
+      return;
+    }
     var total = 0;
     var parts = s.r.map(function (x) {
       total += x[3];
       return tgLink(x[0]) + ' (degree ' + parseInt(x[0], 10) + (x[1] > 1 ? ', ×' + x[1] : '') + '): ' + fieldsLink(x[0], plural(x[3], 'field'));
     });
     var hi = (s.hi || []).map(function (x) { return x[0] + (x[1] > 1 ? ' ×' + x[1] : ''); });
-    var pres = b.presentations.collector || b.presentations.square_commutator;
     el.innerHTML = '2-adic fields in LMFDB with this Galois group: <b>' + total + '</b> — ' + parts.join(' · ') +
       (hi.length ? '<br><span class="gqx-dimtxt">also ' + hi.join(', ') + ' beyond the field tables (degree ≥ ' + LMFDB_FIELD_DEGREE + ')' +
         (s.bs < 47 ? '; siblings known to degree ' + s.bs : '') + '</span>' : '') +
@@ -481,7 +493,7 @@
     var el = $('gqx-why');
     if (!el) return;
     var s = c ? sibInfo(state.label) : null;
-    if (!s || !s.r.length) { el.innerHTML = ''; return; }
+    if (!s || !s.r.length || !c.pd.count) { el.innerHTML = ''; return; }
     var N = c.pd.count, name = POOL_NAMES[state.label] || state.label;
     var sumMult = 0, lfTotal = 0;
     var items = s.r.map(function (x) {

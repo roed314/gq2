@@ -621,7 +621,7 @@
     if (!c) { $('gqx-count').textContent = ''; $('gqx-countstat').textContent = ''; $('gqx-why').innerHTML = ''; $('gqx-orbitcard').innerHTML = ''; return; }
     var n = c.pd.count;
     var name = POOL_NAMES[state.label] || state.label;
-    var line = n + ' ' + (n === 1 ? 'extension' : 'extensions') + ' of ℚ₂ with group ' + esc(name);
+    var line = n + ' ' + (n === 1 ? 'Galois extension' : 'Galois extensions') + ' of ℚ₂ with group ' + esc(name);
     if (c.b.aut_order) line += ' &ensp;·&ensp; |Sur(Γ, G)| = <b>' + (n * c.b.aut_order) + '</b> = ' + n + ' · ' + c.b.aut_order;
     $('gqx-count').innerHTML = line;
     renderWhy(c);

@@ -7,6 +7,13 @@
  * the relator are always recomputed here, and for |G| <= 2000 the tame,
  * pro-2, generation, and invariant claims are re-verified in the page.
  *
+ * siblings.json (scripts/fetch-lmfdb-siblings.py) adds, per group, LMFDB's
+ * transitive representations with the number of core-free subgroup classes
+ * giving each: that is what relates the count of Galois extensions here to
+ * the count of fields in LMFDB's tables, which hold every extension of Q_p of
+ * degree < 24 and list one field per core-free class.  Optional: without it
+ * the group line falls back to a single LMFDB search link.
+ *
  * Injected into paper.html by scripts/inject-example-sidebar.py (build-site.sh).
  */
 (function () {
@@ -219,6 +226,13 @@
     '48.29': 'all 8 extensions share (f = 2, e = 24) — their degree-48 fields are beyond the LMFDB field tables; see the <a href="https://www.lmfdb.org/padicField/?p=2&gal=8T23" target="_blank" rel="noopener">octic subfields (8T23)</a>',
   };
 
+  var LMFDB_FIELD_DEGREE = 24;   // LMFDB holds every extension of Q_2 of degree < 24
+  /* Group-specific colour for the sibling explanation, where the generic
+     "k non-conjugate classes" sentence has a concrete face. */
+  var SIBLING_NOTES = {
+    '48.29': 'here the two 8T23 classes are the two conjugacy classes of S₃ in GL(2,3), swapped by the outer automorphism g ↦ det(g)·g',
+  };
+
   /* ================= state ================= */
   /* Which panels start open is a function of window width at load (never
      persisted): below W_ONE neither fits, from W_ONE the drawer fits beside
@@ -253,6 +267,15 @@
     if (indexData) return Promise.resolve(indexData);
     return fetchJSON(DATA + 'index.json').then(function (ix) { indexData = ix; return ix; });
   }
+  var siblingsData = null, siblingsMissing = false;
+  function getSiblings() {
+    // never rejects: a missing sidecar just means the plain LMFDB link
+    if (siblingsData) return Promise.resolve(siblingsData);
+    if (siblingsMissing) return Promise.resolve(null);
+    return fetchJSON(DATA + 'siblings.json').then(function (sb) { siblingsData = sb; return sb; })
+      .catch(function () { siblingsMissing = true; return null; });
+  }
+  function sibInfo(label) { return siblingsData && siblingsData.groups ? siblingsData.groups[label] || null : null; }
   function derived(label) {
     // elements + O2 mask + tame pairs, for live checks and the sweep (small groups only)
     if (derivedCache[label]) return derivedCache[label];
@@ -311,6 +334,7 @@
     '<section class="gqx-sec" id="gqx-sec-count"><h4>THE COUNT</h4>' +
     '<div class="gqx-count" id="gqx-count"></div>' +
     '<div class="gqx-stat" id="gqx-countstat"></div>' +
+    '<div id="gqx-why"></div>' +
     '<div class="gqx-card" id="gqx-orbitcard"></div></section>' +
     '<section class="gqx-sec" id="gqx-sec-play"><h4>RELATOR PLAYGROUND</h4>' +
     '<div class="gqx-kicker">Independent of the target above: edit any second relator and sweep it against ' +
@@ -342,7 +366,7 @@
     'postcomposition action on surjections is free. Data: precomputed bundles decoded from the ' +
     'verifier\'s eltstore; the word ledger and relator are recomputed live here, and for |G| ≤ ' +
     LIVE_LIMIT + ' the tame, pro-2, generation, and invariant claims are re-verified in the page. ' +
-    'LMFDB field snapshot 2026-07-28.</div>';
+    'LMFDB field snapshot 2026-07-28<span id="gqx-sibfoot"></span>.</div>';
   document.body.appendChild(drawer);
 
   var $ = function (id) { return document.getElementById(id); };
@@ -404,6 +428,84 @@
     return { b: b, pd: pd, orbit: orbit, marking: marks[state.mi], nMarks: marks.length };
   }
 
+  function tgLink(T) {
+    return '<a href="https://www.lmfdb.org/GaloisGroup/' + T + '" target="_blank" rel="noopener" class="gqx-mono">' + T + '</a>';
+  }
+  function fieldsLink(T, text) {
+    return '<a href="https://www.lmfdb.org/padicField/?p=2&n=' + parseInt(T, 10) + '&gal=' + T + '" target="_blank" rel="noopener">' + text + '</a>';
+  }
+  function plural(k, w) { return k + ' ' + w + (k === 1 ? '' : 's'); }
+
+  /* The LMFDB line under the group stats.  What LMFDB's field search returns
+     for this group is N x (core-free classes of index < 24), one field per
+     class per Galois extension; say which classes, with LMFDB's own counts. */
+  function renderLmfdb(b, internal) {
+    var el = $('gqx-lmfdb');
+    if (!el) return;
+    if (internal) {
+      var it = siblingsData && siblingsData.internal;
+      el.innerHTML = '<span class="gqx-dimtxt">not in LMFDB (verifier-internal label)' + (it && it.min_degree
+        ? '; no faithful transitive action below degree ' + it.min_degree + ' (verified ' + esc(it.verified) +
+          '), so none of LMFDB\'s 2-adic fields has this Galois group' : '') + '</span>';
+      return;
+    }
+    var s = sibInfo(b.label);
+    if (!s) {
+      el.innerHTML = '<a href="https://www.lmfdb.org/padicField/?p=2&gal=' + b.label +
+        '" target="_blank" rel="noopener">2-adic fields with this Galois group</a>';
+      return;
+    }
+    if (!s.r.length) {
+      el.innerHTML = '<span class="gqx-dimtxt">' + (s.min
+        ? 'smallest faithful transitive action has degree ' + s.min + ' — LMFDB\'s field tables (degree &lt; ' +
+          LMFDB_FIELD_DEGREE + ') hold no field with this Galois group'
+        : 'no faithful transitive action of degree ≤ 47 — none of LMFDB\'s 2-adic fields has this Galois group') + '</span>';
+      return;
+    }
+    var total = 0;
+    var parts = s.r.map(function (x) {
+      total += x[3];
+      return tgLink(x[0]) + ' (degree ' + parseInt(x[0], 10) + (x[1] > 1 ? ', ×' + x[1] : '') + '): ' + fieldsLink(x[0], plural(x[3], 'field'));
+    });
+    var hi = (s.hi || []).map(function (x) { return x[0] + (x[1] > 1 ? ' ×' + x[1] : ''); });
+    var pres = b.presentations.collector || b.presentations.square_commutator;
+    el.innerHTML = '2-adic fields in LMFDB with this Galois group: <b>' + total + '</b> — ' + parts.join(' · ') +
+      (hi.length ? '<br><span class="gqx-dimtxt">also ' + hi.join(', ') + ' beyond the field tables (degree ≥ ' + LMFDB_FIELD_DEGREE + ')' +
+        (s.bs < 47 ? '; siblings known to degree ' + s.bs : '') + '</span>' : '') +
+      (b.order >= LMFDB_FIELD_DEGREE && pres ? '<br><span class="gqx-dimtxt">the ' + plural(pres.count, 'degree-' + b.order + ' Galois extension') +
+        (pres.count === 1 ? ' itself is' : ' themselves are') + ' beyond the tables too</span>' : '');
+  }
+
+  /* Under the count: the reconciliation, instantiated with this group's data. */
+  function renderWhy(c) {
+    var el = $('gqx-why');
+    if (!el) return;
+    var s = c ? sibInfo(state.label) : null;
+    if (!s || !s.r.length) { el.innerHTML = ''; return; }
+    var N = c.pd.count, name = POOL_NAMES[state.label] || state.label;
+    var sumMult = 0, lfTotal = 0;
+    var items = s.r.map(function (x) {
+      var T = x[0], mult = x[1], ae = x[2], lf = x[3], n = parseInt(T, 10);
+      sumMult += mult; lfTotal += lf;
+      var t = tgLink(T) + ' in degree ' + n + (mult > 1 ? ' <b>×' + mult + '</b>' : '') + ': ' + fieldsLink(T, plural(lf, 'field'));
+      if (mult > 1) t += ' — ' + mult + ' non-conjugate core-free classes give the same permutation group, so each extension has ' +
+        mult + ' non-isomorphic degree-' + n + ' subfields with this Galois group' + (ae ? ', arithmetically equivalent (same zeta function)' : '');
+      return '<li>' + t + '</li>';
+    });
+    var formula = N + ' × (' + s.r.map(function (x) { return x[1]; }).join(' + ') + ') = <b>' + (N * sumMult) + '</b>';
+    el.innerHTML = '<details class="gqx-why"><summary>why LMFDB lists ' + lfTotal + ' fields, not ' + N + '</summary>' +
+      '<p><b>' + N + '</b> counts Galois extensions L/ℚ₂ with Gal(L/ℚ₂) ≅ ' + esc(name) + ' — one per Aut(G)-orbit of markings. ' +
+      'LMFDB\'s search by Galois group lists every extension K/ℚ₂ of degree &lt; ' + LMFDB_FIELD_DEGREE +
+      ' whose <em>Galois closure</em> has this group: each L contributes one K = L<sup>H</sup> for every conjugacy class of ' +
+      'core-free subgroups H ≤ G with [G:H] &lt; ' + LMFDB_FIELD_DEGREE + ' — LMFDB\'s <em>siblings</em>.</p>' +
+      '<ul>' + items.join('') + '</ul>' +
+      '<p>So LMFDB lists ' + formula + (N * sumMult === lfTotal ? ' fields ✓' : ' fields, but holds ' + lfTotal + ' ✗') +
+      (SIBLING_NOTES[state.label] ? '; ' + SIBLING_NOTES[state.label] : '') + '.' +
+      (c.b.order >= LMFDB_FIELD_DEGREE ? ' The degree-' + c.b.order + ' Galois extensions themselves' +
+        ((s.hi || []).length ? ', like the ' + s.hi.map(function (x) { return x[0]; }).join(', ') + ' subfields,' : '') +
+        ' lie beyond the tables.' : '') + '</p></details>';
+  }
+
   function renderTarget() {
     var b = bundles[state.label];
     $('gqx-pick').innerHTML = POOL.map(function (l) {
@@ -429,11 +531,8 @@
       bits.push('|O₂(G)| = ' + b.o2_order);
       bits.push(b.aut_order ? '|Aut(G)| = ' + b.aut_order : '|Aut(G)| not computed');
       bits.push('degree ' + b.degree);
-      if (!internal) {
-        bits.push('<a href="https://www.lmfdb.org/padicField/?p=2&gal=' + b.label +
-          '" target="_blank" rel="noopener">2-adic fields with this Galois group</a>');
-      }
-      $('gqx-gstat').innerHTML = bits.join(' · ');
+      $('gqx-gstat').innerHTML = bits.join(' · ') + '<div id="gqx-lmfdb"></div>';
+      renderLmfdb(b, internal);
     } else {
       sel.innerHTML = '';
       $('gqx-gstat').textContent = '';
@@ -519,12 +618,13 @@
   function renderCount() {
     var c = cur();
     $('gqx-orbitcard').style.display = c && c.orbit ? '' : 'none';
-    if (!c) { $('gqx-count').textContent = ''; $('gqx-countstat').textContent = ''; $('gqx-orbitcard').innerHTML = ''; return; }
+    if (!c) { $('gqx-count').textContent = ''; $('gqx-countstat').textContent = ''; $('gqx-why').innerHTML = ''; $('gqx-orbitcard').innerHTML = ''; return; }
     var n = c.pd.count;
     var name = POOL_NAMES[state.label] || state.label;
     var line = n + ' ' + (n === 1 ? 'extension' : 'extensions') + ' of ℚ₂ with group ' + esc(name);
     if (c.b.aut_order) line += ' &ensp;·&ensp; |Sur(Γ, G)| = <b>' + (n * c.b.aut_order) + '</b> = ' + n + ' · ' + c.b.aut_order;
     $('gqx-count').innerHTML = line;
+    renderWhy(c);
     var other = Object.keys(c.b.presentations).filter(function (k) { return k !== state.pres; })[0];
     $('gqx-countstat').innerHTML = other
       ? 'the ' + (PRES_NAMES[other] || other).replace(/ \(.*/, '') + ' presentation gives the same count: ' + c.b.presentations[other].count + (c.b.presentations[other].count === n ? ' ✓' : ' ✗')
@@ -540,6 +640,13 @@
       else if (matches.length > 1) fieldLine = 'one of ' + matches.map(fieldLink).join(', ') +
         '<br><span class="gqx-dimtxt">(f = ' + inv.f + ', e = ' + inv.e + ') is shared by ' + matches.length + ' fields' +
         (state.label === '24.12' ? '; only the slopes differ, and slopes are not an invariant of the marking' : ' — the marking cannot canonically pick one') + '</span>';
+    } else if (sibInfo(state.label) && sibInfo(state.label).r.length) {
+      var sb = sibInfo(state.label);
+      var own = sb.r.filter(function (x) { return parseInt(x[0], 10) === c.b.order; })[0];
+      fieldLine = own
+        ? 'this extension\'s own degree-' + c.b.order + ' field is one of the ' + fieldsLink(own[0], plural(own[3], 'LMFDB field')) + ' with Galois group ' + tgLink(own[0])
+        : 'its degree-' + c.b.order + ' field is beyond LMFDB\'s tables; the subfields with this Galois closure appear there as ' +
+          sb.r.map(function (x) { return x[1] + ' of degree ' + parseInt(x[0], 10) + ' (' + tgLink(x[0]) + ')'; }).join(' and ');
     } else if (FIELD_NOTES[state.label]) {
       fieldLine = FIELD_NOTES[state.label];
     } else {
@@ -553,8 +660,10 @@
 
   function selectGroup(label) {
     $('gqx-msg').textContent = 'loading ' + label + '…';
-    getBundle(label).then(function () {
+    Promise.all([getBundle(label), getSiblings()]).then(function () {
       state.label = label; state.oi = 0; state.mi = 0;
+      var sf = $('gqx-sibfoot');
+      if (sf && siblingsData) sf.textContent = '; sibling data from LMFDB gps_transitive, pulled ' + siblingsData.generated;
       $('gqx-msg').textContent = '';
       renderAll();
     }).catch(function (err) {
@@ -736,6 +845,7 @@
     current: cur,
     bundles: bundles,
     getBundle: getBundle,
+    getSiblings: getSiblings,
     selectGroup: selectGroup,
     setOpen: setOpen,
     setToc: setToc,

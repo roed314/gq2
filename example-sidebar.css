@@ -156,3 +156,14 @@ table.gqx-ledger tr.gqx-rel td { border-top: 1px solid var(--gqx-tintline); padd
 .gqx-sweep { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 7px; }
 .gqx-err { color: var(--gqx-bad); font-size: 11.5px; margin-top: 5px; }
 .gqx-foot { color: var(--gqx-muted); font-size: 10.5px; margin-top: 16px; border-top: 1px solid var(--gqx-line); padding-top: 8px; line-height: 1.5; }
+
+/* LMFDB sibling line under the group stats, and the count's reconciliation
+   (a born-closed <details>, like the popups' remarks). */
+#gqx-lmfdb { margin-top: 4px; }
+#gqx-lmfdb b { color: var(--gqx-accent); }
+.gqx-why { margin: 4px 0 2px; font-size: 11.5px; color: var(--gqx-muted); line-height: 1.55; }
+.gqx-why summary { cursor: pointer; color: var(--gqx-accent); }
+.gqx-why p { margin: 5px 0; }
+.gqx-why ul { margin: 3px 0 3px 16px; padding: 0; }
+.gqx-why li { margin: 2px 0; }
+.gqx-why b { color: var(--gqx-ink); }
